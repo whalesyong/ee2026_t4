@@ -108,8 +108,7 @@ module Top_Student (  input clk
 
 
     task_C task_C_inst ( .clk(clk6p25m),
-                         .btnU(btnU),
-                         .btnD(btnD),
+                         .btnL(btnL),
                          .btnC(btnC),
                          .taskEnable(taskAenable),
                          .pixel_index(pixel_index),
@@ -158,7 +157,7 @@ module Top_Student (  input clk
             taskCenable = 1;
 
         end
-        else if ( sw == 16'b1000000100101111 ) begin        // task D selected  weiyong 01267 and sw[15]
+        else if ( sw == 16'b1000_0000_1100_0111 ) begin        // task D selected  weiyong 01267 and sw[15]
             pixel_colour <= task_D_colour;
             blinker_ticks = _8hz_ticks;
             led[9:0] = sw[9:0] & {10{blinker}};

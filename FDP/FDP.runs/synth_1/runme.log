@@ -1,0 +1,826 @@
+
+*** Running vivado
+    with args -log Top_Student.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Student.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source Top_Student.tcl -notrace
+Command: synth_design -top Top_Student -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 22924 
+WARNING: [Synth 8-2611] redeclaration of ansi port SLOW_CLOCK is not allowed [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/custom_timer.v:30]
+WARNING: [Synth 8-976] SLOW_CLOCK has already been declared [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/custom_timer.v:30]
+WARNING: [Synth 8-2654] second declaration of SLOW_CLOCK ignored [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/custom_timer.v:30]
+INFO: [Synth 8-994] SLOW_CLOCK is declared here [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/custom_timer.v:26]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 368.613 ; gain = 112.066
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Top_Student' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/Top_Student.v:14]
+	Parameter WHITE bound to: 16'b1111111111111111 
+	Parameter ORANGE bound to: 16'b1111110110100000 
+	Parameter BLUE bound to: 16'b0000000000011111 
+	Parameter GREEN bound to: 16'b0000011111100000 
+	Parameter RED bound to: 16'b1111100000000000 
+	Parameter PURPLE bound to: 16'b1111100000011110 
+	Parameter BLACK bound to: 16'b0000000000000000 
+	Parameter CENTER_X bound to: 48 - type: integer 
+	Parameter CENTER_Y bound to: 32 - type: integer 
+	Parameter _1hz_ticks bound to: 100000000 - type: integer 
+	Parameter _2hz_ticks bound to: 50000000 - type: integer 
+	Parameter _6hz_ticks bound to: 16666667 - type: integer 
+	Parameter _8hz_ticks bound to: 12500000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'custom_timer' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/custom_timer.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'custom_timer' (1#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/custom_timer.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
+	Parameter Width bound to: 96 - type: integer 
+	Parameter Height bound to: 64 - type: integer 
+	Parameter PixelCount bound to: 6144 - type: integer 
+	Parameter PixelCountWidth bound to: 13 - type: integer 
+	Parameter ClkFreq bound to: 6250000 - type: integer 
+	Parameter FrameFreq bound to: 60 - type: integer 
+	Parameter FrameDiv bound to: 104166 - type: integer 
+	Parameter FrameDivWidth bound to: 17 - type: integer 
+	Parameter PowerDelay bound to: 20 - type: integer 
+	Parameter ResetDelay bound to: 3 - type: integer 
+	Parameter VccEnDelay bound to: 20 - type: integer 
+	Parameter StartupCompleteDelay bound to: 100 - type: integer 
+	Parameter MaxDelay bound to: 100 - type: integer 
+	Parameter MaxDelayCount bound to: 625000 - type: integer 
+	Parameter StateCount bound to: 32 - type: integer 
+	Parameter StateWidth bound to: 5 - type: integer 
+	Parameter PowerUp bound to: 5'b00000 
+	Parameter Reset bound to: 5'b00001 
+	Parameter ReleaseReset bound to: 5'b00011 
+	Parameter EnableDriver bound to: 5'b00010 
+	Parameter DisplayOff bound to: 5'b00110 
+	Parameter SetRemapDisplayFormat bound to: 5'b00111 
+	Parameter SetStartLine bound to: 5'b00101 
+	Parameter SetOffset bound to: 5'b00100 
+	Parameter SetNormalDisplay bound to: 5'b01100 
+	Parameter SetMultiplexRatio bound to: 5'b01101 
+	Parameter SetMasterConfiguration bound to: 5'b01111 
+	Parameter DisablePowerSave bound to: 5'b01110 
+	Parameter SetPhaseAdjust bound to: 5'b01010 
+	Parameter SetDisplayClock bound to: 5'b01011 
+	Parameter SetSecondPrechargeA bound to: 5'b01001 
+	Parameter SetSecondPrechargeB bound to: 5'b01000 
+	Parameter SetSecondPrechargeC bound to: 5'b11000 
+	Parameter SetPrechargeLevel bound to: 5'b11001 
+	Parameter SetVCOMH bound to: 5'b11011 
+	Parameter SetMasterCurrent bound to: 5'b11010 
+	Parameter SetContrastA bound to: 5'b11110 
+	Parameter SetContrastB bound to: 5'b11111 
+	Parameter SetContrastC bound to: 5'b11101 
+	Parameter DisableScrolling bound to: 5'b11100 
+	Parameter ClearScreen bound to: 5'b10100 
+	Parameter VccEn bound to: 5'b10101 
+	Parameter DisplayOn bound to: 5'b10111 
+	Parameter PrepareNextFrame bound to: 5'b10110 
+	Parameter SetColAddress bound to: 5'b10010 
+	Parameter SetRowAddress bound to: 5'b10011 
+	Parameter WaitNextFrame bound to: 5'b10001 
+	Parameter SendPixel bound to: 5'b10000 
+	Parameter SpiCommandMaxWidth bound to: 40 - type: integer 
+	Parameter SpiCommandBitCountWidth bound to: 6 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:123]
+INFO: [Synth 8-226] default block is never used [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:198]
+WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:346]
+INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (2#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
+WARNING: [Synth 8-350] instance 'display_mod' of module 'Oled_Display' requires 14 connections, but only 12 given [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/Top_Student.v:70]
+INFO: [Synth 8-6157] synthesizing module 'seven_seg' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/seven_seg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'seven_seg' (3#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/seven_seg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'task_A' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/task_A.v:23]
+	Parameter WHITE bound to: 16'b1111111111111111 
+	Parameter ORANGE bound to: 16'b1111110110100000 
+	Parameter BLUE bound to: 16'b0000000000011111 
+	Parameter GREEN bound to: 16'b0000011111100000 
+	Parameter RED bound to: 16'b1111100000000000 
+	Parameter PURPLE bound to: 16'b1111100000011110 
+	Parameter BLACK bound to: 16'b0000000000000000 
+	Parameter CENTER_X bound to: 48 - type: integer 
+	Parameter CENTER_Y bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'task_A' (4#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/task_A.v:23]
+INFO: [Synth 8-6157] synthesizing module 'task_B' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/task_B.v:9]
+	Parameter WHITE bound to: 16'b1111111111111111 
+	Parameter RED bound to: 16'b1111100000000000 
+	Parameter GREEN bound to: 16'b0000011111100000 
+	Parameter BLUE bound to: 16'b0000000000011111 
+	Parameter ORANGE bound to: 16'b1111110110100000 
+	Parameter BLACK bound to: 16'b0000000000000000 
+	Parameter SQUARE_SIZE bound to: 13 - type: integer 
+	Parameter TOP_Y bound to: 0 - type: integer 
+	Parameter MID_Y bound to: 15 - type: integer 
+	Parameter BOT_Y bound to: 30 - type: integer 
+	Parameter START_X bound to: 42 - type: integer 
+	Parameter CX bound to: 48 - type: integer 
+	Parameter CY bound to: 50 - type: integer 
+	Parameter CD bound to: 13 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'task_B' (5#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/task_B.v:9]
+INFO: [Synth 8-6157] synthesizing module 'task_C' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/task_C.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'task_C' (6#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/task_C.v:1]
+INFO: [Synth 8-6157] synthesizing module 'task_D' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/task_D.v:1]
+	Parameter RECT_X bound to: 66 - type: integer 
+	Parameter RECT_Y bound to: 0 - type: integer 
+	Parameter RECT_LENGTH bound to: 30 - type: integer 
+	Parameter RECT_HEIGHT bound to: 30 - type: integer 
+	Parameter SQUARE_LENGTH bound to: 10 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'flexible_clock' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/task_D.v:207]
+INFO: [Synth 8-6155] done synthesizing module 'flexible_clock' (7#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/task_D.v:207]
+INFO: [Synth 8-6157] synthesizing module 'PixelToXY' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/task_D.v:194]
+	Parameter SCREEN_WIDTH bound to: 96 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'PixelToXY' (8#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/task_D.v:194]
+WARNING: [Synth 8-689] width (13) of port connection 'pixel_index' does not match port width (16) of module 'PixelToXY' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/task_D.v:56]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/task_D.v:149]
+WARNING: [Synth 8-3848] Net JB in module/entity task_D does not have driver. [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/task_D.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'task_D' (9#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/task_D.v:1]
+WARNING: [Synth 8-350] instance 'task_D_inst' of module 'task_D' requires 9 connections, but only 8 given [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/Top_Student.v:118]
+INFO: [Synth 8-6157] synthesizing module 'group_4_display' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/group_4_display.v:23]
+	Parameter WHITE bound to: 16'b1111111111111111 
+	Parameter ORANGE bound to: 16'b1111110110100000 
+	Parameter BLUE bound to: 16'b0000000000011111 
+	Parameter GREEN bound to: 16'b0000011111100000 
+	Parameter RED bound to: 16'b1111100000000000 
+	Parameter PURPLE bound to: 16'b1111100000011110 
+	Parameter BLACK bound to: 16'b0000000000000000 
+	Parameter CENTER_X bound to: 48 - type: integer 
+	Parameter CENTER_Y bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'group_4_display' (10#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/group_4_display.v:23]
+WARNING: [Synth 8-6014] Unused sequential element taskCenable_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/Top_Student.v:157]
+INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (11#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/Top_Student.v:14]
+WARNING: [Synth 8-3917] design Top_Student has port JB[2] driven by constant 0
+WARNING: [Synth 8-3331] design task_D has unconnected port JB[7]
+WARNING: [Synth 8-3331] design task_D has unconnected port JB[6]
+WARNING: [Synth 8-3331] design task_D has unconnected port JB[5]
+WARNING: [Synth 8-3331] design task_D has unconnected port JB[4]
+WARNING: [Synth 8-3331] design task_D has unconnected port JB[3]
+WARNING: [Synth 8-3331] design task_D has unconnected port JB[2]
+WARNING: [Synth 8-3331] design task_D has unconnected port JB[1]
+WARNING: [Synth 8-3331] design task_D has unconnected port JB[0]
+WARNING: [Synth 8-3331] design task_C has unconnected port btnL
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 409.613 ; gain = 153.066
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 409.613 ; gain = 153.066
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 409.613 ; gain = 153.066
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/constrs_1/new/basysConstraints.xdc]
+Finished Parsing XDC File [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/constrs_1/new/basysConstraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/constrs_1/new/basysConstraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_Student_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_Student_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 750.824 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 750.824 ; gain = 494.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 750.824 ; gain = 494.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 750.824 ; gain = 494.277
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Oled_Display'
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "fsm_next_state0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "pixel_colour_out0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "ignoreU" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ignoreC" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ignoreD" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cntU" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cntC_" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cntD" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/task_D.v:149]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/task_D.v:149]
+INFO: [Synth 8-5546] ROM "blinker_ticks" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "taskAenable" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 PowerUp | 00000000100000000000000000000000 |                            00000
+                   Reset | 00000000000100000000000000000000 |                            00001
+            ReleaseReset | 00000000000000000000100000000000 |                            00011
+            EnableDriver | 00000000000000000001000000000000 |                            00010
+              DisplayOff | 00000000000000000100000000000000 |                            00110
+   SetRemapDisplayFormat | 00000100000000000000000000000000 |                            00111
+            SetStartLine | 00001000000000000000000000000000 |                            00101
+               SetOffset | 10000000000000000000000000000000 |                            00100
+        SetNormalDisplay | 00000000000000000000000010000000 |                            01100
+       SetMultiplexRatio | 00000000000000000000000000100000 |                            01101
+  SetMasterConfiguration | 00000000000000000000000001000000 |                            01111
+        DisablePowerSave | 00000000000000000000000000000100 |                            01110
+          SetPhaseAdjust | 00000000000000000000000000001000 |                            01010
+         SetDisplayClock | 00000000001000000000000000000000 |                            01011
+     SetSecondPrechargeA | 00000000010000000000000000000000 |                            01001
+     SetSecondPrechargeB | 01000000000000000000000000000000 |                            01000
+     SetSecondPrechargeC | 00000010000000000000000000000000 |                            11000
+       SetPrechargeLevel | 00000001000000000000000000000000 |                            11001
+                SetVCOMH | 00000000000000010000000000000000 |                            11011
+        SetMasterCurrent | 00000000000000100000000000000000 |                            11010
+            SetContrastA | 00000000000001000000000000000000 |                            11110
+            SetContrastB | 00100000000000000000000000000000 |                            11111
+            SetContrastC | 00000000000000000000000000000001 |                            11101
+        DisableScrolling | 00000000000000000000000000000010 |                            11100
+             ClearScreen | 00000000000000000000000000010000 |                            10100
+                   VccEn | 00010000000000000000000000000000 |                            10101
+               DisplayOn | 00000000000010000000000000000000 |                            10111
+        PrepareNextFrame | 00000000000000001000000000000000 |                            10110
+           SetColAddress | 00000000000000000000010000000000 |                            10010
+           SetRowAddress | 00000000000000000000000100000000 |                            10011
+           WaitNextFrame | 00000000000000000000001000000000 |                            10001
+               SendPixel | 00000000000000000010000000000000 |                            10000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Oled_Display'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 750.824 ; gain = 494.277
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 11    
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 3     
+	   2 Input      9 Bit       Adders := 12    
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 3     
+	   2 Input      4 Bit       Adders := 3     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               40 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	               17 Bit    Registers := 1     
+	               16 Bit    Registers := 5     
+	                8 Bit    Registers := 6     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 4     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 21    
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 3     
+	  32 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	   4 Input     27 Bit        Muxes := 1     
+	   2 Input     27 Bit        Muxes := 1     
+	  32 Input     20 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 29    
+	  22 Input     16 Bit        Muxes := 1     
+	   3 Input     16 Bit        Muxes := 1     
+	   5 Input     16 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 3     
+	   3 Input      7 Bit        Muxes := 1     
+	  32 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 5     
+	   3 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	  32 Input      5 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 14    
+	   5 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 41    
+	   6 Input      1 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Top_Student 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   4 Input     27 Bit        Muxes := 1     
+	   2 Input     27 Bit        Muxes := 1     
+	   5 Input     16 Bit        Muxes := 2     
+	   5 Input      3 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 8     
+	   4 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 2     
+Module custom_timer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	                1 Bit    Registers := 1     
+Module Oled_Display 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	               40 Bit    Registers := 1     
+	               17 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 3     
+	  32 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	  32 Input     20 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 1     
+	  32 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	  32 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module seven_seg 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   4 Input      8 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+Module task_A 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 3     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module task_B 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 3     
++---Registers : 
+	                8 Bit    Registers := 3     
+	                3 Bit    Registers := 3     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	  22 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   3 Input     16 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 12    
+Module task_C 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 23    
+	   2 Input      7 Bit        Muxes := 3     
+	   3 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 4     
+	   3 Input      6 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 13    
+	   6 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 7     
+	   7 Input      1 Bit        Muxes := 1     
+Module flexible_clock 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	                1 Bit    Registers := 1     
+Module task_D 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 10    
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+	   5 Input      1 Bit        Muxes := 2     
+Module group_4_display 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-6014] Unused sequential element clock_6p25mhz/LED_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/task_D.v:216]
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+DSP Report: Generating DSP r_o_sq, operation Mode is: A*B.
+DSP Report: operator r_o_sq is absorbed into DSP r_o_sq.
+DSP Report: Generating DSP distance_sq0, operation Mode is: A*B.
+DSP Report: operator distance_sq0 is absorbed into DSP distance_sq0.
+DSP Report: Generating DSP distance_sq, operation Mode is: C+A*B.
+DSP Report: operator distance_sq is absorbed into DSP distance_sq.
+DSP Report: operator distance_sq0 is absorbed into DSP distance_sq.
+DSP Report: Generating DSP r_i_sq, operation Mode is: A*B.
+DSP Report: operator r_i_sq is absorbed into DSP r_i_sq.
+INFO: [Synth 8-5546] ROM "cntU" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ignoreU" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cntD" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ignoreD" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cntC_" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ignoreC" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element unit_clock_6p25/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.srcs/sources_1/new/custom_timer.v:40]
+INFO: [Synth 8-5546] ROM "blinker_ticks" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "taskAenable0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "taskAenable" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3917] design Top_Student has port JB[2] driven by constant 0
+WARNING: [Synth 8-3331] design task_D has unconnected port JB[7]
+WARNING: [Synth 8-3331] design task_D has unconnected port JB[6]
+WARNING: [Synth 8-3331] design task_D has unconnected port JB[5]
+WARNING: [Synth 8-3331] design task_D has unconnected port JB[4]
+WARNING: [Synth 8-3331] design task_D has unconnected port JB[3]
+WARNING: [Synth 8-3331] design task_D has unconnected port JB[2]
+WARNING: [Synth 8-3331] design task_D has unconnected port JB[1]
+WARNING: [Synth 8-3331] design task_D has unconnected port JB[0]
+WARNING: [Synth 8-3331] design task_C has unconnected port btnL
+INFO: [Synth 8-3886] merging instance 'task_D_inst/oled_data_reg[0]' (FD) to 'task_D_inst/oled_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'task_C_inst/oled_colour_reg[0]' (FDR) to 'task_C_inst/oled_colour_reg[1]'
+INFO: [Synth 8-3886] merging instance 'task_A_inst/pixel_colour_reg[0]' (FDR) to 'task_A_inst/pixel_colour_reg[1]'
+INFO: [Synth 8-3886] merging instance 'task_D_inst/oled_data_reg[1]' (FD) to 'task_D_inst/oled_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'task_C_inst/oled_colour_reg[1]' (FDR) to 'task_C_inst/oled_colour_reg[2]'
+INFO: [Synth 8-3886] merging instance 'task_A_inst/pixel_colour_reg[1]' (FDR) to 'task_A_inst/pixel_colour_reg[2]'
+INFO: [Synth 8-3886] merging instance 'task_D_inst/oled_data_reg[2]' (FD) to 'task_D_inst/oled_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'task_C_inst/oled_colour_reg[2]' (FDR) to 'task_C_inst/oled_colour_reg[3]'
+INFO: [Synth 8-3886] merging instance 'task_A_inst/pixel_colour_reg[2]' (FDR) to 'task_A_inst/pixel_colour_reg[3]'
+INFO: [Synth 8-3886] merging instance 'task_D_inst/oled_data_reg[3]' (FD) to 'task_D_inst/oled_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'task_C_inst/oled_colour_reg[3]' (FDR) to 'task_C_inst/oled_colour_reg[4]'
+INFO: [Synth 8-3886] merging instance 'task_A_inst/pixel_colour_reg[3]' (FDR) to 'task_A_inst/pixel_colour_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (task_D_inst/\oled_data_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (task_C_inst/\oled_colour_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (task_A_inst/\pixel_colour_reg[4] )
+INFO: [Synth 8-3886] merging instance 'task_D_inst/oled_data_reg[5]' (FD) to 'task_D_inst/oled_data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'task_C_inst/oled_colour_reg[5]' (FDS) to 'task_C_inst/oled_colour_reg[6]'
+INFO: [Synth 8-3886] merging instance 'task_A_inst/pixel_colour_reg[5]' (FDR) to 'task_A_inst/pixel_colour_reg[6]'
+INFO: [Synth 8-3886] merging instance 'task_D_inst/oled_data_reg[6]' (FD) to 'task_D_inst/oled_data_reg[7]'
+INFO: [Synth 8-3886] merging instance 'task_C_inst/oled_colour_reg[6]' (FDS) to 'task_C_inst/oled_colour_reg[7]'
+INFO: [Synth 8-3886] merging instance 'task_A_inst/pixel_colour_reg[6]' (FDR) to 'task_A_inst/pixel_colour_reg[7]'
+INFO: [Synth 8-3886] merging instance 'task_D_inst/oled_data_reg[7]' (FD) to 'task_D_inst/oled_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'task_C_inst/oled_colour_reg[7]' (FDS) to 'task_C_inst/oled_colour_reg[8]'
+INFO: [Synth 8-3886] merging instance 'task_A_inst/pixel_colour_reg[7]' (FDR) to 'task_A_inst/pixel_colour_reg[8]'
+INFO: [Synth 8-3886] merging instance 'task_D_inst/oled_data_reg[8]' (FD) to 'task_D_inst/oled_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'task_C_inst/oled_colour_reg[8]' (FDS) to 'task_C_inst/oled_colour_reg[9]'
+INFO: [Synth 8-3886] merging instance 'task_A_inst/pixel_colour_reg[8]' (FDR) to 'task_A_inst/pixel_colour_reg[9]'
+INFO: [Synth 8-3886] merging instance 'task_D_inst/oled_data_reg[9]' (FD) to 'task_D_inst/oled_data_reg[10]'
+INFO: [Synth 8-3886] merging instance 'task_C_inst/oled_colour_reg[9]' (FDS) to 'task_C_inst/oled_colour_reg[10]'
+INFO: [Synth 8-3886] merging instance 'task_A_inst/pixel_colour_reg[9]' (FDR) to 'task_A_inst/pixel_colour_reg[10]'
+INFO: [Synth 8-3886] merging instance 'task_C_inst/oled_colour_reg[10]' (FDS) to 'task_C_inst/oled_colour_reg[11]'
+INFO: [Synth 8-3886] merging instance 'task_D_inst/oled_data_reg[11]' (FD) to 'task_D_inst/oled_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'task_C_inst/oled_colour_reg[11]' (FDS) to 'task_C_inst/oled_colour_reg[12]'
+INFO: [Synth 8-3886] merging instance 'task_A_inst/pixel_colour_reg[11]' (FDR) to 'task_A_inst/pixel_colour_reg[15]'
+INFO: [Synth 8-3886] merging instance 'task_D_inst/oled_data_reg[12]' (FD) to 'task_D_inst/oled_data_reg[13]'
+INFO: [Synth 8-3886] merging instance 'task_C_inst/oled_colour_reg[12]' (FDS) to 'task_C_inst/oled_colour_reg[13]'
+INFO: [Synth 8-3886] merging instance 'task_A_inst/pixel_colour_reg[12]' (FDR) to 'task_A_inst/pixel_colour_reg[15]'
+INFO: [Synth 8-3886] merging instance 'task_D_inst/oled_data_reg[13]' (FD) to 'task_D_inst/oled_data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'task_C_inst/oled_colour_reg[13]' (FDS) to 'task_C_inst/oled_colour_reg[14]'
+INFO: [Synth 8-3886] merging instance 'task_A_inst/pixel_colour_reg[13]' (FDR) to 'task_A_inst/pixel_colour_reg[15]'
+INFO: [Synth 8-3886] merging instance 'task_D_inst/oled_data_reg[14]' (FD) to 'task_D_inst/oled_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'task_C_inst/oled_colour_reg[14]' (FDS) to 'task_C_inst/oled_colour_reg[15]'
+INFO: [Synth 8-3886] merging instance 'task_A_inst/pixel_colour_reg[14]' (FDR) to 'task_A_inst/pixel_colour_reg[15]'
+INFO: [Synth 8-3886] merging instance 'task_B_inst/ignoreU_reg[7]' (FDRE) to 'task_B_inst/ignoreU_reg[1]'
+INFO: [Synth 8-3886] merging instance 'task_B_inst/ignoreU_reg[6]' (FDRE) to 'task_B_inst/ignoreU_reg[1]'
+INFO: [Synth 8-3886] merging instance 'task_B_inst/ignoreU_reg[5]' (FDRE) to 'task_B_inst/ignoreU_reg[1]'
+INFO: [Synth 8-3886] merging instance 'task_B_inst/ignoreU_reg[4]' (FDRE) to 'task_B_inst/ignoreU_reg[1]'
+INFO: [Synth 8-3886] merging instance 'task_B_inst/ignoreU_reg[3]' (FDRE) to 'task_B_inst/ignoreU_reg[1]'
+INFO: [Synth 8-3886] merging instance 'task_B_inst/ignoreU_reg[2]' (FDRE) to 'task_B_inst/ignoreU_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (task_B_inst/\ignoreU_reg[1] )
+INFO: [Synth 8-3886] merging instance 'task_B_inst/ignoreD_reg[7]' (FDRE) to 'task_B_inst/ignoreD_reg[6]'
+INFO: [Synth 8-3886] merging instance 'task_B_inst/ignoreD_reg[6]' (FDRE) to 'task_B_inst/ignoreD_reg[5]'
+INFO: [Synth 8-3886] merging instance 'task_B_inst/ignoreD_reg[5]' (FDRE) to 'task_B_inst/ignoreD_reg[4]'
+INFO: [Synth 8-3886] merging instance 'task_B_inst/ignoreD_reg[4]' (FDRE) to 'task_B_inst/ignoreD_reg[3]'
+INFO: [Synth 8-3886] merging instance 'task_B_inst/ignoreD_reg[3]' (FDRE) to 'task_B_inst/ignoreD_reg[2]'
+INFO: [Synth 8-3886] merging instance 'task_B_inst/ignoreD_reg[2]' (FDRE) to 'task_B_inst/ignoreD_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (task_B_inst/\ignoreD_reg[1] )
+INFO: [Synth 8-3886] merging instance 'task_B_inst/ignoreC_reg[7]' (FDRE) to 'task_B_inst/ignoreC_reg[1]'
+INFO: [Synth 8-3886] merging instance 'task_B_inst/ignoreC_reg[6]' (FDRE) to 'task_B_inst/ignoreC_reg[1]'
+INFO: [Synth 8-3886] merging instance 'task_B_inst/ignoreC_reg[5]' (FDRE) to 'task_B_inst/ignoreC_reg[1]'
+INFO: [Synth 8-3886] merging instance 'task_B_inst/ignoreC_reg[4]' (FDRE) to 'task_B_inst/ignoreC_reg[1]'
+INFO: [Synth 8-3886] merging instance 'task_B_inst/ignoreC_reg[3]' (FDRE) to 'task_B_inst/ignoreC_reg[1]'
+INFO: [Synth 8-3886] merging instance 'task_B_inst/ignoreC_reg[2]' (FDRE) to 'task_B_inst/ignoreC_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (task_B_inst/\ignoreC_reg[1] )
+INFO: [Synth 8-3886] merging instance 'blinker_ticks_reg[0]' (FDE) to 'blinker_ticks_reg[3]'
+INFO: [Synth 8-3886] merging instance 'blinker_ticks_reg[1]' (FDE) to 'blinker_ticks_reg[3]'
+INFO: [Synth 8-3886] merging instance 'blinker_ticks_reg[2]' (FDE) to 'blinker_ticks_reg[9]'
+INFO: [Synth 8-3886] merging instance 'blinker_ticks_reg[4]' (FDE) to 'blinker_ticks_reg[9]'
+INFO: [Synth 8-3886] merging instance 'blinker_ticks_reg[6]' (FDE) to 'blinker_ticks_reg[9]'
+INFO: [Synth 8-3886] merging instance 'blinker_ticks_reg[7]' (FDE) to 'blinker_ticks_reg[25]'
+INFO: [Synth 8-3886] merging instance 'blinker_ticks_reg[8]' (FDE) to 'blinker_ticks_reg[26]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\blinker_ticks_reg[9] )
+INFO: [Synth 8-3886] merging instance 'blinker_ticks_reg[10]' (FDE) to 'blinker_ticks_reg[11]'
+INFO: [Synth 8-3886] merging instance 'blinker_ticks_reg[12]' (FDE) to 'blinker_ticks_reg[19]'
+INFO: [Synth 8-3886] merging instance 'blinker_ticks_reg[13]' (FDE) to 'blinker_ticks_reg[15]'
+INFO: [Synth 8-3886] merging instance 'blinker_ticks_reg[14]' (FDE) to 'blinker_ticks_reg[22]'
+INFO: [Synth 8-3886] merging instance 'blinker_ticks_reg[16]' (FDE) to 'blinker_ticks_reg[26]'
+INFO: [Synth 8-3886] merging instance 'blinker_ticks_reg[17]' (FDE) to 'blinker_ticks_reg[19]'
+INFO: [Synth 8-3886] merging instance 'blinker_ticks_reg[20]' (FDE) to 'blinker_ticks_reg[23]'
+INFO: [Synth 8-3886] merging instance 'blinker_ticks_reg[21]' (FDE) to 'blinker_ticks_reg[23]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\blinker_ticks_reg[23] )
+INFO: [Synth 8-3886] merging instance 'blinker_ticks_reg[24]' (FDE) to 'blinker_ticks_reg[26]'
+INFO: [Synth 8-3886] merging instance 'seven_seg_mod/seg_reg[0]' (FD) to 'seven_seg_mod/seg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'seven_seg_mod/seg_reg[2]' (FD) to 'seven_seg_mod/seg_reg[5]'
+INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[0]' (FD) to 'pixel_colour_reg[1]'
+INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[1]' (FD) to 'pixel_colour_reg[2]'
+INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[2]' (FD) to 'pixel_colour_reg[3]'
+INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[3]' (FD) to 'pixel_colour_reg[4]'
+INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[5]' (FD) to 'pixel_colour_reg[7]'
+INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[6]' (FD) to 'pixel_colour_reg[9]'
+INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[7]' (FD) to 'pixel_colour_reg[8]'
+INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[8]' (FD) to 'pixel_colour_reg[10]'
+INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[11]' (FD) to 'pixel_colour_reg[12]'
+INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[12]' (FD) to 'pixel_colour_reg[13]'
+INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[13]' (FD) to 'pixel_colour_reg[14]'
+INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[14]' (FD) to 'pixel_colour_reg[15]'
+WARNING: [Synth 8-3332] Sequential element (pixel_colour_reg[4]) is unused and will be removed from module task_A.
+WARNING: [Synth 8-3332] Sequential element (ignoreU_reg[1]) is unused and will be removed from module task_B.
+WARNING: [Synth 8-3332] Sequential element (ignoreD_reg[1]) is unused and will be removed from module task_B.
+WARNING: [Synth 8-3332] Sequential element (ignoreC_reg[1]) is unused and will be removed from module task_B.
+WARNING: [Synth 8-3332] Sequential element (oled_colour_reg[4]) is unused and will be removed from module task_C.
+WARNING: [Synth 8-3332] Sequential element (oled_data_reg[4]) is unused and will be removed from module task_D.
+WARNING: [Synth 8-3332] Sequential element (blinker_ticks_reg[23]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (blinker_ticks_reg[9]) is unused and will be removed from module Top_Student.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 750.824 ; gain = 494.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|task_A      | A*B         | 15     | 15     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|task_A      | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|task_A      | C+A*B       | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|task_A      | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:27 . Memory (MB): peak = 801.680 ; gain = 545.133
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 803.492 ; gain = 546.945
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'seven_seg_mod/an_reg[2]' (FD) to 'seven_seg_mod/seg_reg[7]'
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 865.746 ; gain = 609.199
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 865.746 ; gain = 609.199
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 865.746 ; gain = 609.199
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 865.746 ; gain = 609.199
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 865.746 ; gain = 609.199
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 865.746 ; gain = 609.199
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 865.746 ; gain = 609.199
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |BUFG      |     2|
+|2     |CARRY4    |   276|
+|3     |DSP48E1   |     3|
+|4     |DSP48E1_1 |     1|
+|5     |LUT1      |    68|
+|6     |LUT2      |   391|
+|7     |LUT3      |   209|
+|8     |LUT4      |   197|
+|9     |LUT5      |   193|
+|10    |LUT6      |   487|
+|11    |FDE_1     |    32|
+|12    |FDRE      |   595|
+|13    |FDSE      |     4|
+|14    |IBUF      |    22|
+|15    |OBUF      |    36|
++------+----------+------+
+
+Report Instance Areas: 
++------+----------------------+-----------------+------+
+|      |Instance              |Module           |Cells |
++------+----------------------+-----------------+------+
+|1     |top                   |                 |  2516|
+|2     |  _clk6p25m           |custom_timer     |    78|
+|3     |  _clkblinker         |custom_timer_0   |   106|
+|4     |  display_mod         |Oled_Display     |   900|
+|5     |  group_4_display_mod |group_4_display  |    22|
+|6     |  seven_seg_mod       |seven_seg        |    98|
+|7     |    seven_seg_clk     |custom_timer_5   |    76|
+|8     |  task_A_inst         |task_A           |   198|
+|9     |  task_B_inst         |task_B           |   194|
+|10    |  task_C_inst         |task_C           |   290|
+|11    |    unit_clock_25     |custom_timer_3   |    78|
+|12    |    unit_clock_45     |custom_timer_4   |    73|
+|13    |  task_D_inst         |task_D           |   313|
+|14    |    clock_1k          |flexible_clock   |    50|
+|15    |    clock_25m         |flexible_clock_1 |    50|
+|16    |    clock_30          |flexible_clock_2 |    50|
+|17    |    converter         |PixelToXY        |    77|
++------+----------------------+-----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 865.746 ; gain = 609.199
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 20 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 865.746 ; gain = 267.988
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 865.746 ; gain = 609.199
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 334 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 32 instances were transformed.
+  FDE_1 => FDRE (inverted pins: C): 32 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+165 Infos, 39 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 865.746 ; gain = 621.934
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Lawrence/Desktop/ee2026_t4/FDP/FDP.runs/synth_1/Top_Student.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Top_Student_utilization_synth.rpt -pb Top_Student_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 865.746 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 12 10:28:45 2025...
