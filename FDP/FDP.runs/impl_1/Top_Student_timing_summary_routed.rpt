@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Wed Mar 12 11:59:32 2025
+| Date         : Thu Mar 13 03:18:15 2025
 | Host         : Lawrence-ROG running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file Top_Student_timing_summary_routed.rpt -pb Top_Student_timing_summary_routed.pb -rpx Top_Student_timing_summary_routed.rpx -warn_on_violation
 | Design       : Top_Student
@@ -60,7 +60,7 @@ Table of Contents
 
  There is 1 register/latch pin with no clock driven by root clock pin: task_C_inst/unit_clock_25/SLOW_CLOCK_reg/Q (HIGH)
 
- There are 17 register/latch pins with no clock driven by root clock pin: task_C_inst/unit_clock_45/SLOW_CLOCK_reg/Q (HIGH)
+ There are 18 register/latch pins with no clock driven by root clock pin: task_C_inst/unit_clock_45/SLOW_CLOCK_reg/Q (HIGH)
 
  There are 4 register/latch pins with no clock driven by root clock pin: task_D_inst/clock_1k/LED_reg/Q (HIGH)
 
@@ -81,7 +81,7 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 1330 pins that are not constrained for maximum delay. (HIGH)
+ There are 1334 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 

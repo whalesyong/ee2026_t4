@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Wed Mar 12 11:59:32 2025
+| Date         : Thu Mar 13 03:18:16 2025
 | Host         : Lawrence-ROG running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file Top_Student_clock_utilization_routed.rpt
 | Design       : Top_Student
@@ -60,7 +60,7 @@ Table of Contents
 +-----------+-----------+-----------------+------------+-------------+--------------+-------------+-----------------+---------------------+--------------+----------------------------+--------------------+
 | Source Id | Global Id | Driver Type/Pin | Constraint | Site        | Clock Region | Clock Loads | Non-Clock Loads | Source Clock Period | Source Clock | Driver Pin                 | Net                |
 +-----------+-----------+-----------------+------------+-------------+--------------+-------------+-----------------+---------------------+--------------+----------------------------+--------------------+
-| src0      | g0        | FDRE/Q          | None       | SLICE_X4Y46 | X0Y0         |           1 |               2 |                     |              | _clk6p25m/SLOW_CLOCK_reg/Q | _clk6p25m/clk6p25m |
+| src0      | g0        | FDRE/Q          | None       | SLICE_X6Y46 | X0Y0         |           1 |               2 |                     |              | _clk6p25m/SLOW_CLOCK_reg/Q | _clk6p25m/clk6p25m |
 | src1      | g1        | IBUF/O          | IOB_X1Y26  | IOB_X1Y26   | X1Y0         |           1 |               0 |                     |              | clk_IBUF_inst/O            | clk_IBUF           |
 +-----------+-----------+-----------------+------------+-------------+--------------+-------------+-----------------+---------------------+--------------+----------------------------+--------------------+
 * Clock Loads column represents the clock pin loads (pin count)
@@ -73,13 +73,13 @@ Table of Contents
 +----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+----------------------------------------------+--------------------------------------+
 | Local Id | Driver Type/Pin | Constraint | Site/BEL          | Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin                                   | Net                                  |
 +----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+----------------------------------------------+--------------------------------------||
-| 0        | FDRE/Q          | None       | SLICE_X4Y12/AFF   | X0Y0         |          21 |               1 |              |       | task_D_inst/clock_30/LED_reg/Q               | task_D_inst/clock_30/CLK             - Static -
-| 1        | LUT1/O          | None       | SLICE_X4Y27/A6LUT | X0Y0         |          20 |               0 |              |       | delay_reg[0]_i_3/O                           | p_1_in                               - Static -
-| 2        | FDRE/Q          | None       | SLICE_X3Y9/AFF    | X0Y0         |          17 |               1 |              |       | task_C_inst/unit_clock_45/SLOW_CLOCK_reg/Q   | task_C_inst/unit_clock_45/CLK        - Static -
-| 3        | FDRE/Q          | None       | SLICE_X63Y22/AFF  | X1Y0         |          11 |               1 |              |       | seven_seg_mod/seven_seg_clk/SLOW_CLOCK_reg/Q | seven_seg_mod/seven_seg_clk/CLK      - Static -
-| 4        | FDRE/Q          | None       | SLICE_X3Y14/AFF   | X0Y0         |           4 |               1 |              |       | task_D_inst/clock_1k/LED_reg/Q               | task_D_inst/clock_1k/CLK             - Static -
-| 5        | FDRE/Q          | None       | SLICE_X5Y14/AFF   | X0Y0         |           2 |               1 |              |       | task_D_inst/clock_25m/LED_reg/Q              | task_D_inst/clock_25m/CLK            - Static -
-| 6        | FDRE/Q          | None       | SLICE_X5Y2/BFF    | X0Y0         |           1 |               1 |              |       | task_C_inst/unit_clock_25/SLOW_CLOCK_reg/Q   | task_C_inst/unit_clock_25/SLOW_CLOCK - Static -
+| 0        | FDRE/Q          | None       | SLICE_X2Y15/AFF   | X0Y0         |          21 |               1 |              |       | task_D_inst/clock_30/LED_reg/Q               | task_D_inst/clock_30/CLK             - Static -
+| 1        | LUT1/O          | None       | SLICE_X3Y27/C6LUT | X0Y0         |          20 |               0 |              |       | delay_reg[0]_i_3/O                           | p_1_in                               - Static -
+| 2        | FDRE/Q          | None       | SLICE_X1Y0/AFF    | X0Y0         |          18 |               1 |              |       | task_C_inst/unit_clock_45/SLOW_CLOCK_reg/Q   | task_C_inst/unit_clock_45/CLK        - Static -
+| 3        | FDRE/Q          | None       | SLICE_X64Y22/AFF  | X1Y0         |          11 |               1 |              |       | seven_seg_mod/seven_seg_clk/SLOW_CLOCK_reg/Q | seven_seg_mod/seven_seg_clk/CLK      - Static -
+| 4        | FDRE/Q          | None       | SLICE_X1Y18/AFF   | X0Y0         |           4 |               1 |              |       | task_D_inst/clock_1k/LED_reg/Q               | task_D_inst/clock_1k/CLK             - Static -
+| 5        | FDRE/Q          | None       | SLICE_X5Y17/AFF   | X0Y0         |           2 |               1 |              |       | task_D_inst/clock_25m/LED_reg/Q              | task_D_inst/clock_25m/CLK            - Static -
+| 6        | FDRE/Q          | None       | SLICE_X2Y4/AFF    | X0Y0         |           1 |               1 |              |       | task_C_inst/unit_clock_25/SLOW_CLOCK_reg/Q   | task_C_inst/unit_clock_25/SLOW_CLOCK - Static -
 +----------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+----------------------------------------------+--------------------------------------||
 * Local Clocks in this context represents only clocks driven by non-global buffers
 ** Clock Loads column represents the clock pin loads (pin count)
@@ -94,9 +94,9 @@ Table of Contents
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
-| X0Y0              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  579 |  1200 |  265 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
-| X1Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   50 |  1500 |   11 |   450 |    0 |    40 |    0 |    20 |    0 |    20 |
-| X0Y1              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    4 |  1200 |    4 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
+| X0Y0              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  580 |  1200 |  160 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
+| X1Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   50 |  1500 |    5 |   450 |    0 |    40 |    0 |    20 |    0 |    20 |
+| X0Y1              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    4 |  1200 |    0 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1500 |    0 |   450 |    0 |    40 |    0 |    20 |    0 |    20 |
 | X0Y2              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1800 |    0 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y2              |    0 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     4 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |   950 |    0 |   300 |    0 |    10 |    0 |     5 |    0 |    20 |
