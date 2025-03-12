@@ -6,7 +6,7 @@ module task_C (
     output [15:0] pixel_colour_out
     );
 
-wire clk6p25m, clk_25MHz, clk_45Hz;
+wire clk_25MHz, clk_45Hz;
 wire fb;
 wire send_pix;
 wire samp_pix;
@@ -15,7 +15,6 @@ wire [5:0] y;
 
 reg [15:0] oled_colour = 16'b00000_000000_00000;
 
-custom_timer unit_clock_6p25 (clk, 7, clk6p25m);
 custom_timer unit_clock_25 (clk, 2, clk_25MHz);
 custom_timer unit_clock_45 (clk, 1111111, clk_45Hz);
 
@@ -41,13 +40,14 @@ custom_timer unit_clock_45 (clk, 1111111, clk_45Hz);
   reg[6:0] x_var = 7'd85;
   reg[5:0] y_var = 7'd11;
   reg[2:0] step_id = 3'd0;
+  reg start_id = 0;
   
   assign pixel_colour_out = oled_colour;
   initial begin
       step_id = 0;
   end
   
-  always @(posedge clk_25MHz) begin
+  always @(posedge clk_25MHz) begin   
       oled_colour <= 16'b00000_000000_00000;
   
       if (x >= 84 && x <= 94 && y >= 0 && y <= 10) begin
@@ -126,11 +126,12 @@ custom_timer unit_clock_45 (clk, 1111111, clk_45Hz);
 end
     
 always @ (posedge clk_45Hz) begin
-    if (taskEnable == 0) begin
-        step_id <= 1'b0;
+    start_id <= 0;
+    if (taskEnable == 1 && btnC) begin
+        start_id <= 1;
     end
-    if (btnC) begin
-        step_id <= 1'b1;
+    if (start_id == 1) begin
+        step_id = 3'd1;
     end
     if (step_id == 1) begin // down
         y_var <= y_var + 1;

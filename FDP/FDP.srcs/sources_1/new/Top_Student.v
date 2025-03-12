@@ -107,10 +107,10 @@ module Top_Student (  input clk
                          );
 
 
-    task_C task_C_inst ( .clk(clk6p25m),
+    task_C task_C_inst ( .clk(clk),
                          .btnL(btnL),
                          .btnC(btnC),
-                         .taskEnable(taskAenable),
+                         .taskEnable(taskCenable),
                          .pixel_index(pixel_index),
                          .pixel_colour_out(task_C_colour)
                          );
@@ -149,7 +149,7 @@ module Top_Student (  input clk
             taskBenable = 1;
 
         end
-        else if ( sw == 16'b0100000011000111 ) begin        // task C selected jeromy 012358 and sw[14]
+        else if ( sw == 16'b0100_0001_0010_1111 ) begin        // task C selected jeromy 012358 and sw[14]
             pixel_colour <= task_C_colour;
             blinker_ticks = _6hz_ticks;
             led[9:0] = sw[9:0] & {10{blinker}};
@@ -177,14 +177,6 @@ module Top_Student (  input clk
 
 
     end
-
-
-                 
-
-
-
-
-
 
 
 endmodule

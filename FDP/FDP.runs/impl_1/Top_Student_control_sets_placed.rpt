@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Wed Mar 12 10:29:17 2025
+| Date         : Wed Mar 12 11:59:11 2025
 | Host         : Lawrence-ROG running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Top_Student_control_sets_placed.rpt
 | Design       : Top_Student
@@ -24,7 +24,7 @@ Table of Contents
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
 | Number of unique control sets                            |    32 |
-| Unused register locations in slices containing registers |    58 |
+| Unused register locations in slices containing registers |    54 |
 +----------------------------------------------------------+-------+
 
 
@@ -36,11 +36,10 @@ Table of Contents
 +--------+--------------+
 |      2 |            2 |
 |      4 |            2 |
-|      6 |            1 |
-|      8 |            2 |
-|     12 |            2 |
+|      8 |            3 |
+|     12 |            1 |
 |     14 |            2 |
-|    16+ |           21 |
+|    16+ |           22 |
 +--------+--------------+
 
 
@@ -50,10 +49,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             152 |           47 |
+| No           | No                    | No                     |             156 |           44 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |             668 |           95 |
-| Yes          | No                    | No                     |             156 |           28 |
+| Yes          | No                    | No                     |             156 |           30 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |             286 |           37 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -62,41 +61,41 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+-------------------------------------------+---------------------------------------+-----------------------------------------------+------------------+----------------+
-|                Clock Signal               |             Enable Signal             |                Set/Reset Signal               | Slice Load Count | Bel Load Count |
-+-------------------------------------------+---------------------------------------+-----------------------------------------------+------------------+----------------+
-| ~clk6p25m_BUFG                            |                                       |                                               |                1 |              2 |
-|  task_C_inst/unit_clock_25/SLOW_CLOCK     |                                       |                                               |                1 |              2 |
-|  task_D_inst/clock_25m/CLK                |                                       |                                               |                1 |              4 |
-|  task_D_inst/clock_30/CLK                 |                                       |                                               |                1 |              4 |
-|  task_C_inst/unit_clock_45/step_id_reg[2] |                                       |                                               |                2 |              6 |
-|  task_D_inst/clock_1k/CLK                 | task_D_inst/p_0_in                    |                                               |                1 |              8 |
-|  task_D_inst/clock_30/CLK                 |                                       | task_D_inst/square_direction[3]_i_1_n_0       |                2 |              8 |
-|  clk_IBUF_BUFG                            |                                       |                                               |                6 |             12 |
-|  task_C_inst/unit_clock_45/step_id_reg[2] | task_C_inst/y_var[5]_i_1_n_0          |                                               |                5 |             12 |
-|  task_C_inst/unit_clock_45/step_id_reg[2] | task_C_inst/x_var[6]_i_1_n_0          |                                               |                4 |             14 |
-|  task_D_inst/clock_30/CLK                 | task_D_inst/sel                       | task_D_inst/square_direction[3]_i_1_n_0       |                2 |             14 |
-|  task_D_inst/clock_30/CLK                 | task_D_inst/square_y[7]_i_1_n_0       | task_D_inst/square_direction[3]_i_1_n_0       |                3 |             16 |
-|  clk6p25m_BUFG                            | blinker_ticks[26]_i_1_n_0             |                                               |                6 |             18 |
-|  seven_seg_mod/seven_seg_clk/CLK          |                                       |                                               |                3 |             22 |
-|  clk6p25m_BUFG                            |                                       | task_B_inst/prevU_i_1_n_0                     |                5 |             24 |
-| ~clk6p25m_BUFG                            |                                       | display_mod/frame_counter[16]_i_1_n_0         |                5 |             34 |
-|  p_1_in                                   | display_mod/delay[0]_i_1_n_0          |                                               |                5 |             40 |
-|  clk_IBUF_BUFG                            |                                       | _clk6p25m/clear                               |                8 |             64 |
-|  clk_IBUF_BUFG                            |                                       | _clkblinker/clear                             |                8 |             64 |
-|  clk_IBUF_BUFG                            |                                       | task_D_inst/clock_1k/counter[0]_i_1__0_n_0    |                8 |             64 |
-|  clk_IBUF_BUFG                            |                                       | task_D_inst/clock_25m/clear                   |                8 |             64 |
-|  clk_IBUF_BUFG                            |                                       | task_D_inst/clock_30/counter[0]_i_1_n_0       |                8 |             64 |
-|  clk6p25m_BUFG                            |                                       | seven_seg_mod/seven_seg_clk/clear             |                8 |             64 |
-|  clk6p25m_BUFG                            |                                       | task_C_inst/unit_clock_25/clear               |                8 |             64 |
-|  clk6p25m_BUFG                            |                                       | task_C_inst/unit_clock_45/COUNT0_carry__2_n_0 |                8 |             64 |
-|  clk6p25m_BUFG                            | task_A_inst/count_debounce[0]_i_2_n_0 | task_A_inst/count_debounce[0]_i_1_n_0         |                8 |             64 |
-|  clk6p25m_BUFG                            | task_B_inst/ignoreD_reg_n_0_[0]       | task_B_inst/cntD[0]_i_1_n_0                   |                8 |             64 |
-|  clk6p25m_BUFG                            | task_B_inst/ignoreC_reg_n_0_[0]       | task_B_inst/cntC_[0]_i_1_n_0                  |                8 |             64 |
-|  clk6p25m_BUFG                            | task_B_inst/ignoreU_reg_n_0_[0]       | task_B_inst/cntU[0]_i_1_n_0                   |                8 |             64 |
-| ~clk6p25m_BUFG                            | display_mod/state                     |                                               |                7 |             64 |
-| ~clk6p25m_BUFG                            |                                       | display_mod/spi_word[39]_i_1_n_0              |               19 |             90 |
-|  clk6p25m_BUFG                            |                                       |                                               |               32 |            100 |
-+-------------------------------------------+---------------------------------------+-----------------------------------------------+------------------+----------------+
++---------------------------------------+---------------------------------------+-----------------------------------------------+------------------+----------------+
+|              Clock Signal             |             Enable Signal             |                Set/Reset Signal               | Slice Load Count | Bel Load Count |
++---------------------------------------+---------------------------------------+-----------------------------------------------+------------------+----------------+
+|  task_C_inst/unit_clock_25/SLOW_CLOCK |                                       |                                               |                1 |              2 |
+| ~clk6p25m_BUFG                        |                                       |                                               |                1 |              2 |
+|  task_D_inst/clock_25m/CLK            |                                       |                                               |                1 |              4 |
+|  task_D_inst/clock_30/CLK             |                                       |                                               |                1 |              4 |
+|  task_C_inst/unit_clock_45/CLK        |                                       |                                               |                4 |              8 |
+|  task_D_inst/clock_1k/CLK             | task_D_inst/p_0_in                    |                                               |                1 |              8 |
+|  task_D_inst/clock_30/CLK             |                                       | task_D_inst/square_direction[3]_i_1_n_0       |                2 |              8 |
+|  task_C_inst/unit_clock_45/CLK        | task_C_inst/y_var[5]_i_1_n_0          |                                               |                5 |             12 |
+|  task_C_inst/unit_clock_45/CLK        | task_C_inst/x_var[6]_i_1_n_0          |                                               |                4 |             14 |
+|  task_D_inst/clock_30/CLK             | task_D_inst/sel                       | task_D_inst/square_direction[3]_i_1_n_0       |                2 |             14 |
+|  task_D_inst/clock_30/CLK             | task_D_inst/square_y[7]_i_1_n_0       | task_D_inst/square_direction[3]_i_1_n_0       |                3 |             16 |
+|  clk_IBUF_BUFG                        |                                       |                                               |                8 |             16 |
+|  clk6p25m_BUFG                        | blinker_ticks[26]_i_1_n_0             |                                               |                5 |             18 |
+|  seven_seg_mod/seven_seg_clk/CLK      |                                       |                                               |                3 |             22 |
+|  clk6p25m_BUFG                        |                                       | task_B_inst/prevU_i_1_n_0                     |                6 |             24 |
+| ~clk6p25m_BUFG                        |                                       | display_mod/frame_counter[16]_i_1_n_0         |                5 |             34 |
+|  p_1_in                               | display_mod/delay[0]_i_1_n_0          |                                               |                5 |             40 |
+|  clk_IBUF_BUFG                        |                                       | _clk6p25m/clear                               |                8 |             64 |
+|  clk_IBUF_BUFG                        |                                       | _clkblinker/clear                             |                8 |             64 |
+|  clk_IBUF_BUFG                        |                                       | task_C_inst/unit_clock_25/clear               |                8 |             64 |
+|  clk_IBUF_BUFG                        |                                       | task_C_inst/unit_clock_45/COUNT0_carry__2_n_0 |                8 |             64 |
+|  clk_IBUF_BUFG                        |                                       | task_D_inst/clock_1k/counter[0]_i_1__0_n_0    |                8 |             64 |
+|  clk_IBUF_BUFG                        |                                       | task_D_inst/clock_25m/clear                   |                8 |             64 |
+|  clk_IBUF_BUFG                        |                                       | task_D_inst/clock_30/counter[0]_i_1_n_0       |                8 |             64 |
+|  clk6p25m_BUFG                        |                                       | seven_seg_mod/seven_seg_clk/clear             |                8 |             64 |
+|  clk6p25m_BUFG                        | task_A_inst/count_debounce[0]_i_2_n_0 | task_A_inst/count_debounce[0]_i_1_n_0         |                8 |             64 |
+|  clk6p25m_BUFG                        | task_B_inst/ignoreD_reg_n_0_[0]       | task_B_inst/cntD[0]_i_1_n_0                   |                8 |             64 |
+|  clk6p25m_BUFG                        | task_B_inst/ignoreU_reg_n_0_[0]       | task_B_inst/cntU[0]_i_1_n_0                   |                8 |             64 |
+|  clk6p25m_BUFG                        | task_B_inst/ignoreC_reg_n_0_[0]       | task_B_inst/cntC_[0]_i_1_n_0                  |                8 |             64 |
+| ~clk6p25m_BUFG                        | display_mod/state                     |                                               |               10 |             64 |
+| ~clk6p25m_BUFG                        |                                       | display_mod/spi_word[39]_i_1_n_0              |               18 |             90 |
+|  clk6p25m_BUFG                        |                                       |                                               |               25 |             98 |
++---------------------------------------+---------------------------------------+-----------------------------------------------+------------------+----------------+
 
 

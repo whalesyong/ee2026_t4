@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Wed Mar 12 10:29:36 2025
+| Date         : Wed Mar 12 11:59:30 2025
 | Host         : Lawrence-ROG running 64-bit major release  (build 9200)
 | Command      : report_drc -file Top_Student_drc_routed.rpt -pb Top_Student_drc_routed.pb -rpx Top_Student_drc_routed.rpx
 | Design       : Top_Student
@@ -145,7 +145,7 @@ Related violations: <none>
 
 RTSTAT-10#1 Warning
 No routable loads  
-821 net(s) have no routable loads. The problem bus(es) and/or net(s) are task_C_inst/unit_clock_25/COUNT0_carry__0_n_1, seven_seg_mod/seven_seg_clk/COUNT0_carry__0_n_1, task_C_inst/unit_clock_45/COUNT0_carry__0_n_1, seven_seg_mod/seven_seg_clk/COUNT0_carry__0_n_2, task_C_inst/unit_clock_25/COUNT0_carry__0_n_2, task_C_inst/unit_clock_45/COUNT0_carry__0_n_2, task_C_inst/unit_clock_45/COUNT0_carry__0_n_3, seven_seg_mod/seven_seg_clk/COUNT0_carry__0_n_3, task_C_inst/unit_clock_25/COUNT0_carry__0_n_3, seven_seg_mod/seven_seg_clk/COUNT0_carry__1_n_1, task_C_inst/unit_clock_45/COUNT0_carry__1_n_1, task_C_inst/unit_clock_25/COUNT0_carry__1_n_1, seven_seg_mod/seven_seg_clk/COUNT0_carry__1_n_2, task_C_inst/unit_clock_45/COUNT0_carry__1_n_2, task_C_inst/unit_clock_25/COUNT0_carry__1_n_2 (the first 15 of 821 listed).
+821 net(s) have no routable loads. The problem bus(es) and/or net(s) are task_C_inst/unit_clock_45/COUNT0_carry__0_n_1, seven_seg_mod/seven_seg_clk/COUNT0_carry__0_n_1, task_C_inst/unit_clock_25/COUNT0_carry__0_n_1, seven_seg_mod/seven_seg_clk/COUNT0_carry__0_n_2, task_C_inst/unit_clock_25/COUNT0_carry__0_n_2, task_C_inst/unit_clock_45/COUNT0_carry__0_n_2, task_C_inst/unit_clock_25/COUNT0_carry__0_n_3, task_C_inst/unit_clock_45/COUNT0_carry__0_n_3, seven_seg_mod/seven_seg_clk/COUNT0_carry__0_n_3, seven_seg_mod/seven_seg_clk/COUNT0_carry__1_n_1, task_C_inst/unit_clock_25/COUNT0_carry__1_n_1, task_C_inst/unit_clock_45/COUNT0_carry__1_n_1, task_C_inst/unit_clock_25/COUNT0_carry__1_n_2, task_C_inst/unit_clock_45/COUNT0_carry__1_n_2, seven_seg_mod/seven_seg_clk/COUNT0_carry__1_n_2 (the first 15 of 821 listed).
 Related violations: <none>
 
 
