@@ -99,12 +99,15 @@ always @(posedge clk_25MHz) begin
     end
 end
     
+reg [1:0] pixel_update_counter = 2'd0;
+  
 always @(posedge clk_45Hz) begin
     if (taskEnable == 0 || (step_id == 7 && btnC)) begin
         // Reset the display and wait for btnC
         step_id <= 3'd0;
         y_var <= 7'd11;
         x_var <= 7'd84;
+        pixel_update_counter <= 0;
     end else if (btnC && step_id == 0) begin
         step_id <= 3'd1;
     end else if (step_id == 1) begin // Down
@@ -118,30 +121,38 @@ always @(posedge clk_45Hz) begin
         if (x_var <= 47) begin
             x_var <= 7'd57;
             step_id <= 3'd3;
+            pixel_update_counter <= 0;
         end
-    end else if (step_id == 3) begin // Up
-        y_var <= y_var - 1;
-        if (y_var <= 27) begin
-            y_var <= 7'd27;
-            step_id <= 3'd4;
-        end
-    end else if (step_id == 4) begin // Right
-        x_var <= x_var + 1;
-        if (x_var >= 72) begin
-            x_var <= 7'd72;
-            step_id <= 3'd5;
-        end
-    end else if (step_id == 5) begin // Up
-        y_var <= y_var - 1;
-        if (y_var <= 0) begin
-            y_var <= 7'd0;
-            step_id <= 3'd6;
-        end
-    end else if (step_id == 6) begin // Right
-        x_var <= x_var + 1;
-        if (x_var >= 85) begin
-            x_var <= 7'd85;
-            step_id <= 3'd7;
+    end else if (step_id >= 3) begin  
+        pixel_update_counter <= pixel_update_counter + 1;
+        if (pixel_update_counter == 2'd2) begin
+            pixel_update_counter <= 0; 
+        
+            if (step_id == 3) begin // Up
+                y_var <= y_var - 1;
+                if (y_var <= 27) begin
+                    y_var <= 7'd27;
+                    step_id <= 3'd4;
+                end
+            end else if (step_id == 4) begin // right
+                x_var <= x_var + 1;
+                if (x_var >= 72) begin
+                    x_var <= 7'd72;
+                    step_id <= 3'd5;
+                end
+            end else if (step_id == 5) begin // up
+                y_var <= y_var - 1;
+                if (y_var <= 0) begin
+                    y_var <= 7'd0;
+                    step_id <= 3'd6;
+                end
+            end else if (step_id == 6) begin // right
+                x_var <= x_var + 1;
+                if (x_var >= 84) begin
+                    x_var <= 7'd84;
+                    step_id <= 3'd7;
+                end
+            end
         end
     end
 end
