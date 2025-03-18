@@ -1,0 +1,4 @@
+
+*** Running vivado
+    with args -log Top_Student.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source Top_Student.tcl -notrace
+
