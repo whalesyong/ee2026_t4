@@ -19,6 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+// this is a module showing how to instantiate the basic snake 
 
 module test_snake(
         input clk, 
@@ -40,11 +41,12 @@ module test_snake(
          .y(pixel_y)
      );
  
+     parameter MAX_VEL = 5;
      parameter WHITE = 16'b11111_111111_11111;
      //6.25MHz for OLED display 
      wire clk_6p25m;
      wire clk_25m;
-     wire clk_30h;
+     wire clk_200h;
      wire frame_beg;     
      
      reg signed [12:0] x_vel;
@@ -72,15 +74,16 @@ module test_snake(
          .output_wire(clk_6p25m)
      );
  
-     flexible_clk clk_mod30h(
+     flexible_clk clk_mod200h(
          .clk(clk),
-         .m(1666666),
-         .output_wire(clk_30h)
+         .m(250000),
+         .output_wire(clk_200h)
      );
      
+
+     
      basic_snake snake_mod(
-        .clk_30h(clk_30h),
-        .btnU(btnU), .btnD(btnD), .btnL(btnL), .btnR(btnR),
+        .slow_clk(clk_200h),
         .x_vel(x_vel), 
         .y_vel(y_vel),
         .xpos(xpos), 
@@ -108,8 +111,8 @@ module test_snake(
           
     //init values                     
     initial begin 
-        xpos = 40; 
-        ypos = 40; 
+        xpos = 45; 
+        ypos = 30; 
         
         pixel_colour <= 16'h0000; //black 
         
@@ -117,19 +120,33 @@ module test_snake(
         y_vel = 0;
      
     end
+
     
+
     //update vels with new vels
-    always @ ( *) begin 
-        xpos <= xpos_wire; 
-        ypos <= ypos_wire;
+    always @ (posedge clk_200h) begin
         x_vel <= new_x_vel;
         y_vel <= new_y_vel;
+        
+        // X velocity control with limits
+        if(btnL && x_vel > - MAX_VEL)
+            x_vel <= x_vel - 1;
+        if(btnR && x_vel < MAX_VEL)
+            x_vel <= x_vel + 1;
+            
+        // Y velocity control with limits    
+        if(btnU && y_vel > -MAX_VEL)
+            y_vel <= y_vel - 1;
+        if(btnD && y_vel < MAX_VEL)
+            y_vel <= y_vel + 1;
     end
    
     
     always @ (posedge clk_25m) begin 
-       
-        if (pixel_x >= xpos-1 && pixel_x <= xpos+1 && pixel_y >= ypos-1 && pixel_y <= ypos+1)
+        xpos <= xpos_wire; 
+        ypos <= ypos_wire;
+        // Changed comparison to use top-left corner as reference
+        if (pixel_x > xpos && pixel_x <= xpos+4 && pixel_y > ypos && pixel_y <= ypos+4)
             pixel_colour <= 16'b11111_000000_00000; // Red color for snake
         else 
             pixel_colour <= 16'h0000;       
