@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sun Mar 16 00:15:28 2025
+# Process ID: 26728
+# Current directory: C:/Users/Lawrence/Desktop/ee2026_t4/FDP_mouse
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5012 C:\Users\Lawrence\Desktop\ee2026_t4\FDP_mouse\FDP.xpr
+# Log file: C:/Users/Lawrence/Desktop/ee2026_t4/FDP_mouse/vivado.log
+# Journal file: C:/Users/Lawrence/Desktop/ee2026_t4/FDP_mouse\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Lawrence/Desktop/ee2026_t4/FDP_mouse/FDP.xpr
+update_compile_order -fileset sources_1
+file mkdir C:/Users/Lawrence/Desktop/ee2026_t4/FDP_mouse/FDP.srcs/constrs_1
+file mkdir C:/Users/Lawrence/Desktop/ee2026_t4/FDP_mouse/FDP.srcs/constrs_1/new
+close [ open C:/Users/Lawrence/Desktop/ee2026_t4/FDP_mouse/FDP.srcs/constrs_1/new/basys3constraints.xdc w ]
+add_files -fileset constrs_1 C:/Users/Lawrence/Desktop/ee2026_t4/FDP_mouse/FDP.srcs/constrs_1/new/basys3constraints.xdc
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1

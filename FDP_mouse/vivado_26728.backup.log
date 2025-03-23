@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sun Mar 16 00:15:28 2025
+# Process ID: 26728
+# Current directory: C:/Users/Lawrence/Desktop/ee2026_t4/FDP_mouse
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5012 C:\Users\Lawrence\Desktop\ee2026_t4\FDP_mouse\FDP.xpr
+# Log file: C:/Users/Lawrence/Desktop/ee2026_t4/FDP_mouse/vivado.log
+# Journal file: C:/Users/Lawrence/Desktop/ee2026_t4/FDP_mouse\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Lawrence/Desktop/ee2026_t4/FDP_mouse/FDP.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/Christopher/Desktop/MODS/.Xil/Vivado-3416-CMS-SG-D1-13900K/PrjAr/_X_' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 765.781 ; gain = 66.883
+update_compile_order -fileset sources_1
+file mkdir C:/Users/Lawrence/Desktop/ee2026_t4/FDP_mouse/FDP.srcs/constrs_1
+file mkdir C:/Users/Lawrence/Desktop/ee2026_t4/FDP_mouse/FDP.srcs/constrs_1/new
+close [ open C:/Users/Lawrence/Desktop/ee2026_t4/FDP_mouse/FDP.srcs/constrs_1/new/basys3constraints.xdc w ]
+add_files -fileset constrs_1 C:/Users/Lawrence/Desktop/ee2026_t4/FDP_mouse/FDP.srcs/constrs_1/new/basys3constraints.xdc
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
