@@ -92,7 +92,27 @@ module test_snake(
         .new_x_vel(new_x_vel), 
         .new_y_vel(new_y_vel)
      );
-         //inst display 
+
+     wire [8:0] food_x;
+     wire [8:0] food_y;
+     wire food_eaten;
+     wire camera_offset_x;
+     wire camera_offset_y;
+     
+     food_and_camera food_mod(
+         .clk(clk_200h),
+         .reset(0),
+         .xpos(xpos), 
+         .ypos(ypos),
+         .food_x(food_x),
+         .food_y(food_y),
+         .food_eaten(food_eaten),
+         .camera_offset_x(camera_offset_x),
+         .camera_offset_y(camera_offset_y)
+     );
+     
+     
+     
      Oled_Display display_mod (  .clk(clk_6p25m),
                                  .reset(0), 
                                  .frame_begin(frame_beg),
@@ -151,8 +171,4 @@ module test_snake(
         else 
             pixel_colour <= 16'h0000;       
     end
- 
-    
-    
 endmodule
-
