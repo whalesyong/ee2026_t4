@@ -6,7 +6,7 @@ module flexible_worm(
     output led
     );
     
-    wire clk_6p25m;
+    wire clk_6p25m, clk_200h;
     wire frame_beg;
     wire sending_pixel;
     wire sample_pixel;
@@ -16,6 +16,8 @@ module flexible_worm(
     
     wire [7:0] pixel_x;
     wire [7:0] pixel_y;
+    
+    reg [7:0] curr_length = 10;
     
     PixelToXY converter_mod (
              .pixel_index(pixel_index),
@@ -28,6 +30,12 @@ module flexible_worm(
              .n(8),
              .SLOW_CLOCK(clk_6p25m)
          );
+         
+     flexible_clk clk_mod200h(
+              .CLOCK(clk),
+              .n(250000),
+              .SLOW_CLOCK(clk_200h)
+          );
     
     Oled_Display display_mod (  .clk(clk_6p25m),
                                  .reset(0), 
@@ -46,8 +54,8 @@ module flexible_worm(
                                );
 
 
-reg [6:0] worm_x [0:47]; // Stores the x-coordinates of the worm
-reg [5:0] worm_y [0:47]; // Stores the y-coordinates of the worm
+reg [9:0] worm_x [0:9]; // Stores the x-coordinates of the worm
+reg [9:0] worm_y [0:9]; // Stores the y-coordinates of the worm
 integer i;
 
 reg btnR_sync_0, btnR_sync_1, btnR_prev, btnR_stable;
@@ -98,51 +106,51 @@ always @ (posedge clk_6p25m) begin
    
    // Initialize worm in the top-left corner
    if (worm_x[0] == 0 && worm_y[0] == 0) begin
-       for (i = 0; i < 48; i = i + 1) begin
+       for (i = 0; i < curr_length; i = i + 1) begin
            worm_x[i] <= i; // Initially in a row
            worm_y[i] <= 0;
        end
    end
    
    // Draw the worm body
-   for (i = 46; i >= 0; i = i - 1) begin
+   for (i = curr_length - 2; i >= 0; i = i - 1) begin
        if (pixel_x == worm_x[i] && pixel_y == worm_y[i]) begin
            pixel_colour <= 16'h1111;
        end
    end
    // Draw the worm head
-   if (pixel_x == worm_x[47] && pixel_y == worm_y[47]) begin
+   if (pixel_x == worm_x[curr_length - 1] && pixel_y == worm_y[curr_length - 1]) begin
        pixel_colour <= 16'b11111_111111_11111;
    end
    
    // Move worm, wrap around when reaching screen width
    if (btnR_stable) begin
-       for (i = 46; i >= 0; i = i - 1) begin
+      for (i = curr_length - 2; i >= 0; i = i - 1) begin
           worm_x[i] <= worm_x[i+1]; // Body takes next position
           worm_y[i] <= worm_y[i+1];
       end
-      worm_x[47] <= worm_x[47] + 1;
+      worm_x[curr_length - 1] <= worm_x[curr_length - 1] + 1;
    end
    if (btnL_stable) begin
-       for (i = 46; i >= 0; i = i - 1) begin
+      for (i = curr_length - 2; i >= 0; i = i - 1) begin
           worm_x[i] <= worm_x[i+1]; // Body takes next position
           worm_y[i] <= worm_y[i+1];
       end
-      worm_x[47] <= worm_x[47] - 1;
+      worm_x[curr_length - 1] <= worm_x[curr_length - 1] - 1;
    end
    if (btnU_stable) begin
-       for (i = 46; i >= 0; i = i - 1) begin
+       for (i = curr_length - 2; i >= 0; i = i - 1) begin
            worm_x[i] <= worm_x[i+1]; // Body takes next position
            worm_y[i] <= worm_y[i+1];
        end
-       worm_y[47] <= worm_y[47] - 1; // Move head up
+       worm_y[curr_length - 1] <= worm_y[curr_length - 1] - 1;
    end
    if (btnD_stable) begin
-       for (i = 46; i > 0; i = i - 1) begin
+       for (i = curr_length - 2; i >= 0; i = i - 1) begin
            worm_x[i] <= worm_x[i+1]; // Body takes next position
            worm_y[i] <= worm_y[i+1];
        end
-       worm_y[47] <= worm_y[47] + 1; // Move head down
+       worm_y[curr_length - 1] <= worm_y[curr_length - 1] + 1;
    end
 end
 
