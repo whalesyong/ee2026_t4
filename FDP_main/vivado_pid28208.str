@@ -1,0 +1,98 @@
+/*
+
+Xilinx Vivado v2018.2 (64-bit) [Major: 2018, Minor: 2]
+SW Build: 2258646 on Thu Jun 14 20:03:12 MDT 2018
+IP Build: 2256618 on Thu Jun 14 22:10:49 MDT 2018
+
+Process ID: 28208
+License: Customer
+
+Current time: 	Tue Mar 25 08:36:29 SGT 2025
+Time zone: 	Singapore Time (Asia/Singapore)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 16
+
+Screen size: 2048x1152
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 241 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.2/tps/win64/jre
+Java executable location: 	C:/Xilinx/Vivado/2018.2/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	Lawrence
+User home directory: C:/Users/Lawrence
+User working directory: C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main
+User country: 	SG
+User language: 	en
+User locale: 	en_SG
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.2
+RDI_DATADIR: C:/Xilinx/Vivado/2018.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.2/bin
+
+Vivado preferences file location: C:/Users/Lawrence/AppData/Roaming/Xilinx/Vivado/2018.2/vivado.xml
+Vivado preferences directory: C:/Users/Lawrence/AppData/Roaming/Xilinx/Vivado/2018.2/
+Vivado layouts directory: C:/Users/Lawrence/AppData/Roaming/Xilinx/Vivado/2018.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/vivado.log
+Vivado journal file location: 	C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/vivado.jou
+Engine tmp dir: 	C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/.Xil/Vivado-28208-Lawrence-ROG
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2018.2
+XILINX_SDK: C:/Xilinx/SDK/2018.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2018.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2018.2
+
+
+GUI allocated memory:	146 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 519 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 67 MB (+67302kb) [00:00:10]
+// [Engine Memory]: 467 MB (+338602kb) [00:00:10]
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: C:\Users\Lawrence\Desktop\ee2026_t4\FDP_main\FDP.xpr. Version: Vivado v2018.2 
+// bx (ck):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// [GUI Memory]: 84 MB (+15243kb) [00:00:14]
+// [Engine Memory]: 519 MB (+29438kb) [00:00:14]
+// HMemoryUtils.trashcanNow. Engine heap size: 534 MB. GUI used memory: 38 MB. Current time: 3/25/25 8:36:31 AM SGT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 576 MB (+33105kb) [00:00:17]
+// Tcl Message: open_project C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/Christopher/Desktop/MODS/.Xil/Vivado-3416-CMS-SG-D1-13900K/PrjAr/_X_' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'. 
+// Project name: FDP; location: C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main; part: xc7a35tcpg236-1
+// [Engine Memory]: 614 MB (+8969kb) [00:00:18]
+// Tcl Message: open_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 768.941 ; gain = 80.176 
+dismissDialog("Open Project"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
