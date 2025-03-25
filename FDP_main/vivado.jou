@@ -12,3 +12,5 @@
 start_gui
 open_project C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.xpr
 update_compile_order -fileset sources_1
+add_files {C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/food_and_camera.v C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/module_pack.v C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/test_snake.v C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/paint.v C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/neural_net.v C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/CanvasTransfer.v C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/basic_snake.v C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/ss_display.v C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/test_food_camera.v}
+update_compile_order -fileset sources_1
