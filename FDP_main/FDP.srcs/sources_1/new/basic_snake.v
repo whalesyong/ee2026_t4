@@ -4,7 +4,8 @@ module basic_snake(
     input signed [12:0] x_vel, y_vel,
     input [8:0] xpos, ypos,
     output reg [8:0] new_xpos, new_ypos, 
-    output reg signed [12:0] new_x_vel = 0, new_y_vel = 0
+    output reg signed [12:0] new_x_vel = 0, new_y_vel = 0,
+    output reg vel_changed = 0
 );
     //note that the box location is now the top-left corner of a 5x5 box
     localparam MAX_X = 95;
@@ -12,10 +13,11 @@ module basic_snake(
     localparam BOX_SIZE = 4;  // 5x5 box (0 to 4)
 
     reg signed [12:0] potential_xpos, potential_ypos;
-    reg [2:0] flag = 0;
-
+    reg [4:0] flag = 0;
+    
     always @ (posedge slow_clk) begin 
-        flag <= (flag == 7) ? 0 : flag + 1;
+        vel_changed = 0;
+        flag <= (flag == 15) ? 0 : flag + 1;
 
         if (flag == 0) begin 
             new_x_vel = x_vel;
@@ -29,19 +31,23 @@ module basic_snake(
         if (potential_xpos <= 0) begin  // Left wall
             potential_xpos = 0;
             new_x_vel = -new_x_vel;
+            vel_changed = 1;
         end
         else if (potential_xpos >= MAX_X - BOX_SIZE) begin  // Right wall
             potential_xpos = MAX_X - BOX_SIZE;
             new_x_vel = -new_x_vel;
+            vel_changed = 1;
         end
 
         if (potential_ypos <= 0) begin  // Top wall
             potential_ypos = 0;
             new_y_vel = -new_y_vel;
+            vel_changed=1;
         end
         else if (potential_ypos >= MAX_Y - BOX_SIZE) begin  // Bottom wall
             potential_ypos = MAX_Y - BOX_SIZE;
             new_y_vel = -new_y_vel;
+            vel_changed = 1;
         end
         //output the last valid position 
         new_xpos = potential_xpos[8:0];
