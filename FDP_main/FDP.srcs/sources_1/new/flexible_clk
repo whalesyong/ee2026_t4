@@ -1,0 +1,17 @@
+`timescale 1ns / 1ps
+module flexible_clk(input CLOCK, input [31:0]n, output reg SLOW_CLOCK );
+
+// start a counter that counts up to n
+// when it equals n, reset the counter and invert the signal 
+reg [31:0] counter = 0;
+always @ (posedge CLOCK) begin
+    
+    if (counter == n-1) begin 
+        counter <= 0;
+        SLOW_CLOCK <= ~SLOW_CLOCK;
+    end
+    else begin
+        counter <= counter + 1;
+    end
+end 
+endmodule
