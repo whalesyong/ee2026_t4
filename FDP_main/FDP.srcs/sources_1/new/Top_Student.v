@@ -154,6 +154,16 @@ module Top_Student (    input clk,
     // update position of worms
 
     // update display
+    render_oled oled_renderer(
+        .pixel_index(pixel_index),
+        .user_worm_x(0),// TOOD: add user worm x position
+        .user_worm_y(0), // TODOL add user worm y position
+        .enemy_worm_x(0), // TODO: add enemy worm x position
+        .enemy_worm_y(0), // TODO: add enemy worm y position
+        .food_x(0), // TODO: add food x position
+        .food_y(0), // TODO: add food y position
+        .pixel_colour(pixel_colour)
+    );
 
     //TODO: for now, render the snake on the screen and in Top_student
     // rendering should be abstracted into a separate module 
