@@ -1,29 +1,10 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 20.03.2025 06:16:03
-// Design Name: 
-// Module Name: mouse_direction
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module mouse_direction(
     input clk,      // 100 mhz
     input [11:0] mouse_x, mouse_y, // 12 bits
-    output reg signed [12:0] x_dir, y_dir 
+    output reg signed [12:0] x_dir, y_dir,
+    output reg flag // set to 1 when direction is updated
     );
 
     parameter ANGLE_DECELERATION = 3;
@@ -60,6 +41,13 @@ module mouse_direction(
         // Copy raw deltas to processing registers
         mouse_x_delta_proc = mouse_x_delta_raw;
         mouse_y_delta_proc = mouse_y_delta_raw;
+
+        // update flag if there is a change in direction
+        if (mouse_x_delta_proc != 0 || mouse_y_delta_proc != 0) begin
+            flag <= 1;
+        end else begin
+            flag <= 0;
+        end 
 
         // determine the quadrant
         if (mouse_x_delta_proc > 0 && mouse_y_delta_proc > 0) begin

@@ -14,7 +14,7 @@ module Top_Student (    input clk,
     parameter MAX_VEL = 10;
 
     
-    // variavles for OLED display
+    // variables for OLED display
     reg [15:0] pixel_colour;
     wire [12:0] pixel_index;
     wire frame_beg;
@@ -105,7 +105,8 @@ module Top_Student (    input clk,
         .mouse_x(mouse_xpos), 
         .mouse_y(mouse_ypos), 
         .x_dir(x_dir_wire), 
-        .y_dir(y_dir_wire)
+        .y_dir(y_dir_wire),
+        .flag(mouse_event_flag) // set to 1 when direction is updated
     );
     always @ * begin 
         x_dir = x_dir_wire;
