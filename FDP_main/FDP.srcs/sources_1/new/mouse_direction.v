@@ -71,34 +71,34 @@ module mouse_direction(
         // determine directions
         if ( mouse_x_delta_proc > ( 9 * mouse_y_delta_proc ) ) begin 
             // 0 degree direction
-            x_dir = 13'b0_1111_1111_1111;
-            y_dir = 13'b0_0000_0000_0000;
+            x_dir = 13'd5;
+            y_dir = 13'd0;
 
 
         end
         else if ( mouse_y_delta_proc > ( 9 * mouse_x_delta_proc ) ) begin
             // 90 degree direction
-            x_dir = 13'b0_0000_0000_0000;   
-            y_dir = 13'b0_1111_1111_1111;
+            x_dir = 13'd0;   
+            y_dir = 13'd5;
         end
 
         else if ( (mouse_x_delta_proc >> 2) > mouse_y_delta_proc ) begin
             // 22.5 degree direction
-            x_dir = 13'd3783;
-            y_dir = 13'd1567;
+            x_dir = 13'd4;
+            y_dir = 13'd1;
             
         end
 
         else if ( (mouse_y_delta_proc >> 2) > mouse_x_delta_proc ) begin
             //67.5 degree direction
-            x_dir = 13'd1567; 
-            y_dir = 13'd3783;
+            x_dir = 13'd1; 
+            y_dir = 13'd4;
         end
 
         else begin
             // 45 degree direction
-            x_dir = 13'd2895;
-            y_dir = 13'd2895;
+            x_dir = 13'd3;
+            y_dir = 13'd3;
         end
         
         // apply sign based on quadrant
@@ -107,16 +107,18 @@ module mouse_direction(
                 // no change
             end
             2'b01: begin
-                x_dir <= -x_dir;
+                x_dir = -x_dir;
             end
             2'b10: begin
-                x_dir <= -x_dir;
-                y_dir <= -y_dir;
+                x_dir = -x_dir;
+                y_dir = -y_dir;
             end
             2'b11: begin
-                y_dir <= -y_dir;
+                y_dir == -y_dir;
             end
         endcase
+
+        y_dir = -y_dir // invert y direction
 
     end
 
