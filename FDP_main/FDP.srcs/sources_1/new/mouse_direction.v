@@ -114,7 +114,7 @@ module mouse_direction(
                 y_dir = -y_dir;
             end
             2'b11: begin
-                y_dir == -y_dir;
+                y_dir = -y_dir;
             end
         endcase
 
