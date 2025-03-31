@@ -118,7 +118,7 @@ module mouse_direction(
             end
         endcase
 
-        y_dir = -y_dir // invert y direction
+        y_dir = -y_dir; // invert y direction
 
     end
 
