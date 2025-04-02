@@ -12,7 +12,7 @@ module Top_Student (    input clk,
 
     // constant parameters
     parameter MAX_VEL = 10;
-
+    
     
     // variables for OLED display
     reg [15:0] pixel_colour;
@@ -53,6 +53,7 @@ module Top_Student (    input clk,
     wire signed [12:0] snake_new_x_vel;
     wire signed [12:0] snake_new_y_vel;
     wire vel_changed;
+    wire [7:0] new_size;
 
 
     wire clk6p25m;
@@ -105,14 +106,17 @@ module Top_Student (    input clk,
         .mouse_x(mouse_xpos), 
         .mouse_y(mouse_ypos), 
         .x_dir(x_dir_wire), 
-        .y_dir(y_dir_wire),
-        .flag(mouse_event_flag) // set to 1 when direction is updated
+        .y_dir(y_dir_wire)
     );
     always @ * begin 
         x_dir = x_dir_wire;
         y_dir = y_dir_wire;
     end
-    
+  
+    reg [9:0] worm_x_array [0:47];
+    reg [9:0] worm_y_array [0:47];
+    integer i;
+  
     // CAMERA & FOOD wires
     wire [9:0] cam_offset_x;
     wire [9:0] cam_offset_y;
@@ -151,21 +155,27 @@ module Top_Student (    input clk,
     .reg_food_location_5(reg_food_location_5),
     .reg_food_location_6(reg_food_location_6),
     .reg_food_location_7(reg_food_location_7)
-);
-
+    );
+  
     // inst user_worm and enemy_worm
     flexible_snake user_snake(
         .slow_clk(clk400hz), 
-        .x_vel(normalized_x_dir), 
-        .y_vel(normalized_y_dir), 
-        .xpos(snake_xpos), 
-        .ypos(snake_ypos), 
-        .new_xpos(snake_new_xpos), 
-        .new_ypos(snake_new_ypos), 
-        .new_x_vel(snake_new_x_vel), 
-        .new_y_vel(snake_new_y_vel), 
-        .vel_changed(vel_changed)
+        .rst(0),
+        .x_dir(normalized_x_dir), 
+        .y_dir(normalized_y_dir), 
+        .directionEnable(1),
+        .food_eaten(0),
+        .x_worm(snake_new_xpos), 
+        .y_worm(snake_new_ypos), 
+        .new_size(new_size)
     );
+
+    always @(*) begin
+        for (i = 0; i < 48; i = i + 1) begin
+            worm_x_array[i] = snake_new_xpos[i*10 +: 10];  // Extract each 10-bit segment
+            worm_y_array[i] = snake_new_ypos[i*10 +: 10];
+        end
+    end
     
     // update velocity
     // normalization logic for mouse direction input to flexi_snake
@@ -193,16 +203,6 @@ module Top_Student (    input clk,
     // update position of worms
 
     // update display
-    render_oled oled_renderer(
-        .pixel_index(pixel_index),
-        .user_worm_x(0),// TOOD: add user worm x position
-        .user_worm_y(0), // TODOL add user worm y position
-        .enemy_worm_x(0), // TODO: add enemy worm x position
-        .enemy_worm_y(0), // TODO: add enemy worm y position
-        .food_x(0), // TODO: add food x position
-        .food_y(0), // TODO: add food y position
-        .pixel_colour(pixel_colour)
-    );
 
     //TODO: for now, render the snake on the screen and in Top_student
     // rendering should be abstracted into a separate module 
@@ -210,9 +210,12 @@ module Top_Student (    input clk,
     always @ (posedge clk_25m) begin 
         snake_xpos <= snake_new_xpos; 
         snake_ypos <= snake_new_ypos;
-
-        if (pixel_x > snake_xpos && pixel_x <= snake_xpos+4 && pixel_y > snake_ypos && pixel_y <= snake_ypos+4) begin
-            pixel_colour <= 16'b11111_111111_11111; 
+        // Snake head
+        if (pixel_x == snake_xpos+4 && pixel_y == snake_ypos+4) begin
+            pixel_colour <= 16'b11111_111111_11111;
+        end
+        if (pixel_x > snake_xpos && pixel_x < snake_xpos+4 && pixel_y > snake_ypos && pixel_y < snake_ypos+4) begin
+            pixel_colour <= 16'h1111; 
         end
         else begin
             pixel_colour <= 16'b00000_000000_00000;
