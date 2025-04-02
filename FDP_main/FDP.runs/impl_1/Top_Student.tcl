@@ -68,12 +68,12 @@ set rc [catch {
   create_project -in_memory -part xc7a35tcpg236-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.cache/wt [current_project]
-  set_property parent.project_path C:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.xpr [current_project]
-  set_property ip_output_repo C:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.cache/wt [current_project]
+  set_property parent.project_path C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.xpr [current_project]
+  set_property ip_output_repo C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.runs/synth_1/Top_Student.dcp
-  read_xdc C:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc
+  add_files -quiet C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.runs/synth_1/Top_Student.dcp
+  read_xdc C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc
   link_design -top Top_Student -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]
