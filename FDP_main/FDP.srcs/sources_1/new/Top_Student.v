@@ -112,11 +112,51 @@ module Top_Student (    input clk,
         x_dir = x_dir_wire;
         y_dir = y_dir_wire;
     end
-    
+  
     reg [9:0] worm_x_array [0:47];
     reg [9:0] worm_y_array [0:47];
     integer i;
-    
+  
+    // CAMERA & FOOD wires
+    wire [9:0] cam_offset_x;
+    wire [9:0] cam_offset_y;
+    wire [3:0] reg_food_eaten;
+    wire [15:0] reg_food_location_0, reg_food_location_1, reg_food_location_2, reg_food_location_3;
+    wire [15:0] reg_food_location_4, reg_food_location_5, reg_food_location_6, reg_food_location_7;
+    // Head coordinates for snakes
+    wire [9:0] user_head_x = {1'b0, snake_xpos};  // Extend from 9-bit to 10-bit
+    wire [9:0] user_head_y = {1'b0, snake_ypos};
+    wire [9:0] enemy_head_x0 = 10'd30;  // Placeholder for now
+    wire [9:0] enemy_head_y0 = 10'd30;
+    wire [9:0] enemy_head_x1 = 10'd30;
+    wire [9:0] enemy_head_y1 = 10'd30;
+    wire [9:0] enemy_head_x2 = 10'd30;
+    wire [9:0] enemy_head_y2 = 10'd30;
+
+    food_and_camera food_mod (
+    .clk(clk),
+    .reset(0), // or use a proper reset
+    .userwormheadx(user_head_x),
+    .userwormheady(user_head_y),
+    .enemywormheadx0(enemy_head_x0),
+    .enemywormheady0(enemy_head_y0),
+    .enemywormheadx1(enemy_head_x1),
+    .enemywormheady1(enemy_head_y1),
+    .enemywormheadx2(enemy_head_x2),
+    .enemywormheady2(enemy_head_y2),
+    .cam_offset_x(cam_offset_x),
+    .cam_offset_y(cam_offset_y),
+    .reg_food_eaten(reg_food_eaten),
+    .reg_food_location_0(reg_food_location_0),
+    .reg_food_location_1(reg_food_location_1),
+    .reg_food_location_2(reg_food_location_2),
+    .reg_food_location_3(reg_food_location_3),
+    .reg_food_location_4(reg_food_location_4),
+    .reg_food_location_5(reg_food_location_5),
+    .reg_food_location_6(reg_food_location_6),
+    .reg_food_location_7(reg_food_location_7)
+    );
+  
     // inst user_worm and enemy_worm
     flexible_snake user_snake(
         .slow_clk(clk400hz), 
