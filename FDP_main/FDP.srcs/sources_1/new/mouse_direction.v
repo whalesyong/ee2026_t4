@@ -17,9 +17,9 @@ module mouse_direction(
     reg signed [12:0] mouse_y_delta_proc;   // Used in second always block
     reg [1:0] quadrant; 
     wire clk6p25m;
-    wire clk10hz;
+    wire clk100hz;
     flexible_clock clk6p25_mod (clk, 32'd8, clk6p25m);
-    flexible_clock clk10hz_mod (clk, 32'd10_000_000, clk10hz);
+    flexible_clock clk100hz_mod (clk, 32'd1_000_000, clk100hz);
 
     // Initialize directions
     initial begin
@@ -27,17 +27,15 @@ module mouse_direction(
         y_dir = 0;
     end
 
-    // Update mouse deltas
-    always @(posedge clk6p25m) begin
-        mouse_x_delta_raw <= mouse_x - mouse_x_prev;
-        mouse_y_delta_raw <= mouse_y - mouse_y_prev;
-
-        mouse_x_prev <= mouse_x;
-        mouse_y_prev <= mouse_y;
-    end
-
     // Compute the angle and directions
-    always @(posedge clk10hz) begin
+    always @(posedge clk100hz) begin
+        // Update mouse deltas
+        mouse_x_delta_raw = mouse_x - mouse_x_prev;
+        mouse_y_delta_raw = mouse_y - mouse_y_prev;
+
+        mouse_x_prev = mouse_x;
+        mouse_y_prev = mouse_y;
+
         // Copy raw deltas to processing registers
         mouse_x_delta_proc = mouse_x_delta_raw;
         mouse_y_delta_proc = mouse_y_delta_raw;
@@ -69,14 +67,14 @@ module mouse_direction(
         end
 
         // determine directions
-        if ( mouse_x_delta_proc > ( 9 * mouse_y_delta_proc ) ) begin 
+        if ( mouse_x_delta_proc > ( 2 * mouse_y_delta_proc ) ) begin //issue
             // 0 degree direction
             x_dir = 13'd5;
             y_dir = 13'd0;
 
 
         end
-        else if ( mouse_y_delta_proc > ( 9 * mouse_x_delta_proc ) ) begin
+        else if ( mouse_y_delta_proc > ( 2 * mouse_x_delta_proc ) ) begin
             // 90 degree direction
             x_dir = 13'd0;   
             y_dir = 13'd5;
