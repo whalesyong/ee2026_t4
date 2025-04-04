@@ -24,12 +24,38 @@ module flexible_snake(
     input slow_clk, 
     input rst,
     input signed [12:0] x_dir, y_dir, 
+    input [8:0] xpos, ypos,
     input directionEnable,
     input food_eaten,
     output reg [479:0] x_worm, y_worm,  // Flattened snake position data
-    output reg [7:0] new_size
+    output reg [7:0] new_size, 
+    output reg signed [12:0] new_x_vel = 0, new_y_vel = 0, 
+    output reg vel_changed = 0
 );
     localparam MAX_LENGTH = 48;  // Number of segments in the snake
+    
+    wire [8:0] new_xpos_wire, new_ypos_wire; 
+    wire signed [12:0] new_x_vel_wire, new_y_vel_wire;
+    wire vel_changed_wire;
+    assign new_xpos_wire = x_worm; 
+    assign new_ypos_wire = y_worm;
+    assign new_x_vel_wire = new_x_vel; 
+    assign new_y_vel_wire = new_y_vel; 
+    assign vel_changed_wire = vel_changed;
+    
+    // inst basic snake module 
+    basic_snake snake_mod(
+        .slow_clk(slow_clk), 
+        .x_vel(x_dir), 
+        .y_vel(y_dir), 
+        .xpos(xpos), 
+        .ypos(ypos), 
+        .new_xpos(new_xpos_wire), 
+        .new_ypos(new_ypos_wire), 
+        .new_x_vel(new_x_vel_wire), 
+        .new_y_vel(new_y_vel_wire), 
+        .vel_changed(vel_changed_wire)
+    );
 
     reg [9:0] worm_x [0:MAX_LENGTH-1];  // X positions
     reg [9:0] worm_y [0:MAX_LENGTH-1];  // Y positions
