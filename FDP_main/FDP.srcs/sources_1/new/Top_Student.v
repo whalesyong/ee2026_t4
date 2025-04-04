@@ -68,7 +68,7 @@ module Top_Student (    input clk,
 
     wire clk400hz; 
     flexible_clock clk_mod_400hz(
-        .CLOCK(clk6p25m),
+        .CLOCK(clk),
         .divider(125000), 
         .SLOW_CLOCK(clk400hz)
     );
@@ -217,9 +217,12 @@ module Top_Student (    input clk,
     // rendering should be abstracted into a separate module 
 
     always @ (posedge clk_25m) begin 
+        //for debugging 
+        led <= {snake_xpos[7:0], snake_ypos[7:0]};
+
         //update head 
-        snake_xpos <= snake_new_xpos[9:0];
-        snake_ypos <= snake_new_ypos[9:0];
+        snake_xpos <= snake_new_xpos[479:470];
+        snake_ypos <= snake_new_ypos[479:470];
         // Snake head
         if (pixel_x == snake_xpos+4 && pixel_y == snake_ypos+4) begin
             pixel_colour <= 16'b11111_111111_11111;
@@ -253,8 +256,7 @@ module Top_Student (    input clk,
         else if (!btnU && !btnD && y_vel_debug != 0)  // Deceleration
             y_vel_debug <= (y_vel_debug > 0) ? y_vel_debug - 1 : y_vel_debug + 1;
         
-        led[3:0] <= x_vel_debug[3:0];  // Show X velocity
-        led[7:4] <= y_vel_debug[3:0];  // show y vel 
+
     end
 endmodule
 
