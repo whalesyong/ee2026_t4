@@ -11,7 +11,7 @@ module Top_Student (    input clk,
                     );
 
     // constant parameters
-    parameter MAX_VEL = 10;
+    parameter MAX_VEL = 5;
     
     // variavles for OLED display
     reg [15:0] pixel_colour;
@@ -45,15 +45,19 @@ module Top_Student (    input clk,
     reg [12:0] max_val;
     reg [12:0] abs_x;
     reg [12:0] abs_y;
-    reg [8:0] snake_xpos;
-    reg [8:0] snake_ypos;
-    wire [8:0] snake_new_xpos; 
-    wire [8:0] snake_new_ypos;
+    reg [8:0] snake_xpos = 30;
+    reg [8:0] snake_ypos = 30;
+    wire [479:0] snake_new_xpos; 
+    wire [479:0] snake_new_ypos;
     wire signed [12:0] snake_new_x_vel;
     wire signed [12:0] snake_new_y_vel;
     wire vel_changed;
     wire [7:0] new_size;
 
+
+    // * FOR DEBUGGING 
+    reg signed [12:0] x_vel_debug = 0;
+    reg signed [12:0] y_vel_debug=0;
 
     wire clk6p25m;
     flexible_clock clk_mod_6p25m(
@@ -99,19 +103,20 @@ module Top_Student (    input clk,
                         .xpos(mouse_xpos), .ypos(mouse_ypos), .zpos(mouse_zpos),
                         .left(left), .middle(middle), .right(right), .new_event(new_event));
     
-    
+    /*
     mouse_direction mouse_dir_mod(
         .clk(clk), 
         .mouse_x(mouse_xpos), 
         .mouse_y(mouse_ypos), 
         .x_dir(x_dir_wire), 
         .y_dir(y_dir_wire)
-    );
+    );*/
     always @ * begin 
         x_dir = x_dir_wire;
         y_dir = y_dir_wire;
     end
-  
+    
+    //maximum length of worm is 48 pixels.
     reg [9:0] worm_x_array [0:47];
     reg [9:0] worm_y_array [0:47];
     integer i;
@@ -160,14 +165,14 @@ module Top_Student (    input clk,
     flexible_snake user_snake(
         .slow_clk(clk400hz), 
         .rst(0),
-        .x_dir(normalized_x_dir), 
-        .y_dir(normalized_y_dir), 
+        .x_dir(x_vel_debug), 
+        .y_dir(y_vel_debug), 
         .xpos(snake_xpos), 
         .ypos(snake_ypos), 
         .directionEnable(1),
         .food_eaten(0),
-        .x_worm(snake_new_xpos), 
-        .y_worm(snake_new_ypos), 
+        .x_worm_flat(snake_new_xpos), 
+        .y_worm_flat(snake_new_ypos), 
         .new_size(new_size),
         .new_x_vel(snake_new_x_vel), 
         .new_y_vel(snake_new_y_vel), 
@@ -176,7 +181,7 @@ module Top_Student (    input clk,
 
     always @(*) begin
         for (i = 0; i < 48; i = i + 1) begin
-            worm_x_array[i] = snake_new_xpos[i*10 +: 10];  // Extract each 10-bit segment
+            worm_x_array[i] = snake_new_xpos[i*10 +: 10];  
             worm_y_array[i] = snake_new_ypos[i*10 +: 10];
         end
     end
@@ -212,8 +217,9 @@ module Top_Student (    input clk,
     // rendering should be abstracted into a separate module 
 
     always @ (posedge clk_25m) begin 
-        snake_xpos <= snake_new_xpos; 
-        snake_ypos <= snake_new_ypos;
+        //update head 
+        snake_xpos <= snake_new_xpos[9:0];
+        snake_ypos <= snake_new_ypos[9:0];
         // Snake head
         if (pixel_x == snake_xpos+4 && pixel_y == snake_ypos+4) begin
             pixel_colour <= 16'b11111_111111_11111;
@@ -224,6 +230,31 @@ module Top_Student (    input clk,
         else begin
             pixel_colour <= 16'b00000_000000_00000;
         end
+    end
+    initial begin 
+        
+    end
+
+    // for debugging 
+    always @ (posedge clk400hz) begin 
+        // X velocity control
+        if (btnL && x_vel_debug > -MAX_VEL) 
+            x_vel_debug <= x_vel_debug - 1;
+        else if (btnR && x_vel_debug < MAX_VEL) 
+            x_vel_debug <= x_vel_debug + 1;
+        else if (!btnL && !btnR && x_vel_debug != 0)  // Deceleration
+            x_vel_debug <= (x_vel_debug > 0) ? x_vel_debug - 1 : x_vel_debug + 1;
+
+        // Y velocity control
+        if (btnU && y_vel_debug > -MAX_VEL) 
+            y_vel_debug <= y_vel_debug - 1;
+        else if (btnD && y_vel_debug < MAX_VEL)
+            y_vel_debug <= y_vel_debug + 1;
+        else if (!btnU && !btnD && y_vel_debug != 0)  // Deceleration
+            y_vel_debug <= (y_vel_debug > 0) ? y_vel_debug - 1 : y_vel_debug + 1;
+        
+        led[3:0] <= x_vel_debug[3:0];  // Show X velocity
+        led[7:4] <= y_vel_debug[3:0];  // show y vel 
     end
 endmodule
 
@@ -238,3 +269,4 @@ module flexible_clock(input CLOCK,input [31:0] divider,output reg SLOW_CLOCK = 0
     end
     
 endmodule
+
