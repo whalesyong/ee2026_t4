@@ -22,25 +22,25 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.cache/wt [current_project]
-set_property parent.project_path C:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.xpr [current_project]
+set_property webtalk.parent_dir C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.cache/wt [current_project]
+set_property parent.project_path C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.cache/ip [current_project]
+set_property ip_output_repo c:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files C:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/res/weights.coe
-add_files C:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/res/00.coe
+add_files C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/res/weights.coe
+add_files C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/res/00.coe
 read_verilog -library xil_defaultlib {
-  C:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v
-  C:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/basic_snake.v
-  C:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v
-  C:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/mouse_direction.v
-  C:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/pixel_converter.v
-  C:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v
+  C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v
+  C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/basic_snake.v
+  C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v
+  C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/mouse_direction.v
+  C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/pixel_converter.v
+  C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v
 }
 read_vhdl -library xil_defaultlib {
-  C:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd
-  C:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Ps2Interface.vhd
+  C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd
+  C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Ps2Interface.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -50,8 +50,8 @@ read_vhdl -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc
-set_property used_in_implementation false [get_files C:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc]
+read_xdc C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc
+set_property used_in_implementation false [get_files C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc]
 
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]

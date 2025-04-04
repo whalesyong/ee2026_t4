@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/ee2026/git_stuff/ee2026_t4/FDP_main/FDP.runs/synth_1'
+HD_PWD='C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
