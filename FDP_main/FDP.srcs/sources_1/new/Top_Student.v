@@ -13,8 +13,7 @@ module Top_Student (    input clk,
     // constant parameters
     parameter MAX_VEL = 10;
     
-    
-    // variables for OLED display
+    // variavles for OLED display
     reg [15:0] pixel_colour;
     wire [12:0] pixel_index;
     wire frame_beg;
@@ -163,11 +162,16 @@ module Top_Student (    input clk,
         .rst(0),
         .x_dir(normalized_x_dir), 
         .y_dir(normalized_y_dir), 
+        .xpos(snake_xpos), 
+        .ypos(snake_ypos), 
         .directionEnable(1),
         .food_eaten(0),
         .x_worm(snake_new_xpos), 
         .y_worm(snake_new_ypos), 
-        .new_size(new_size)
+        .new_size(new_size),
+        .new_x_vel(snake_new_x_vel), 
+        .new_y_vel(snake_new_y_vel), 
+        .vel_changed(vel_changed)
     );
 
     always @(*) begin
