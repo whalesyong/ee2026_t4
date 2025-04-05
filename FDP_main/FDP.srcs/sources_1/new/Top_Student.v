@@ -45,8 +45,8 @@ module Top_Student (    input clk,
     reg [12:0] max_val;
     reg [12:0] abs_x;
     reg [12:0] abs_y;
-    reg [8:0] snake_xpos = 30;
-    reg [8:0] snake_ypos = 30;
+    reg [9:0] snake_xpos = 30;
+    reg [9:0] snake_ypos = 30;
     wire [479:0] snake_new_xpos; 
     wire [479:0] snake_new_ypos;
     wire signed [12:0] snake_new_x_vel;
@@ -116,11 +116,7 @@ module Top_Student (    input clk,
         y_dir = y_dir_wire;
     end
     
-    //maximum length of worm is 48 pixels.
-    reg [9:0] worm_x_array [0:47];
-    reg [9:0] worm_y_array [0:47];
-    integer i;
-  
+
     // CAMERA & FOOD wires
     wire [9:0] cam_offset_x;
     wire [9:0] cam_offset_y;
@@ -178,13 +174,6 @@ module Top_Student (    input clk,
         .new_y_vel(snake_new_y_vel), 
         .vel_changed(vel_changed)
     );
-
-    always @(*) begin
-        for (i = 0; i < 48; i = i + 1) begin
-            worm_x_array[i] = snake_new_xpos[i*10 +: 10];  
-            worm_y_array[i] = snake_new_ypos[i*10 +: 10];
-        end
-    end
     
     // update velocity
     // normalization logic for mouse direction input to flexi_snake
@@ -213,27 +202,46 @@ module Top_Student (    input clk,
 
     // update display
 
-    //TODO: for now, render the snake on the screen and in Top_student
+    // TODO: for now, render the snake on the screen and in Top_student
     // rendering should be abstracted into a separate module 
+   
+    //maximum length of worm is 48 pixels.
+       reg [9:0] worm_x_array [0:47];
+       reg [9:0] worm_y_array [0:47];
+       integer i;
+           
+       always @(*) begin
+           for (i = 0; i < 48; i = i + 1) begin
+               worm_x_array[i] = snake_new_xpos[i*10 +: 10]; // LSB >> MSB 
+               worm_y_array[i] = snake_new_ypos[i*10 +: 10]; // forward slicing
+           end
+       end
+       
+    reg [9:0] debug_body_xpos;   
+    reg [9:0] debug_body_ypos;   
 
     always @ (posedge clk_25m) begin 
         //for debugging 
         led <= {snake_xpos[7:0], snake_ypos[7:0]};
 
         //update head 
-        snake_xpos <= snake_new_xpos[479:470];
-        snake_ypos <= snake_new_ypos[479:470];
+        snake_xpos <= worm_x_array[new_size - 1]; // worm_x_array[i] where i >= new_size should be 0 (uninitialised body segs)
+        snake_ypos <= worm_y_array[new_size - 1]; // worm_x_array[i] where i < new_size - 1 stores the coordinates of body segs
+        debug_body_xpos <= worm_x_array[new_size - 1] + 5;
+        debug_body_ypos <= worm_y_array[new_size - 1] + 5; 
+
         // Snake head
-        if (pixel_x == snake_xpos+4 && pixel_y == snake_ypos+4) begin
+        if (pixel_x == snake_xpos && pixel_y == snake_ypos) begin
             pixel_colour <= 16'b11111_111111_11111;
         end
-        if (pixel_x > snake_xpos && pixel_x < snake_xpos+4 && pixel_y > snake_ypos && pixel_y < snake_ypos+4) begin
-            pixel_colour <= 16'h1111; 
+         f (pixel_x == debug_body_xpos && pixel_y == debug_body_ypos) begin
+            pixel_colour <= 16'b00000_000000_11111;
         end
         else begin
             pixel_colour <= 16'b00000_000000_00000;
         end
     end
+    
     initial begin 
         
     end
@@ -257,7 +265,7 @@ module Top_Student (    input clk,
             y_vel_debug <= (y_vel_debug > 0) ? y_vel_debug - 1 : y_vel_debug + 1;
         
 
-    end
+        end
 endmodule
 
 

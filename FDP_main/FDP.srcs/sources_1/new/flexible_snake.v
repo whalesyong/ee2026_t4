@@ -24,7 +24,7 @@ module flexible_snake(
     input slow_clk, 
     input rst,
     input signed [12:0] x_dir, y_dir, 
-    input [8:0] xpos, ypos,
+    input [9:0] xpos, ypos,
     input directionEnable,
     input food_eaten,
     output reg [479:0] x_worm_flat, y_worm_flat,  // Flattened snake position data
@@ -35,7 +35,7 @@ module flexible_snake(
     localparam MAX_LENGTH = 48;  // Number of segments in the snake
     
     // variables for interfacing with basic_snake
-    wire [8:0] new_xpos_wire, new_ypos_wire; 
+    wire [9:0] new_xpos_wire, new_ypos_wire; 
     wire signed [12:0] new_x_vel_wire, new_y_vel_wire;
     wire vel_changed_wire;
 
@@ -90,9 +90,11 @@ module flexible_snake(
             // Flatten worm_x_arr and worm_y_arr into 480-bit registers
             x_worm_flat = 0;
             y_worm_flat = 0;
-            for (i = 0; i < MAX_LENGTH; i = i + 1) begin
-                x_worm_flat = {x_worm_flat[479-10:0], worm_x_arr[i]};  // Append 10-bit segment
-                y_worm_flat = {y_worm_flat[479-10:0], worm_y_arr[i]};
+            for (i = 0; i < current_size ; i = i + 1) begin
+                x_worm_flat = (x_worm_flat >> 10);
+                x_worm_flat = x_worm_flat | (worm_x_arr[i] << ((current_size - 1) * 10));  // Put head in upper 10 bits
+                y_worm_flat = (y_worm_flat >> 10);
+                y_worm_flat = y_worm_flat | (worm_y_arr[i] << ((current_size - 1) * 10));
             end
 
             // Handle food consumption
@@ -105,4 +107,3 @@ module flexible_snake(
         end
     end
 endmodule
-
