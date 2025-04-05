@@ -12,7 +12,7 @@ module render_oled(
     input [479:0] food_y_flat,
     input [8:0] camera_offset_x, // 500 x 500 world
     input [8:0] camera_offset_y,
-    output [15:0] pixel_colour
+    output reg [15:0] pixel_colour
     );
 
     localparam WHITE = 16'b11111_111111_11111;
@@ -64,10 +64,11 @@ module render_oled(
 
     initial begin
         counter = 0;
+
         // intialise pixel colour cache
-        for (int i = 0; i < 61443; i = i + 1) begin
-            pixel_colour_cache[i] = BLACK;
-        end
+        // for (i = 0; i < 61443; i = i + 1) begin
+        //     pixel_colour_cache[i] = BLACK;
+        // end
     end
 
     
@@ -99,7 +100,7 @@ module render_oled(
         loop_idx <= (loop_idx >= 7'd47) ? 7'd0 : (loop_idx + 1);
         
                 
-        // CHECK in order of priority: 
+        // Check pixel in order of priority: 
         // 1. sq boundary
         // 2. user worm body
         // 3. enemy worm body

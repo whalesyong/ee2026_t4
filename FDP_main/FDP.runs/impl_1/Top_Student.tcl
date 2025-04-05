@@ -68,12 +68,17 @@ set rc [catch {
   create_project -in_memory -part xc7a35tcpg236-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.cache/wt [current_project]
-  set_property parent.project_path C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.xpr [current_project]
-  set_property ip_output_repo C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.cache/wt [current_project]
+  set_property parent.project_path C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.xpr [current_project]
+  set_property ip_output_repo C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.runs/synth_1/Top_Student.dcp
-  read_xdc C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc
+  set_property XPM_LIBRARIES XPM_MEMORY [current_project]
+  add_files -quiet C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.runs/synth_1/Top_Student.dcp
+  read_ip -quiet C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_inter/blk_mem_gen_inter.xci
+  read_ip -quiet C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_0_1/blk_mem_gen_0.xci
+  read_ip -quiet C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const.xci
+  read_ip -quiet C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img.xci
+  read_xdc C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc
   link_design -top Top_Student -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]
@@ -153,6 +158,7 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
+  set_property XPM_LIBRARIES XPM_MEMORY [current_project]
   catch { write_mem_info -force Top_Student.mmi }
   write_bitstream -force Top_Student.bit 
   catch {write_debug_probes -quiet -force Top_Student}
