@@ -6,14 +6,18 @@ module render_oled(
     input [12:0]pixel_index,
     input [479:0] user_worm_x_flat, // flattened from [9:0] to [479:0]
     input [479:0] user_worm_y_flat,
+    input [7:0] user_size,
     input [479:0] enemy_worm_x_flat,
     input [479:0] enemy_worm_y_flat,
+    input [7:0] enemy_size,
     input [479:0] food_x_flat,
     input [479:0] food_y_flat,
     input [8:0] camera_offset_x, // 500 x 500 world
     input [8:0] camera_offset_y,
-    output reg [15:0] pixel_colour
+    output [15:0] pixel_colour
     );
+
+    // TODO: account for size of snakes
 
     localparam WHITE = 16'b11111_111111_11111;
     localparam ORANGE = 16'b11111_101101_00000;
@@ -81,12 +85,14 @@ module render_oled(
         in_food = 0;
 
         // Check current index
-        if ( counter_x >= user_worm_x[loop_idx] && counter_x <= user_worm_x[loop_idx] + 4 && 
+        if (loop_idx <= user_size && 
+            counter_x >= user_worm_x[loop_idx] && counter_x <= user_worm_x[loop_idx] + 4 && 
             counter_y >= user_worm_y[loop_idx] && counter_y <= user_worm_y[loop_idx] + 4) begin
             in_user_worm = 1;
         end
 
-        if ( counter_x >= enemy_worm_x[loop_idx] && counter_x <= enemy_worm_x[loop_idx] + 4 && 
+        if (loop_idx <= enemy_size &&  
+            counter_x >= enemy_worm_x[loop_idx] && counter_x <= enemy_worm_x[loop_idx] + 4 && 
             counter_y >= enemy_worm_y[loop_idx] && counter_y <= enemy_worm_y[loop_idx] + 4) begin
             in_enemy_worm = 1;
         end
@@ -129,14 +135,10 @@ module render_oled(
         end
 
         // update counter
-        counter <= (counter >= 6143) ? 0 : (counter + 1); 
+        counter = (counter >= 6143) ? 0 : (counter + 1); 
 
     end
 
-    // read pixel data from cache
-    always @ (posedge clk6p25m ) begin
-        pixel_colour <= pixel_colour_cache[pixel_index];
-    end
-
+    assign pixel_colour = pixel_colour_cache[pixel_index];
 
 endmodule

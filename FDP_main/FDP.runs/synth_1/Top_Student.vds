@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sat Apr  5 15:53:59 2025
-# Process ID: 18148
+# Start of session at: Sat Apr  5 18:00:20 2025
+# Process ID: 1344
 # Current directory: C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.runs/synth_1
 # Command line: vivado.exe -log Top_Student.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Student.tcl
 # Log file: C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.runs/synth_1/Top_Student.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 29500 
+INFO: Helper process launched with PID 26448 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 386.504 ; gain = 99.922
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 387.984 ; gain = 101.527
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Top_Student' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:3]
 	Parameter MAX_VEL bound to: 5 - type: integer 
@@ -25,8 +25,8 @@ INFO: [Synth 8-6157] synthesizing module 'PixelToXY' [C:/Users/Lawrence/Desktop/
 	Parameter SCREEN_WIDTH bound to: 96 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'PixelToXY' (1#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/pixel_converter.v:22]
 WARNING: [Synth 8-689] width (13) of port connection 'pixel_index' does not match port width (16) of module 'PixelToXY' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:23]
-INFO: [Synth 8-6157] synthesizing module 'flexible_clock' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:266]
-INFO: [Synth 8-6155] done synthesizing module 'flexible_clock' (2#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:266]
+INFO: [Synth 8-6157] synthesizing module 'flexible_clock' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:264]
+INFO: [Synth 8-6155] done synthesizing module 'flexible_clock' (2#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:264]
 INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
@@ -117,118 +117,118 @@ WARNING: [Synth 8-5788] Register reg_food_location_7_reg in module food_and_came
 WARNING: [Synth 8-5788] Register cam_offset_x_reg in module food_and_camera is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/test_food_camera.v:84]
 WARNING: [Synth 8-5788] Register cam_offset_y_reg in module food_and_camera is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/test_food_camera.v:85]
 INFO: [Synth 8-6155] done synthesizing module 'food_and_camera' (6#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/test_food_camera.v:3]
-INFO: [Synth 8-6157] synthesizing module 'flexible_snake' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flexible_snake' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:3]
 	Parameter MAX_LENGTH bound to: 48 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'basic_snake' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/basic_snake.v:2]
 	Parameter MAX_X bound to: 95 - type: integer 
 	Parameter MAX_Y bound to: 63 - type: integer 
 	Parameter BOX_SIZE bound to: 4 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'basic_snake' (7#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/basic_snake.v:2]
-WARNING: [Synth 8-324] index 48 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 48 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 49 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 48 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 49 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 48 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 50 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 49 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 50 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 49 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 51 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 50 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 51 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 50 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 52 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 51 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 52 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 51 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 53 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 52 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 53 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 52 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 54 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 53 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 54 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 53 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 55 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 54 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 55 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 54 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 56 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 55 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 56 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 55 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 57 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 56 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 57 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 56 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 58 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 57 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 58 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 57 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 59 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 58 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 59 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 58 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 60 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 59 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 60 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 59 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 61 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 60 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 61 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 60 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 62 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 61 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 62 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 61 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 63 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 62 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 63 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 62 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 64 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 63 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 64 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 63 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 65 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 64 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 65 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 64 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 66 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 65 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 66 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 65 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 67 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 66 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 67 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 66 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 68 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 67 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 68 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 67 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 69 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 68 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 69 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 68 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 70 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 69 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 70 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 69 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 71 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 70 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 71 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 70 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 72 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 71 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 72 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 71 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:81]
-WARNING: [Synth 8-324] index 73 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
-WARNING: [Synth 8-324] index 72 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:80]
+WARNING: [Synth 8-324] index 48 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 48 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 49 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 48 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 49 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 48 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 50 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 49 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 50 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 49 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 51 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 50 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 51 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 50 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 52 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 51 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 52 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 51 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 53 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 52 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 53 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 52 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 54 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 53 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 54 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 53 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 55 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 54 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 55 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 54 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 56 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 55 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 56 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 55 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 57 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 56 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 57 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 56 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 58 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 57 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 58 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 57 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 59 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 58 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 59 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 58 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 60 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 59 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 60 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 59 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 61 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 60 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 61 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 60 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 62 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 61 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 62 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 61 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 63 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 62 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 63 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 62 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 64 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 63 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 64 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 63 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 65 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 64 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 65 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 64 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 66 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 65 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 66 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 65 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 67 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 66 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 67 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 66 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 68 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 67 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 68 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 67 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 69 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 68 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 69 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 68 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 70 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 69 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 70 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 69 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 71 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 70 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 71 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 70 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 72 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 71 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 72 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 71 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
+WARNING: [Synth 8-324] index 73 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
+WARNING: [Synth 8-324] index 72 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
 INFO: [Common 17-14] Message 'Synth 8-324' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-WARNING: [Synth 8-5788] Register new_x_vel_reg in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:75]
-WARNING: [Synth 8-5788] Register new_y_vel_reg in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:76]
-WARNING: [Synth 8-5788] Register vel_changed_reg in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'flexible_snake' (8#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:23]
+WARNING: [Synth 8-5788] Register new_x_vel_reg in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:55]
+WARNING: [Synth 8-5788] Register new_y_vel_reg in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:56]
+WARNING: [Synth 8-5788] Register vel_changed_reg in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'flexible_snake' (8#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:3]
 WARNING: [Synth 8-3848] Net seg in module/entity Top_Student does not have driver. [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:8]
 WARNING: [Synth 8-3848] Net an in module/entity Top_Student does not have driver. [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:9]
 INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (9#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:3]
@@ -263,7 +263,7 @@ WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[1]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 770.441 ; gain = 483.859
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 770.984 ; gain = 484.527
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -276,10 +276,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 770.441 ; gain = 483.859
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 770.984 ; gain = 484.527
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 770.441 ; gain = 483.859
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 770.984 ; gain = 484.527
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -297,22 +297,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 829.582 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 828.770 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 829.582 ; gain = 543.000
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 828.770 ; gain = 542.312
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 829.582 ; gain = 543.000
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 828.770 ; gain = 542.312
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 829.582 ; gain = 543.000
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 828.770 ; gain = 542.312
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "SLOW_CLOCK0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Oled_Display'
@@ -535,7 +535,7 @@ reset_enable_reporting_wait_ack | 0000000010000000000000000000000000000 |       
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'MouseCtl'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 829.582 ; gain = 543.000
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 828.770 ; gain = 542.312
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1038,7 +1038,7 @@ WARNING: [Synth 8-3332] Sequential element (left_down_reg) is unused and will be
 WARNING: [Synth 8-3332] Sequential element (left_reg) is unused and will be removed from module MouseCtl.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 829.582 ; gain = 543.000
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 828.770 ; gain = 542.312
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1050,13 +1050,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 829.582 ; gain = 543.000
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 828.770 ; gain = 542.312
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 829.582 ; gain = 543.000
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 828.770 ; gain = 542.312
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1068,7 +1068,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 829.582 ; gain = 543.000
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 828.770 ; gain = 542.312
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1094,7 +1094,7 @@ INFO: [Synth 8-5365] Flop mouse/Inst_Ps2Interface/ps2_data_h_reg is being invert
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 829.582 ; gain = 543.000
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 828.770 ; gain = 542.312
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1107,7 +1107,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 829.582 ; gain = 543.000
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 828.770 ; gain = 542.312
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1119,25 +1119,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 829.582 ; gain = 543.000
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 828.770 ; gain = 542.312
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 829.582 ; gain = 543.000
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 828.770 ; gain = 542.312
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 829.582 ; gain = 543.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 828.770 ; gain = 542.312
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 829.582 ; gain = 543.000
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 828.770 ; gain = 542.312
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1200,11 +1200,11 @@ Report Instance Areas:
 |9     |    snake_mod         |basic_snake      |   144|
 +------+----------------------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 829.582 ; gain = 543.000
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 828.770 ; gain = 542.312
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 2303 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 829.582 ; gain = 483.859
-Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 829.582 ; gain = 543.000
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:23 . Memory (MB): peak = 828.770 ; gain = 484.527
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 828.770 ; gain = 542.312
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 179 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -1218,9 +1218,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 307 Infos, 290 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 829.582 ; gain = 554.492
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 828.770 ; gain = 553.820
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.runs/synth_1/Top_Student.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Top_Student_utilization_synth.rpt -pb Top_Student_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 829.582 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Apr  5 15:54:37 2025...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 828.770 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Apr  5 18:00:55 2025...
