@@ -17,31 +17,57 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param synth.incrementalSynthesisCache C:/Users/Lawrence/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-22136-Lawrence-ROG/incrSyn
+set_param xicom.use_bs_reader 1
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.cache/wt [current_project]
-set_property parent.project_path C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.xpr [current_project]
+set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
+set_property webtalk.parent_dir C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.cache/wt [current_project]
+set_property parent.project_path C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.xpr [current_project]
+set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.cache/ip [current_project]
+set_property ip_output_repo c:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/res/weights.coe
-add_files C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/res/00.coe
+add_files C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/res/weights.coe
+add_files C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/res/00.coe
 read_verilog -library xil_defaultlib {
-  C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v
-  C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/basic_snake.v
-  C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v
-  C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/mouse_direction.v
-  C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/pixel_converter.v
-  C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/CanvasTransfer.v
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/basic_snake.v
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/module_pack.v
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/mouse_direction.v
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/neural_net.v
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/paint.v
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/pixel_converter.v
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/ss_display.v
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/test_food_camera.v
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/test_head_lawrence.v
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/render_oled.v
 }
 read_vhdl -library xil_defaultlib {
-  C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd
-  C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Ps2Interface.vhd
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Ps2Interface.vhd
 }
+read_ip -quiet C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_inter/blk_mem_gen_inter.xci
+set_property used_in_implementation false [get_files -all c:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_inter/blk_mem_gen_inter_ooc.xdc]
+
+read_ip -quiet C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_0_1/blk_mem_gen_0.xci
+set_property used_in_implementation false [get_files -all c:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_0_1/blk_mem_gen_0_ooc.xdc]
+
+read_ip -quiet C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const.xci
+set_property used_in_implementation false [get_files -all c:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_ooc.xdc]
+
+read_ip -quiet C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img.xci
+set_property used_in_implementation false [get_files -all c:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_ooc.xdc]
+
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -50,9 +76,11 @@ read_vhdl -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc
-set_property used_in_implementation false [get_files C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc]
+read_xdc C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc
+set_property used_in_implementation false [get_files C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]
 
