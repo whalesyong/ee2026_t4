@@ -11,6 +11,7 @@ module Top_Lawrence_Test (
     inout PS2Clk, PS2Data
 );
 
+    wire [15:0] pixel_colour;
 
 
     wire clk6p25m;
@@ -41,7 +42,7 @@ module Top_Lawrence_Test (
         .SLOW_CLOCK(clk_25m)
      );
     
-
+    wire [12:0] pixel_index;
     Oled_Display display_mod (  .clk(clk6p25m),
                                 .reset(0), 
                                 .frame_begin(frame_beg),
@@ -99,7 +100,8 @@ module Top_Lawrence_Test (
         // .vel_changed()
     );
 
-    assign led[9:0] = user_snake_x[9:0];
+    assign led = pixel_colour; // test if pixel is white
+
 
     // manually control direction with button
     always @(*) begin
@@ -132,7 +134,7 @@ module Top_Lawrence_Test (
 
     render_oled render_oled_inst (
         .clk(clk),
-        .clk6p25m(clk6p25m),
+        // .clk6p25m(clk6p25m),
         .pixel_index(pixel_index),
         .user_worm_x_flat(snake_new_xpos), // flattened x-coordinates of user worm
         .user_worm_y_flat(snake_new_ypos), // flattened y-coordinates of user worm
@@ -151,7 +153,7 @@ module Top_Lawrence_Test (
         .clk(clk7seg), 
         .seg(seg),
         .an(an),
-        .num(new_x_vel)
+        .num(pixel_colour)
     );
 
 endmodule
