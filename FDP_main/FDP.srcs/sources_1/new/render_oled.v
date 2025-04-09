@@ -35,7 +35,7 @@ module render_oled(
     reg active_buffer; // 0 or 1 to indicate the active display buffer
 
    // wire in_boundary;
-    reg in_user_worm;
+    // reg in_user_worm;
     reg in_enemy_worm;
     reg in_food;
 
@@ -149,25 +149,40 @@ module render_oled(
 //------------------------------------------------------------------------- REWROTE THREE ALW BLOCKS 
 // FOR 3 COMBINATIONAL LOOPS
     // Define a border, for example a 1‑pixel thick frame (adjust as needed)
-wire in_boundary = (pixel_x < camera_offset_x + 1) ||
-                   (pixel_x > camera_offset_x + 94) ||
-                   (pixel_y < camera_offset_y + 1) ||
-                   (pixel_y > camera_offset_y + 62);
+    wire in_boundary = (counter_x < camera_offset_x + 1) ||
+                   (counter_x > camera_offset_x + 94) ||
+                   (counter_y < camera_offset_y + 1) ||
+                   (counter_y > camera_offset_y + 62);
+
+    wire [47:0] detect_in_user_worm =0; // check if each worm segment is in the pixel
+    generate
+        for (i = 0; i < 48; i = i + 1)  begin : detect_in_user_worm_logic 
+            assign detect_in_user_worm[i] = ( i <= user_size &&
+                counter_x >= user_worm_x[i] && counter_x <= user_worm_x[i] + 4 &&
+                counter_y >= user_worm_y[i] && counter_y <= user_worm_y[i] + 4) ? 1 : 0;
+            end
+    endgenerate
+    // wire in_user_worm = |detect_in_user_worm; // OR reduce the array to a single bit
+
+    // show head only for now
+    wire in_user_worm = counter_x >= user_worm_x[0] && counter_x <= user_worm_x[0] + 4 &&
+                counter_y >= user_worm_y[0] && counter_y <= user_worm_y[0] + 4 ? 1 : 0;
+
 
 // Replace sequential loops with combinational logic for all objects:
 integer j;
 always @(*) begin
     // Default flags
-    in_user_worm = 0;
+    // in_user_worm = 0;
     in_enemy_worm = 0;
     in_food = 0;
     
-    // Check user worm segments
-    for (j = 0; j < user_size; j = j + 1) begin
-        if ((pixel_x >= user_worm_x[j]) && (pixel_x <= user_worm_x[j] + 4) &&
-            (pixel_y >= user_worm_y[j]) && (pixel_y <= user_worm_y[j] + 4))
-            in_user_worm = 1;
-    end
+    // // Check user worm segments
+    // for (j = 0; j < user_size; j = j + 1) begin
+    //     if ((pixel_x >= user_worm_x[j]) && (pixel_x <= user_worm_x[j] + 4) &&
+    //         (pixel_y >= user_worm_y[j]) && (pixel_y <= user_worm_y[j] + 4))
+    //         in_user_worm = 1;
+    // end
     
     // Check enemy worm segments
     for (j = 0; j < enemy_size; j = j + 1) begin
@@ -179,8 +194,9 @@ always @(*) begin
     // If you have a fixed number of food items (here 48):
     for (j = 0; j < 48; j = j + 1) begin
         if ((pixel_x >= food_x[j]) && (pixel_x <= food_x[j] + 4) &&
-            (pixel_y >= food_y[j]) && (pixel_y <= food_y[j] + 4))
-            in_food = 1;
+            (pixel_y >= food_y[j]) && (pixel_y <= food_y[j] + 4)) begin
+                // in_food = 1;
+            end
     end
 end
 
