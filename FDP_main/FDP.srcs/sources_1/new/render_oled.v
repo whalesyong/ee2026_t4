@@ -14,7 +14,8 @@ module render_oled(
     input [479:0] food_y_flat,
     input [8:0] camera_offset_x, // 500 x 500 world
     input [8:0] camera_offset_y,
-    output [15:0] pixel_colour
+    output [15:0] pixel_colour,
+    output [9:0] debugx, debugy 
     );
 
     localparam WHITE = 16'b11111_111111_11111;
@@ -51,12 +52,12 @@ module render_oled(
     genvar i;
     generate
         for (i = 0; i < 48; i = i + 1) begin : pack_user_worm_x
-            assign user_worm_x[i] = user_worm_x_flat[i * 10 +: 10];
-            assign user_worm_y[i] = user_worm_y_flat[i * 10 +: 10];
-            assign enemy_worm_x[i] = enemy_worm_x_flat[i * 10 +: 10];
-            assign enemy_worm_y[i] = enemy_worm_y_flat[i * 10 +: 10];
-            assign food_x[i] = food_x_flat[i * 10 +: 10];
-            assign food_y[i] = food_y_flat[i * 10 +: 10];
+            assign user_worm_x[i] = user_worm_x_flat[ 10*i + 9 : 10 * i ];
+            assign user_worm_y[i] = user_worm_y_flat[ 10*i + 9 : 10 * i ];
+            assign enemy_worm_x[i] = enemy_worm_x_flat[ 10*i + 9 : 10 * i ];
+            assign enemy_worm_y[i] = enemy_worm_y_flat[ 10*i + 9 : 10 * i ];
+            assign food_x[i] = food_x_flat[ 10*i + 9 : 10 * i ];
+            assign food_y[i] = food_y_flat[ 10*i + 9 : 10 * i ];
         end
     endgenerate
 
@@ -164,10 +165,17 @@ module render_oled(
     endgenerate
     // wire in_user_worm = |detect_in_user_worm; // OR reduce the array to a single bit
 
-    // show head only for now
+    // show head a few segments for now
     wire in_user_worm = counter_x >= user_worm_x[0] && counter_x <= user_worm_x[0] + 4 &&
-                counter_y >= user_worm_y[0] && counter_y <= user_worm_y[0] + 4 ? 1 : 0;
+                counter_y >= user_worm_y[0] && counter_y <= user_worm_y[0] + 4 
 
+                || (user_worm_x[1] && counter_x <= user_worm_x[1] + 4 &&
+                counter_y >= user_worm_y[1] && counter_y <= user_worm_y[1] + 4 ) 
+                
+             ? 1 : 0;
+
+    assign debugx = user_worm_x[0];
+    assign debugy = user_worm_x[1];
 
 // Replace sequential loops with combinational logic for all objects:
 integer j;

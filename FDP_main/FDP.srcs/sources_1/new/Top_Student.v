@@ -185,6 +185,10 @@ module Top_Student (    input clk,
 
         // output
         .pixel_colour(pixel_colour) // output pixel color
+
+        ,
+        .debugx(debugx),
+        .debugy(debugy)
     );
 
     // inst user_worm and enemy_worm
@@ -202,9 +206,7 @@ module Top_Student (    input clk,
         .size(user_size),
         .new_x_vel(snake_new_x_vel), 
         .new_y_vel(snake_new_y_vel), 
-        .vel_changed(vel_changed),
-        .debugx(debugx),
-        .debugy(debugy)
+        .vel_changed(vel_changed)
     );
 
 
@@ -215,10 +217,8 @@ module Top_Student (    input clk,
             worm_x_array[i] = user_snake_xpos[i*10 +: 10];  
             worm_y_array[i] = user_snake_ypos[i*10 +: 10];
         end
-        led[9:5] <= worm_x_array[0][4:0];     // Display head x position
-        led[4:0] <= worm_y_array[0][4:0];     // Display head y position
-        led[9:5] <= debugx[4:0];     // Display head x position
-        led[4:0] <= debugy[4:0];     // Display head y position
+        led [15:8] = debugx[7:0];
+        led [7:0]  = debugy[7:0];
     end
     
     // update velocity
