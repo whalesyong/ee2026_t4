@@ -14,7 +14,7 @@ module Top_Student (    input clk,
     parameter MAX_VEL = 5;
     
     // variavles for OLED display
-    wire [15:0] pixel_colour;
+    wire [15:0] pixel_colour; // if rendering in top, set as reg, if in render_oled, set as wire
     wire [12:0] pixel_index;
     wire frame_beg;
     wire [7:0] pixel_x;   
@@ -165,6 +165,8 @@ module Top_Student (    input clk,
         .reg_food_location_7(reg_food_location_7)
     );
 
+
+
     // Inst render_oled
     render_oled render_oled_inst (
         .clk(clk),
@@ -270,6 +272,21 @@ module Top_Student (    input clk,
         
 
     end
+
+    // debug block for rendering in top
+/*
+    always @ (posedge clk_25m) begin
+
+        if (pixel_x == debugx + 4 && pixel_y == debugy +4) begin
+            pixel_colour <= 16'b11111_111111_11111;
+        end
+        if (pixel_x > debugx && pixel_x < debugx + 4 && pixel_y > debugy  && pixel_y < debugy + 4) begin
+            pixel_colour <= 16'h1111; 
+        end
+        else begin
+            pixel_colour <= 16'b00000_000000_00000;
+        end
+    end*/
 endmodule
 
 

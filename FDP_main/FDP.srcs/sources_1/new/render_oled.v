@@ -34,7 +34,7 @@ module render_oled(
     reg [15:0] pixel_colour_reg;
     reg active_buffer; // 0 or 1 to indicate the active display buffer
 
-    wire in_boundary;
+   // wire in_boundary;
     reg in_user_worm;
     reg in_enemy_worm;
     reg in_food;
@@ -81,11 +81,27 @@ module render_oled(
         .SLOW_CLOCK(clk_slow)
     );
 
+    // added a 25m clock for debugging 
+    wire debug_clk_25m;
+    flexible_clock clk_mod25m(
+        .CLOCK(clk),
+        .divider(2), 
+        .SLOW_CLOCK(debug_clk_25m)
+     ); 
+
+    wire debug_clk_6p25m;
+    flexible_clock clk_slow_inst_6p25m(
+        .CLOCK(clk),
+        .divider(8), 
+        .SLOW_CLOCK(debug_clk_6p25m)
+    );
+
     initial begin
         counter = 0;
 
     end
 
+/*
     // update if pixel is in boundary
     assign in_boundary = (counter_x <= 2 || counter_x >= 497 || counter_y <= 2 || counter_y >= 497) ? 1 : 0;
 
@@ -128,7 +144,47 @@ module render_oled(
         // Update index for next cycle (wrap around after 47)
       loop_idx <= (loop_idx >= 7'd47) ? 7'd0 : (loop_idx + 1);
     end
+*/
 
+//------------------------------------------------------------------------- REWROTE THREE ALW BLOCKS 
+// FOR 3 COMBINATIONAL LOOPS
+    // Define a border, for example a 1‑pixel thick frame (adjust as needed)
+wire in_boundary = (pixel_x < camera_offset_x + 1) ||
+                   (pixel_x > camera_offset_x + 94) ||
+                   (pixel_y < camera_offset_y + 1) ||
+                   (pixel_y > camera_offset_y + 62);
+
+// Replace sequential loops with combinational logic for all objects:
+integer j;
+always @(*) begin
+    // Default flags
+    in_user_worm = 0;
+    in_enemy_worm = 0;
+    in_food = 0;
+    
+    // Check user worm segments
+    for (j = 0; j < user_size; j = j + 1) begin
+        if ((pixel_x >= user_worm_x[j]) && (pixel_x <= user_worm_x[j] + 4) &&
+            (pixel_y >= user_worm_y[j]) && (pixel_y <= user_worm_y[j] + 4))
+            in_user_worm = 1;
+    end
+    
+    // Check enemy worm segments
+    for (j = 0; j < enemy_size; j = j + 1) begin
+        if ((pixel_x >= enemy_worm_x[j]) && (pixel_x <= enemy_worm_x[j] + 4) &&
+            (pixel_y >= enemy_worm_y[j]) && (pixel_y <= enemy_worm_y[j] + 4))
+            in_enemy_worm = 1;
+    end
+    
+    // If you have a fixed number of food items (here 48):
+    for (j = 0; j < 48; j = j + 1) begin
+        if ((pixel_x >= food_x[j]) && (pixel_x <= food_x[j] + 4) &&
+            (pixel_y >= food_y[j]) && (pixel_y <= food_y[j] + 4))
+            in_food = 1;
+    end
+end
+
+//----------------------------------------------------
 
     // Check pixel in order of priority: 
     // 1. sq boundary
@@ -143,7 +199,7 @@ module render_oled(
                                 (in_food) ? PURPLE : 
                                 BLACK; // background colour
 
-    always @ (posedge clk_slow ) begin
+    always @ (posedge debug_clk_6p25m ) begin //originally posedge clk_slow
 
         if (active_buffer) begin
             pixel_colour_cache_1[counter] <= output_colour; // Update active buffer
