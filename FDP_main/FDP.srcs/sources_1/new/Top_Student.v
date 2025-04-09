@@ -14,7 +14,7 @@ module Top_Student (    input clk,
     parameter MAX_VEL = 5;
     
     // variavles for OLED display
-    reg [15:0] pixel_colour;
+    wire [15:0] pixel_colour;
     wire [12:0] pixel_index;
     wire frame_beg;
     wire [7:0] pixel_x;   
@@ -47,12 +47,14 @@ module Top_Student (    input clk,
     reg [12:0] abs_y;
     reg [8:0] snake_xpos = 30;
     reg [8:0] snake_ypos = 30;
-    wire [479:0] snake_new_xpos; 
-    wire [479:0] snake_new_ypos;
+    wire [479:0] user_snake_xpos; 
+    wire [479:0] user_snake_ypos;
     wire signed [12:0] snake_new_x_vel;
     wire signed [12:0] snake_new_y_vel;
     wire vel_changed;
-    wire [7:0] new_size;
+    wire [7:0] user_size;
+    wire [7:0] enemy_size;
+    wire [9:0] debugx, debugy;
 
 
     // * FOR DEBUGGING 
@@ -78,30 +80,31 @@ module Top_Student (    input clk,
         .CLOCK(clk),
         .divider(2), 
         .SLOW_CLOCK(clk_25m)
-     );
-    
-    
+     ); 
 
-    Oled_Display display_mod (  .clk(clk6p25m),
-                                .reset(0), 
-                                .frame_begin(frame_beg),
-                                // .sending_pixels(1),
-                                // .sample_pixel(1),
-                                .pixel_index(pixel_index), // output
-                                .pixel_data(pixel_colour),   
-                                .cs(JB[0]),
-                                .sdin(JB[1]),
-                                .sclk(JB[3]),
-                                .d_cn(JB[4]),
-                                .resn(JB[5]), 
-                                .vccen(JB[6]),
-                                .pmoden(JB[7])
-                        );
+    Oled_Display display_mod (  
+        .clk(clk6p25m),
+        .reset(0), 
+        .frame_begin(frame_beg),
+        // .sending_pixels(1),
+        // .sample_pixel(1),
+        .pixel_index(pixel_index), // output
+        .pixel_data(pixel_colour),   
+        .cs(JB[0]),
+        .sdin(JB[1]),
+        .sclk(JB[3]),
+        .d_cn(JB[4]),
+        .resn(JB[5]), 
+        .vccen(JB[6]),
+        .pmoden(JB[7])
+        );
 
-    MouseCtl mouse (    .clk(clk), .rst(0), .value(0), .setx(0), .sety(0), .setmax_x(0), .setmax_y(0), .ps2_clk(PS2Clk), .ps2_data(PS2Data), 
-                        // outputs
-                        .xpos(mouse_xpos), .ypos(mouse_ypos), .zpos(mouse_zpos),
-                        .left(left), .middle(middle), .right(right), .new_event(new_event));
+    MouseCtl mouse (    
+        .clk(clk), .rst(0), .value(0), .setx(0), .sety(0), .setmax_x(0), .setmax_y(0), .ps2_clk(PS2Clk), .ps2_data(PS2Data), 
+        // outputs
+        .xpos(mouse_xpos), .ypos(mouse_ypos), .zpos(mouse_zpos),
+        .left(left), .middle(middle), .right(right), .new_event(new_event)
+        );
     
     /*
     mouse_direction mouse_dir_mod(
@@ -111,6 +114,7 @@ module Top_Student (    input clk,
         .x_dir(x_dir_wire), 
         .y_dir(y_dir_wire)
     );*/
+
     always @ * begin 
         x_dir = x_dir_wire;
         y_dir = y_dir_wire;
@@ -138,29 +142,49 @@ module Top_Student (    input clk,
     wire [9:0] enemy_head_y2 = 10'd30;
 
     food_and_camera food_mod (
-    .clk(clk),
-    .reset(0), // or use a proper reset
-    .userwormheadx(user_head_x),
-    .userwormheady(user_head_y),
-    .enemywormheadx0(enemy_head_x0),
-    .enemywormheady0(enemy_head_y0),
-    .enemywormheadx1(enemy_head_x1),
-    .enemywormheady1(enemy_head_y1),
-    .enemywormheadx2(enemy_head_x2),
-    .enemywormheady2(enemy_head_y2),
-    .cam_offset_x(cam_offset_x),
-    .cam_offset_y(cam_offset_y),
-    .reg_food_eaten(reg_food_eaten),
-    .reg_food_location_0(reg_food_location_0),
-    .reg_food_location_1(reg_food_location_1),
-    .reg_food_location_2(reg_food_location_2),
-    .reg_food_location_3(reg_food_location_3),
-    .reg_food_location_4(reg_food_location_4),
-    .reg_food_location_5(reg_food_location_5),
-    .reg_food_location_6(reg_food_location_6),
-    .reg_food_location_7(reg_food_location_7)
+        .clk(clk),
+        .reset(0), // or use a proper reset
+        .userwormheadx(user_head_x),
+        .userwormheady(user_head_y),
+        .enemywormheadx0(enemy_head_x0),
+        .enemywormheady0(enemy_head_y0),
+        .enemywormheadx1(enemy_head_x1),
+        .enemywormheady1(enemy_head_y1),
+        .enemywormheadx2(enemy_head_x2),
+        .enemywormheady2(enemy_head_y2),
+        .cam_offset_x(cam_offset_x),
+        .cam_offset_y(cam_offset_y),
+        .reg_food_eaten(reg_food_eaten),
+        .reg_food_location_0(reg_food_location_0),
+        .reg_food_location_1(reg_food_location_1),
+        .reg_food_location_2(reg_food_location_2),
+        .reg_food_location_3(reg_food_location_3),
+        .reg_food_location_4(reg_food_location_4),
+        .reg_food_location_5(reg_food_location_5),
+        .reg_food_location_6(reg_food_location_6),
+        .reg_food_location_7(reg_food_location_7)
     );
-  
+
+    // Inst render_oled
+    render_oled render_oled_inst (
+        .clk(clk),
+        // .clk6p25m(clk6p25m),
+        .pixel_index(pixel_index),
+        .user_worm_x_flat(user_snake_xpos), // flattened x-coordinates of user worm
+        .user_worm_y_flat(user_snake_ypos), // flattened y-coordinates of user worm
+        .user_size(user_size), // size of user worm
+        .enemy_worm_x_flat(0), // flattened x-coordinates of enemy worm (not used)
+        .enemy_worm_y_flat(0), // flattened y-coordinates of enemy worm (not used)
+        .enemy_size(0), // size of enemy worm (not used)
+        .food_x_flat(0), // flattened x-coordinates of food (not used)
+        .food_y_flat(0), // flattened y-coordinates of food (not used)
+        .camera_offset_x(0), // camera x-offset (not used)
+        .camera_offset_y(0), // camera y-offset (not used)
+
+        // output
+        .pixel_colour(pixel_colour) // output pixel color
+    );
+
     // inst user_worm and enemy_worm
     flexible_snake user_snake(
         .slow_clk(clk400hz), 
@@ -171,19 +195,28 @@ module Top_Student (    input clk,
         .ypos(snake_ypos), 
         .directionEnable(1),
         .food_eaten(0),
-        .x_worm_flat(snake_new_xpos), 
-        .y_worm_flat(snake_new_ypos), 
-        .new_size(new_size),
+        .x_worm_flat(user_snake_xpos), 
+        .y_worm_flat(user_snake_ypos), 
+        .size(user_size),
         .new_x_vel(snake_new_x_vel), 
         .new_y_vel(snake_new_y_vel), 
-        .vel_changed(vel_changed)
+        .vel_changed(vel_changed),
+        .debugx(debugx),
+        .debugy(debugy)
     );
 
+
+
+    // update 2D array of worm positions
     always @(*) begin
         for (i = 0; i < 48; i = i + 1) begin
-            worm_x_array[i] = snake_new_xpos[i*10 +: 10];  
-            worm_y_array[i] = snake_new_ypos[i*10 +: 10];
+            worm_x_array[i] = user_snake_xpos[i*10 +: 10];  
+            worm_y_array[i] = user_snake_ypos[i*10 +: 10];
         end
+        led[9:5] <= worm_x_array[0][4:0];     // Display head x position
+        led[4:0] <= worm_y_array[0][4:0];     // Display head y position
+        led[9:5] <= debugx[4:0];     // Display head x position
+        led[4:0] <= debugy[4:0];     // Display head y position
     end
     
     // update velocity
@@ -216,27 +249,6 @@ module Top_Student (    input clk,
     //TODO: for now, render the snake on the screen and in Top_student
     // rendering should be abstracted into a separate module 
 
-    always @ (posedge clk_25m) begin 
-        //for debugging 
-        led <= {snake_xpos[7:0], snake_ypos[7:0]};
-
-        //update head 
-        snake_xpos <= snake_new_xpos[479:470];
-        snake_ypos <= snake_new_ypos[479:470];
-        // Snake head
-        if (pixel_x == snake_xpos+4 && pixel_y == snake_ypos+4) begin
-            pixel_colour <= 16'b11111_111111_11111;
-        end
-        if (pixel_x > snake_xpos && pixel_x < snake_xpos+4 && pixel_y > snake_ypos && pixel_y < snake_ypos+4) begin
-            pixel_colour <= 16'h1111; 
-        end
-        else begin
-            pixel_colour <= 16'b00000_000000_00000;
-        end
-    end
-    initial begin 
-        
-    end
 
     // for debugging 
     always @ (posedge clk400hz) begin 
@@ -272,3 +284,4 @@ module flexible_clock(input CLOCK,input [31:0] divider,output reg SLOW_CLOCK = 0
     
 endmodule
 
+// fuck 2026

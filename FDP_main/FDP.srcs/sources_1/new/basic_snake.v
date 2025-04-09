@@ -2,15 +2,20 @@
 module basic_snake(
     input slow_clk,
     input signed [12:0] x_vel, y_vel,
-    input [8:0] xpos, ypos,
-    output reg [8:0] new_xpos, new_ypos, 
+    input [9:0] xpos, ypos, // position of head
+    output reg [9:0] new_xpos, new_ypos, 
     output reg signed [12:0] new_x_vel = 0, new_y_vel = 0,
-    output reg vel_changed = 0
+    output reg vel_changed = 0,
+    output [9:0] debugx, debugy   
 );
+
+    assign debugx = potential_xpos[9:0];
+    assign debugy = potential_ypos[9:0];
+
     //note that the box location is now the top-left corner of a 5x5 box
     localparam MAX_X = 95;
     localparam MAX_Y = 63;
-    localparam BOX_SIZE = 4;  // 5x5 box (0 to 4)
+    localparam BOX_SIZE = 1;  // 5x5 box (0 to 4)
 
     reg signed [12:0] potential_xpos, potential_ypos;
     reg [4:0] flag = 0;
@@ -50,8 +55,7 @@ module basic_snake(
             vel_changed = 1;
         end
         //output the last valid position 
-        new_xpos = potential_xpos[8:0];
-        new_ypos = potential_ypos[8:0];
-    end   
+        new_xpos = potential_xpos[9:0];
+        new_ypos = potential_ypos[9:0];
+    end
 endmodule
-
