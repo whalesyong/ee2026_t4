@@ -28,7 +28,8 @@ module flexible_snake(
     wire [9:0] new_xpos_wire, new_ypos_wire;
     wire signed [12:0] new_x_vel_wire, new_y_vel_wire;
     wire vel_changed_wire;
-    
+    wire pos_changed_wire;
+
     // Instantiate the snake movement module
     basic_snake snake_mod(
         .slow_clk(slow_clk), 
@@ -41,6 +42,7 @@ module flexible_snake(
         .new_x_vel(new_x_vel_wire), 
         .new_y_vel(new_y_vel_wire), 
         .vel_changed(vel_changed_wire),
+        .pos_changed(pos_changed_wire),
         .debugx(debugx),
         .debugy(debugy)
     );
@@ -60,7 +62,7 @@ module flexible_snake(
             // Clear flattened outputs (optional here since combinational logic drives these)
 
             head_index <= 0;
-            size <= 5;  // default starting size
+            size <= 10;  // default starting size
             new_x_vel <= 0;
             new_y_vel <= 0;
             vel_changed <= 0;
@@ -73,7 +75,7 @@ module flexible_snake(
             vel_changed <= vel_changed_wire;
             
             // Update snake head position when direction is enabled
-            if (directionEnable) begin
+            if (pos_changed_wire && directionEnable) begin
                 // step 1, get the new head position (should be decremented)
                 head_index <= (head_index == 0) ? (MAX_LENGTH - 1) : head_index - 1;
 

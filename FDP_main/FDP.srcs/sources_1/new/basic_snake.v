@@ -6,6 +6,7 @@ module basic_snake(
     output reg [9:0] new_xpos, new_ypos, 
     output reg signed [12:0] new_x_vel = 0, new_y_vel = 0,
     output reg vel_changed = 0,
+    output reg pos_changed = 0,
     output [9:0] debugx, debugy   
 );
 
@@ -23,6 +24,7 @@ module basic_snake(
     reg [4:0] flag = 0;
     
     always @ (posedge slow_clk) begin 
+        pos_changed = 0;
         vel_changed = 0;
         flag <= (flag == 15) ? 0 : flag + 1;
 
@@ -32,6 +34,7 @@ module basic_snake(
             // Update positions using new velocities
             potential_xpos = $signed(xpos) + new_x_vel;
             potential_ypos = $signed(ypos) + new_y_vel;
+            pos_changed = 1;
         end
 
         // Collision detection for top-left corner positioning
