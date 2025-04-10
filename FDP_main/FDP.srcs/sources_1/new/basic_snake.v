@@ -38,26 +38,31 @@ module basic_snake(
         end
 
         // Collision detection for top-left corner positioning
-        if (potential_xpos <= 0) begin  // Left wall
+        if (potential_xpos < 0) begin  // Left wall
             potential_xpos = 0;
             new_x_vel = -new_x_vel;
             vel_changed = 1;
+            pos_changed = 0;
         end
         else if (potential_xpos >= MAX_X - BOX_SIZE) begin  // Right wall
             potential_xpos = MAX_X - BOX_SIZE;
             new_x_vel = -new_x_vel;
             vel_changed = 1;
+            pos_changed = 0;            
+
         end
 
-        if (potential_ypos <= 0) begin  // Top wall
+        if (potential_ypos < 0) begin  // Top wall
             potential_ypos = 0;
             new_y_vel = -new_y_vel;
             vel_changed=1;
+            pos_changed = 0;
         end
         else if (potential_ypos >= MAX_Y - BOX_SIZE) begin  // Bottom wall
             potential_ypos = MAX_Y - BOX_SIZE;
             new_y_vel = -new_y_vel;
             vel_changed = 1;
+            pos_changed = 0;
         end
         //output the last valid position 
         new_xpos = potential_xpos[9:0];
