@@ -120,12 +120,100 @@ module Top_Student (    input clk,
         y_dir = y_dir_wire;
     end
     
-    //maximum length of worm is 48 pixels.
-    reg [9:0] worm_x_array [0:47];
-    reg [9:0] worm_y_array [0:47];
-    integer i;
-  
-    // CAMERA & FOOD wires
+    wire directionEnable; 
+    assign directionEnable = (sw[15]) ? ((btnL | btnR | btnU | btnD)? 1: 0) : 1;
+    
+    // inst user_worm and enemy_worm
+    flexible_snake user_snake(
+        .slow_clk(clk400hz), 
+        .rst(0),
+        .x_dir(x_vel_debug), 
+        .y_dir(y_vel_debug), 
+        .xpos(snake_xpos), 
+        .ypos(snake_ypos), 
+        .directionEnable(directionEnable),
+        .food_eaten(0),
+        .x_worm_flat(user_snake_xpos), 
+        .y_worm_flat(user_snake_ypos), 
+        .size(user_size),
+        .new_x_vel(snake_new_x_vel), 
+        .new_y_vel(snake_new_y_vel), 
+        .vel_changed(vel_changed),
+        .debugx(),
+        .debugy()
+    );
+    
+    wire [9:0] user_worm_x [0:47];
+    wire [9:0] user_worm_y [0:47];
+    
+    genvar n;
+    generate
+        for (n = 0; n < 48; n = n + 1) begin : pack_user_worm_x
+            assign user_worm_x[n] = user_snake_xpos[ 10*n + 9 : 10 * n ];
+            assign user_worm_y[n] = user_snake_ypos[ 10*n + 9 : 10 * n ];
+        end
+    endgenerate
+
+    // update 2D array of worm positions
+    always @(*) begin
+        led [15:8] = user_worm_x[1]; // for debugging
+        led [7:0]  = user_worm_y[1]; // for debugging
+    end
+    
+    // update velocity
+    // normalization logic for mouse direction input to flexi_snake
+    always @(*) begin
+        // calculate absolute values 
+        abs_x = (x_dir < 0) ? -x_dir : x_dir;
+        abs_y = (y_dir < 0) ? -y_dir : y_dir;
+        // calculate max value
+        max_val = (abs_x > abs_y) ? abs_x : abs_y;
+        // normalize values
+        if (max_val == 0) begin
+            normalized_x_dir = 0;
+            normalized_y_dir = 0;
+        end
+        else begin
+            // TODO: a little unsure about this division here
+            normalized_x_dir = (x_dir * MAX_VEL) / max_val;
+            normalized_y_dir = (y_dir * MAX_VEL) / max_val;
+        end
+
+    end
+        // use mouse input for user_worm
+        // use AI for enemy_worm
+
+    // update position of worms
+
+    // update display
+
+    //TODO: for now, render the snake on the screen and in Top_student
+    // rendering should be abstracted into a separate module 
+
+
+    // for debugging 
+    always @ (posedge clk400hz) begin 
+        // X velocity control
+        if (btnL && x_vel_debug > -MAX_VEL) 
+            x_vel_debug <= x_vel_debug - 1;
+        else if (btnR && x_vel_debug < MAX_VEL) 
+            x_vel_debug <= x_vel_debug + 1;
+        else if (!btnL && !btnR && x_vel_debug != 0)  // Deceleration
+            x_vel_debug <= (x_vel_debug > 0) ? x_vel_debug - 1 : x_vel_debug + 1;
+
+        // Y velocity control
+        if (btnU && y_vel_debug > -MAX_VEL) 
+            y_vel_debug <= y_vel_debug - 1;
+        else if (btnD && y_vel_debug < MAX_VEL)
+            y_vel_debug <= y_vel_debug + 1;
+        else if (!btnU && !btnD && y_vel_debug != 0)  // Deceleration
+            y_vel_debug <= (y_vel_debug > 0) ? y_vel_debug - 1 : y_vel_debug + 1;
+        
+
+    end
+
+
+// CAMERA & FOOD wires
     wire [9:0] cam_offset_x;
     wire [9:0] cam_offset_y;
     wire [3:0] reg_food_eaten;
@@ -190,93 +278,6 @@ module Top_Student (    input clk,
         .debugx(),
         .debugy()
     );
-    
-    
-    wire directionEnable; 
-    assign directionEnable = (btnL | btnR | btnU | btnD)? 1: 0;
-    // inst user_worm and enemy_worm
-    flexible_snake user_snake(
-        .slow_clk(clk400hz), 
-        .rst(0),
-        .x_dir(x_vel_debug), 
-        .y_dir(y_vel_debug), 
-        .xpos(snake_xpos), 
-        .ypos(snake_ypos), 
-        .directionEnable(directionEnable),
-        .food_eaten(0),
-        .x_worm_flat(user_snake_xpos), 
-        .y_worm_flat(user_snake_ypos), 
-        .size(user_size),
-        .new_x_vel(snake_new_x_vel), 
-        .new_y_vel(snake_new_y_vel), 
-        .vel_changed(vel_changed),
-        .debugx(),
-        .debugy()
-    );
-    
-
-
-    // update 2D array of worm positions
-    always @(*) begin
-        for (i = 0; i < 48; i = i + 1) begin
-            worm_x_array[i] = user_snake_xpos[i*10 +: 10];  
-            worm_y_array[i] = user_snake_ypos[i*10 +: 10];
-        end
-        led [15:8] = worm_x_array[4]; // for debugging
-        led [7:0]  = worm_x_array[0]; // for debugging
-    end
-    
-    // update velocity
-    // normalization logic for mouse direction input to flexi_snake
-    always @(*) begin
-        // calculate absolute values 
-        abs_x = (x_dir < 0) ? -x_dir : x_dir;
-        abs_y = (y_dir < 0) ? -y_dir : y_dir;
-        // calculate max value
-        max_val = (abs_x > abs_y) ? abs_x : abs_y;
-        // normalize values
-        if (max_val == 0) begin
-            normalized_x_dir = 0;
-            normalized_y_dir = 0;
-        end
-        else begin
-            // TODO: a little unsure about this division here
-            normalized_x_dir = (x_dir * MAX_VEL) / max_val;
-            normalized_y_dir = (y_dir * MAX_VEL) / max_val;
-        end
-
-    end
-        // use mouse input for user_worm
-        // use AI for enemy_worm
-
-    // update position of worms
-
-    // update display
-
-    //TODO: for now, render the snake on the screen and in Top_student
-    // rendering should be abstracted into a separate module 
-
-
-    // for debugging 
-    always @ (posedge clk400hz) begin 
-        // X velocity control
-        if (btnL && x_vel_debug > -MAX_VEL) 
-            x_vel_debug <= x_vel_debug - 1;
-        else if (btnR && x_vel_debug < MAX_VEL) 
-            x_vel_debug <= x_vel_debug + 1;
-        else if (!btnL && !btnR && x_vel_debug != 0)  // Deceleration
-            x_vel_debug <= (x_vel_debug > 0) ? x_vel_debug - 1 : x_vel_debug + 1;
-
-        // Y velocity control
-        if (btnU && y_vel_debug > -MAX_VEL) 
-            y_vel_debug <= y_vel_debug - 1;
-        else if (btnD && y_vel_debug < MAX_VEL)
-            y_vel_debug <= y_vel_debug + 1;
-        else if (!btnU && !btnD && y_vel_debug != 0)  // Deceleration
-            y_vel_debug <= (y_vel_debug > 0) ? y_vel_debug - 1 : y_vel_debug + 1;
-        
-
-    end
 
     // debug block for rendering in top
 /*
@@ -305,5 +306,3 @@ module flexible_clock(input CLOCK,input [31:0] divider,output reg SLOW_CLOCK = 0
     end
     
 endmodule
-
-// fuck 2026

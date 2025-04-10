@@ -99,11 +99,11 @@ module flexible_snake(
         for (idx = 0; idx < MAX_LENGTH; idx = idx + 1) begin : flatten_snake
         
             assign x_worm_flat[(idx+1)*10 - 1 -: 10] = (idx < size) ? 
-                worm_x_mem[(head_index + idx ) % MAX_LENGTH] : 10'd0;
-                
-
+            worm_x_mem[(head_index + size - 1 - idx) % MAX_LENGTH] : 10'd0;
+        
             assign y_worm_flat[(idx+1)*10 - 1 -: 10] = (idx < size) ? 
-                worm_y_mem[(head_index + idx ) % MAX_LENGTH] : 10'd0;
+            worm_y_mem[(head_index + size - 1 - idx) % MAX_LENGTH] : 10'd0;
+
 
         end
     endgenerate
