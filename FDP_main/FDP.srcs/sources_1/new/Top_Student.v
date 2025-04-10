@@ -187,10 +187,13 @@ module Top_Student (    input clk,
         .pixel_colour(pixel_colour) // output pixel color
 
         ,
-        .debugx(debugx),
-        .debugy(debugy)
+        .debugx(),
+        .debugy()
     );
-
+    
+    
+    wire directionEnable; 
+    assign directionEnable = (btnL | btnR | btnU | btnD)? 1: 0;
     // inst user_worm and enemy_worm
     flexible_snake user_snake(
         .slow_clk(clk400hz), 
@@ -199,16 +202,18 @@ module Top_Student (    input clk,
         .y_dir(y_vel_debug), 
         .xpos(snake_xpos), 
         .ypos(snake_ypos), 
-        .directionEnable(1),
+        .directionEnable(directionEnable),
         .food_eaten(0),
         .x_worm_flat(user_snake_xpos), 
         .y_worm_flat(user_snake_ypos), 
         .size(user_size),
         .new_x_vel(snake_new_x_vel), 
         .new_y_vel(snake_new_y_vel), 
-        .vel_changed(vel_changed)
+        .vel_changed(vel_changed),
+        .debugx(),
+        .debugy()
     );
-
+    
 
 
     // update 2D array of worm positions
@@ -217,8 +222,8 @@ module Top_Student (    input clk,
             worm_x_array[i] = user_snake_xpos[i*10 +: 10];  
             worm_y_array[i] = user_snake_ypos[i*10 +: 10];
         end
-        led [15:8] = debugx[7:0];
-        led [7:0]  = debugy[7:0];
+        led [15:8] = worm_x_array[4]; // for debugging
+        led [7:0]  = worm_x_array[0]; // for debugging
     end
     
     // update velocity

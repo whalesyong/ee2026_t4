@@ -149,13 +149,12 @@ module render_oled(
 
 //------------------------------------------------------------------------- REWROTE THREE ALW BLOCKS 
 // FOR 3 COMBINATIONAL LOOPS
-    // Define a border, for example a 1‑pixel thick frame (adjust as needed)
     wire in_boundary = (counter_x < camera_offset_x + 1) ||
                    (counter_x > camera_offset_x + 94) ||
                    (counter_y < camera_offset_y + 1) ||
                    (counter_y > camera_offset_y + 62);
 
-    wire [47:0] detect_in_user_worm =0; // check if each worm segment is in the pixel
+    wire [47:0] detect_in_user_worm; // check if each worm segment is in the pixel 
     generate
         for (i = 0; i < 48; i = i + 1)  begin : detect_in_user_worm_logic 
             assign detect_in_user_worm[i] = ( i <= user_size &&
@@ -163,19 +162,21 @@ module render_oled(
                 counter_y >= user_worm_y[i] && counter_y <= user_worm_y[i] + 4) ? 1 : 0;
             end
     endgenerate
-    // wire in_user_worm = |detect_in_user_worm; // OR reduce the array to a single bit
-
+     // wire in_user_worm = |detect_in_user_worm; // OR reduce the array to a single bit
+    
+    //below declaration only renders one body segment and the head of the worm
     // show head a few segments for now
     wire in_user_worm = counter_x >= user_worm_x[0] && counter_x <= user_worm_x[0] + 4 &&
                 counter_y >= user_worm_y[0] && counter_y <= user_worm_y[0] + 4 
 
-                || (user_worm_x[1] && counter_x <= user_worm_x[1] + 4 &&
-                counter_y >= user_worm_y[1] && counter_y <= user_worm_y[1] + 4 ) 
+                // comment out the body segment rendering for now
+                || (user_worm_x[2] && counter_x <= user_worm_x[2] + 4 &&
+                counter_y >= user_worm_y[2] && counter_y <= user_worm_y[2] + 4 )
                 
              ? 1 : 0;
 
     assign debugx = user_worm_x[0];
-    assign debugy = user_worm_x[1];
+    assign debugy = user_worm_x[2];
 
 // Replace sequential loops with combinational logic for all objects:
 integer j;
@@ -194,8 +195,8 @@ always @(*) begin
     
     // Check enemy worm segments
     for (j = 0; j < enemy_size; j = j + 1) begin
-        if ((pixel_x >= enemy_worm_x[j]) && (pixel_x <= enemy_worm_x[j] + 4) &&
-            (pixel_y >= enemy_worm_y[j]) && (pixel_y <= enemy_worm_y[j] + 4))
+        if ((pixel_x >= enemy_worm_x[j]) && (pixel_x <= enemy_worm_x[j] + 2) &&
+            (pixel_y >= enemy_worm_y[j]) && (pixel_y <= enemy_worm_y[j] + 2))
             in_enemy_worm = 1;
     end
     

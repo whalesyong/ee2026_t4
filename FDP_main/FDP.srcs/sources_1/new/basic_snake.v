@@ -9,6 +9,9 @@ module basic_snake(
     output [9:0] debugx, debugy   
 );
 
+    reg signed [12:0] potential_xpos, potential_ypos;
+
+
     assign debugx = potential_xpos[9:0];
     assign debugy = potential_ypos[9:0];
 
@@ -17,7 +20,6 @@ module basic_snake(
     localparam MAX_Y = 63;
     localparam BOX_SIZE = 1;  // 5x5 box (0 to 4)
 
-    reg signed [12:0] potential_xpos, potential_ypos;
     reg [4:0] flag = 0;
     
     always @ (posedge slow_clk) begin 
