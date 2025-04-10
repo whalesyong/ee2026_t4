@@ -59,12 +59,12 @@ module render_oled(
         end
     endgenerate
 
-    // map counter x, y to 500x500 world
-    wire [10:0]counter_x = (counter % 96) + camera_offset_x/2;
-    wire [10:0]counter_y = (counter / 96) + camera_offset_y/2;
+    wire [10:0] camera_offset_x = ( user_worm_x[0] > 30) ? user_worm_x[0] - 30 : 0; 
+    wire [10:0] camera_offset_y = ( user_worm_y[0] > 30) ? user_worm_y[0] - 30 : 0;
 
-    wire [10:0] camera_offset_x = user_worm_x[0]; // 500x500 world offset x
-    wire [10:0] camera_offset_y = user_worm_y[0]; // 500x500 world offset y
+    // map counter x, y to 500x500 world
+    wire [10:0]counter_x = (counter % 96) + camera_offset_x ;
+    wire [10:0]counter_y = (counter / 96) + camera_offset_y ;
 
     // map pixel index to 500x500 world
     wire [10:0]pixel_x = (pixel_index % 96) + camera_offset_x;

@@ -17,8 +17,8 @@ module basic_snake(
     assign debugy = potential_ypos[9:0];
 
     //note that the box location is now the top-left corner of a 5x5 box
-    localparam MAX_X = 95;
-    localparam MAX_Y = 63;
+    localparam MAX_X = 499;
+    localparam MAX_Y = 499;
     localparam BOX_SIZE = 1;  // 5x5 box (0 to 4)
 
     reg [4:0] flag = 0;
