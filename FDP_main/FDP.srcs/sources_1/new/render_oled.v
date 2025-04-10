@@ -12,8 +12,6 @@ module render_oled(
     input [7:0] enemy_size,
     input [479:0] food_x_flat,
     input [479:0] food_y_flat,
-    input [8:0] camera_offset_x, // 500 x 500 world
-    input [8:0] camera_offset_y,
     output [15:0] pixel_colour,
     output [9:0] debugx, debugy 
     );
@@ -37,8 +35,8 @@ module render_oled(
 
    // wire in_boundary;
     // reg in_user_worm;
-    reg in_enemy_worm;
-    reg in_food;
+    // reg in_enemy_worm;
+    // reg in_food;
 
 
     // pack flattened inputs into 2d registers
@@ -62,8 +60,11 @@ module render_oled(
     endgenerate
 
     // map counter x, y to 500x500 world
-    wire [10:0]counter_x = (counter % 96) + camera_offset_x;
-    wire [10:0]counter_y = (counter / 96) + camera_offset_y;
+    wire [10:0]counter_x = (counter % 96) + camera_offset_x/2;
+    wire [10:0]counter_y = (counter / 96) + camera_offset_y/2;
+
+    wire [10:0] camera_offset_x = user_worm_x[0]; // 500x500 world offset x
+    wire [10:0] camera_offset_y = user_worm_y[0]; // 500x500 world offset y
 
     // map pixel index to 500x500 world
     wire [10:0]pixel_x = (pixel_index % 96) + camera_offset_x;
@@ -149,22 +150,34 @@ module render_oled(
     
     //------------------------------------------------------------------------- REWROTE THREE ALW BLOCKS 
     // FOR 3 COMBINATIONAL LOOPS
-    wire in_boundary = (counter_x < camera_offset_x + 1) ||
-                   (counter_x > camera_offset_x + 94) ||
-                   (counter_y < camera_offset_y + 1) ||
-                   (counter_y > camera_offset_y + 62);
+    wire in_boundary = (counter_x <= 2 || counter_x >= 497 || counter_y <= 2 || counter_y >= 497) ? 1 : 0;
 
-    wire [47:0] detect_in_user_worm;
+
+    wire[47:0] detect_in_user_worm;
+    wire[47:0] detect_in_enemy_worm;
+    wire[47:0] detect_in_food;
 
     generate
-        for (i = 0; i < 48; i = i + 1)  begin : detect_in_user_worm_logic 
+        for (i = 0; i < 48; i = i + 1)  begin : detect_object 
             assign detect_in_user_worm[i] = ( i < user_size &&
                 counter_x >= user_worm_x[i] && counter_x <= user_worm_x[i] + 4 &&
                 counter_y >= user_worm_y[i] && counter_y <= user_worm_y[i] + 4 ) ? 1 : 0;
+
+            assign detect_in_enemy_worm[i] = ( i < enemy_size &&
+                counter_x >= enemy_worm_x[i] && counter_x <= enemy_worm_x[i] + 4 &&
+                counter_y >= enemy_worm_y[i] && counter_y <= enemy_worm_y[i] + 4 ) ? 1 : 0;
+                
+            assign detect_in_food[i] = (
+                counter_x >= food_x[i] && counter_x <= food_x[i] + 4 &&
+                counter_y >= food_y[i] && counter_y <= food_y[i] + 4 ) ? 1 : 0;
         end
     endgenerate
+
+    
     
     wire in_user_worm = |detect_in_user_worm;
+    wire in_enemy_worm = |detect_in_enemy_worm;
+    wire in_food = |detect_in_food;
 
     assign debugx = user_worm_x[1];
     assign debugy = user_worm_y[1];
@@ -174,8 +187,8 @@ module render_oled(
     always @(*) begin
         // Default flags
         // in_user_worm = 0;
-        in_enemy_worm = 0;
-        in_food = 0;
+        // in_enemy_worm = 0;
+        // in_food = 0;
         
         // // Check user worm segments
         // for (j = 0; j < user_size; j = j + 1) begin
@@ -185,19 +198,19 @@ module render_oled(
         // end
         
         // Check enemy worm segments
-        for (j = 0; j < enemy_size; j = j + 1) begin
-            if ((pixel_x >= enemy_worm_x[j]) && (pixel_x <= enemy_worm_x[j] + 2) &&
-                (pixel_y >= enemy_worm_y[j]) && (pixel_y <= enemy_worm_y[j] + 2))
-                in_enemy_worm = 1;
-        end
+        // for (j = 0; j < enemy_size; j = j + 1) begin
+        //     if ((pixel_x >= enemy_worm_x[j]) && (pixel_x <= enemy_worm_x[j] + 2) &&
+        //         (pixel_y >= enemy_worm_y[j]) && (pixel_y <= enemy_worm_y[j] + 2))
+        //         in_enemy_worm = 1;
+        // end
         
-        // If you have a fixed number of food items (here 48):
-        for (j = 0; j < 48; j = j + 1) begin
-            if ((pixel_x >= food_x[j]) && (pixel_x <= food_x[j] + 4) &&
-                (pixel_y >= food_y[j]) && (pixel_y <= food_y[j] + 4)) begin
-                    // in_food = 1;
-                end
-        end
+        // // If you have a fixed number of food items (here 48):
+        // for (j = 0; j < 48; j = j + 1) begin
+        //     if ((pixel_x >= food_x[j]) && (pixel_x <= food_x[j] + 4) &&
+        //         (pixel_y >= food_y[j]) && (pixel_y <= food_y[j] + 4)) begin
+        //             // in_food = 1;
+        //         end
+        // end
     end
 
     //----------------------------------------------------

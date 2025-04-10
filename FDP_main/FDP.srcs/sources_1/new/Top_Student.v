@@ -120,8 +120,7 @@ module Top_Student (    input clk,
         y_dir = y_dir_wire;
     end
     
-    wire directionEnable; 
-    assign directionEnable = (sw[15]) ? ((btnL | btnR | btnU | btnD)? 1: 0) : 1;
+    wire directionEnable = (sw[15]) ? ((btnL | btnR | btnU | btnD | btnC)? 1: 0) : 1;
     
     // inst user_worm and enemy_worm
     flexible_snake user_snake(
@@ -156,8 +155,8 @@ module Top_Student (    input clk,
 
     // update 2D array of worm positions
     always @(*) begin
-        led [15:8] = user_worm_x[1]; // for debugging
-        led [7:0]  = user_worm_y[1]; // for debugging
+        led [15:8] = user_worm_x[0]; // for debugging
+        led [7:0]  = user_worm_y[0]; // for debugging
     end
     
     // update velocity
@@ -209,6 +208,10 @@ module Top_Student (    input clk,
         else if (!btnU && !btnD && y_vel_debug != 0)  // Deceleration
             y_vel_debug <= (y_vel_debug > 0) ? y_vel_debug - 1 : y_vel_debug + 1;
         
+        if (btnC) begin
+            x_vel_debug <= 1;
+            y_vel_debug <= 1;
+        end
 
     end
 
@@ -268,8 +271,7 @@ module Top_Student (    input clk,
         .enemy_size(0), // size of enemy worm (not used)
         .food_x_flat(0), // flattened x-coordinates of food (not used)
         .food_y_flat(0), // flattened y-coordinates of food (not used)
-        .camera_offset_x(0), // camera x-offset (not used)
-        .camera_offset_y(0), // camera y-offset (not used)
+
 
         // output
         .pixel_colour(pixel_colour) // output pixel color
