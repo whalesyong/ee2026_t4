@@ -7,7 +7,7 @@ module mouse_direction(
     output reg flag // set to 1 when direction is updated
     );
 
-    parameter ANGLE_DECELERATION = 3;
+     parameter ANGLE_DECELERATION = 3;
 
     reg [11:0] mouse_x_prev;
     reg [11:0] mouse_y_prev;
@@ -21,6 +21,9 @@ module mouse_direction(
     flexible_clock clk6p25_mod (clk, 32'd8, clk6p25m);
     flexible_clock clk100hz_mod (clk, 32'd1_000_000, clk100hz);
 
+    reg [12:0] x_dir_reg;
+    reg [12:0] y_dir_reg;
+    
     // Initialize directions
     initial begin
         x_dir = 0;
@@ -39,7 +42,7 @@ module mouse_direction(
         // Copy raw deltas to processing registers
         mouse_x_delta_proc = mouse_x_delta_raw;
         mouse_y_delta_proc = mouse_y_delta_raw;
-
+        
         // update flag if there is a change in direction
         if (mouse_x_delta_proc != 0 || mouse_y_delta_proc != 0) begin
             flag <= 1;
@@ -65,7 +68,7 @@ module mouse_direction(
         if (mouse_y_delta_proc < 0) begin
             mouse_y_delta_proc = -mouse_y_delta_proc;
         end
-
+        
         // determine directions
         if ( mouse_x_delta_proc > ( 2 * mouse_y_delta_proc ) ) begin //issue
             // 0 degree direction
@@ -115,10 +118,6 @@ module mouse_direction(
                 y_dir = -y_dir;
             end
         endcase
-
-        y_dir = -y_dir; // invert y direction
-
     end
-
 
 endmodule
