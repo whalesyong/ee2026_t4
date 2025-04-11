@@ -3,6 +3,7 @@ module basic_snake(
     input slow_clk,
     input signed [12:0] x_vel, y_vel,
     input [9:0] xpos, ypos, // position of head
+    input difficulty, // 0 for normal, 1 for hard
     output reg [9:0] new_xpos, new_ypos, 
     output reg signed [12:0] new_x_vel = 0, new_y_vel = 0,
     output reg vel_changed = 0,
@@ -11,6 +12,8 @@ module basic_snake(
 );
 
     reg signed [12:0] potential_xpos, potential_ypos;
+
+    wire [4:0] difficulty_adjusted_speed = (difficulty == 1) ? 10 : 20; // smaller number means faster worm
 
 
     assign debugx = potential_xpos[9:0];
@@ -26,7 +29,7 @@ module basic_snake(
     always @ (posedge slow_clk) begin 
         pos_changed = 0;
         vel_changed = 0;
-        flag <= (flag == 15) ? 0 : flag + 1;
+        flag <= (flag == difficulty_adjusted_speed) ? 0 : flag + 1;  // smaller number means faster snake
 
         if (flag == 0) begin 
             new_x_vel = x_vel;

@@ -132,6 +132,7 @@ module Top_Student (    input clk,
         .rst(reset_user),
         .x_dir(x_vel_debug), 
         .y_dir(y_vel_debug), 
+        .difficulty(difficulty), 
         .xpos(snake_xpos), 
         .ypos(snake_ypos), 
         .directionEnable(directionEnable),
@@ -154,13 +155,13 @@ module Top_Student (    input clk,
     wire [9:0] user_worm_x [0:47];
     wire [9:0] user_worm_y [0:47];
     
-    genvar n;
-    generate
-        for (n = 0; n < 48; n = n + 1) begin : pack_user_worm_x
-            assign user_worm_x[n] = user_snake_xpos[ 10*n + 9 : 10 * n ];
-            assign user_worm_y[n] = user_snake_ypos[ 10*n + 9 : 10 * n ];
-        end
-    endgenerate
+    genvar n; // unused
+    // generate
+    //     for (n = 0; n < 48; n = n + 1) begin : pack_user_worm_x
+    //         assign user_worm_x[n] = user_snake_xpos[ 10*n + 9 : 10 * n ];
+    //         assign user_worm_y[n] = user_snake_ypos[ 10*n + 9 : 10 * n ];
+    //     end
+    // endgenerate
 
     // update 2D array of worm positions
     always @(*) begin
@@ -188,16 +189,6 @@ module Top_Student (    input clk,
         end
 
     end
-        // use mouse input for user_worm
-        // use AI for enemy_worm
-
-    // update position of worms
-
-    // update display
-
-    //TODO: for now, render the snake on the screen and in Top_student
-    // rendering should be abstracted into a separate module 
-
 
     // for debugging 
     always @ (posedge clk400hz) begin 
@@ -241,29 +232,6 @@ module Top_Student (    input clk,
     wire [9:0] enemy_head_x2 = 10'd30;
     wire [9:0] enemy_head_y2 = 10'd30;
 
-    food_and_camera food_mod (
-        .clk(clk),
-        .reset(0), // or use a proper reset
-        .userwormheadx(user_head_x),
-        .userwormheady(user_head_y),
-        .enemywormheadx0(enemy_head_x0),
-        .enemywormheady0(enemy_head_y0),
-        .enemywormheadx1(enemy_head_x1),
-        .enemywormheady1(enemy_head_y1),
-        .enemywormheadx2(enemy_head_x2),
-        .enemywormheady2(enemy_head_y2),
-        .cam_offset_x(cam_offset_x),
-        .cam_offset_y(cam_offset_y),
-        .reg_food_eaten(reg_food_eaten),
-        .reg_food_location_0(reg_food_location_0),
-        .reg_food_location_1(reg_food_location_1),
-        .reg_food_location_2(reg_food_location_2),
-        .reg_food_location_3(reg_food_location_3),
-        .reg_food_location_4(reg_food_location_4),
-        .reg_food_location_5(reg_food_location_5),
-        .reg_food_location_6(reg_food_location_6),
-        .reg_food_location_7(reg_food_location_7)
-    );
 
     // Inst render_oled
     render_oled render_oled_inst (
@@ -312,10 +280,11 @@ module Top_Student (    input clk,
       
     reg [1:0] state = START;
     reg [1:0] nextstate = START;
+    reg difficulty; // 0 for normal, 1 for hard
 
     always @ ( * ) begin
         case (state)
-            START:                      nextstate = (btnR_debounced) ? CHOOSE_DIFFICULTY_NORMAL: START;
+            START:  nextstate = (btnR_debounced) ? CHOOSE_DIFFICULTY_NORMAL: START;
 
             CHOOSE_DIFFICULTY_NORMAL:   begin
                 if (btnD_debounced) 
@@ -324,6 +293,7 @@ module Top_Student (    input clk,
                     nextstate = GAME; 
                 else 
                     nextstate = CHOOSE_DIFFICULTY_NORMAL;
+                difficulty = 0; 
             end
 
             CHOOSE_DIFFICULTY_HARD: begin
@@ -333,16 +303,16 @@ module Top_Student (    input clk,
                     nextstate = GAME; 
                 else 
                     nextstate = CHOOSE_DIFFICULTY_HARD;
+                difficulty = 1; 
 
             end
 
-            GAME:                       nextstate = GAME; // TODO: Game over logic
+            GAME:   nextstate = GAME; // TODO: Game over logic
 
         endcase
     end
 
     always @ (posedge clk or posedge sw[13]) begin
-
         if (sw[13])  // reset
             state <= START;
          

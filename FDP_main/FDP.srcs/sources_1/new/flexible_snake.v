@@ -7,6 +7,7 @@ module flexible_snake(
     input [9:0] xpos, ypos,
     input directionEnable,
     input food_eaten,
+    input difficulty, // 0 for normal, 1 for hard
     // 10/4 changeed from wire to reg
     output wire [479:0] x_worm_flat, y_worm_flat,
     output reg [7:0] size = 10, 
@@ -35,6 +36,7 @@ module flexible_snake(
         .slow_clk(slow_clk), 
         .x_vel(x_dir), 
         .y_vel(y_dir), 
+        .difficulty(difficulty), // 0 for normal, 1 for hard
         .xpos(worm_x_mem[head_index]),  // place current head position
         .ypos(worm_y_mem[head_index]),  
         .new_xpos(new_xpos_wire), 
