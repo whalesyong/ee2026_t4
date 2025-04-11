@@ -2,12 +2,12 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Wed Apr  2 09:31:38 2025
-# Process ID: 1984
-# Current directory: C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.runs/synth_1
+# Start of session at: Sat Apr 12 03:24:42 2025
+# Process ID: 27928
+# Current directory: C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.runs/synth_1
 # Command line: vivado.exe -log Top_Student.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Student.tcl
-# Log file: C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.runs/synth_1/Top_Student.vds
-# Journal file: C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.runs/synth_1\vivado.jou
+# Log file: C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.runs/synth_1/Top_Student.vds
+# Journal file: C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source Top_Student.tcl -notrace
 Command: synth_design -top Top_Student -part xc7a35tcpg236-1
@@ -15,19 +15,20 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8664 
+INFO: Helper process launched with PID 36708 
+WARNING: [Synth 8-2490] overwriting previous definition of module flexible_clock [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:273]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 385.289 ; gain = 99.281
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 368.656 ; gain = 111.496
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'Top_Student' [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:3]
-	Parameter MAX_VEL bound to: 10 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'PixelToXY' [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/pixel_converter.v:22]
+INFO: [Synth 8-6157] synthesizing module 'Top_Student' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:3]
+	Parameter MAX_VEL bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'PixelToXY' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/pixel_converter.v:22]
 	Parameter SCREEN_WIDTH bound to: 96 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'PixelToXY' (1#1) [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/pixel_converter.v:22]
-WARNING: [Synth 8-689] width (13) of port connection 'pixel_index' does not match port width (16) of module 'PixelToXY' [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:24]
-INFO: [Synth 8-6157] synthesizing module 'flexible_clock' [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:185]
-INFO: [Synth 8-6155] done synthesizing module 'flexible_clock' (2#1) [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:185]
-INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
+INFO: [Synth 8-6155] done synthesizing module 'PixelToXY' (1#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/pixel_converter.v:22]
+WARNING: [Synth 8-689] width (13) of port connection 'pixel_index' does not match port width (16) of module 'PixelToXY' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:25]
+INFO: [Synth 8-6157] synthesizing module 'flexible_clock' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:273]
+INFO: [Synth 8-6155] done synthesizing module 'flexible_clock' (2#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:273]
+INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
 	Parameter PixelCount bound to: 6144 - type: integer 
@@ -78,45 +79,1208 @@ INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/Mac/Home/Documents/G
 	Parameter SendPixel bound to: 5'b10000 
 	Parameter SpiCommandMaxWidth bound to: 40 - type: integer 
 	Parameter SpiCommandBitCountWidth bound to: 6 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:123]
-INFO: [Synth 8-226] default block is never used [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:198]
-WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:346]
-INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (3#1) [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
-WARNING: [Synth 8-350] instance 'display_mod' of module 'Oled_Display' requires 14 connections, but only 12 given [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:81]
-INFO: [Synth 8-638] synthesizing module 'MouseCtl' [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:212]
+INFO: [Synth 8-226] default block is never used [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:123]
+INFO: [Synth 8-226] default block is never used [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:198]
+WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:346]
+INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (3#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
+WARNING: [Synth 8-350] instance 'display_mod' of module 'Oled_Display' requires 14 connections, but only 12 given [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:94]
+INFO: [Synth 8-638] synthesizing module 'MouseCtl' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:212]
 	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
 	Parameter CHECK_PERIOD_MS bound to: 500 - type: integer 
 	Parameter TIMEOUT_PERIOD_MS bound to: 100 - type: integer 
-INFO: [Synth 8-3491] module 'Ps2Interface' declared at 'C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Ps2Interface.vhd:156' bound to instance 'Inst_Ps2Interface' of component 'Ps2Interface' [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:374]
-INFO: [Synth 8-638] synthesizing module 'Ps2Interface' [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Ps2Interface.vhd:184]
-INFO: [Synth 8-256] done synthesizing module 'Ps2Interface' (4#1) [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Ps2Interface.vhd:184]
-WARNING: [Synth 8-6014] Unused sequential element inc_reg was removed.  [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:455]
-WARNING: [Synth 8-6014] Unused sequential element x_inter_reg was removed.  [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:461]
-WARNING: [Synth 8-6014] Unused sequential element inc_reg was removed.  [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:519]
-WARNING: [Synth 8-6014] Unused sequential element y_inter_reg was removed.  [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:525]
-INFO: [Synth 8-256] done synthesizing module 'MouseCtl' (5#1) [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:212]
-INFO: [Synth 8-6157] synthesizing module 'mouse_direction' [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/mouse_direction.v:3]
+INFO: [Synth 8-3491] module 'Ps2Interface' declared at 'C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Ps2Interface.vhd:156' bound to instance 'Inst_Ps2Interface' of component 'Ps2Interface' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:374]
+INFO: [Synth 8-638] synthesizing module 'Ps2Interface' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Ps2Interface.vhd:184]
+INFO: [Synth 8-256] done synthesizing module 'Ps2Interface' (4#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Ps2Interface.vhd:184]
+WARNING: [Synth 8-6014] Unused sequential element inc_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:455]
+WARNING: [Synth 8-6014] Unused sequential element x_inter_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:461]
+WARNING: [Synth 8-6014] Unused sequential element inc_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:519]
+WARNING: [Synth 8-6014] Unused sequential element y_inter_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:525]
+INFO: [Synth 8-256] done synthesizing module 'MouseCtl' (5#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:212]
+INFO: [Synth 8-6157] synthesizing module 'mouse_direction' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/mouse_direction.v:3]
 	Parameter ANGLE_DECELERATION bound to: 3 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element mouse_x_delta_proc_reg was removed.  [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/mouse_direction.v:42]
-WARNING: [Synth 8-6014] Unused sequential element mouse_y_delta_proc_reg was removed.  [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/mouse_direction.v:43]
-INFO: [Synth 8-6155] done synthesizing module 'mouse_direction' (6#1) [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/mouse_direction.v:3]
-INFO: [Synth 8-6157] synthesizing module 'flexible_snake' [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:23]
-INFO: [Synth 8-6157] synthesizing module 'basic_snake' [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/basic_snake.v:2]
-	Parameter MAX_X bound to: 95 - type: integer 
-	Parameter MAX_Y bound to: 63 - type: integer 
-	Parameter BOX_SIZE bound to: 4 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'basic_snake' (7#1) [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/basic_snake.v:2]
-WARNING: [Synth 8-3848] Net new_xpos in module/entity flexible_snake does not have driver. [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:27]
-WARNING: [Synth 8-3848] Net new_ypos in module/entity flexible_snake does not have driver. [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:27]
-INFO: [Synth 8-6155] done synthesizing module 'flexible_snake' (8#1) [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:23]
-ERROR: [Synth 8-439] module 'render_oled' not found [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:157]
-ERROR: [Synth 8-6156] failed synthesizing module 'Top_Student' [C:/Mac/Home/Documents/GitHub/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:3]
+WARNING: [Synth 8-6014] Unused sequential element mouse_x_delta_raw_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/mouse_direction.v:35]
+WARNING: [Synth 8-6014] Unused sequential element mouse_y_delta_raw_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/mouse_direction.v:36]
+WARNING: [Synth 8-6014] Unused sequential element mouse_x_delta_proc_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/mouse_direction.v:42]
+WARNING: [Synth 8-6014] Unused sequential element mouse_y_delta_proc_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/mouse_direction.v:43]
+INFO: [Synth 8-6155] done synthesizing module 'mouse_direction' (6#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/mouse_direction.v:3]
+INFO: [Synth 8-6157] synthesizing module 'flexible_snake' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:3]
+	Parameter MAX_LENGTH bound to: 48 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:21]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:22]
+INFO: [Synth 8-6157] synthesizing module 'basic_snake' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/basic_snake.v:2]
+	Parameter MAX_X bound to: 494 - type: integer 
+	Parameter MAX_Y bound to: 494 - type: integer 
+	Parameter BOX_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'basic_snake' (7#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/basic_snake.v:2]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[0] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[1] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[2] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[3] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[4] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[5] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[6] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[7] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[8] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[9] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[10] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[11] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[12] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[13] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[14] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[15] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[16] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[17] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[18] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[19] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[20] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[21] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[22] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[23] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[24] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[25] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[26] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[27] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[28] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[29] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[30] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[31] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[32] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[33] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[34] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[35] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[36] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[37] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[38] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[39] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[40] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[41] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[42] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[43] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[44] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[45] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[46] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_x_mem_reg[47] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:38]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[0] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[1] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[2] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[3] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[4] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[5] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[6] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[7] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[8] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[9] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[10] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[11] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[12] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[13] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[14] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[15] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[16] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[17] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[18] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[19] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[20] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[21] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[22] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[23] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[24] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[25] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[26] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[27] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[28] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[29] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[30] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[31] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[32] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[33] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[34] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[35] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[36] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[37] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[38] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[39] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[40] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[41] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[42] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[43] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[44] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[45] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[46] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+WARNING: [Synth 8-5788] Register worm_y_mem_reg[47] in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:39]
+INFO: [Synth 8-6155] done synthesizing module 'flexible_snake' (8#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:3]
+INFO: [Synth 8-6157] synthesizing module 'render_oled' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/render_oled.v:3]
+	Parameter WHITE bound to: 16'b1111111111111111 
+	Parameter ORANGE bound to: 16'b1111110110100000 
+	Parameter BLUE bound to: 16'b0000000000011111 
+	Parameter GREEN bound to: 16'b0000011111100000 
+	Parameter RED bound to: 16'b1111100000000000 
+	Parameter PURPLE bound to: 16'b1111100000011110 
+	Parameter BLACK bound to: 16'b0000000000000000 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/render_oled.v:28]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/render_oled.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'render_oled' (9#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/render_oled.v:3]
+WARNING: [Synth 8-3848] Net seg in module/entity Top_Student does not have driver. [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:8]
+WARNING: [Synth 8-3848] Net an in module/entity Top_Student does not have driver. [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (10#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:3]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port JB[2]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[7]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[6]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[5]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[4]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[3]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[2]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[1]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[0]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port an[3]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port an[2]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port an[1]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port an[0]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[13]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[12]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[11]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[10]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[9]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[8]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[7]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[6]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[5]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[4]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[3]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[2]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[1]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 442.738 ; gain = 156.730
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 476.859 ; gain = 219.699
 ---------------------------------------------------------------------------------
-RTL Elaboration failed
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 476.859 ; gain = 219.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 476.859 ; gain = 219.699
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc]
+Finished Parsing XDC File [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_Student_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_Student_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 823.645 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 823.645 ; gain = 566.484
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 823.645 ; gain = 566.484
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 823.645 ; gain = 566.484
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "SLOW_CLOCK0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Oled_Display'
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "fsm_next_state0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Ps2Interface'
+INFO: [Synth 8-5546] ROM "reset_bit_count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "busy" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "read_data" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "load_tx_data" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ps2_clk_h" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "delay_100us_counter_enable" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "delay_20us_counter_enable" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "delay_63clk_counter_enable" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'MouseCtl'
+INFO: [Synth 8-5545] ROM "periodic_check_tick" won't be mapped to RAM because address size (26) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "timeout" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reset_periodic_check_cnt" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "new_event" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "y_dir" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "pos_changed" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[5]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[12]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[13]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[14]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[15]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[16]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[17]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[18]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[19]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[20]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[21]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[22]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[23]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[24]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[25]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[26]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[27]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[28]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[29]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[30]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[31]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[32]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[33]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[34]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[35]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[36]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[37]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[38]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[39]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[40]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[41]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[42]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[43]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[44]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[45]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[46]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[47]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "in_boundary" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 PowerUp | 00000000100000000000000000000000 |                            00000
+                   Reset | 00000000000100000000000000000000 |                            00001
+            ReleaseReset | 00000000000000000000100000000000 |                            00011
+            EnableDriver | 00000000000000000001000000000000 |                            00010
+              DisplayOff | 00000000000000000100000000000000 |                            00110
+   SetRemapDisplayFormat | 00000100000000000000000000000000 |                            00111
+            SetStartLine | 00001000000000000000000000000000 |                            00101
+               SetOffset | 10000000000000000000000000000000 |                            00100
+        SetNormalDisplay | 00000000000000000000000010000000 |                            01100
+       SetMultiplexRatio | 00000000000000000000000000100000 |                            01101
+  SetMasterConfiguration | 00000000000000000000000001000000 |                            01111
+        DisablePowerSave | 00000000000000000000000000000100 |                            01110
+          SetPhaseAdjust | 00000000000000000000000000001000 |                            01010
+         SetDisplayClock | 00000000001000000000000000000000 |                            01011
+     SetSecondPrechargeA | 00000000010000000000000000000000 |                            01001
+     SetSecondPrechargeB | 01000000000000000000000000000000 |                            01000
+     SetSecondPrechargeC | 00000010000000000000000000000000 |                            11000
+       SetPrechargeLevel | 00000001000000000000000000000000 |                            11001
+                SetVCOMH | 00000000000000010000000000000000 |                            11011
+        SetMasterCurrent | 00000000000000100000000000000000 |                            11010
+            SetContrastA | 00000000000001000000000000000000 |                            11110
+            SetContrastB | 00100000000000000000000000000000 |                            11111
+            SetContrastC | 00000000000000000000000000000001 |                            11101
+        DisableScrolling | 00000000000000000000000000000010 |                            11100
+             ClearScreen | 00000000000000000000000000010000 |                            10100
+                   VccEn | 00010000000000000000000000000000 |                            10101
+               DisplayOn | 00000000000010000000000000000000 |                            10111
+        PrepareNextFrame | 00000000000000001000000000000000 |                            10110
+           SetColAddress | 00000000000000000000010000000000 |                            10010
+           SetRowAddress | 00000000000000000000000100000000 |                            10011
+           WaitNextFrame | 00000000000000000000001000000000 |                            10001
+               SendPixel | 00000000000000000010000000000000 |                            10000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Oled_Display'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                00000000000000001 |                            00000
+            rx_down_edge |                00000000000000010 |                            00011
+                rx_clk_l |                00000000000000100 |                            00010
+                rx_clk_h |                00000000000001000 |                            00001
+         rx_error_parity |                00000000000010000 |                            00100
+           rx_data_ready |                00000000000100000 |                            00101
+          tx_force_clk_l |                00000000001000000 |                            00110
+      tx_bring_data_down |                00000000010000000 |                            00111
+          tx_release_clk |                00000000100000000 |                            01000
+ tx_first_wait_down_edge |                00000001000000000 |                            01001
+                tx_clk_l |                00000010000000000 |                            01010
+         tx_wait_up_edge |                00000100000000000 |                            01011
+tx_wait_up_edge_before_ack |                00001000000000000 |                            01101
+             tx_wait_ack |                00010000000000000 |                            01110
+         tx_received_ack |                00100000000000000 |                            01111
+         tx_error_no_ack |                01000000000000000 |                            10000
+                tx_clk_h |                10000000000000000 |                            01100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Ps2Interface'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   reset | 0000000000000000000000000000000000001 |                           000000
+          reset_wait_ack | 0000000000000000000000000000000000010 |                           000001
+reset_wait_bat_completion | 0000000000000000000000000000000000100 |                           000010
+           reset_wait_id | 0000000000000000000000000000000001000 |                           000011
+reset_set_sample_rate_200 | 0000000000000000000000000000000010000 |                           000100
+reset_set_sample_rate_200_wait_ack | 0000000000000000000000000000000100000 |                           000101
+reset_send_sample_rate_200 | 0000000000000000000000000000001000000 |                           000110
+reset_send_sample_rate_200_wait_ack | 0000000000000000000000000000010000000 |                           000111
+reset_set_sample_rate_100 | 0000000000000000000000000000100000000 |                           001000
+reset_set_sample_rate_100_wait_ack | 0000000000000000000000000001000000000 |                           001001
+reset_send_sample_rate_100 | 0000000000000000000000000010000000000 |                           001010
+reset_send_sample_rate_100_wait_ack | 0000000000000000000000000100000000000 |                           001011
+reset_set_sample_rate_80 | 0000000000000000000000001000000000000 |                           001100
+reset_set_sample_rate_80_wait_ack | 0000000000000000000000010000000000000 |                           001101
+reset_send_sample_rate_80 | 0000000000000000000000100000000000000 |                           001110
+reset_send_sample_rate_80_wait_ack | 0000000000000000000001000000000000000 |                           001111
+           reset_read_id | 0000000000000000000010000000000000000 |                           010000
+  reset_read_id_wait_ack | 0000000000000000000100000000000000000 |                           010001
+   reset_read_id_wait_id | 0000000000000000001000000000000000000 |                           010010
+    reset_set_resolution | 0000000000000000010000000000000000000 |                           010011
+reset_set_resolution_wait_ack | 0000000000000000100000000000000000000 |                           010100
+   reset_send_resolution | 0000000000000001000000000000000000000 |                           010101
+reset_send_resolution_wait_ack | 0000000000000010000000000000000000000 |                           010110
+reset_set_sample_rate_40 | 0000000000000100000000000000000000000 |                           010111
+reset_set_sample_rate_40_wait_ack | 0000000000001000000000000000000000000 |                           011000
+reset_send_sample_rate_40 | 0000000000010000000000000000000000000 |                           011001
+reset_send_sample_rate_40_wait_ack | 0000000000100000000000000000000000000 |                           011010
+  reset_enable_reporting | 0000000001000000000000000000000000000 |                           011011
+reset_enable_reporting_wait_ack | 0000000010000000000000000000000000000 |                           011100
+             read_byte_1 | 0000000100000000000000000000000000000 |                           011101
+             read_byte_2 | 0000001000000000000000000000000000000 |                           011110
+             read_byte_3 | 0000010000000000000000000000000000000 |                           011111
+             read_byte_4 | 0000100000000000000000000000000000000 |                           100000
+          mark_new_event | 0001000000000000000000000000000000000 |                           100100
+           check_read_id | 0010000000000000000000000000000000000 |                           100001
+  check_read_id_wait_ack | 0100000000000000000000000000000000000 |                           100010
+   check_read_id_wait_id | 1000000000000000000000000000000000000 |                           100011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'MouseCtl'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 823.645 ; gain = 566.484
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------------+------------+----------+
+|      |RTL Partition        |Replication |Instances |
++------+---------------------+------------+----------+
+|1     |flexible_snake__GBM0 |           1|     24525|
+|2     |flexible_snake__GBM1 |           1|     12458|
+|3     |flexible_snake__GBM2 |           1|     17789|
+|4     |flexible_snake__GBM3 |           1|      7979|
+|5     |flexible_snake__GBM4 |           1|     10172|
+|6     |flexible_snake__GBM5 |           1|     15266|
+|7     |render_oled__GB0     |           1|     21516|
+|8     |render_oled__GB1     |           1|     20428|
+|9     |Top_Student__GC0     |           1|      8928|
++------+---------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 96    
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     26 Bit       Adders := 1     
+	   2 Input     24 Bit       Adders := 1     
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input     13 Bit       Adders := 14    
+	   3 Input     13 Bit       Adders := 2     
+	   2 Input     12 Bit       Adders := 4     
+	   2 Input     11 Bit       Adders := 293   
+	   2 Input      8 Bit       Adders := 5     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 3     
++---Registers : 
+	               40 Bit    Registers := 1     
+	               26 Bit    Registers := 1     
+	               24 Bit    Registers := 1     
+	               17 Bit    Registers := 1     
+	               13 Bit    Registers := 14    
+	               12 Bit    Registers := 8     
+	               11 Bit    Registers := 2     
+	               10 Bit    Registers := 196   
+	                8 Bit    Registers := 8     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 4     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 50    
++---RAMs : 
+	              96K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 3     
+	  37 Input     37 Bit        Muxes := 1     
+	   2 Input     37 Bit        Muxes := 69    
+	   2 Input     32 Bit        Muxes := 4     
+	  32 Input     32 Bit        Muxes := 1     
+	   2 Input     26 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 1     
+	  32 Input     20 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 19    
+	  17 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   5 Input     16 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 30    
+	   4 Input     13 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 10    
+	   2 Input     11 Bit        Muxes := 3     
+	   2 Input     10 Bit        Muxes := 200   
+	   2 Input      9 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 2     
+	  37 Input      8 Bit        Muxes := 3     
+	  32 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 2     
+	   5 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 5     
+	  32 Input      5 Bit        Muxes := 1     
+	  37 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 133   
+	  17 Input      1 Bit        Muxes := 4     
+	  37 Input      1 Bit        Muxes := 20    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Top_Student 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     13 Bit       Adders := 4     
++---Muxes : 
+	   2 Input     13 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module basic_snake 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     13 Bit       Adders := 4     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               13 Bit    Registers := 4     
+	               10 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     13 Bit        Muxes := 12    
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+Module flexible_snake 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 48    
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	               13 Bit    Registers := 2     
+	               10 Bit    Registers := 96    
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 100   
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 48    
+Module flexible_clock__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module flexible_clock__2 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module flexible_clock__3 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module flexible_clock__4 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module render_oled 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 292   
++---Registers : 
+	                1 Bit    Registers := 1     
++---RAMs : 
+	              96K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   5 Input     16 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 1     
+Module flexible_clock__6 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module flexible_clock__7 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module flexible_clock 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module Oled_Display 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	               40 Bit    Registers := 1     
+	               17 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 3     
+	  32 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	  32 Input     20 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 1     
+	  32 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	  32 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module Ps2Interface 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 3     
++---Registers : 
+	               11 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 17    
++---Muxes : 
+	  17 Input     17 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 18    
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	  17 Input      1 Bit        Muxes := 4     
+Module MouseCtl 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     26 Bit       Adders := 1     
+	   2 Input     24 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 4     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               26 Bit    Registers := 1     
+	               24 Bit    Registers := 1     
+	               12 Bit    Registers := 6     
+	                8 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 17    
++---Muxes : 
+	  37 Input     37 Bit        Muxes := 1     
+	   2 Input     37 Bit        Muxes := 69    
+	   2 Input     26 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 10    
+	   2 Input      9 Bit        Muxes := 2     
+	  37 Input      8 Bit        Muxes := 3     
+	  37 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	  37 Input      1 Bit        Muxes := 20    
+Module flexible_clock__5 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mouse_direction 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     13 Bit       Adders := 2     
+	   2 Input     13 Bit       Adders := 2     
++---Registers : 
+	               13 Bit    Registers := 2     
+	               12 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     13 Bit        Muxes := 2     
+	   4 Input     13 Bit        Muxes := 2     
+	   5 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element clk_mod25m/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:279]
+INFO: [Synth 8-5545] ROM "clk_mod_6p25m/SLOW_CLOCK0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clk_mod_400hz/SLOW_CLOCK0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "periodic_check_tick" won't be mapped to RAM because address size (26) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "timeout" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "clk100hz_mod/SLOW_CLOCK0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clk_mod_400hz/SLOW_CLOCK0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clk_mod_6p25m/SLOW_CLOCK0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-3331] design Top_Student has unconnected port JB[2]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port led[14]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port led[13]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port led[12]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port led[11]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port led[10]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[7]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[6]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[5]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[4]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[3]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[2]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[1]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[0]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port an[3]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port an[2]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port an[1]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port an[0]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[13]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[12]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[11]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[10]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[9]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[8]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[7]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[6]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[5]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[4]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[3]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[2]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[1]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[0]
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/x_max_reg[0]' (FDRE) to 'i_0/mouse/x_max_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/x_max_reg[1]' (FDRE) to 'i_0/mouse/x_max_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/x_max_reg[2]' (FDRE) to 'i_0/mouse/x_max_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/x_max_reg[3]' (FDRE) to 'i_0/mouse/x_max_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/x_max_reg[4]' (FDRE) to 'i_0/mouse/x_max_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/x_max_reg[5]' (FDRE) to 'i_0/mouse/x_max_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/x_max_reg[6]' (FDSE) to 'i_0/mouse/x_max_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/x_max_reg[7]' (FDSE) to 'i_0/mouse/x_max_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/x_max_reg[8]' (FDSE) to 'i_0/mouse/x_max_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/x_max_reg[9]' (FDSE) to 'i_0/mouse/y_max_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/x_max_reg[10]' (FDRE) to 'i_0/mouse/x_max_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/x_max_reg[11]' (FDRE) to 'i_0/mouse/y_max_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/y_max_reg[0]' (FDRE) to 'i_0/mouse/y_max_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/y_max_reg[1]' (FDRE) to 'i_0/mouse/y_max_reg[2]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/y_max_reg[2]' (FDRE) to 'i_0/mouse/y_max_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/y_max_reg[3]' (FDRE) to 'i_0/mouse/y_max_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/y_max_reg[4]' (FDRE) to 'i_0/mouse/y_max_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/y_max_reg[5]' (FDRE) to 'i_0/mouse/y_max_reg[6]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/y_max_reg[6]' (FDRE) to 'i_0/mouse/y_max_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/y_max_reg[7]' (FDSE) to 'i_0/mouse/y_max_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/y_max_reg[8]' (FDRE) to 'i_0/mouse/y_max_reg[10]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse/y_max_reg[10]' (FDRE) to 'i_0/mouse/y_max_reg[11]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\mouse/y_max_reg[11] )
+INFO: [Synth 8-3886] merging instance 'i_0/mouse_dir_mod/y_dir_reg[3]' (FD) to 'i_0/mouse_dir_mod/y_dir_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse_dir_mod/y_dir_reg[4]' (FD) to 'i_0/mouse_dir_mod/y_dir_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse_dir_mod/y_dir_reg[5]' (FD) to 'i_0/mouse_dir_mod/y_dir_reg[6]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse_dir_mod/y_dir_reg[6]' (FD) to 'i_0/mouse_dir_mod/y_dir_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse_dir_mod/y_dir_reg[7]' (FD) to 'i_0/mouse_dir_mod/y_dir_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse_dir_mod/y_dir_reg[8]' (FD) to 'i_0/mouse_dir_mod/y_dir_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse_dir_mod/y_dir_reg[9]' (FD) to 'i_0/mouse_dir_mod/y_dir_reg[10]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse_dir_mod/y_dir_reg[10]' (FD) to 'i_0/mouse_dir_mod/y_dir_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse_dir_mod/y_dir_reg[11]' (FD) to 'i_0/mouse_dir_mod/y_dir_reg[12]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse_dir_mod/x_dir_reg[3]' (FD) to 'i_0/mouse_dir_mod/x_dir_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse_dir_mod/x_dir_reg[4]' (FD) to 'i_0/mouse_dir_mod/x_dir_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse_dir_mod/x_dir_reg[5]' (FD) to 'i_0/mouse_dir_mod/x_dir_reg[6]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse_dir_mod/x_dir_reg[6]' (FD) to 'i_0/mouse_dir_mod/x_dir_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse_dir_mod/x_dir_reg[7]' (FD) to 'i_0/mouse_dir_mod/x_dir_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse_dir_mod/x_dir_reg[8]' (FD) to 'i_0/mouse_dir_mod/x_dir_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse_dir_mod/x_dir_reg[9]' (FD) to 'i_0/mouse_dir_mod/x_dir_reg[10]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse_dir_mod/x_dir_reg[10]' (FD) to 'i_0/mouse_dir_mod/x_dir_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/mouse_dir_mod/x_dir_reg[11]' (FD) to 'i_0/mouse_dir_mod/x_dir_reg[12]'
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[47]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[46]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[45]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[44]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[43]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[42]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[41]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[40]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[39]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[38]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[37]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[36]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[35]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[34]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[33]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[32]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[31]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[30]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[29]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[28]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[27]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[26]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[25]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[24]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[23]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[22]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[21]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[20]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[19]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[18]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[17]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[16]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[15]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[14]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[13]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[12]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[5]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Common 17-14] Message 'Synth 8-5545' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[0]' (FD) to 'snake_mod/new_ypos_reg[0]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[1]' (FD) to 'snake_mod/new_ypos_reg[1]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[2]' (FD) to 'snake_mod/new_ypos_reg[2]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[3]' (FD) to 'snake_mod/new_ypos_reg[3]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[4]' (FD) to 'snake_mod/new_ypos_reg[4]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[5]' (FD) to 'snake_mod/new_ypos_reg[5]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[6]' (FD) to 'snake_mod/new_ypos_reg[6]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[7]' (FD) to 'snake_mod/new_ypos_reg[7]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[8]' (FD) to 'snake_mod/new_ypos_reg[8]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[9]' (FD) to 'snake_mod/new_ypos_reg[9]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[0]' (FD) to 'snake_mod/new_xpos_reg[0]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[1]' (FD) to 'snake_mod/new_xpos_reg[1]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[2]' (FD) to 'snake_mod/new_xpos_reg[2]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[3]' (FD) to 'snake_mod/new_xpos_reg[3]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[4]' (FD) to 'snake_mod/new_xpos_reg[4]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[5]' (FD) to 'snake_mod/new_xpos_reg[5]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[6]' (FD) to 'snake_mod/new_xpos_reg[6]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[7]' (FD) to 'snake_mod/new_xpos_reg[7]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[8]' (FD) to 'snake_mod/new_xpos_reg[8]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[9]' (FD) to 'snake_mod/new_xpos_reg[9]'
+WARNING: [Synth 8-6014] Unused sequential element clk_buffer_inst/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:279]
+WARNING: [Synth 8-6014] Unused sequential element clk_slow_inst/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:279]
+WARNING: [Synth 8-6014] Unused sequential element clk_mod25m/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:279]
+WARNING: [Synth 8-3463] Infeasible ramstyle = block set for RAM pixel_colour_cache_1_reg,trying to implement using LUTRAM
+WARNING: [Synth 8-3463] Infeasible ramstyle = block set for RAM pixel_colour_cache_1_reg,trying to implement using LUTRAM
+WARNING: [Synth 8-3463] Infeasible ramstyle = block set for RAM pixel_colour_cache_0_reg,trying to implement using LUTRAM
+WARNING: [Synth 8-3463] Infeasible ramstyle = block set for RAM pixel_colour_cache_0_reg,trying to implement using LUTRAM
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:59 . Memory (MB): peak = 823.645 ; gain = 566.484
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++-----------------+--------------------------+-----------+----------------------+-------------------------------+
+|Module Name      | RTL Object               | Inference | Size (Depth x Width) | Primitives                    | 
++-----------------+--------------------------+-----------+----------------------+-------------------------------+
+|render_oled__GB0 | pixel_colour_cache_1_reg | Implied   | 8 K x 16             | RAM64X1D x 96  RAM64M x 480   | 
+|render_oled__GB0 | pixel_colour_cache_0_reg | Implied   | 8 K x 16             | RAM64X1D x 96  RAM64M x 480   | 
++-----------------+--------------------------+-----------+----------------------+-------------------------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------------+------------+----------+
+|      |RTL Partition        |Replication |Instances |
++------+---------------------+------------+----------+
+|1     |flexible_snake__GBM0 |           2|     24553|
+|2     |flexible_snake__GBM1 |           2|     12636|
+|3     |flexible_snake__GBM2 |           2|     16595|
+|4     |flexible_snake__GBM3 |           2|      5196|
+|5     |flexible_snake__GBM4 |           2|      6625|
+|6     |flexible_snake__GBM5 |           2|      8471|
+|7     |render_oled__GB0     |           1|     23660|
+|8     |render_oled__GB1     |           1|     18674|
+|9     |Top_Student__GC0     |           1|      2791|
++------+---------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:46 ; elapsed = 00:01:07 . Memory (MB): peak = 843.652 ; gain = 586.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[12]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[11]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[10]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[9]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[8]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[7]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[6]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[5]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[4]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[3]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[2]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[1]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[0]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[12]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[11]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[10]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[9]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[8]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[7]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[6]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[5]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[4]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[3]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[2]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[1]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[0]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[12]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[11]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[10]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[9]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[8]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[7]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[6]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[5]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[4]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[3]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[2]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[1]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[0]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[12]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[11]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[10]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[9]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[8]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[7]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[6]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[5]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[4]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[3]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[2]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[1]) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[0]) is unused and will be removed from module basic_snake__1.
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (user_snakei_2/\worm_y_mem_reg[0][1]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (user_snakei_2/\worm_y_mem_reg[0][2]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (user_snakei_2/\worm_y_mem_reg[0][3]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (user_snakei_2/\worm_y_mem_reg[0][4]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (enemy_snakei_8/\worm_y_mem_reg[0][1]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (enemy_snakei_8/\worm_y_mem_reg[0][4]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (enemy_snakei_8/\worm_y_mem_reg[0][5]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (user_snakei_1/\worm_x_mem_reg[0][1]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (user_snakei_1/\worm_x_mem_reg[0][2]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (user_snakei_1/\worm_x_mem_reg[0][3]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (user_snakei_1/\worm_x_mem_reg[0][4]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (enemy_snakei_7/\worm_x_mem_reg[0][1]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (enemy_snakei_7/\worm_x_mem_reg[0][4]_LDC )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (enemy_snakei_7/\worm_x_mem_reg[0][5]_LDC )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (flexible_snake__GBM4:/i_0/\size_reg[0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (flexible_snake__GBM4:/i_0/\size_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (flexible_snake__GBM4:/i_0/\size_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (flexible_snake__GBM4:/i_0/\size_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (flexible_snake__GBM4:/i_0/\size_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (flexible_snake__GBM4:/i_0/\size_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (flexible_snake__GBM4:/i_0/\size_reg[7] )
+WARNING: [Synth 8-3332] Sequential element (vel_changed_reg) is unused and will be removed from module basic_snake__1.
+WARNING: [Synth 8-3332] Sequential element (vel_changed_reg) is unused and will be removed from module basic_snake.
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:01:12 . Memory (MB): peak = 882.758 ; gain = 625.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++-----------------+--------------------------+-----------+----------------------+-------------------------------+
+|Module Name      | RTL Object               | Inference | Size (Depth x Width) | Primitives                    | 
++-----------------+--------------------------+-----------+----------------------+-------------------------------+
+|render_oled__GB0 | pixel_colour_cache_1_reg | Implied   | 8 K x 16             | RAM64X1D x 96  RAM64M x 480   | 
+|render_oled__GB0 | pixel_colour_cache_0_reg | Implied   | 8 K x 16             | RAM64X1D x 96  RAM64M x 480   | 
++-----------------+--------------------------+-----------+----------------------+-------------------------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+------------------------+------------+----------+
+|      |RTL Partition           |Replication |Instances |
++------+------------------------+------------+----------+
+|1     |flexible_snake__GBM0    |           1|      6255|
+|2     |flexible_snake__GBM1    |           1|      2028|
+|3     |flexible_snake__GBM2    |           1|      7017|
+|4     |flexible_snake__GBM3    |           2|      4509|
+|5     |flexible_snake__GBM4    |           2|      1963|
+|6     |flexible_snake__GBM5    |           1|      5746|
+|7     |render_oled__GB0        |           1|      8401|
+|8     |render_oled__GB1        |           1|      2708|
+|9     |Top_Student__GC0        |           1|      2791|
+|10    |flexible_snake__GBM5__1 |           1|      5758|
+|11    |flexible_snake__GBM1__1 |           1|      2125|
+|12    |flexible_snake__GBM0__1 |           1|      6352|
+|13    |flexible_snake__GBM2__1 |           1|      7017|
++------+------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:54 ; elapsed = 00:01:15 . Memory (MB): peak = 906.895 ; gain = 649.734
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5365] Flop mouse/Inst_Ps2Interface/ps2_clk_h_reg is being inverted and renamed to mouse/Inst_Ps2Interface/ps2_clk_h_reg_inv.
+INFO: [Synth 8-5365] Flop mouse/Inst_Ps2Interface/ps2_data_h_reg is being inverted and renamed to mouse/Inst_Ps2Interface/ps2_data_h_reg_inv.
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:55 ; elapsed = 00:01:17 . Memory (MB): peak = 906.895 ; gain = 649.734
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:56 ; elapsed = 00:01:17 . Memory (MB): peak = 906.895 ; gain = 649.734
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:56 ; elapsed = 00:01:18 . Memory (MB): peak = 906.895 ; gain = 649.734
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:56 ; elapsed = 00:01:18 . Memory (MB): peak = 906.895 ; gain = 649.734
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:57 ; elapsed = 00:01:18 . Memory (MB): peak = 906.895 ; gain = 649.734
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:57 ; elapsed = 00:01:18 . Memory (MB): peak = 906.895 ; gain = 649.734
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     5|
+|2     |CARRY4   |  1382|
+|3     |LUT1     |   601|
+|4     |LUT2     |  2674|
+|5     |LUT3     |  1156|
+|6     |LUT4     |  1394|
+|7     |LUT5     |  1173|
+|8     |LUT6     |  7667|
+|9     |MUXF7    |  3024|
+|10    |MUXF8    |  1480|
+|11    |RAM64M   |   960|
+|12    |RAM64X1D |   192|
+|13    |FDCE     |  1277|
+|14    |FDE_1    |    32|
+|15    |FDPE     |   677|
+|16    |FDRE     |   650|
+|17    |IBUF     |     8|
+|18    |IOBUF    |     2|
+|19    |OBUF     |    18|
+|20    |OBUFT    |    18|
++------+---------+------+
+
+Report Instance Areas: 
++------+------------------------+-----------------+------+
+|      |Instance                |Module           |Cells |
++------+------------------------+-----------------+------+
+|1     |top                     |                 | 24390|
+|2     |  clk_mod_400hz         |flexible_clock   |    54|
+|3     |  clk_mod_6p25m         |flexible_clock_0 |    51|
+|4     |  display_mod           |Oled_Display     |   495|
+|5     |  enemy_snake           |flexible_snake   |  7648|
+|6     |    snake_mod           |basic_snake_4    |   160|
+|7     |  mouse                 |MouseCtl         |   816|
+|8     |    Inst_Ps2Interface   |Ps2Interface     |   284|
+|9     |  mouse_dir_mod         |mouse_direction  |   125|
+|10    |    clk100hz_mod        |flexible_clock_3 |    54|
+|11    |  render_oled_inst      |render_oled      |  4151|
+|12    |    clk_slow_inst_6p25m |flexible_clock_2 |    51|
+|13    |  user_snake            |flexible_snake_1 |  7702|
+|14    |    snake_mod           |basic_snake      |   160|
++------+------------------------+-----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:57 ; elapsed = 00:01:18 . Memory (MB): peak = 906.895 ; gain = 649.734
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 94 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:48 ; elapsed = 00:01:12 . Memory (MB): peak = 906.895 ; gain = 302.949
+Synthesis Optimization Complete : Time (s): cpu = 00:00:57 ; elapsed = 00:01:19 . Memory (MB): peak = 906.895 ; gain = 649.734
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 7080 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1186 instances were transformed.
+  FDE_1 => FDRE (inverted pins: C): 32 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 960 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 192 instances
+
 INFO: [Common 17-83] Releasing license: Synthesis
-22 Infos, 11 Warnings, 0 Critical Warnings and 3 Errors encountered.
-synth_design failed
-ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
-INFO: [Common 17-206] Exiting Vivado at Wed Apr  2 09:31:54 2025...
+303 Infos, 231 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:01 ; elapsed = 00:01:25 . Memory (MB): peak = 906.895 ; gain = 662.383
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.runs/synth_1/Top_Student.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Top_Student_utilization_synth.rpt -pb Top_Student_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.193 . Memory (MB): peak = 906.895 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Apr 12 03:26:12 2025...

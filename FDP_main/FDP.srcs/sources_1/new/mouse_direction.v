@@ -16,9 +16,8 @@ module mouse_direction(
     reg signed [12:0] mouse_x_delta_proc;   // Used in second always block
     reg signed [12:0] mouse_y_delta_proc;   // Used in second always block
     reg [1:0] quadrant; 
-    wire clk6p25m;
+    
     wire clk100hz;
-    flexible_clock clk6p25_mod (clk, 32'd8, clk6p25m);
     flexible_clock clk100hz_mod (clk, 32'd1_000_000, clk100hz);
 
     reg [12:0] x_dir_reg;
