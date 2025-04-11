@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sat Apr  5 18:00:20 2025
-# Process ID: 1344
+# Start of session at: Fri Apr 11 09:48:34 2025
+# Process ID: 15788
 # Current directory: C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.runs/synth_1
 # Command line: vivado.exe -log Top_Student.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Student.tcl
 # Log file: C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.runs/synth_1/Top_Student.vds
@@ -15,18 +15,20 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 26448 
+INFO: Helper process launched with PID 25468 
+WARNING: [Synth 8-2254] instance name 'frame_rate' matches net/port name [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/menu_screen.v:12]
+WARNING: [Synth 8-2142] illegal initial value of input port menu_selection for module menu_screen ignored [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/menu_screen.v:5]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 387.984 ; gain = 101.527
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 399.344 ; gain = 113.082
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Top_Student' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:3]
 	Parameter MAX_VEL bound to: 5 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'PixelToXY' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/pixel_converter.v:22]
 	Parameter SCREEN_WIDTH bound to: 96 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'PixelToXY' (1#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/pixel_converter.v:22]
-WARNING: [Synth 8-689] width (13) of port connection 'pixel_index' does not match port width (16) of module 'PixelToXY' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:23]
-INFO: [Synth 8-6157] synthesizing module 'flexible_clock' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:264]
-INFO: [Synth 8-6155] done synthesizing module 'flexible_clock' (2#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:264]
+WARNING: [Synth 8-689] width (13) of port connection 'pixel_index' does not match port width (16) of module 'PixelToXY' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:25]
+INFO: [Synth 8-6157] synthesizing module 'flexible_clock' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:312]
+INFO: [Synth 8-6155] done synthesizing module 'flexible_clock' (2#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:312]
 INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
@@ -82,7 +84,7 @@ INFO: [Synth 8-226] default block is never used [C:/Users/Lawrence/Desktop/ee202
 INFO: [Synth 8-226] default block is never used [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:198]
 WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:346]
 INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (3#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
-WARNING: [Synth 8-350] instance 'display_mod' of module 'Oled_Display' requires 14 connections, but only 12 given [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:85]
+WARNING: [Synth 8-350] instance 'display_mod' of module 'Oled_Display' requires 14 connections, but only 12 given [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:87]
 INFO: [Synth 8-638] synthesizing module 'MouseCtl' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:212]
 	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
 	Parameter CHECK_PERIOD_MS bound to: 500 - type: integer 
@@ -95,6 +97,16 @@ WARNING: [Synth 8-6014] Unused sequential element x_inter_reg was removed.  [C:/
 WARNING: [Synth 8-6014] Unused sequential element inc_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:519]
 WARNING: [Synth 8-6014] Unused sequential element y_inter_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:525]
 INFO: [Synth 8-256] done synthesizing module 'MouseCtl' (5#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:212]
+INFO: [Synth 8-6157] synthesizing module 'flexible_snake' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:3]
+	Parameter MAX_LENGTH bound to: 48 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:21]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:22]
+INFO: [Synth 8-6157] synthesizing module 'basic_snake' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/basic_snake.v:2]
+	Parameter MAX_X bound to: 499 - type: integer 
+	Parameter MAX_Y bound to: 499 - type: integer 
+	Parameter BOX_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'basic_snake' (6#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/basic_snake.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'flexible_snake' (7#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:3]
 INFO: [Synth 8-6157] synthesizing module 'food_and_camera' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/test_food_camera.v:3]
 	Parameter SCREEN_WIDTH bound to: 96 - type: integer 
 	Parameter SCREEN_HEIGHT bound to: 64 - type: integer 
@@ -116,122 +128,48 @@ WARNING: [Synth 8-5788] Register reg_food_location_6_reg in module food_and_came
 WARNING: [Synth 8-5788] Register reg_food_location_7_reg in module food_and_camera is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/test_food_camera.v:81]
 WARNING: [Synth 8-5788] Register cam_offset_x_reg in module food_and_camera is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/test_food_camera.v:84]
 WARNING: [Synth 8-5788] Register cam_offset_y_reg in module food_and_camera is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/test_food_camera.v:85]
-INFO: [Synth 8-6155] done synthesizing module 'food_and_camera' (6#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/test_food_camera.v:3]
-INFO: [Synth 8-6157] synthesizing module 'flexible_snake' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:3]
-	Parameter MAX_LENGTH bound to: 48 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'basic_snake' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/basic_snake.v:2]
-	Parameter MAX_X bound to: 95 - type: integer 
-	Parameter MAX_Y bound to: 63 - type: integer 
-	Parameter BOX_SIZE bound to: 4 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'basic_snake' (7#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/basic_snake.v:2]
-WARNING: [Synth 8-324] index 48 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 48 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 49 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 48 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 49 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 48 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 50 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 49 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 50 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 49 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 51 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 50 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 51 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 50 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 52 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 51 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 52 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 51 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 53 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 52 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 53 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 52 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 54 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 53 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 54 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 53 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 55 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 54 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 55 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 54 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 56 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 55 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 56 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 55 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 57 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 56 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 57 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 56 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 58 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 57 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 58 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 57 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 59 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 58 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 59 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 58 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 60 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 59 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 60 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 59 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 61 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 60 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 61 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 60 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 62 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 61 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 62 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 61 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 63 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 62 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 63 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 62 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 64 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 63 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 64 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 63 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 65 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 64 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 65 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 64 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 66 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 65 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 66 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 65 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 67 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 66 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 67 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 66 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 68 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 67 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 68 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 67 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 69 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 68 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 69 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 68 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 70 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 69 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 70 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 69 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 71 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 70 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 71 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 70 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 72 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 71 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 72 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 71 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:61]
-WARNING: [Synth 8-324] index 73 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-WARNING: [Synth 8-324] index 72 out of range [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:60]
-INFO: [Common 17-14] Message 'Synth 8-324' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-WARNING: [Synth 8-5788] Register new_x_vel_reg in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:55]
-WARNING: [Synth 8-5788] Register new_y_vel_reg in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:56]
-WARNING: [Synth 8-5788] Register vel_changed_reg in module flexible_snake is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'flexible_snake' (8#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'food_and_camera' (8#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/test_food_camera.v:3]
+INFO: [Synth 8-6157] synthesizing module 'render_oled' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/render_oled.v:3]
+	Parameter WHITE bound to: 16'b1111111111111111 
+	Parameter ORANGE bound to: 16'b1111110110100000 
+	Parameter BLUE bound to: 16'b0000000000011111 
+	Parameter GREEN bound to: 16'b0000011111100000 
+	Parameter RED bound to: 16'b1111100000000000 
+	Parameter PURPLE bound to: 16'b1111100000011110 
+	Parameter BLACK bound to: 16'b0000000000000000 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/render_oled.v:28]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/render_oled.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'render_oled' (9#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/render_oled.v:3]
+INFO: [Synth 8-6157] synthesizing module 'menu_screen' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/menu_screen.v:3]
+	Parameter picture_total_count bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'menu_screen' (10#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/menu_screen.v:3]
+WARNING: [Synth 8-350] instance 'menu_screen_inst' of module 'menu_screen' requires 4 connections, but only 3 given [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:287]
 WARNING: [Synth 8-3848] Net seg in module/entity Top_Student does not have driver. [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:8]
 WARNING: [Synth 8-3848] Net an in module/entity Top_Student does not have driver. [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:9]
-INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (9#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (11#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:3]
+WARNING: [Synth 8-3331] design menu_screen has unconnected port menu_selection[2]
+WARNING: [Synth 8-3331] design menu_screen has unconnected port menu_selection[1]
+WARNING: [Synth 8-3331] design menu_screen has unconnected port menu_selection[0]
+WARNING: [Synth 8-3331] design flexible_snake has unconnected port xpos[9]
+WARNING: [Synth 8-3331] design flexible_snake has unconnected port xpos[8]
+WARNING: [Synth 8-3331] design flexible_snake has unconnected port xpos[7]
+WARNING: [Synth 8-3331] design flexible_snake has unconnected port xpos[6]
+WARNING: [Synth 8-3331] design flexible_snake has unconnected port xpos[5]
+WARNING: [Synth 8-3331] design flexible_snake has unconnected port xpos[4]
+WARNING: [Synth 8-3331] design flexible_snake has unconnected port xpos[3]
+WARNING: [Synth 8-3331] design flexible_snake has unconnected port xpos[2]
+WARNING: [Synth 8-3331] design flexible_snake has unconnected port xpos[1]
+WARNING: [Synth 8-3331] design flexible_snake has unconnected port xpos[0]
+WARNING: [Synth 8-3331] design flexible_snake has unconnected port ypos[9]
+WARNING: [Synth 8-3331] design flexible_snake has unconnected port ypos[8]
+WARNING: [Synth 8-3331] design flexible_snake has unconnected port ypos[7]
+WARNING: [Synth 8-3331] design flexible_snake has unconnected port ypos[6]
+WARNING: [Synth 8-3331] design flexible_snake has unconnected port ypos[5]
+WARNING: [Synth 8-3331] design flexible_snake has unconnected port ypos[4]
+WARNING: [Synth 8-3331] design flexible_snake has unconnected port ypos[3]
+WARNING: [Synth 8-3331] design flexible_snake has unconnected port ypos[2]
+WARNING: [Synth 8-3331] design flexible_snake has unconnected port ypos[1]
+WARNING: [Synth 8-3331] design flexible_snake has unconnected port ypos[0]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port JB[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[7]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[6]
@@ -245,8 +183,6 @@ WARNING: [Synth 8-3331] design Top_Student has unconnected port an[3]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port an[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port an[1]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port an[0]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port btnC
-WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[15]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[14]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[13]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[12]
@@ -263,7 +199,7 @@ WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[1]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 770.984 ; gain = 484.527
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2229.691 ; gain = 1943.430
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -276,10 +212,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 770.984 ; gain = 484.527
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2229.691 ; gain = 1943.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 770.984 ; gain = 484.527
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2229.691 ; gain = 1943.430
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -297,22 +233,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 828.770 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 18870.637 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 828.770 ; gain = 542.312
+Finished Constraint Validation : Time (s): cpu = 00:06:17 ; elapsed = 00:06:47 . Memory (MB): peak = 18870.637 ; gain = 18584.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 828.770 ; gain = 542.312
+Finished Loading Part and Timing Information : Time (s): cpu = 00:06:17 ; elapsed = 00:06:47 . Memory (MB): peak = 18870.637 ; gain = 18584.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 828.770 ; gain = 542.312
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:06:17 ; elapsed = 00:06:47 . Memory (MB): peak = 18870.637 ; gain = 18584.375
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "SLOW_CLOCK0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Oled_Display'
@@ -385,54 +321,56 @@ INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address si
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[5]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[12]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[13]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[14]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[15]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[16]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[17]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[18]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[19]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[20]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[21]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[22]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[23]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[24]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[25]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[26]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[27]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[28]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[29]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[30]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[31]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[32]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[33]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[34]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[35]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[36]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[37]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[38]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[39]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[40]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[41]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[42]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[43]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[44]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[45]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[46]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[47]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_y_arr_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "pos_changed" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[5]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[12]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[13]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[14]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[15]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[16]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[17]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[18]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[19]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[20]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[21]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[22]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[23]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[24]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[25]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[26]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[27]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[28]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[29]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[30]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[31]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[32]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[33]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[34]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[35]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[36]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[37]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[38]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[39]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[40]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[41]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[42]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[43]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[44]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[45]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[46]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[47]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "in_boundary" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -534,29 +472,42 @@ reset_enable_reporting_wait_ack | 0000000010000000000000000000000000000 |       
    check_read_id_wait_id | 1000000000000000000000000000000000000 |                           100011
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'MouseCtl'
+WARNING: [Synth 8-327] inferring latch for variable 'oled_data_reg' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/menu_screen.v:28]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 828.770 ; gain = 542.312
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:06:34 ; elapsed = 00:07:05 . Memory (MB): peak = 18870.637 ; gain = 18584.375
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+--------------------+------------+----------+
+|      |RTL Partition       |Replication |Instances |
++------+--------------------+------------+----------+
+|1     |flexible_snake__GB0 |           1|     23930|
+|2     |flexible_snake__GB1 |           1|     23510|
+|3     |flexible_snake__GB2 |           1|      6051|
+|4     |flexible_snake__GB3 |           1|      7980|
+|5     |flexible_snake__GB4 |           1|      9418|
+|6     |flexible_snake__GB5 |           1|        49|
+|7     |flexible_snake__GB6 |           1|     15269|
+|8     |render_oled__GB0    |           1|     21013|
+|9     |render_oled__GB1    |           1|     20931|
+|10    |Top_Student__GCB0   |           1|     57325|
+|11    |Top_Student__GCB1   |           1|      7553|
++------+--------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   3 Input     32 Bit       Adders := 48    
+	   2 Input     32 Bit       Adders := 1     
 	   2 Input     26 Bit       Adders := 1     
 	   2 Input     24 Bit       Adders := 1     
 	   2 Input     17 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 1     
 	   2 Input     13 Bit       Adders := 8     
 	   2 Input     12 Bit       Adders := 4     
-	   2 Input     11 Bit       Adders := 1     
-	   3 Input     11 Bit       Adders := 2     
+	   2 Input     11 Bit       Adders := 293   
 	   2 Input     10 Bit       Adders := 2     
-	   2 Input      9 Bit       Adders := 1     
 	   2 Input      8 Bit       Adders := 4     
 	   2 Input      7 Bit       Adders := 2     
 	   2 Input      6 Bit       Adders := 1     
@@ -565,48 +516,72 @@ Detailed RTL Component Info :
 +---XORs : 
 	   2 Input      1 Bit         XORs := 1     
 +---Registers : 
-	              480 Bit    Registers := 2     
 	               40 Bit    Registers := 1     
 	               26 Bit    Registers := 1     
 	               24 Bit    Registers := 1     
 	               17 Bit    Registers := 1     
-	               16 Bit    Registers := 11    
+	               16 Bit    Registers := 10    
 	               13 Bit    Registers := 6     
 	               12 Bit    Registers := 6     
 	               11 Bit    Registers := 2     
-	               10 Bit    Registers := 114   
-	                9 Bit    Registers := 4     
+	               10 Bit    Registers := 116   
 	                8 Bit    Registers := 6     
 	                7 Bit    Registers := 1     
 	                6 Bit    Registers := 1     
 	                5 Bit    Registers := 1     
 	                4 Bit    Registers := 5     
-	                1 Bit    Registers := 39    
+	                1 Bit    Registers := 46    
++---RAMs : 
+	              96K Bit         RAMs := 1     
 +---Muxes : 
 	   2 Input     40 Bit        Muxes := 3     
 	  37 Input     37 Bit        Muxes := 1     
 	   2 Input     37 Bit        Muxes := 69    
+	   2 Input     32 Bit        Muxes := 3     
 	  32 Input     32 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 2     
 	   2 Input     26 Bit        Muxes := 1     
 	   2 Input     24 Bit        Muxes := 1     
 	  32 Input     20 Bit        Muxes := 1     
 	   2 Input     17 Bit        Muxes := 19    
 	  17 Input     17 Bit        Muxes := 1     
-	   2 Input     13 Bit        Muxes := 16    
+	   2 Input     16 Bit        Muxes := 228   
+	   5 Input     16 Bit        Muxes := 6     
+	   3 Input     16 Bit        Muxes := 20    
+	  16 Input     16 Bit        Muxes := 2     
+	   6 Input     16 Bit        Muxes := 4     
+	   4 Input     16 Bit        Muxes := 7     
+	  10 Input     16 Bit        Muxes := 1     
+	   9 Input     16 Bit        Muxes := 1     
+	   7 Input     16 Bit        Muxes := 1     
+	   8 Input     16 Bit        Muxes := 1     
+	   5 Input     15 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 17    
 	   2 Input     12 Bit        Muxes := 10    
-	   2 Input     11 Bit        Muxes := 1     
-	   2 Input     10 Bit        Muxes := 190   
-	   2 Input      9 Bit        Muxes := 6     
+	   2 Input     11 Bit        Muxes := 3     
+	   2 Input     10 Bit        Muxes := 98    
+	   2 Input      9 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 1     
 	  37 Input      8 Bit        Muxes := 3     
 	  32 Input      6 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 3     
 	  32 Input      5 Bit        Muxes := 1     
+	  16 Input      4 Bit        Muxes := 2     
+	  10 Input      4 Bit        Muxes := 1     
+	   9 Input      4 Bit        Muxes := 1     
 	  37 Input      4 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 21    
 	   5 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 122   
+	   5 Input      3 Bit        Muxes := 3     
+	   6 Input      3 Bit        Muxes := 4     
+	   7 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 7     
+	   4 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 85    
 	  17 Input      1 Bit        Muxes := 4     
 	  37 Input      1 Bit        Muxes := 20    
 ---------------------------------------------------------------------------------
@@ -620,19 +595,120 @@ Module Top_Student
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     13 Bit       Adders := 4     
-	   3 Input     11 Bit       Adders := 2     
-+---Registers : 
-	               16 Bit    Registers := 2     
-	                9 Bit    Registers := 2     
 +---Muxes : 
 	   2 Input     13 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 4     
-Module flexible_clock 
+Module basic_snake 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     13 Bit       Adders := 4     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               13 Bit    Registers := 4     
+	               10 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     13 Bit        Muxes := 12    
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+Module flexible_snake 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 48    
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	               13 Bit    Registers := 2     
+	               10 Bit    Registers := 96    
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 96    
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 48    
+Module flexible_clock__1 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 1     
+Module flexible_clock__2 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module flexible_clock__3 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module flexible_clock__4 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module render_oled 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 292   
++---Registers : 
+	                1 Bit    Registers := 1     
++---RAMs : 
+	              96K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   5 Input     16 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 1     
+Module flexible_clock__6 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module flexible_clock__5 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module menu_screen 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   3 Input     16 Bit        Muxes := 20    
+	   2 Input     16 Bit        Muxes := 227   
+	  16 Input     16 Bit        Muxes := 2     
+	   6 Input     16 Bit        Muxes := 4     
+	   4 Input     16 Bit        Muxes := 7     
+	  10 Input     16 Bit        Muxes := 1     
+	   9 Input     16 Bit        Muxes := 1     
+	   5 Input     16 Bit        Muxes := 5     
+	   7 Input     16 Bit        Muxes := 1     
+	   8 Input     16 Bit        Muxes := 1     
+	   5 Input     15 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 1     
+	  16 Input      4 Bit        Muxes := 2     
+	  10 Input      4 Bit        Muxes := 1     
+	   9 Input      4 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 3     
+	   6 Input      3 Bit        Muxes := 4     
+	   7 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 7     
+	   4 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
 Module Oled_Display 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -653,6 +729,12 @@ Detailed RTL Component Info :
 	   2 Input      5 Bit        Muxes := 2     
 	  32 Input      5 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 2     
+Module flexible_clock__7 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
 Module Ps2Interface 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -713,35 +795,12 @@ Detailed RTL Component Info :
 	   2 Input      4 Bit        Muxes := 21    
 	   5 Input      4 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 7     
-Module basic_snake 
+Module flexible_clock 
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     13 Bit       Adders := 4     
-	   2 Input      5 Bit       Adders := 1     
 +---Registers : 
-	               13 Bit    Registers := 4     
-	                9 Bit    Registers := 2     
-	                5 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input     13 Bit        Muxes := 12    
-	   2 Input      5 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 2     
-Module flexible_snake 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      9 Bit       Adders := 1     
-	   2 Input      8 Bit       Adders := 2     
-+---Registers : 
-	              480 Bit    Registers := 2     
-	               13 Bit    Registers := 2     
-	               10 Bit    Registers := 96    
-	                8 Bit    Registers := 2     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     10 Bit        Muxes := 188   
-	   2 Input      9 Bit        Muxes := 4     
-	   2 Input      1 Bit        Muxes := 96    
+	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -754,64 +813,35 @@ BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-5545] ROM "clk_mod_6p25m/SLOW_CLOCK0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element clk_mod25m/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:318]
 INFO: [Synth 8-5545] ROM "clk_mod_400hz/SLOW_CLOCK0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "clk_mod25m/SLOW_CLOCK0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5545] ROM "periodic_check_tick" won't be mapped to RAM because address size (26) is larger than maximum supported(25)
-INFO: [Synth 8-5546] ROM "timeout" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[47]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[46]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[45]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[44]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[43]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[42]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[41]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[40]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[39]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[38]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[37]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[36]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[35]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[34]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[33]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[32]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[31]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[30]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[29]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[28]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[27]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[26]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[25]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[24]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[23]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[22]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[21]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[20]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[19]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[18]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[17]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[16]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[15]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[14]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[13]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[12]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[5]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "worm_x_arr_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Common 17-14] Message 'Synth 8-5545' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-6014] Unused sequential element mouse/x_overflow_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:453]
+WARNING: [Synth 8-6014] Unused sequential element mouse/x_inc_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:458]
+WARNING: [Synth 8-6014] Unused sequential element mouse/x_max_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:489]
+WARNING: [Synth 8-6014] Unused sequential element mouse/x_sign_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:451]
+WARNING: [Synth 8-6014] Unused sequential element mouse/x_pos_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:431]
+WARNING: [Synth 8-6014] Unused sequential element mouse/xpos_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:431]
+WARNING: [Synth 8-6014] Unused sequential element mouse/y_overflow_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:517]
+WARNING: [Synth 8-6014] Unused sequential element mouse/y_inc_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:522]
+WARNING: [Synth 8-6014] Unused sequential element mouse/y_max_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:553]
+WARNING: [Synth 8-6014] Unused sequential element mouse/y_sign_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:515]
+WARNING: [Synth 8-6014] Unused sequential element mouse/y_pos_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:434]
+WARNING: [Synth 8-6014] Unused sequential element mouse/ypos_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:434]
+WARNING: [Synth 8-6014] Unused sequential element mouse/zpos_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:1011]
+WARNING: [Synth 8-6014] Unused sequential element mouse/left_down_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:423]
+WARNING: [Synth 8-6014] Unused sequential element mouse/left_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:423]
+WARNING: [Synth 8-6014] Unused sequential element mouse/middle_down_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:425]
+WARNING: [Synth 8-6014] Unused sequential element mouse/middle_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:425]
+WARNING: [Synth 8-6014] Unused sequential element mouse/right_down_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:427]
+WARNING: [Synth 8-6014] Unused sequential element mouse/right_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:427]
+WARNING: [Synth 8-6014] Unused sequential element mouse/new_event_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:610]
+INFO: [Synth 8-5545] ROM "mouse/periodic_check_tick" won't be mapped to RAM because address size (26) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "mouse/timeout" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "clk_mod_400hz/SLOW_CLOCK0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 WARNING: [Synth 8-3331] design Top_Student has unconnected port JB[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[7]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[6]
@@ -825,8 +855,6 @@ WARNING: [Synth 8-3331] design Top_Student has unconnected port an[3]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port an[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port an[1]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port an[0]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port btnC
-WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[15]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[14]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[13]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[12]
@@ -842,240 +870,209 @@ WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[3]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[1]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[0]
-INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[0]' (FDS) to 'pixel_colour_reg[4]'
-INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[1]' (FDR) to 'pixel_colour_reg[2]'
-INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[2]' (FDR) to 'pixel_colour_reg[3]'
-INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[3]' (FDR) to 'pixel_colour_reg[5]'
-INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[4]' (FDS) to 'pixel_colour_reg[8]'
-INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[5]' (FDR) to 'pixel_colour_reg[6]'
-INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[6]' (FDR) to 'pixel_colour_reg[7]'
-INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[7]' (FDR) to 'pixel_colour_reg[9]'
-INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[8]' (FDS) to 'pixel_colour_reg[12]'
-INFO: [Synth 8-3886] merging instance 'user_snake/snake_mod/new_ypos_reg[8]' (FD) to 'user_snake/snake_mod/potential_ypos_reg[8]'
-INFO: [Synth 8-3886] merging instance 'user_snake/snake_mod/new_xpos_reg[8]' (FD) to 'user_snake/snake_mod/potential_xpos_reg[8]'
-INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[9]' (FDR) to 'pixel_colour_reg[10]'
-INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[10]' (FDR) to 'pixel_colour_reg[11]'
-INFO: [Synth 8-3886] merging instance 'user_snake/snake_mod/potential_ypos_reg[0]' (FD) to 'user_snake/snake_mod/new_ypos_reg[0]'
-INFO: [Synth 8-3886] merging instance 'user_snake/snake_mod/potential_ypos_reg[1]' (FD) to 'user_snake/snake_mod/new_ypos_reg[1]'
-INFO: [Synth 8-3886] merging instance 'user_snake/snake_mod/potential_ypos_reg[2]' (FD) to 'user_snake/snake_mod/new_ypos_reg[2]'
-INFO: [Synth 8-3886] merging instance 'user_snake/snake_mod/potential_ypos_reg[3]' (FD) to 'user_snake/snake_mod/new_ypos_reg[3]'
-INFO: [Synth 8-3886] merging instance 'user_snake/snake_mod/potential_ypos_reg[4]' (FD) to 'user_snake/snake_mod/new_ypos_reg[4]'
-INFO: [Synth 8-3886] merging instance 'user_snake/snake_mod/potential_ypos_reg[5]' (FD) to 'user_snake/snake_mod/new_ypos_reg[5]'
-INFO: [Synth 8-3886] merging instance 'user_snake/snake_mod/potential_ypos_reg[6]' (FD) to 'user_snake/snake_mod/new_ypos_reg[6]'
-INFO: [Synth 8-3886] merging instance 'user_snake/snake_mod/potential_ypos_reg[7]' (FD) to 'user_snake/snake_mod/new_ypos_reg[7]'
-INFO: [Synth 8-3886] merging instance 'user_snake/snake_mod/potential_xpos_reg[0]' (FD) to 'user_snake/snake_mod/new_xpos_reg[0]'
-INFO: [Synth 8-3886] merging instance 'user_snake/snake_mod/potential_xpos_reg[1]' (FD) to 'user_snake/snake_mod/new_xpos_reg[1]'
-INFO: [Synth 8-3886] merging instance 'user_snake/snake_mod/potential_xpos_reg[2]' (FD) to 'user_snake/snake_mod/new_xpos_reg[2]'
-INFO: [Synth 8-3886] merging instance 'user_snake/snake_mod/potential_xpos_reg[3]' (FD) to 'user_snake/snake_mod/new_xpos_reg[3]'
-INFO: [Synth 8-3886] merging instance 'user_snake/snake_mod/potential_xpos_reg[4]' (FD) to 'user_snake/snake_mod/new_xpos_reg[4]'
-INFO: [Synth 8-3886] merging instance 'user_snake/snake_mod/potential_xpos_reg[5]' (FD) to 'user_snake/snake_mod/new_xpos_reg[5]'
-INFO: [Synth 8-3886] merging instance 'user_snake/snake_mod/potential_xpos_reg[6]' (FD) to 'user_snake/snake_mod/new_xpos_reg[6]'
-INFO: [Synth 8-3886] merging instance 'user_snake/snake_mod/potential_xpos_reg[7]' (FD) to 'user_snake/snake_mod/new_xpos_reg[7]'
-INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[11]' (FDR) to 'pixel_colour_reg[13]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snake/current_size0_inferred/\current_size_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snake/current_size0_inferred/\current_size_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snake/current_size0_inferred/\current_size_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snake/current_size0_inferred/\current_size_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snake/current_size0_inferred/\current_size_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snake/current_size0_inferred/\current_size_reg[5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snake/current_size0_inferred/\current_size_reg[6] )
-INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[13]' (FDR) to 'pixel_colour_reg[14]'
-INFO: [Synth 8-3886] merging instance 'pixel_colour_reg[14]' (FDR) to 'pixel_colour_reg[15]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\pixel_colour_reg[15] )
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[448]' (FDCE) to 'user_snake/worm_y_arr_reg[2][8]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[448]' (FDCE) to 'user_snake/worm_x_arr_reg[2][8]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[458]' (FDCE) to 'user_snake/worm_y_arr_reg[1][8]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[458]' (FDCE) to 'user_snake/worm_x_arr_reg[1][8]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[468]' (FDCE) to 'user_snake/worm_y_arr_reg[0][8]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[468]' (FDCE) to 'user_snake/worm_x_arr_reg[0][8]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[440]' (FDCE) to 'user_snake/worm_y_arr_reg[2][0]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[441]' (FDCE) to 'user_snake/worm_y_arr_reg[2][1]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[442]' (FDCE) to 'user_snake/worm_y_arr_reg[2][2]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[443]' (FDCE) to 'user_snake/worm_y_arr_reg[2][3]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[444]' (FDCE) to 'user_snake/worm_y_arr_reg[2][4]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[445]' (FDCE) to 'user_snake/worm_y_arr_reg[2][5]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[446]' (FDCE) to 'user_snake/worm_y_arr_reg[2][6]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[447]' (FDCE) to 'user_snake/worm_y_arr_reg[2][7]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[440]' (FDCE) to 'user_snake/worm_x_arr_reg[2][0]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[441]' (FDCE) to 'user_snake/worm_x_arr_reg[2][1]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[442]' (FDCE) to 'user_snake/worm_x_arr_reg[2][2]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[443]' (FDCE) to 'user_snake/worm_x_arr_reg[2][3]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[444]' (FDCE) to 'user_snake/worm_x_arr_reg[2][4]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[445]' (FDCE) to 'user_snake/worm_x_arr_reg[2][5]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[446]' (FDCE) to 'user_snake/worm_x_arr_reg[2][6]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[447]' (FDCE) to 'user_snake/worm_x_arr_reg[2][7]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[450]' (FDCE) to 'user_snake/worm_y_arr_reg[1][0]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[451]' (FDCE) to 'user_snake/worm_y_arr_reg[1][1]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[452]' (FDCE) to 'user_snake/worm_y_arr_reg[1][2]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[453]' (FDCE) to 'user_snake/worm_y_arr_reg[1][3]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[454]' (FDCE) to 'user_snake/worm_y_arr_reg[1][4]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[455]' (FDCE) to 'user_snake/worm_y_arr_reg[1][5]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[456]' (FDCE) to 'user_snake/worm_y_arr_reg[1][6]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[457]' (FDCE) to 'user_snake/worm_y_arr_reg[1][7]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[450]' (FDCE) to 'user_snake/worm_x_arr_reg[1][0]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[451]' (FDCE) to 'user_snake/worm_x_arr_reg[1][1]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[452]' (FDCE) to 'user_snake/worm_x_arr_reg[1][2]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[453]' (FDCE) to 'user_snake/worm_x_arr_reg[1][3]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[454]' (FDCE) to 'user_snake/worm_x_arr_reg[1][4]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[455]' (FDCE) to 'user_snake/worm_x_arr_reg[1][5]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[456]' (FDCE) to 'user_snake/worm_x_arr_reg[1][6]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[457]' (FDCE) to 'user_snake/worm_x_arr_reg[1][7]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[460]' (FDCE) to 'user_snake/worm_y_arr_reg[0][0]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[461]' (FDCE) to 'user_snake/worm_y_arr_reg[0][1]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[462]' (FDCE) to 'user_snake/worm_y_arr_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[463]' (FDCE) to 'user_snake/worm_y_arr_reg[0][3]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[464]' (FDCE) to 'user_snake/worm_y_arr_reg[0][4]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[465]' (FDCE) to 'user_snake/worm_y_arr_reg[0][5]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[466]' (FDCE) to 'user_snake/worm_y_arr_reg[0][6]'
-INFO: [Synth 8-3886] merging instance 'user_snake/y_worm_flat_reg[467]' (FDCE) to 'user_snake/worm_y_arr_reg[0][7]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[460]' (FDCE) to 'user_snake/worm_x_arr_reg[0][0]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[461]' (FDCE) to 'user_snake/worm_x_arr_reg[0][1]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[462]' (FDCE) to 'user_snake/worm_x_arr_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[463]' (FDCE) to 'user_snake/worm_x_arr_reg[0][3]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[464]' (FDCE) to 'user_snake/worm_x_arr_reg[0][4]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[465]' (FDCE) to 'user_snake/worm_x_arr_reg[0][5]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[466]' (FDCE) to 'user_snake/worm_x_arr_reg[0][6]'
-INFO: [Synth 8-3886] merging instance 'user_snake/x_worm_flat_reg[467]' (FDCE) to 'user_snake/worm_x_arr_reg[0][7]'
-WARNING: [Synth 8-3332] Sequential element (x_new_reg) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_overflow_reg) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_inc_reg[7]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_inc_reg[6]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_inc_reg[5]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_inc_reg[4]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_inc_reg[3]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_inc_reg[2]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_inc_reg[1]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_inc_reg[0]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_max_reg[11]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_max_reg[10]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_max_reg[9]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_max_reg[8]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_max_reg[7]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_max_reg[6]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_max_reg[5]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_max_reg[4]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_max_reg[3]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_max_reg[2]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_max_reg[1]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_max_reg[0]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_sign_reg) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_pos_reg[11]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_pos_reg[10]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_pos_reg[9]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_pos_reg[8]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_pos_reg[7]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_pos_reg[6]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_pos_reg[5]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_pos_reg[4]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_pos_reg[3]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_pos_reg[2]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_pos_reg[1]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (x_pos_reg[0]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (xpos_reg[11]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (xpos_reg[10]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (xpos_reg[9]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (xpos_reg[8]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (xpos_reg[7]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (xpos_reg[6]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (xpos_reg[5]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (xpos_reg[4]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (xpos_reg[3]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (xpos_reg[2]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (xpos_reg[1]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (xpos_reg[0]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_new_reg) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_overflow_reg) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_inc_reg[7]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_inc_reg[6]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_inc_reg[5]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_inc_reg[4]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_inc_reg[3]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_inc_reg[2]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_inc_reg[1]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_inc_reg[0]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_max_reg[11]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_max_reg[10]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_max_reg[9]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_max_reg[8]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_max_reg[7]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_max_reg[6]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_max_reg[5]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_max_reg[4]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_max_reg[3]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_max_reg[2]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_max_reg[1]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_max_reg[0]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_sign_reg) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_pos_reg[11]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_pos_reg[10]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_pos_reg[9]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_pos_reg[8]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_pos_reg[7]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_pos_reg[6]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_pos_reg[5]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_pos_reg[4]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_pos_reg[3]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_pos_reg[2]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_pos_reg[1]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (y_pos_reg[0]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (ypos_reg[11]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (ypos_reg[10]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (ypos_reg[9]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (ypos_reg[8]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (ypos_reg[7]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (ypos_reg[6]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (ypos_reg[5]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (ypos_reg[4]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (ypos_reg[3]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (ypos_reg[2]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (ypos_reg[1]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (ypos_reg[0]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (zpos_reg[3]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (zpos_reg[2]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (zpos_reg[1]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (zpos_reg[0]) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (left_down_reg) is unused and will be removed from module MouseCtl.
-WARNING: [Synth 8-3332] Sequential element (left_reg) is unused and will be removed from module MouseCtl.
-INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_4/i_0/\size_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_4/i_0/\size_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_4/i_0/\size_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_4/i_0/\size_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_4/i_0/\size_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_4/i_0/\size_reg[0] )
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[47]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[46]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[45]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[44]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[43]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[42]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[41]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[40]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[39]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[38]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[37]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[36]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[35]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[34]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[33]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[32]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[31]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[30]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[29]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[28]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[27]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[26]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[25]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[24]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[23]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[22]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[21]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[20]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[19]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[18]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[17]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[16]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[15]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[14]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[13]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[12]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[5]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[4]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Common 17-14] Message 'Synth 8-5545' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[0]' (FD) to 'snake_mod/new_ypos_reg[0]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[1]' (FD) to 'snake_mod/new_ypos_reg[1]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[2]' (FD) to 'snake_mod/new_ypos_reg[2]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[3]' (FD) to 'snake_mod/new_ypos_reg[3]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[4]' (FD) to 'snake_mod/new_ypos_reg[4]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[5]' (FD) to 'snake_mod/new_ypos_reg[5]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[6]' (FD) to 'snake_mod/new_ypos_reg[6]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[7]' (FD) to 'snake_mod/new_ypos_reg[7]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[8]' (FD) to 'snake_mod/new_ypos_reg[8]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[9]' (FD) to 'snake_mod/new_ypos_reg[9]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[0]' (FD) to 'snake_mod/new_xpos_reg[0]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[1]' (FD) to 'snake_mod/new_xpos_reg[1]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[2]' (FD) to 'snake_mod/new_xpos_reg[2]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[3]' (FD) to 'snake_mod/new_xpos_reg[3]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[4]' (FD) to 'snake_mod/new_xpos_reg[4]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[5]' (FD) to 'snake_mod/new_xpos_reg[5]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[6]' (FD) to 'snake_mod/new_xpos_reg[6]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[7]' (FD) to 'snake_mod/new_xpos_reg[7]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[8]' (FD) to 'snake_mod/new_xpos_reg[8]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[9]' (FD) to 'snake_mod/new_xpos_reg[9]'
+INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[12]' (FD) to 'snake_mod/potential_xpos_reg[12]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (snake_mod/\potential_xpos_reg[12] )
+WARNING: [Synth 8-3332] Sequential element (potential_xpos_reg[12]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-6014] Unused sequential element clk_buffer_inst/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:318]
+WARNING: [Synth 8-6014] Unused sequential element clk_slow_inst/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:318]
+WARNING: [Synth 8-6014] Unused sequential element clk_mod25m/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:318]
+WARNING: [Synth 8-3463] Infeasible ramstyle = block set for RAM pixel_colour_cache_1_reg,trying to implement using LUTRAM
+WARNING: [Synth 8-3463] Infeasible ramstyle = block set for RAM pixel_colour_cache_1_reg,trying to implement using LUTRAM
+WARNING: [Synth 8-3463] Infeasible ramstyle = block set for RAM pixel_colour_cache_0_reg,trying to implement using LUTRAM
+WARNING: [Synth 8-3463] Infeasible ramstyle = block set for RAM pixel_colour_cache_0_reg,trying to implement using LUTRAM
+INFO: [Synth 8-5546] ROM "display_mod/fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "display_mod/fsm_next_state0" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3917] design Top_Student__GCB0 has port JB[6] driven by constant 1
+WARNING: [Synth 8-3331] design menu_screen has unconnected port menu_selection[2]
+WARNING: [Synth 8-3331] design menu_screen has unconnected port menu_selection[1]
+WARNING: [Synth 8-3331] design menu_screen has unconnected port menu_selection[0]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 828.770 ; gain = 542.312
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:12:26 ; elapsed = 00:13:23 . Memory (MB): peak = 18870.637 ; gain = 18584.375
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++-----------------+--------------------------+-----------+----------------------+-------------------------------+
+|Module Name      | RTL Object               | Inference | Size (Depth x Width) | Primitives                    | 
++-----------------+--------------------------+-----------+----------------------+-------------------------------+
+|render_oled__GB0 | pixel_colour_cache_1_reg | Implied   | 8 K x 16             | RAM64X1D x 96  RAM64M x 480   | 
+|render_oled__GB0 | pixel_colour_cache_0_reg | Implied   | 8 K x 16             | RAM64X1D x 96  RAM64M x 480   | 
++-----------------+--------------------------+-----------+----------------------+-------------------------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+--------------------+------------+----------+
+|      |RTL Partition       |Replication |Instances |
++------+--------------------+------------+----------+
+|1     |flexible_snake__GB0 |           1|     24350|
+|2     |flexible_snake__GB1 |           1|     23510|
+|3     |flexible_snake__GB2 |           1|      4147|
+|4     |flexible_snake__GB3 |           1|      5716|
+|5     |flexible_snake__GB4 |           1|      6117|
+|6     |flexible_snake__GB5 |           1|        49|
+|7     |flexible_snake__GB6 |           1|      8266|
+|8     |render_oled__GB0    |           1|     23187|
+|9     |render_oled__GB1    |           1|     19157|
+|10    |Top_Student__GCB0   |           1|     10345|
+|11    |Top_Student__GCB1   |           1|      1121|
++------+--------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 828.770 ; gain = 542.312
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:12:33 ; elapsed = 00:13:31 . Memory (MB): peak = 18870.637 ; gain = 18584.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[12]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[11]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[10]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[9]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[8]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[7]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[6]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[5]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[4]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[3]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[2]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[1]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[0]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[12]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[11]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[10]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[9]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[8]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[7]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[6]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[5]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[4]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[3]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[2]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[1]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[0]) is unused and will be removed from module basic_snake.
+WARNING: [Synth 8-3332] Sequential element (vel_changed_reg) is unused and will be removed from module basic_snake.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 828.770 ; gain = 542.312
+Finished Timing Optimization : Time (s): cpu = 00:12:34 ; elapsed = 00:13:32 . Memory (MB): peak = 18870.637 ; gain = 18584.375
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+--------------------+------------+----------+
+|      |RTL Partition       |Replication |Instances |
++------+--------------------+------------+----------+
+|1     |flexible_snake__GB0 |           1|      1326|
+|2     |flexible_snake__GB1 |           1|      1326|
+|3     |flexible_snake__GB2 |           1|      1622|
+|4     |flexible_snake__GB3 |           1|      1718|
+|5     |flexible_snake__GB4 |           1|      1851|
+|6     |flexible_snake__GB5 |           1|        49|
+|7     |flexible_snake__GB6 |           1|      5516|
+|8     |render_oled__GB0    |           1|       200|
+|9     |Top_Student__GCB0   |           1|     10345|
+|10    |Top_Student__GCB1   |           1|      1121|
++------+--------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 828.770 ; gain = 542.312
+Finished Technology Mapping : Time (s): cpu = 00:12:35 ; elapsed = 00:13:40 . Memory (MB): peak = 18870.637 ; gain = 18584.375
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+--------------------+------------+----------+
+|      |RTL Partition       |Replication |Instances |
++------+--------------------+------------+----------+
+|1     |flexible_snake__GB0 |           1|       876|
+|2     |flexible_snake__GB1 |           1|       876|
+|3     |flexible_snake__GB2 |           1|       196|
+|4     |flexible_snake__GB3 |           1|         0|
+|5     |flexible_snake__GB4 |           1|         0|
+|6     |flexible_snake__GB5 |           1|        49|
+|7     |flexible_snake__GB6 |           1|       207|
+|8     |render_oled__GB0    |           1|         0|
+|9     |Top_Student__GCB0   |           1|      3313|
+|10    |Top_Student__GCB1   |           1|       698|
++------+--------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -1094,7 +1091,7 @@ INFO: [Synth 8-5365] Flop mouse/Inst_Ps2Interface/ps2_data_h_reg is being invert
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 828.770 ; gain = 542.312
+Finished IO Insertion : Time (s): cpu = 00:12:36 ; elapsed = 00:13:41 . Memory (MB): peak = 18870.637 ; gain = 18584.375
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1107,7 +1104,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 828.770 ; gain = 542.312
+Finished Renaming Generated Instances : Time (s): cpu = 00:12:36 ; elapsed = 00:13:41 . Memory (MB): peak = 18870.637 ; gain = 18584.375
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1119,40 +1116,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 828.770 ; gain = 542.312
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:12:36 ; elapsed = 00:13:42 . Memory (MB): peak = 18870.637 ; gain = 18584.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 828.770 ; gain = 542.312
+Finished Renaming Generated Ports : Time (s): cpu = 00:12:36 ; elapsed = 00:13:42 . Memory (MB): peak = 18870.637 ; gain = 18584.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 828.770 ; gain = 542.312
+Finished Handling Custom Attributes : Time (s): cpu = 00:12:36 ; elapsed = 00:13:42 . Memory (MB): peak = 18870.637 ; gain = 18584.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 828.770 ; gain = 542.312
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start ROM, RAM, DSP and Shift Register Reporting
----------------------------------------------------------------------------------
-
-Static Shift Register Report:
-+------------+---------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|Module Name | RTL Name                        | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
-+------------+---------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|Top_Student | user_snake/x_worm_flat_reg[478] | 5      | 9     | NO           | NO                 | YES               | 9      | 0       | 
-|Top_Student | user_snake/y_worm_flat_reg[478] | 5      | 9     | NO           | NO                 | YES               | 9      | 0       | 
-+------------+---------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-
----------------------------------------------------------------------------------
-Finished ROM, RAM, DSP and Shift Register Reporting
+Finished Renaming Generated Nets : Time (s): cpu = 00:12:36 ; elapsed = 00:13:42 . Memory (MB): peak = 18870.637 ; gain = 18584.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1168,59 +1150,64 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |BUFG   |     4|
-|2     |CARRY4 |   140|
-|3     |LUT1   |    62|
-|4     |LUT2   |   234|
-|5     |LUT3   |    96|
-|6     |LUT4   |   121|
-|7     |LUT5   |   167|
-|8     |LUT6   |   180|
-|9     |SRL16E |    18|
-|10    |FDE_1  |    32|
-|11    |FDRE   |   487|
-|12    |IBUF   |     5|
-|13    |IOBUF  |     2|
-|14    |OBUF   |    23|
-|15    |OBUFT  |    13|
+|1     |BUFG   |     3|
+|2     |CARRY4 |   137|
+|3     |LUT1   |    67|
+|4     |LUT2   |   310|
+|5     |LUT3   |   192|
+|6     |LUT4   |   117|
+|7     |LUT5   |   211|
+|8     |LUT6   |  2536|
+|9     |MUXF7  |   849|
+|10    |MUXF8  |   409|
+|11    |FDE_1  |    32|
+|12    |FDRE   |  1409|
+|13    |FDSE   |    14|
+|14    |LD     |    16|
+|15    |IBUF   |     7|
+|16    |IOBUF  |     2|
+|17    |OBUF   |    23|
+|18    |OBUFT  |    13|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+----------------------+-----------------+------+
 |      |Instance              |Module           |Cells |
 +------+----------------------+-----------------+------+
-|1     |top                   |                 |  1584|
-|2     |  clk_mod25m          |flexible_clock   |    50|
-|3     |  clk_mod_400hz       |flexible_clock_0 |    54|
-|4     |  clk_mod_6p25m       |flexible_clock_1 |    52|
-|5     |  display_mod         |Oled_Display     |   479|
-|6     |  mouse               |MouseCtl         |   447|
-|7     |    Inst_Ps2Interface |Ps2Interface     |   256|
-|8     |  user_snake          |flexible_snake   |   180|
-|9     |    snake_mod         |basic_snake      |   144|
+|1     |top                   |                 |  6347|
+|2     |  clk_mod_400hz       |flexible_clock   |    54|
+|3     |  clk_mod_6p25m       |flexible_clock_0 |    51|
+|4     |  display_mod         |Oled_Display     |  3180|
+|5     |  menu_screen_inst    |menu_screen      |   170|
+|6     |    frame_rate        |flexible_clock_1 |    63|
+|7     |  mouse               |MouseCtl         |   451|
+|8     |    Inst_Ps2Interface |Ps2Interface     |   259|
+|9     |  user_snake          |flexible_snake   |  2098|
+|10    |    snake_mod         |basic_snake      |   600|
 +------+----------------------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 828.770 ; gain = 542.312
+Finished Writing Synthesis Report : Time (s): cpu = 00:12:36 ; elapsed = 00:13:42 . Memory (MB): peak = 18870.637 ; gain = 18584.375
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 2303 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:23 . Memory (MB): peak = 828.770 ; gain = 484.527
-Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 828.770 ; gain = 542.312
+Synthesis finished with 0 errors, 0 critical warnings and 89 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:06:24 ; elapsed = 00:07:20 . Memory (MB): peak = 18870.637 ; gain = 1943.430
+Synthesis Optimization Complete : Time (s): cpu = 00:12:36 ; elapsed = 00:13:42 . Memory (MB): peak = 18870.637 ; gain = 18584.375
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 179 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 1452 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 34 instances were transformed.
+  A total of 50 instances were transformed.
   FDE_1 => FDRE (inverted pins: C): 32 instances
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+  LD => LDCE: 16 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-307 Infos, 290 Warnings, 0 Critical Warnings and 0 Errors encountered.
+250 Infos, 170 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 828.770 ; gain = 553.820
+synth_design: Time (s): cpu = 00:12:38 ; elapsed = 00:13:45 . Memory (MB): peak = 18870.637 ; gain = 18595.902
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.runs/synth_1/Top_Student.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Top_Student_utilization_synth.rpt -pb Top_Student_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 828.770 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Apr  5 18:00:55 2025...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 18870.637 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 11 10:02:24 2025...

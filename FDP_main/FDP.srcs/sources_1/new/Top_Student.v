@@ -15,6 +15,8 @@ module Top_Student (    input clk,
     
     // variavles for OLED display
     wire [15:0] pixel_colour; // if rendering in top, set as reg, if in render_oled, set as wire
+    wire [15:0] menu_colour; 
+    wire [15:0] world_colour; 
     wire [12:0] pixel_index;
     wire frame_beg;
     wire [7:0] pixel_x;   
@@ -274,12 +276,21 @@ module Top_Student (    input clk,
 
 
         // output
-        .pixel_colour(pixel_colour) // output pixel color
+        .pixel_colour(world_colour) // output pixel color
 
         ,
         .debugx(),
         .debugy()
     );
+
+    // inst menu screen
+    menu_screen menu_screen_inst (
+        .clk(clk),
+        .pixel_index(pixel_index),
+        .oled_data(menu_colour)
+    );
+
+    assign pixel_colour = menu_colour; // display menu for now
 
     // debug block for rendering in top
 /*

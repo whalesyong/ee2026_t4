@@ -17,10 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param synth.incrementalSynthesisCache C:/Users/Lawrence/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-22136-Lawrence-ROG/incrSyn
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -51,6 +48,7 @@ read_verilog -library xil_defaultlib {
   C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/test_food_camera.v
   C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/test_head_lawrence.v
   C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/render_oled.v
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/menu_screen.v
 }
 read_vhdl -library xil_defaultlib {
   C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd
