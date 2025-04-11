@@ -127,7 +127,7 @@ module Top_Student (    input clk,
     // inst user_worm and enemy_worm
     flexible_snake user_snake(
         .slow_clk(clk400hz), 
-        .rst(0),
+        .rst(sw[14]),
         .x_dir(x_vel_debug), 
         .y_dir(y_vel_debug), 
         .xpos(snake_xpos), 
@@ -284,13 +284,13 @@ module Top_Student (    input clk,
     );
 
     // inst menu screen
-    menu_screen menu_screen_inst (
-        .clk(clk),
-        .pixel_index(pixel_index),
-        .oled_data(menu_colour)
-    );
+    // menu_screen menu_screen_inst (
+    //     .clk(clk),
+    //     .pixel_index(pixel_index),
+    //     .oled_data(menu_colour)
+    // );
 
-    assign pixel_colour = menu_colour; // display menu for now
+    assign pixel_colour = world_colour; // display menu for now
 
     // debug block for rendering in top
 /*
