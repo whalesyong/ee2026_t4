@@ -13,18 +13,17 @@ module food_and_camera (
     input [9:0] enemywormheady2,
 
     output reg  food_eaten = 0 ,
-    output reg [479:0] food_x_flat,
-    output reg [479:0] food_y_flat,
+    (* ram_style = "block" *) output reg [479:0] food_x_flat,
+    (* ram_style = "block" *) output reg [479:0] food_y_flat,
     output wire [47:0] user_collisions
 );
     parameter SCREEN_WIDTH  = 499;
     parameter SCREEN_HEIGHT = 499;
     parameter BOUNDARY_OFFSET = 10; // Offset from the edges of the screen
 
+    (* ram_style = "block" *) reg [9:0] food_x [0:47];
+    (* ram_style = "block" *) reg [9:0] food_y [0:47];
     reg [15:0] rng_seed = 16'hACE1;
-    reg [9:0] food_x [0:47];
-    reg [9:0] food_y [0:47];
-
     integer i;
 
     // Combinational logic for collision detection
@@ -32,6 +31,9 @@ module food_and_camera (
     wire [47:0] enemy0_collisions;
     wire [47:0] enemy1_collisions;
     wire [47:0] enemy2_collisions;
+
+
+    // comment out the generate block for one always block 
 
     genvar j;
     generate
@@ -54,7 +56,21 @@ module food_and_camera (
         end
         // assign enemy1_collisions[j] = (enemywormheadx1 == food_x[j]) && (enemywormheady1 == food_y[j]);
         // assign enemy2_collisions[j] = (enemywormheadx2 == food_x[j]) && (enemywormheady2 == food_y[j]);
-    endgenerate
+    endgenerate 
+/*
+        // Collision detection using a single always block to reduce LUT usage
+    (* ram_style = "distributed" *) reg [47:0] collision_reg;
+    always @( posedge clk ) begin
+        for (i = 0; i < 48; i = i + 1) begin
+            collision_reg[i] <= (
+                userwormheadx <= (food_x[i] + 4) &&
+                (userwormheadx + 4) >= food_x[i] &&
+                userwormheady <= (food_y[i] + 4) &&
+                (userwormheady + 4) >= food_y[i]
+            );
+        end
+    end
+    assign user_collisions = collision_reg;*/
 
     // Pack food locations into flattened arrays - combinational
     always @(*) begin

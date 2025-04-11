@@ -79,6 +79,12 @@ module Top_Student (    input clk,
         .divider(125000), 
         .SLOW_CLOCK(clk400hz)
     );
+    wire clk100hz;
+    flexible_clock clk_mod_100hz(
+        .CLOCK(clk),
+        .divider(500000),
+        .SLOW_CLOCK(clk100hz)
+    );
 
     wire clk_25m;
     flexible_clock clk_mod25m(
@@ -203,6 +209,7 @@ module Top_Student (    input clk,
     wire [9:0] user_worm_x [0:47];
     wire [9:0] user_worm_y [0:47];
     
+    
     genvar n;
     generate
         for (n = 0; n < 48; n = n + 1) begin : pack_user_worm_x
@@ -210,6 +217,7 @@ module Top_Student (    input clk,
             assign user_worm_y[n] = user_snake_ypos[ 10*n + 9 : 10 * n ];
         end
     endgenerate
+
 
     // show the enemy head on the LEDs
     reg [9:0] enemy_head_x;
@@ -291,7 +299,7 @@ module Top_Student (    input clk,
 
     wire [47:0] user_collisions;
     food_and_camera food_mod (
-        .clk(clk),
+        .clk(clk100hz),
         .reset(btnC), // or use a proper reset
         .userwormheadx(user_head_x),
         .userwormheady(user_head_y),
