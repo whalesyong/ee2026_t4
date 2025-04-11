@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Fri Apr 11 10:02:59 2025
+| Date         : Fri Apr 11 14:59:11 2025
 | Host         : Lawrence-ROG running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Top_Student_control_sets_placed.rpt
 | Design       : Top_Student
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    77 |
-| Unused register locations in slices containing registers |    82 |
+| Number of unique control sets                            |    86 |
+| Unused register locations in slices containing registers |   114 |
 +----------------------------------------------------------+-------+
 
 
@@ -34,11 +34,13 @@ Table of Contents
 +--------+--------------+
 | Fanout | Control Sets |
 +--------+--------------+
-|      2 |            2 |
-|      8 |            1 |
+|      2 |            5 |
+|      4 |            2 |
+|      6 |            3 |
+|      8 |            3 |
 |     12 |            5 |
 |     14 |            1 |
-|    16+ |           68 |
+|    16+ |           67 |
 +--------+--------------+
 
 
@@ -48,10 +50,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             222 |           42 |
+| No           | No                    | No                     |             174 |           37 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |             470 |           66 |
-| Yes          | No                    | No                     |            2102 |          434 |
+| No           | Yes                   | No                     |             518 |           78 |
+| Yes          | No                    | No                     |            2102 |          538 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |             148 |           23 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -64,82 +66,91 @@ Table of Contents
 |                 Clock Signal                |                     Enable Signal                    |                   Set/Reset Signal                   | Slice Load Count | Bel Load Count |
 +---------------------------------------------+------------------------------------------------------+------------------------------------------------------+------------------+----------------+
 |  menu_screen_inst/frame_rate/frame_rate__0  |                                                      |                                                      |                1 |              2 |
+|  menu_screen_inst/oled_data_reg[15]_i_2_n_0 |                                                      | display_mod/AR[3]                                    |                1 |              2 |
+|  menu_screen_inst/oled_data_reg[15]_i_2_n_0 |                                                      | display_mod/AR[1]                                    |                1 |              2 |
+|  menu_screen_inst/oled_data_reg[15]_i_2_n_0 |                                                      | display_mod/AR[5]                                    |                1 |              2 |
 | ~clk6p25m_BUFG                              |                                                      |                                                      |                1 |              2 |
-|  clk_IBUF_BUFG                              | mouse/Inst_Ps2Interface/shift_frame                  | mouse/Inst_Ps2Interface/reset_bit_count              |                2 |              8 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/potential_xpos[11]_i_2_n_0      | user_snake/snake_mod/potential_ypos[11]_i_1_n_0      |                2 |             12 |
+|  menu_screen_inst/oled_data_reg[15]_i_2_n_0 |                                                      | display_mod/AR[0]                                    |                1 |              4 |
+|  menu_screen_inst/oled_data_reg[15]_i_2_n_0 |                                                      | menu_screen_inst/oled_data_reg[14]_i_2_n_0           |                1 |              4 |
+|  menu_screen_inst/oled_data_reg[15]_i_2_n_0 |                                                      | display_mod/AS[0]                                    |                1 |              6 |
+|  menu_screen_inst/oled_data_reg[15]_i_2_n_0 |                                                      | display_mod/AR[4]                                    |                2 |              6 |
+|  menu_screen_inst/oled_data_reg[15]_i_2_n_0 |                                                      | display_mod/AR[2]                                    |                3 |              6 |
+|  clk_IBUF_BUFG                              |                                                      | mouse/Inst_Ps2Interface/clk_inter0                   |                1 |              8 |
+|  clk_IBUF_BUFG                              |                                                      | mouse/Inst_Ps2Interface/data_inter0                  |                1 |              8 |
+|  clk_IBUF_BUFG                              | mouse/Inst_Ps2Interface/shift_frame                  | mouse/Inst_Ps2Interface/reset_bit_count              |                1 |              8 |
 |  clk400hz_BUFG                              |                                                      |                                                      |                2 |             12 |
 |  clk400hz_BUFG                              |                                                      | user_snake/snake_mod/new_xpos[1]_i_1_n_0             |                2 |             12 |
 |  clk400hz_BUFG                              |                                                      | user_snake/snake_mod/new_ypos[1]_i_1_n_0             |                2 |             12 |
 |  clk400hz_BUFG                              | user_snake/snake_mod/potential_xpos[11]_i_2_n_0      | user_snake/snake_mod/potential_xpos[11]_i_1_n_0      |                2 |             12 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/potential_xpos[11]_i_2_n_0      | user_snake/snake_mod/potential_ypos[11]_i_1_n_0      |                2 |             12 |
 |  clk_IBUF_BUFG                              | mouse/Inst_Ps2Interface/delay_63clk_count[6]_i_2_n_0 | mouse/Inst_Ps2Interface/delay_63clk_count[6]_i_1_n_0 |                2 |             14 |
-|  clk_IBUF_BUFG                              | mouse/write_data_1                                   |                                                      |                3 |             16 |
 |  clk_IBUF_BUFG                              | mouse/Inst_Ps2Interface/load_rx_data                 |                                                      |                2 |             16 |
-|  clk_IBUF_BUFG                              | mouse/Inst_Ps2Interface/frame[9]_i_1_n_0             |                                                      |                3 |             20 |
-|  clk_IBUF_BUFG                              | mouse/Inst_Ps2Interface/delay_20us_count[10]_i_2_n_0 | mouse/Inst_Ps2Interface/delay_20us_count[10]_i_1_n_0 |                3 |             22 |
+|  clk_IBUF_BUFG                              | mouse/write_data                                     |                                                      |                2 |             16 |
+|  clk_IBUF_BUFG                              | mouse/Inst_Ps2Interface/frame[9]_i_1_n_0             |                                                      |                2 |             20 |
+|  clk_IBUF_BUFG                              | mouse/Inst_Ps2Interface/delay_20us_count[10]_i_2_n_0 | mouse/Inst_Ps2Interface/delay_20us_count[10]_i_1_n_0 |                4 |             22 |
+|  clk400hz_BUFG                              | y_vel_debug[0]_i_1_n_0                               | btnC_IBUF                                            |                4 |             26 |
 |  clk400hz_BUFG                              | sel                                                  | btnC_IBUF                                            |                4 |             26 |
 |  clk400hz_BUFG                              | user_snake/snake_mod/head_index0                     |                                                      |                5 |             26 |
-|  clk400hz_BUFG                              | y_vel_debug[0]_i_1_n_0                               | btnC_IBUF                                            |                4 |             26 |
-|  clk_IBUF_BUFG                              | mouse/Inst_Ps2Interface/delay_100us_count[0]_i_2_n_0 | mouse/Inst_Ps2Interface/clear__0                     |                4 |             28 |
+|  clk_IBUF_BUFG                              | mouse/Inst_Ps2Interface/delay_100us_count[0]_i_2_n_0 | mouse/Inst_Ps2Interface/clear                        |                4 |             28 |
 |  menu_screen_inst/frame_rate/frame_rate__0  |                                                      | menu_screen_inst/frame_count[15]_i_1_n_0             |                4 |             30 |
-|  menu_screen_inst/oled_data_reg[15]_i_2_n_0 |                                                      |                                                      |                7 |             32 |
 | ~clk6p25m_BUFG                              |                                                      | display_mod/frame_counter[16]_i_1_n_0                |                5 |             34 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[14][0]           |                                                      |                6 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[16][0]           |                                                      |                9 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[0][0]            |                                                      |                5 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[17][0]           |                                                      |               10 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[18][0]           |                                                      |                5 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[1][0]            |                                                      |                6 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[33][0]           |                                                      |                7 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[9][0]            |                                                      |               19 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[28][0]           |                                                      |                8 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[41][0]           |                                                      |                7 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[39][0]           |                                                      |                6 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[44][0]           |                                                      |                5 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[21][0]           |                                                      |                7 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[29][0]           |                                                      |                9 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[26][0]           |                                                      |                6 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[35][0]           |                                                      |                8 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[42][0]           |                                                      |                7 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[4][0]            |                                                      |                7 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[6][0]            |                                                      |                6 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[25][0]           |                                                      |                8 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[34][0]           |                                                      |                8 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[27][0]           |                                                      |                9 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[36][0]           |                                                      |                7 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[8][0]            |                                                      |               17 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[31][0]           |                                                      |               19 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[32][0]           |                                                      |                8 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[3][0]            |                                                      |               10 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[23][0]           |                                                      |                6 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[46][0]           |                                                      |               16 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[20][0]           |                                                      |                6 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[40][0]           |                                                      |                7 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[43][0]           |                                                      |                5 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[24][0]           |                                                      |                7 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[22][0]           |                                                      |                7 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[30][0]           |                                                      |               17 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[37][0]           |                                                      |                8 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[2][0]            |                                                      |                8 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[38][0]           |                                                      |                7 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[7][0]            |                                                      |               10 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[38][0]           |                                                      |               11 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[23][0]           |                                                      |               10 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[41][0]           |                                                      |               11 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[42][0]           |                                                      |               10 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[1][0]            |                                                      |                8 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[6][0]            |                                                      |                7 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[7][0]            |                                                      |               11 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[21][0]           |                                                      |                8 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[8][0]            |                                                      |               18 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[39][0]           |                                                      |                8 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[22][0]           |                                                      |                8 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[26][0]           |                                                      |               12 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[45][0]           |                                                      |               10 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[30][0]           |                                                      |               19 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[35][0]           |                                                      |                9 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[2][0]            |                                                      |               10 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[28][0]           |                                                      |               10 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[24][0]           |                                                      |                8 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[33][0]           |                                                      |                9 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[40][0]           |                                                      |                9 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[44][0]           |                                                      |                9 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[11][0]           |                                                      |                6 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[25][0]           |                                                      |                7 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[20][0]           |                                                      |               11 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[37][0]           |                                                      |                9 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[18][0]           |                                                      |               12 |             40 |
 |  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[47][0]           |                                                      |               20 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[45][0]           |                                                      |                7 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[27][0]           |                                                      |               12 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[9][0]            |                                                      |               20 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[12][0]           |                                                      |                9 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[3][0]            |                                                      |                6 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[13][0]           |                                                      |                8 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[34][0]           |                                                      |                9 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[15][0]           |                                                      |                9 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[43][0]           |                                                      |               10 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[5][0]            |                                                      |                6 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[0][0]            |                                                      |               11 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[16][0]           |                                                      |               12 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[4][0]            |                                                      |                8 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[46][0]           |                                                      |               16 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[29][0]           |                                                      |               14 |             40 |
 |  delay_reg[0]_i_3_n_0                       | display_mod/delay[0]_i_1_n_0                         |                                                      |                5 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[5][0]            |                                                      |                7 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[11][0]           |                                                      |                7 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[12][0]           |                                                      |                7 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[19][0]           |                                                      |                9 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[15][0]           |                                                      |                6 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[10][0]           |                                                      |                4 |             40 |
-|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[13][0]           |                                                      |                6 |             40 |
-|  clk_IBUF_BUFG                              |                                                      | mouse/reset_timeout_cnt                              |                7 |             48 |
-|  clk_IBUF_BUFG                              |                                                      | mouse/reset_periodic_check_cnt                       |                8 |             52 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[17][0]           |                                                      |               12 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[10][0]           |                                                      |               11 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[19][0]           |                                                      |               10 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[31][0]           |                                                      |               20 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[14][0]           |                                                      |               13 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[32][0]           |                                                      |                9 |             40 |
+|  clk400hz_BUFG                              | user_snake/snake_mod/worm_y_mem_reg[36][0]           |                                                      |               10 |             40 |
+|  clk_IBUF_BUFG                              |                                                      | mouse/reset_timeout_cnt_reg_n_0                      |                7 |             48 |
+|  clk_IBUF_BUFG                              |                                                      | mouse/reset_periodic_check_cnt__0                    |                6 |             52 |
+| ~clk6p25m_BUFG                              | display_mod/state                                    |                                                      |                7 |             64 |
+|  clk_IBUF_BUFG                              |                                                      | clk_mod_400hz/clear                                  |                8 |             64 |
 |  clk_IBUF_BUFG                              |                                                      | menu_screen_inst/frame_rate/clear                    |                8 |             64 |
-| ~clk6p25m_BUFG                              | display_mod/state                                    |                                                      |               10 |             64 |
-|  clk_IBUF_BUFG                              |                                                      | clk_mod_6p25m/clear                                  |                8 |             64 |
-|  clk_IBUF_BUFG                              |                                                      | clk_mod_400hz/COUNT[0]_i_1__0_n_0                    |                8 |             64 |
-| ~clk6p25m_BUFG                              |                                                      | display_mod/spi_word[39]_i_1_n_0                     |               14 |             90 |
-|  clk_IBUF_BUFG                              |                                                      |                                                      |               31 |            174 |
+|  clk_IBUF_BUFG                              |                                                      | clk_mod_6p25m/COUNT[0]_i_1__0_n_0                    |                8 |             64 |
+| ~clk6p25m_BUFG                              |                                                      | display_mod/spi_word[39]_i_1_n_0                     |               15 |             90 |
+|  clk_IBUF_BUFG                              |                                                      |                                                      |               33 |            158 |
 +---------------------------------------------+------------------------------------------------------+------------------------------------------------------+------------------+----------------+
 
 

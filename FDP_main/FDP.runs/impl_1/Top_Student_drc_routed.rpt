@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Fri Apr 11 10:03:21 2025
+| Date         : Fri Apr 11 14:59:44 2025
 | Host         : Lawrence-ROG running 64-bit major release  (build 9200)
 | Command      : report_drc -file Top_Student_drc_routed.rpt -pb Top_Student_drc_routed.pb -rpx Top_Student_drc_routed.rpx
 | Design       : Top_Student
@@ -62,7 +62,7 @@ Related violations: <none>
 
 RTSTAT-10#1 Warning
 No routable loads  
-358 net(s) have no routable loads. The problem bus(es) and/or net(s) are menu_screen_inst/frame_rate/COUNT_reg[0]_i_1_n_2, menu_screen_inst/frame_rate/COUNT_reg[0]_i_1_n_3, clk_mod_6p25m/COUNT_reg[0]_i_2__0_n_1, clk_mod_6p25m/COUNT_reg[0]_i_2__0_n_2, clk_mod_6p25m/COUNT_reg[0]_i_2__0_n_3, clk_mod_400hz/COUNT_reg[0]_i_2__1_n_1, clk_mod_400hz/COUNT_reg[0]_i_2__1_n_2, clk_mod_400hz/COUNT_reg[0]_i_2__1_n_3, menu_screen_inst/frame_rate/COUNT_reg[0]_i_2_n_1, menu_screen_inst/frame_rate/COUNT_reg[0]_i_2_n_2, menu_screen_inst/frame_rate/COUNT_reg[0]_i_2_n_3, menu_screen_inst/frame_rate/COUNT_reg[0]_i_3_n_1, menu_screen_inst/frame_rate/COUNT_reg[0]_i_3_n_2, menu_screen_inst/frame_rate/COUNT_reg[0]_i_3_n_3, menu_screen_inst/frame_rate/COUNT_reg[0]_i_8_n_1 (the first 15 of 358 listed).
+358 net(s) have no routable loads. The problem bus(es) and/or net(s) are menu_screen_inst/frame_rate/COUNT_reg[0]_i_1_n_2, menu_screen_inst/frame_rate/COUNT_reg[0]_i_1_n_3, clk_mod_400hz/COUNT_reg[0]_i_2__0_n_1, clk_mod_400hz/COUNT_reg[0]_i_2__0_n_2, clk_mod_400hz/COUNT_reg[0]_i_2__0_n_3, clk_mod_6p25m/COUNT_reg[0]_i_2__1_n_1, clk_mod_6p25m/COUNT_reg[0]_i_2__1_n_2, clk_mod_6p25m/COUNT_reg[0]_i_2__1_n_3, menu_screen_inst/frame_rate/COUNT_reg[0]_i_2_n_1, menu_screen_inst/frame_rate/COUNT_reg[0]_i_2_n_2, menu_screen_inst/frame_rate/COUNT_reg[0]_i_2_n_3, menu_screen_inst/frame_rate/COUNT_reg[0]_i_3_n_1, menu_screen_inst/frame_rate/COUNT_reg[0]_i_3_n_2, menu_screen_inst/frame_rate/COUNT_reg[0]_i_3_n_3, menu_screen_inst/frame_rate/COUNT_reg[0]_i_8_n_1 (the first 15 of 358 listed).
 Related violations: <none>
 
 

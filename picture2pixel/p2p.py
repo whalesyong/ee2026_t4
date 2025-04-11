@@ -11,7 +11,7 @@ input_dir = 'input'  # Modify if needed
 output_dir = 'output'  # Modify if needed
 
 # Parameters for picture2pixel library
-num_frames = 2
+num_frames = 4
 width = 96
 height = 64
 svd_r = 0
@@ -55,3 +55,6 @@ input_folder = "output"
 output_file = "output.txt"
 
 generate_code(input_folder, output_file)
+
+# open output.txt with default text editor (windows only)
+os.startfile(output_file)

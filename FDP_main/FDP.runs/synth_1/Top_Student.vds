@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Fri Apr 11 09:48:34 2025
-# Process ID: 15788
+# Start of session at: Fri Apr 11 14:34:39 2025
+# Process ID: 18320
 # Current directory: C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.runs/synth_1
 # Command line: vivado.exe -log Top_Student.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Student.tcl
 # Log file: C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.runs/synth_1/Top_Student.vds
@@ -15,11 +15,11 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 25468 
-WARNING: [Synth 8-2254] instance name 'frame_rate' matches net/port name [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/menu_screen.v:12]
+INFO: Helper process launched with PID 20844 
+WARNING: [Synth 8-2254] instance name 'frame_rate' matches net/port name [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/menu_screen.v:21]
 WARNING: [Synth 8-2142] illegal initial value of input port menu_selection for module menu_screen ignored [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/menu_screen.v:5]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 399.344 ; gain = 113.082
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 399.102 ; gain = 112.070
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Top_Student' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:3]
 	Parameter MAX_VEL bound to: 5 - type: integer 
@@ -141,7 +141,7 @@ INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/Lawr
 INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/render_oled.v:29]
 INFO: [Synth 8-6155] done synthesizing module 'render_oled' (9#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/render_oled.v:3]
 INFO: [Synth 8-6157] synthesizing module 'menu_screen' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/menu_screen.v:3]
-	Parameter picture_total_count bound to: 3 - type: integer 
+	Parameter picture_total_count bound to: 4 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'menu_screen' (10#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/menu_screen.v:3]
 WARNING: [Synth 8-350] instance 'menu_screen_inst' of module 'menu_screen' requires 4 connections, but only 3 given [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:287]
 WARNING: [Synth 8-3848] Net seg in module/entity Top_Student does not have driver. [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:8]
@@ -199,7 +199,7 @@ WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[1]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2229.691 ; gain = 1943.430
+Finished RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 3179.227 ; gain = 2892.195
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -212,10 +212,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2229.691 ; gain = 1943.430
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 3179.227 ; gain = 2892.195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2229.691 ; gain = 1943.430
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 3179.227 ; gain = 2892.195
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -233,22 +233,23 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 18870.637 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 28363.117 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:06:17 ; elapsed = 00:06:47 . Memory (MB): peak = 18870.637 ; gain = 18584.375
+Finished Constraint Validation : Time (s): cpu = 00:11:07 ; elapsed = 00:12:09 . Memory (MB): peak = 28363.117 ; gain = 28076.086
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:06:17 ; elapsed = 00:06:47 . Memory (MB): peak = 18870.637 ; gain = 18584.375
+Finished Loading Part and Timing Information : Time (s): cpu = 00:11:07 ; elapsed = 00:12:09 . Memory (MB): peak = 28363.117 ; gain = 28076.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:06:17 ; elapsed = 00:06:47 . Memory (MB): peak = 18870.637 ; gain = 18584.375
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:11:07 ; elapsed = 00:12:09 . Memory (MB): peak = 28363.117 ; gain = 28076.086
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "SLOW_CLOCK0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Oled_Display'
@@ -371,6 +372,8 @@ INFO: [Synth 8-5545] ROM "worm_x_mem_reg[45]" won't be mapped to RAM because add
 INFO: [Synth 8-5545] ROM "worm_x_mem_reg[46]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "worm_x_mem_reg[47]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5544] ROM "in_boundary" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "oled_data" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "oled_data" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -472,9 +475,9 @@ reset_enable_reporting_wait_ack | 0000000010000000000000000000000000000 |       
    check_read_id_wait_id | 1000000000000000000000000000000000000 |                           100011
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'MouseCtl'
-WARNING: [Synth 8-327] inferring latch for variable 'oled_data_reg' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/menu_screen.v:28]
+WARNING: [Synth 8-327] inferring latch for variable 'oled_data_reg' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/menu_screen.v:36]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:06:34 ; elapsed = 00:07:05 . Memory (MB): peak = 18870.637 ; gain = 18584.375
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:11:44 ; elapsed = 00:12:50 . Memory (MB): peak = 28363.117 ; gain = 28076.086
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -490,8 +493,12 @@ Report RTL Partitions:
 |7     |flexible_snake__GB6 |           1|     15269|
 |8     |render_oled__GB0    |           1|     21013|
 |9     |render_oled__GB1    |           1|     20931|
-|10    |Top_Student__GCB0   |           1|     57325|
-|11    |Top_Student__GCB1   |           1|      7553|
+|10    |menu_screen__GB0    |           1|     57754|
+|11    |menu_screen__GB1    |           1|     13743|
+|12    |menu_screen__GB2    |           1|     16882|
+|13    |menu_screen__GB3    |           1|     20533|
+|14    |menu_screen__GB4    |           1|     26970|
+|15    |Top_Student__GC0    |           1|     10500|
 +------+--------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -544,19 +551,26 @@ Detailed RTL Component Info :
 	  32 Input     20 Bit        Muxes := 1     
 	   2 Input     17 Bit        Muxes := 19    
 	  17 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 228   
-	   5 Input     16 Bit        Muxes := 6     
-	   3 Input     16 Bit        Muxes := 20    
-	  16 Input     16 Bit        Muxes := 2     
-	   6 Input     16 Bit        Muxes := 4     
-	   4 Input     16 Bit        Muxes := 7     
-	  10 Input     16 Bit        Muxes := 1     
-	   9 Input     16 Bit        Muxes := 1     
-	   7 Input     16 Bit        Muxes := 1     
-	   8 Input     16 Bit        Muxes := 1     
-	   5 Input     15 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	   2 Input     13 Bit        Muxes := 17    
+	   2 Input     16 Bit        Muxes := 1145  
+	   5 Input     16 Bit        Muxes := 29    
+	   4 Input     16 Bit        Muxes := 42    
+	   3 Input     16 Bit        Muxes := 70    
+	   6 Input     16 Bit        Muxes := 14    
+	   7 Input     16 Bit        Muxes := 8     
+	   8 Input     16 Bit        Muxes := 10    
+	   9 Input     16 Bit        Muxes := 5     
+	  10 Input     16 Bit        Muxes := 3     
+	  13 Input     16 Bit        Muxes := 2     
+	  21 Input     16 Bit        Muxes := 1     
+	  14 Input     16 Bit        Muxes := 1     
+	  12 Input     16 Bit        Muxes := 1     
+	  15 Input     16 Bit        Muxes := 1     
+	  29 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 4     
+	   3 Input     15 Bit        Muxes := 2     
+	   7 Input     15 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 18    
+	   3 Input     13 Bit        Muxes := 2     
 	   2 Input     12 Bit        Muxes := 10    
 	   2 Input     11 Bit        Muxes := 3     
 	   2 Input     10 Bit        Muxes := 98    
@@ -567,21 +581,25 @@ Detailed RTL Component Info :
 	   2 Input      6 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 3     
 	  32 Input      5 Bit        Muxes := 1     
-	  16 Input      4 Bit        Muxes := 2     
-	  10 Input      4 Bit        Muxes := 1     
-	   9 Input      4 Bit        Muxes := 1     
+	   9 Input      4 Bit        Muxes := 5     
+	  10 Input      4 Bit        Muxes := 3     
+	  13 Input      4 Bit        Muxes := 2     
+	  14 Input      4 Bit        Muxes := 1     
+	  12 Input      4 Bit        Muxes := 1     
+	  15 Input      4 Bit        Muxes := 1     
 	  37 Input      4 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 21    
 	   5 Input      4 Bit        Muxes := 1     
-	   5 Input      3 Bit        Muxes := 3     
-	   6 Input      3 Bit        Muxes := 4     
-	   7 Input      3 Bit        Muxes := 1     
-	   8 Input      3 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 18    
+	   6 Input      3 Bit        Muxes := 13    
+	   8 Input      3 Bit        Muxes := 10    
+	   7 Input      3 Bit        Muxes := 9     
 	   2 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 2     
-	   3 Input      2 Bit        Muxes := 7     
-	   4 Input      2 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 85    
+	   4 Input      2 Bit        Muxes := 14    
+	   3 Input      2 Bit        Muxes := 25    
+	   2 Input      1 Bit        Muxes := 84    
+	   4 Input      1 Bit        Muxes := 1     
 	  17 Input      1 Bit        Muxes := 4     
 	  37 Input      1 Bit        Muxes := 20    
 ---------------------------------------------------------------------------------
@@ -667,12 +685,6 @@ Detailed RTL Component Info :
 	   5 Input     16 Bit        Muxes := 1     
 	   2 Input     11 Bit        Muxes := 2     
 	   2 Input      2 Bit        Muxes := 1     
-Module flexible_clock__6 
-Detailed RTL Component Info : 
-+---Registers : 
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
 Module flexible_clock__5 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -686,29 +698,58 @@ Detailed RTL Component Info :
 +---Registers : 
 	               16 Bit    Registers := 1     
 +---Muxes : 
-	   3 Input     16 Bit        Muxes := 20    
-	   2 Input     16 Bit        Muxes := 227   
-	  16 Input     16 Bit        Muxes := 2     
-	   6 Input     16 Bit        Muxes := 4     
-	   4 Input     16 Bit        Muxes := 7     
-	  10 Input     16 Bit        Muxes := 1     
-	   9 Input     16 Bit        Muxes := 1     
-	   5 Input     16 Bit        Muxes := 5     
-	   7 Input     16 Bit        Muxes := 1     
-	   8 Input     16 Bit        Muxes := 1     
-	   5 Input     15 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	   2 Input     13 Bit        Muxes := 1     
-	  16 Input      4 Bit        Muxes := 2     
-	  10 Input      4 Bit        Muxes := 1     
-	   9 Input      4 Bit        Muxes := 1     
-	   5 Input      3 Bit        Muxes := 3     
-	   6 Input      3 Bit        Muxes := 4     
-	   7 Input      3 Bit        Muxes := 1     
-	   8 Input      3 Bit        Muxes := 1     
-	   3 Input      2 Bit        Muxes := 7     
-	   4 Input      2 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 2     
+	   4 Input     16 Bit        Muxes := 42    
+	   2 Input     16 Bit        Muxes := 1144  
+	   5 Input     16 Bit        Muxes := 28    
+	   3 Input     16 Bit        Muxes := 70    
+	   6 Input     16 Bit        Muxes := 14    
+	   7 Input     16 Bit        Muxes := 8     
+	   8 Input     16 Bit        Muxes := 10    
+	   9 Input     16 Bit        Muxes := 5     
+	  10 Input     16 Bit        Muxes := 3     
+	  13 Input     16 Bit        Muxes := 2     
+	  21 Input     16 Bit        Muxes := 1     
+	  14 Input     16 Bit        Muxes := 1     
+	  12 Input     16 Bit        Muxes := 1     
+	  15 Input     16 Bit        Muxes := 1     
+	  29 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 4     
+	   3 Input     15 Bit        Muxes := 2     
+	   7 Input     15 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 2     
+	   3 Input     13 Bit        Muxes := 2     
+	   9 Input      4 Bit        Muxes := 5     
+	  10 Input      4 Bit        Muxes := 3     
+	  13 Input      4 Bit        Muxes := 2     
+	  14 Input      4 Bit        Muxes := 1     
+	  12 Input      4 Bit        Muxes := 1     
+	  15 Input      4 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 18    
+	   6 Input      3 Bit        Muxes := 13    
+	   8 Input      3 Bit        Muxes := 10    
+	   7 Input      3 Bit        Muxes := 9     
+	   4 Input      2 Bit        Muxes := 14    
+	   3 Input      2 Bit        Muxes := 25    
+	   2 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+Module flexible_clock__6 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module flexible_clock__7 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module flexible_clock 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
 Module Oled_Display 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -729,12 +770,6 @@ Detailed RTL Component Info :
 	   2 Input      5 Bit        Muxes := 2     
 	  32 Input      5 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 2     
-Module flexible_clock__7 
-Detailed RTL Component Info : 
-+---Registers : 
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
 Module Ps2Interface 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -795,12 +830,6 @@ Detailed RTL Component Info :
 	   2 Input      4 Bit        Muxes := 21    
 	   5 Input      4 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 7     
-Module flexible_clock 
-Detailed RTL Component Info : 
-+---Registers : 
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -813,35 +842,9 @@ BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6014] Unused sequential element clk_mod25m/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:318]
-INFO: [Synth 8-5545] ROM "clk_mod_400hz/SLOW_CLOCK0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-WARNING: [Synth 8-6014] Unused sequential element mouse/x_overflow_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:453]
-WARNING: [Synth 8-6014] Unused sequential element mouse/x_inc_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:458]
-WARNING: [Synth 8-6014] Unused sequential element mouse/x_max_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:489]
-WARNING: [Synth 8-6014] Unused sequential element mouse/x_sign_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:451]
-WARNING: [Synth 8-6014] Unused sequential element mouse/x_pos_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:431]
-WARNING: [Synth 8-6014] Unused sequential element mouse/xpos_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:431]
-WARNING: [Synth 8-6014] Unused sequential element mouse/y_overflow_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:517]
-WARNING: [Synth 8-6014] Unused sequential element mouse/y_inc_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:522]
-WARNING: [Synth 8-6014] Unused sequential element mouse/y_max_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:553]
-WARNING: [Synth 8-6014] Unused sequential element mouse/y_sign_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:515]
-WARNING: [Synth 8-6014] Unused sequential element mouse/y_pos_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:434]
-WARNING: [Synth 8-6014] Unused sequential element mouse/ypos_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:434]
-WARNING: [Synth 8-6014] Unused sequential element mouse/zpos_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:1011]
-WARNING: [Synth 8-6014] Unused sequential element mouse/left_down_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:423]
-WARNING: [Synth 8-6014] Unused sequential element mouse/left_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:423]
-WARNING: [Synth 8-6014] Unused sequential element mouse/middle_down_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:425]
-WARNING: [Synth 8-6014] Unused sequential element mouse/middle_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:425]
-WARNING: [Synth 8-6014] Unused sequential element mouse/right_down_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:427]
-WARNING: [Synth 8-6014] Unused sequential element mouse/right_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:427]
-WARNING: [Synth 8-6014] Unused sequential element mouse/new_event_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:610]
-INFO: [Synth 8-5545] ROM "mouse/periodic_check_tick" won't be mapped to RAM because address size (26) is larger than maximum supported(25)
-INFO: [Synth 8-5546] ROM "mouse/timeout" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5545] ROM "clk_mod_400hz/SLOW_CLOCK0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 WARNING: [Synth 8-3331] design Top_Student has unconnected port JB[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[7]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[6]
@@ -870,12 +873,12 @@ WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[3]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[1]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[0]
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_4/i_0/\size_reg[5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_4/i_0/\size_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_4/i_0/\size_reg[6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_4/i_0/\size_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_4/i_0/\size_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_4/i_0/\size_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_3/i_0/\size_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_3/i_0/\size_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_3/i_0/\size_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_3/i_0/\size_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_3/i_0/\size_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_3/i_0/\size_reg[0] )
 INFO: [Synth 8-5545] ROM "worm_x_mem_reg[47]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "worm_x_mem_reg[46]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "worm_x_mem_reg[45]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -923,7 +926,7 @@ INFO: [Synth 8-5545] ROM "worm_x_mem_reg[4]" won't be mapped to RAM because addr
 INFO: [Synth 8-5545] ROM "worm_x_mem_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "worm_x_mem_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "worm_x_mem_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Common 17-14] Message 'Synth 8-5545' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-5545] ROM "worm_x_mem_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[0]' (FD) to 'snake_mod/new_ypos_reg[0]'
 INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[1]' (FD) to 'snake_mod/new_ypos_reg[1]'
 INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[2]' (FD) to 'snake_mod/new_ypos_reg[2]'
@@ -950,18 +953,121 @@ WARNING: [Synth 8-3332] Sequential element (potential_xpos_reg[12]) is unused an
 WARNING: [Synth 8-6014] Unused sequential element clk_buffer_inst/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:318]
 WARNING: [Synth 8-6014] Unused sequential element clk_slow_inst/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:318]
 WARNING: [Synth 8-6014] Unused sequential element clk_mod25m/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:318]
+INFO: [Synth 8-5545] ROM "clk_slow_inst_6p25m/SLOW_CLOCK0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clk_slow_inst_6p25m/SLOW_CLOCK0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Common 17-14] Message 'Synth 8-5545' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 WARNING: [Synth 8-3463] Infeasible ramstyle = block set for RAM pixel_colour_cache_1_reg,trying to implement using LUTRAM
 WARNING: [Synth 8-3463] Infeasible ramstyle = block set for RAM pixel_colour_cache_1_reg,trying to implement using LUTRAM
 WARNING: [Synth 8-3463] Infeasible ramstyle = block set for RAM pixel_colour_cache_0_reg,trying to implement using LUTRAM
 WARNING: [Synth 8-3463] Infeasible ramstyle = block set for RAM pixel_colour_cache_0_reg,trying to implement using LUTRAM
-INFO: [Synth 8-5546] ROM "display_mod/fsm_next_state0" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "display_mod/fsm_next_state0" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-3917] design Top_Student__GCB0 has port JB[6] driven by constant 1
-WARNING: [Synth 8-3331] design menu_screen has unconnected port menu_selection[2]
-WARNING: [Synth 8-3331] design menu_screen has unconnected port menu_selection[1]
-WARNING: [Synth 8-3331] design menu_screen has unconnected port menu_selection[0]
+INFO: [Synth 8-5544] ROM "oled_data1" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element clk_mod25m/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:318]
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "timeout" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3332] Sequential element (x_new_reg) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_overflow_reg) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_inc_reg[7]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_inc_reg[6]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_inc_reg[5]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_inc_reg[4]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_inc_reg[3]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_inc_reg[2]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_inc_reg[1]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_inc_reg[0]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_max_reg[11]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_max_reg[10]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_max_reg[9]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_max_reg[8]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_max_reg[7]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_max_reg[6]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_max_reg[5]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_max_reg[4]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_max_reg[3]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_max_reg[2]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_max_reg[1]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_max_reg[0]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_sign_reg) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_pos_reg[11]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_pos_reg[10]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_pos_reg[9]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_pos_reg[8]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_pos_reg[7]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_pos_reg[6]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_pos_reg[5]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_pos_reg[4]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_pos_reg[3]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_pos_reg[2]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_pos_reg[1]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (x_pos_reg[0]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (xpos_reg[11]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (xpos_reg[10]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (xpos_reg[9]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (xpos_reg[8]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (xpos_reg[7]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (xpos_reg[6]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (xpos_reg[5]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (xpos_reg[4]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (xpos_reg[3]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (xpos_reg[2]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (xpos_reg[1]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (xpos_reg[0]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_new_reg) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_overflow_reg) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_inc_reg[7]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_inc_reg[6]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_inc_reg[5]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_inc_reg[4]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_inc_reg[3]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_inc_reg[2]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_inc_reg[1]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_inc_reg[0]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_max_reg[11]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_max_reg[10]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_max_reg[9]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_max_reg[8]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_max_reg[7]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_max_reg[6]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_max_reg[5]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_max_reg[4]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_max_reg[3]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_max_reg[2]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_max_reg[1]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_max_reg[0]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_sign_reg) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_pos_reg[11]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_pos_reg[10]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_pos_reg[9]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_pos_reg[8]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_pos_reg[7]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_pos_reg[6]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_pos_reg[5]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_pos_reg[4]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_pos_reg[3]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_pos_reg[2]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_pos_reg[1]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (y_pos_reg[0]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (ypos_reg[11]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (ypos_reg[10]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (ypos_reg[9]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (ypos_reg[8]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (ypos_reg[7]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (ypos_reg[6]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (ypos_reg[5]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (ypos_reg[4]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (ypos_reg[3]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (ypos_reg[2]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (ypos_reg[1]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (ypos_reg[0]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (zpos_reg[3]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (zpos_reg[2]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (zpos_reg[1]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (zpos_reg[0]) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (left_down_reg) is unused and will be removed from module MouseCtl.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:12:26 ; elapsed = 00:13:23 . Memory (MB): peak = 18870.637 ; gain = 18584.375
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:21:07 ; elapsed = 00:22:59 . Memory (MB): peak = 28363.117 ; gain = 28076.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -993,47 +1099,24 @@ Report RTL Partitions:
 |7     |flexible_snake__GB6 |           1|      8266|
 |8     |render_oled__GB0    |           1|     23187|
 |9     |render_oled__GB1    |           1|     19157|
-|10    |Top_Student__GCB0   |           1|     10345|
-|11    |Top_Student__GCB1   |           1|      1121|
+|10    |menu_screen__GB0    |           1|     25418|
+|11    |menu_screen__GB1    |           1|      3447|
+|12    |menu_screen__GB2    |           1|      5418|
+|13    |menu_screen__GB3    |           1|      6293|
+|14    |menu_screen__GB4    |           1|      6988|
+|15    |Top_Student__GC0    |           1|      1872|
 +------+--------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:12:33 ; elapsed = 00:13:31 . Memory (MB): peak = 18870.637 ; gain = 18584.375
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:21:13 ; elapsed = 00:23:07 . Memory (MB): peak = 28363.117 ; gain = 28076.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[12]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[11]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[10]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[9]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[8]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[7]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[6]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[5]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[4]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[3]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[2]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[1]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_x_vel_reg[0]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[12]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[11]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[10]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[9]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[8]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[7]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[6]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[5]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[4]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[3]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[2]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[1]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (new_y_vel_reg[0]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-3332] Sequential element (vel_changed_reg) is unused and will be removed from module basic_snake.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:12:34 ; elapsed = 00:13:32 . Memory (MB): peak = 18870.637 ; gain = 18584.375
+Finished Timing Optimization : Time (s): cpu = 00:21:14 ; elapsed = 00:23:08 . Memory (MB): peak = 28363.117 ; gain = 28076.086
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1048,14 +1131,18 @@ Report RTL Partitions:
 |6     |flexible_snake__GB5 |           1|        49|
 |7     |flexible_snake__GB6 |           1|      5516|
 |8     |render_oled__GB0    |           1|       200|
-|9     |Top_Student__GCB0   |           1|     10345|
-|10    |Top_Student__GCB1   |           1|      1121|
+|9     |menu_screen__GB0    |           1|     25400|
+|10    |menu_screen__GB1    |           1|      3440|
+|11    |menu_screen__GB2    |           1|      5418|
+|12    |menu_screen__GB3    |           1|      6293|
+|13    |menu_screen__GB4    |           1|      6988|
+|14    |Top_Student__GC0    |           1|      1872|
 +------+--------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:12:35 ; elapsed = 00:13:40 . Memory (MB): peak = 18870.637 ; gain = 18584.375
+Finished Technology Mapping : Time (s): cpu = 00:21:16 ; elapsed = 00:23:19 . Memory (MB): peak = 28363.117 ; gain = 28076.086
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1070,8 +1157,12 @@ Report RTL Partitions:
 |6     |flexible_snake__GB5 |           1|        49|
 |7     |flexible_snake__GB6 |           1|       207|
 |8     |render_oled__GB0    |           1|         0|
-|9     |Top_Student__GCB0   |           1|      3313|
-|10    |Top_Student__GCB1   |           1|       698|
+|9     |menu_screen__GB0    |           1|      9198|
+|10    |menu_screen__GB1    |           1|      1253|
+|11    |menu_screen__GB2    |           1|      1923|
+|12    |menu_screen__GB3    |           1|      2073|
+|13    |menu_screen__GB4    |           1|      2472|
+|14    |Top_Student__GC0    |           1|      1036|
 +------+--------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -1091,7 +1182,7 @@ INFO: [Synth 8-5365] Flop mouse/Inst_Ps2Interface/ps2_data_h_reg is being invert
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:12:36 ; elapsed = 00:13:41 . Memory (MB): peak = 18870.637 ; gain = 18584.375
+Finished IO Insertion : Time (s): cpu = 00:21:26 ; elapsed = 00:23:30 . Memory (MB): peak = 28363.117 ; gain = 28076.086
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1104,7 +1195,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:12:36 ; elapsed = 00:13:41 . Memory (MB): peak = 18870.637 ; gain = 18584.375
+Finished Renaming Generated Instances : Time (s): cpu = 00:21:26 ; elapsed = 00:23:30 . Memory (MB): peak = 28363.117 ; gain = 28076.086
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1116,25 +1207,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:12:36 ; elapsed = 00:13:42 . Memory (MB): peak = 18870.637 ; gain = 18584.375
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:21:26 ; elapsed = 00:23:31 . Memory (MB): peak = 28363.117 ; gain = 28076.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:12:36 ; elapsed = 00:13:42 . Memory (MB): peak = 18870.637 ; gain = 18584.375
+Finished Renaming Generated Ports : Time (s): cpu = 00:21:26 ; elapsed = 00:23:31 . Memory (MB): peak = 28363.117 ; gain = 28076.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:12:36 ; elapsed = 00:13:42 . Memory (MB): peak = 18870.637 ; gain = 18584.375
+Finished Handling Custom Attributes : Time (s): cpu = 00:21:28 ; elapsed = 00:23:32 . Memory (MB): peak = 28363.117 ; gain = 28076.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:12:36 ; elapsed = 00:13:42 . Memory (MB): peak = 18870.637 ; gain = 18584.375
+Finished Renaming Generated Nets : Time (s): cpu = 00:21:28 ; elapsed = 00:23:32 . Memory (MB): peak = 28363.117 ; gain = 28076.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1152,62 +1243,65 @@ Report Cell Usage:
 +------+-------+------+
 |1     |BUFG   |     3|
 |2     |CARRY4 |   137|
-|3     |LUT1   |    67|
-|4     |LUT2   |   310|
-|5     |LUT3   |   192|
-|6     |LUT4   |   117|
-|7     |LUT5   |   211|
-|8     |LUT6   |  2536|
-|9     |MUXF7  |   849|
-|10    |MUXF8  |   409|
+|3     |LUT1   |    69|
+|4     |LUT2   |  2073|
+|5     |LUT3   |  1178|
+|6     |LUT4   |  1421|
+|7     |LUT5   |  1934|
+|8     |LUT6   | 11725|
+|9     |MUXF7  |   222|
+|10    |MUXF8  |   108|
 |11    |FDE_1  |    32|
 |12    |FDRE   |  1409|
 |13    |FDSE   |    14|
-|14    |LD     |    16|
-|15    |IBUF   |     7|
-|16    |IOBUF  |     2|
-|17    |OBUF   |    23|
-|18    |OBUFT  |    13|
+|14    |LDC    |     9|
+|15    |LDP    |     7|
+|16    |IBUF   |     7|
+|17    |IOBUF  |     2|
+|18    |OBUF   |    23|
+|19    |OBUFT  |    13|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+----------------------+-----------------+------+
 |      |Instance              |Module           |Cells |
 +------+----------------------+-----------------+------+
-|1     |top                   |                 |  6347|
+|1     |top                   |                 | 20386|
 |2     |  clk_mod_400hz       |flexible_clock   |    54|
 |3     |  clk_mod_6p25m       |flexible_clock_0 |    51|
-|4     |  display_mod         |Oled_Display     |  3180|
-|5     |  menu_screen_inst    |menu_screen      |   170|
+|4     |  display_mod         |Oled_Display     | 17266|
+|5     |  menu_screen_inst    |menu_screen      |   127|
 |6     |    frame_rate        |flexible_clock_1 |    63|
-|7     |  mouse               |MouseCtl         |   451|
-|8     |    Inst_Ps2Interface |Ps2Interface     |   259|
+|7     |  mouse               |MouseCtl         |   447|
+|8     |    Inst_Ps2Interface |Ps2Interface     |   256|
 |9     |  user_snake          |flexible_snake   |  2098|
 |10    |    snake_mod         |basic_snake      |   600|
 +------+----------------------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:12:36 ; elapsed = 00:13:42 . Memory (MB): peak = 18870.637 ; gain = 18584.375
+Finished Writing Synthesis Report : Time (s): cpu = 00:21:28 ; elapsed = 00:23:32 . Memory (MB): peak = 28363.117 ; gain = 28076.086
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 89 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:06:24 ; elapsed = 00:07:20 . Memory (MB): peak = 18870.637 ; gain = 1943.430
-Synthesis Optimization Complete : Time (s): cpu = 00:12:36 ; elapsed = 00:13:42 . Memory (MB): peak = 18870.637 ; gain = 18584.375
+Synthesis finished with 0 errors, 0 critical warnings and 164 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:10:28 ; elapsed = 00:12:04 . Memory (MB): peak = 28363.117 ; gain = 2892.195
+Synthesis Optimization Complete : Time (s): cpu = 00:21:28 ; elapsed = 00:23:33 . Memory (MB): peak = 28363.117 ; gain = 28076.086
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 1452 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 524 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'Top_Student' is not ideal for floorplanning, since the cellview 'Oled_Display' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 50 instances were transformed.
   FDE_1 => FDRE (inverted pins: C): 32 instances
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
-  LD => LDCE: 16 instances
+  LDC => LDCE: 9 instances
+  LDP => LDPE: 7 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-250 Infos, 170 Warnings, 0 Critical Warnings and 0 Errors encountered.
+255 Infos, 219 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:12:38 ; elapsed = 00:13:45 . Memory (MB): peak = 18870.637 ; gain = 18595.902
+synth_design: Time (s): cpu = 00:21:32 ; elapsed = 00:23:39 . Memory (MB): peak = 28363.117 ; gain = 28087.559
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.runs/synth_1/Top_Student.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Top_Student_utilization_synth.rpt -pb Top_Student_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 18870.637 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri Apr 11 10:02:24 2025...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.113 . Memory (MB): peak = 28363.117 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 11 14:58:24 2025...
