@@ -17,7 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Common 17-41} -limit 10000000
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -33,6 +33,7 @@ set_property ip_output_repo c:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.cac
 set_property ip_cache_permissions {read write} [current_project]
 add_files C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/res/weights.coe
 add_files C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/res/00.coe
+add_files C:/Users/Lawrence/Desktop/ee2026_t4/picture2pixel/frames.coe
 read_verilog -library xil_defaultlib {
   C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v
   C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/CanvasTransfer.v
@@ -48,7 +49,11 @@ read_verilog -library xil_defaultlib {
   C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/test_food_camera.v
   C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/test_head_lawrence.v
   C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/render_oled.v
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/frame_selector.v
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_clock.v
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_worm.v
   C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/menu_screen.v
+  C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/debounce.v
 }
 read_vhdl -library xil_defaultlib {
   C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd
@@ -65,6 +70,9 @@ set_property used_in_implementation false [get_files -all c:/Users/Lawrence/Desk
 
 read_ip -quiet C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img.xci
 set_property used_in_implementation false [get_files -all c:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_ooc.xdc]
+
+read_ip -quiet C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci
+set_property used_in_implementation false [get_files -all c:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

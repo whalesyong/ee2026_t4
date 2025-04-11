@@ -60,12 +60,12 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a35tcpg236-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
@@ -79,6 +79,7 @@ set rc [catch {
   read_ip -quiet C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_0_1/blk_mem_gen_0.xci
   read_ip -quiet C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const.xci
   read_ip -quiet C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img.xci
+  read_ip -quiet C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci
   read_xdc C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc
   link_design -top Top_Student -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb

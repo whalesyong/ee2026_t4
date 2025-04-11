@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Fri Apr 11 14:34:39 2025
-# Process ID: 18320
+# Start of session at: Sat Apr 12 02:52:54 2025
+# Process ID: 36204
 # Current directory: C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.runs/synth_1
 # Command line: vivado.exe -log Top_Student.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Student.tcl
 # Log file: C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.runs/synth_1/Top_Student.vds
@@ -15,20 +15,25 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 20844 
-WARNING: [Synth 8-2254] instance name 'frame_rate' matches net/port name [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/menu_screen.v:21]
-WARNING: [Synth 8-2142] illegal initial value of input port menu_selection for module menu_screen ignored [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/menu_screen.v:5]
+INFO: Helper process launched with PID 14508 
+WARNING: [Synth 8-992] reset_user is already implicitly declared earlier [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:149]
+WARNING: [Synth 8-992] state is already implicitly declared earlier [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:313]
+WARNING: [Synth 8-2490] overwriting previous definition of module flexible_clock [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_clock.v:2]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 399.102 ; gain = 112.070
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 399.328 ; gain = 112.617
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Top_Student' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:3]
 	Parameter MAX_VEL bound to: 5 - type: integer 
+	Parameter START bound to: 2'b00 
+	Parameter CHOOSE_DIFFICULTY_NORMAL bound to: 2'b01 
+	Parameter CHOOSE_DIFFICULTY_HARD bound to: 2'b10 
+	Parameter GAME bound to: 2'b11 
 INFO: [Synth 8-6157] synthesizing module 'PixelToXY' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/pixel_converter.v:22]
 	Parameter SCREEN_WIDTH bound to: 96 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'PixelToXY' (1#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/pixel_converter.v:22]
-WARNING: [Synth 8-689] width (13) of port connection 'pixel_index' does not match port width (16) of module 'PixelToXY' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:25]
-INFO: [Synth 8-6157] synthesizing module 'flexible_clock' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:312]
-INFO: [Synth 8-6155] done synthesizing module 'flexible_clock' (2#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:312]
+WARNING: [Synth 8-689] width (13) of port connection 'pixel_index' does not match port width (16) of module 'PixelToXY' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:27]
+INFO: [Synth 8-6157] synthesizing module 'flexible_clock' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_clock.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'flexible_clock' (2#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_clock.v:2]
 INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
@@ -84,7 +89,7 @@ INFO: [Synth 8-226] default block is never used [C:/Users/Lawrence/Desktop/ee202
 INFO: [Synth 8-226] default block is never used [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:198]
 WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:346]
 INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (3#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
-WARNING: [Synth 8-350] instance 'display_mod' of module 'Oled_Display' requires 14 connections, but only 12 given [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:87]
+WARNING: [Synth 8-350] instance 'display_mod' of module 'Oled_Display' requires 14 connections, but only 12 given [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:89]
 INFO: [Synth 8-638] synthesizing module 'MouseCtl' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:212]
 	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
 	Parameter CHECK_PERIOD_MS bound to: 500 - type: integer 
@@ -102,8 +107,8 @@ INFO: [Synth 8-6157] synthesizing module 'flexible_snake' [C:/Users/Lawrence/Des
 INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:21]
 INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:22]
 INFO: [Synth 8-6157] synthesizing module 'basic_snake' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/basic_snake.v:2]
-	Parameter MAX_X bound to: 499 - type: integer 
-	Parameter MAX_Y bound to: 499 - type: integer 
+	Parameter MAX_X bound to: 494 - type: integer 
+	Parameter MAX_Y bound to: 494 - type: integer 
 	Parameter BOX_SIZE bound to: 1 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'basic_snake' (6#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/basic_snake.v:2]
 INFO: [Synth 8-6155] done synthesizing module 'flexible_snake' (7#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_snake.v:3]
@@ -141,15 +146,21 @@ INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/Lawr
 INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/render_oled.v:29]
 INFO: [Synth 8-6155] done synthesizing module 'render_oled' (9#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/render_oled.v:3]
 INFO: [Synth 8-6157] synthesizing module 'menu_screen' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/menu_screen.v:3]
-	Parameter picture_total_count bound to: 4 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'menu_screen' (10#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/menu_screen.v:3]
-WARNING: [Synth 8-350] instance 'menu_screen_inst' of module 'menu_screen' requires 4 connections, but only 3 given [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:287]
+INFO: [Synth 8-6157] synthesizing module 'frame_selector' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/frame_selector.v:1]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_1' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.runs/synth_1/.Xil/Vivado-36204-Lawrence-ROG/realtime/blk_mem_gen_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_1' (10#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.runs/synth_1/.Xil/Vivado-36204-Lawrence-ROG/realtime/blk_mem_gen_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'frame_selector' (11#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/frame_selector.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'menu_screen' (12#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/menu_screen.v:3]
+WARNING: [Synth 8-689] width (2) of port connection 'state' does not match port width (3) of module 'menu_screen' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:294]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/debounce.v:1]
+INFO: [Synth 8-6157] synthesizing module 'clock_enable' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/debounce.v:17]
+INFO: [Synth 8-6155] done synthesizing module 'clock_enable' (13#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/debounce.v:17]
+INFO: [Synth 8-6157] synthesizing module 'my_dff_en' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/debounce.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'my_dff_en' (14#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/debounce.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (15#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/debounce.v:1]
 WARNING: [Synth 8-3848] Net seg in module/entity Top_Student does not have driver. [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:8]
 WARNING: [Synth 8-3848] Net an in module/entity Top_Student does not have driver. [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:9]
-INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (11#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:3]
-WARNING: [Synth 8-3331] design menu_screen has unconnected port menu_selection[2]
-WARNING: [Synth 8-3331] design menu_screen has unconnected port menu_selection[1]
-WARNING: [Synth 8-3331] design menu_screen has unconnected port menu_selection[0]
+INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (16#1) [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:3]
 WARNING: [Synth 8-3331] design flexible_snake has unconnected port xpos[9]
 WARNING: [Synth 8-3331] design flexible_snake has unconnected port xpos[8]
 WARNING: [Synth 8-3331] design flexible_snake has unconnected port xpos[7]
@@ -183,8 +194,6 @@ WARNING: [Synth 8-3331] design Top_Student has unconnected port an[3]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port an[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port an[1]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port an[0]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[14]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[13]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[12]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[11]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[10]
@@ -199,7 +208,7 @@ WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[1]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 3179.227 ; gain = 2892.195
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 504.262 ; gain = 217.551
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -212,18 +221,23 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 3179.227 ; gain = 2892.195
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 504.262 ; gain = 217.551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 3179.227 ; gain = 2892.195
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 504.262 ; gain = 217.551
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
+Parsing XDC File [c:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1/blk_mem_gen_1_in_context.xdc] for cell 'menu_screen_inst/frame_selector_inst/frame_rom'
+Finished Parsing XDC File [c:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1/blk_mem_gen_1_in_context.xdc] for cell 'menu_screen_inst/frame_selector_inst/frame_rom'
 Parsing XDC File [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc]
+WARNING: [Vivado 12-180] No cells matched '<cellname>'. [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc:11]
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects [get_cells <cellname>]'. [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc:11]
 Finished Parsing XDC File [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/Top_Student_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/constrs_1/new/basys3constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_Student_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Top_Student_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.runs/synth_1/dont_touch.xdc]
@@ -233,23 +247,23 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 28363.117 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 837.324 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:11:07 ; elapsed = 00:12:09 . Memory (MB): peak = 28363.117 ; gain = 28076.086
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 837.324 ; gain = 550.613
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:11:07 ; elapsed = 00:12:09 . Memory (MB): peak = 28363.117 ; gain = 28076.086
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 837.324 ; gain = 550.613
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for menu_screen_inst/frame_selector_inst/frame_rom. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:11:07 ; elapsed = 00:12:09 . Memory (MB): peak = 28363.117 ; gain = 28076.086
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 837.324 ; gain = 550.613
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "SLOW_CLOCK0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Oled_Display'
@@ -372,8 +386,11 @@ INFO: [Synth 8-5545] ROM "worm_x_mem_reg[45]" won't be mapped to RAM because add
 INFO: [Synth 8-5545] ROM "worm_x_mem_reg[46]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "worm_x_mem_reg[47]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5544] ROM "in_boundary" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5546] ROM "oled_data" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "oled_data" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "slow_clk_en" won't be mapped to RAM because address size (27) is larger than maximum supported(25)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Top_Student'
+INFO: [Synth 8-5544] ROM "nextstate0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nextstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nextstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -475,9 +492,17 @@ reset_enable_reporting_wait_ack | 0000000010000000000000000000000000000 |       
    check_read_id_wait_id | 1000000000000000000000000000000000000 |                           100011
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'MouseCtl'
-WARNING: [Synth 8-327] inferring latch for variable 'oled_data_reg' [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/menu_screen.v:36]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   START |                               00 |                               00
+CHOOSE_DIFFICULTY_NORMAL |                               01 |                               01
+  CHOOSE_DIFFICULTY_HARD |                               10 |                               10
+                    GAME |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'Top_Student'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:11:44 ; elapsed = 00:12:50 . Memory (MB): peak = 28363.117 ; gain = 28076.086
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 837.324 ; gain = 550.613
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -490,15 +515,10 @@ Report RTL Partitions:
 |4     |flexible_snake__GB3 |           1|      7980|
 |5     |flexible_snake__GB4 |           1|      9418|
 |6     |flexible_snake__GB5 |           1|        49|
-|7     |flexible_snake__GB6 |           1|     15269|
+|7     |flexible_snake__GB6 |           1|     15267|
 |8     |render_oled__GB0    |           1|     21013|
 |9     |render_oled__GB1    |           1|     20931|
-|10    |menu_screen__GB0    |           1|     57754|
-|11    |menu_screen__GB1    |           1|     13743|
-|12    |menu_screen__GB2    |           1|     16882|
-|13    |menu_screen__GB3    |           1|     20533|
-|14    |menu_screen__GB4    |           1|     26970|
-|15    |Top_Student__GC0    |           1|     10500|
+|10    |Top_Student__GC0    |           1|     11747|
 +------+--------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -510,7 +530,6 @@ Detailed RTL Component Info :
 	   2 Input     26 Bit       Adders := 1     
 	   2 Input     24 Bit       Adders := 1     
 	   2 Input     17 Bit       Adders := 1     
-	   2 Input     16 Bit       Adders := 1     
 	   2 Input     13 Bit       Adders := 8     
 	   2 Input     12 Bit       Adders := 4     
 	   2 Input     11 Bit       Adders := 293   
@@ -527,7 +546,7 @@ Detailed RTL Component Info :
 	               26 Bit    Registers := 1     
 	               24 Bit    Registers := 1     
 	               17 Bit    Registers := 1     
-	               16 Bit    Registers := 10    
+	               16 Bit    Registers := 9     
 	               13 Bit    Registers := 6     
 	               12 Bit    Registers := 6     
 	               11 Bit    Registers := 2     
@@ -537,7 +556,7 @@ Detailed RTL Component Info :
 	                6 Bit    Registers := 1     
 	                5 Bit    Registers := 1     
 	                4 Bit    Registers := 5     
-	                1 Bit    Registers := 46    
+	                1 Bit    Registers := 61    
 +---RAMs : 
 	              96K Bit         RAMs := 1     
 +---Muxes : 
@@ -551,26 +570,9 @@ Detailed RTL Component Info :
 	  32 Input     20 Bit        Muxes := 1     
 	   2 Input     17 Bit        Muxes := 19    
 	  17 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1145  
-	   5 Input     16 Bit        Muxes := 29    
-	   4 Input     16 Bit        Muxes := 42    
-	   3 Input     16 Bit        Muxes := 70    
-	   6 Input     16 Bit        Muxes := 14    
-	   7 Input     16 Bit        Muxes := 8     
-	   8 Input     16 Bit        Muxes := 10    
-	   9 Input     16 Bit        Muxes := 5     
-	  10 Input     16 Bit        Muxes := 3     
-	  13 Input     16 Bit        Muxes := 2     
-	  21 Input     16 Bit        Muxes := 1     
-	  14 Input     16 Bit        Muxes := 1     
-	  12 Input     16 Bit        Muxes := 1     
-	  15 Input     16 Bit        Muxes := 1     
-	  29 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 4     
-	   3 Input     15 Bit        Muxes := 2     
-	   7 Input     15 Bit        Muxes := 2     
-	   2 Input     13 Bit        Muxes := 18    
-	   3 Input     13 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 2     
+	   5 Input     16 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 16    
 	   2 Input     12 Bit        Muxes := 10    
 	   2 Input     11 Bit        Muxes := 3     
 	   2 Input     10 Bit        Muxes := 98    
@@ -581,25 +583,13 @@ Detailed RTL Component Info :
 	   2 Input      6 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 3     
 	  32 Input      5 Bit        Muxes := 1     
-	   9 Input      4 Bit        Muxes := 5     
-	  10 Input      4 Bit        Muxes := 3     
-	  13 Input      4 Bit        Muxes := 2     
-	  14 Input      4 Bit        Muxes := 1     
-	  12 Input      4 Bit        Muxes := 1     
-	  15 Input      4 Bit        Muxes := 1     
 	  37 Input      4 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 21    
 	   5 Input      4 Bit        Muxes := 1     
-	   5 Input      3 Bit        Muxes := 18    
-	   6 Input      3 Bit        Muxes := 13    
-	   8 Input      3 Bit        Muxes := 10    
-	   7 Input      3 Bit        Muxes := 9     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 2     
-	   4 Input      2 Bit        Muxes := 14    
-	   3 Input      2 Bit        Muxes := 25    
-	   2 Input      1 Bit        Muxes := 84    
-	   4 Input      1 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 8     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 92    
 	  17 Input      1 Bit        Muxes := 4     
 	  37 Input      1 Bit        Muxes := 20    
 ---------------------------------------------------------------------------------
@@ -614,10 +604,12 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     13 Bit       Adders := 4     
 +---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     13 Bit        Muxes := 4     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 4     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 7     
 Module basic_snake 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -685,53 +677,6 @@ Detailed RTL Component Info :
 	   5 Input     16 Bit        Muxes := 1     
 	   2 Input     11 Bit        Muxes := 2     
 	   2 Input      2 Bit        Muxes := 1     
-Module flexible_clock__5 
-Detailed RTL Component Info : 
-+---Registers : 
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module menu_screen 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     16 Bit       Adders := 1     
-+---Registers : 
-	               16 Bit    Registers := 1     
-+---Muxes : 
-	   4 Input     16 Bit        Muxes := 42    
-	   2 Input     16 Bit        Muxes := 1144  
-	   5 Input     16 Bit        Muxes := 28    
-	   3 Input     16 Bit        Muxes := 70    
-	   6 Input     16 Bit        Muxes := 14    
-	   7 Input     16 Bit        Muxes := 8     
-	   8 Input     16 Bit        Muxes := 10    
-	   9 Input     16 Bit        Muxes := 5     
-	  10 Input     16 Bit        Muxes := 3     
-	  13 Input     16 Bit        Muxes := 2     
-	  21 Input     16 Bit        Muxes := 1     
-	  14 Input     16 Bit        Muxes := 1     
-	  12 Input     16 Bit        Muxes := 1     
-	  15 Input     16 Bit        Muxes := 1     
-	  29 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 4     
-	   3 Input     15 Bit        Muxes := 2     
-	   7 Input     15 Bit        Muxes := 2     
-	   2 Input     13 Bit        Muxes := 2     
-	   3 Input     13 Bit        Muxes := 2     
-	   9 Input      4 Bit        Muxes := 5     
-	  10 Input      4 Bit        Muxes := 3     
-	  13 Input      4 Bit        Muxes := 2     
-	  14 Input      4 Bit        Muxes := 1     
-	  12 Input      4 Bit        Muxes := 1     
-	  15 Input      4 Bit        Muxes := 1     
-	   5 Input      3 Bit        Muxes := 18    
-	   6 Input      3 Bit        Muxes := 13    
-	   8 Input      3 Bit        Muxes := 10    
-	   7 Input      3 Bit        Muxes := 9     
-	   4 Input      2 Bit        Muxes := 14    
-	   3 Input      2 Bit        Muxes := 25    
-	   2 Input      1 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 1     
 Module flexible_clock__6 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -830,6 +775,98 @@ Detailed RTL Component Info :
 	   2 Input      4 Bit        Muxes := 21    
 	   5 Input      4 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 7     
+Module flexible_clock__5 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module menu_screen 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module clock_enable__1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module my_dff_en__5 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module my_dff_en__4 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module my_dff_en__3 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module clock_enable__2 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module my_dff_en__8 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module my_dff_en__7 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module my_dff_en__6 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module clock_enable__3 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module my_dff_en__11 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module my_dff_en__10 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module my_dff_en__9 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module clock_enable__4 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module my_dff_en__14 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module my_dff_en__13 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module my_dff_en__12 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module clock_enable 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module my_dff_en__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module my_dff_en__2 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module my_dff_en 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -842,10 +879,17 @@ BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-3331] design Top_Student has unconnected port JB[2]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port led[7]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port led[6]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port led[5]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port led[4]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port led[3]
+WARNING: [Synth 8-3331] design Top_Student has unconnected port led[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[7]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[6]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port seg[5]
@@ -858,8 +902,6 @@ WARNING: [Synth 8-3331] design Top_Student has unconnected port an[3]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port an[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port an[1]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port an[0]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[14]
-WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[13]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[12]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[11]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[10]
@@ -877,7 +919,9 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snak
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_3/i_0/\size_reg[7] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_3/i_0/\size_reg[6] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_3/i_0/\size_reg[4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (user_snakei_3/i_0/\size_reg[3] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_3/i_0/\size_reg[2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (user_snakei_3/i_0/\size_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (user_snakei_3/i_0/\size_reg[0] )
 INFO: [Synth 8-5545] ROM "worm_x_mem_reg[47]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "worm_x_mem_reg[46]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -947,21 +991,19 @@ INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[6]' (FD) to 
 INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[7]' (FD) to 'snake_mod/new_xpos_reg[7]'
 INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[8]' (FD) to 'snake_mod/new_xpos_reg[8]'
 INFO: [Synth 8-3886] merging instance 'snake_mod/potential_xpos_reg[9]' (FD) to 'snake_mod/new_xpos_reg[9]'
-INFO: [Synth 8-3886] merging instance 'snake_mod/potential_ypos_reg[12]' (FD) to 'snake_mod/potential_xpos_reg[12]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (snake_mod/\potential_xpos_reg[12] )
-WARNING: [Synth 8-3332] Sequential element (potential_xpos_reg[12]) is unused and will be removed from module basic_snake.
-WARNING: [Synth 8-6014] Unused sequential element clk_buffer_inst/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:318]
-WARNING: [Synth 8-6014] Unused sequential element clk_slow_inst/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:318]
-WARNING: [Synth 8-6014] Unused sequential element clk_mod25m/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:318]
-INFO: [Synth 8-5545] ROM "clk_slow_inst_6p25m/SLOW_CLOCK0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element clk_buffer_inst/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_clock.v:8]
+WARNING: [Synth 8-6014] Unused sequential element clk_slow_inst/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_clock.v:8]
+WARNING: [Synth 8-6014] Unused sequential element clk_mod25m/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_clock.v:8]
 INFO: [Synth 8-5545] ROM "clk_slow_inst_6p25m/SLOW_CLOCK0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Common 17-14] Message 'Synth 8-5545' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 WARNING: [Synth 8-3463] Infeasible ramstyle = block set for RAM pixel_colour_cache_1_reg,trying to implement using LUTRAM
 WARNING: [Synth 8-3463] Infeasible ramstyle = block set for RAM pixel_colour_cache_1_reg,trying to implement using LUTRAM
 WARNING: [Synth 8-3463] Infeasible ramstyle = block set for RAM pixel_colour_cache_0_reg,trying to implement using LUTRAM
 WARNING: [Synth 8-3463] Infeasible ramstyle = block set for RAM pixel_colour_cache_0_reg,trying to implement using LUTRAM
-INFO: [Synth 8-5544] ROM "oled_data1" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-WARNING: [Synth 8-6014] Unused sequential element clk_mod25m/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/Top_Student.v:318]
+WARNING: [Synth 8-6014] Unused sequential element clk_mod25m/SLOW_CLOCK_reg was removed.  [C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.srcs/sources_1/new/flexible_clock.v:8]
+INFO: [Synth 8-5544] ROM "reset_user0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "reset_user0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "reset_user0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "timeout" won't be mapped to RAM because it is too sparse
@@ -1064,10 +1106,11 @@ WARNING: [Synth 8-3332] Sequential element (zpos_reg[2]) is unused and will be r
 WARNING: [Synth 8-3332] Sequential element (zpos_reg[1]) is unused and will be removed from module MouseCtl.
 WARNING: [Synth 8-3332] Sequential element (zpos_reg[0]) is unused and will be removed from module MouseCtl.
 WARNING: [Synth 8-3332] Sequential element (left_down_reg) is unused and will be removed from module MouseCtl.
+WARNING: [Synth 8-3332] Sequential element (left_reg) is unused and will be removed from module MouseCtl.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:21:07 ; elapsed = 00:22:59 . Memory (MB): peak = 28363.117 ; gain = 28076.086
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:48 . Memory (MB): peak = 840.754 ; gain = 554.043
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1092,78 +1135,71 @@ Report RTL Partitions:
 +------+--------------------+------------+----------+
 |1     |flexible_snake__GB0 |           1|     24350|
 |2     |flexible_snake__GB1 |           1|     23510|
-|3     |flexible_snake__GB2 |           1|      4147|
-|4     |flexible_snake__GB3 |           1|      5716|
-|5     |flexible_snake__GB4 |           1|      6117|
+|3     |flexible_snake__GB2 |           1|      4127|
+|4     |flexible_snake__GB3 |           1|      5157|
+|5     |flexible_snake__GB4 |           1|      6092|
 |6     |flexible_snake__GB5 |           1|        49|
-|7     |flexible_snake__GB6 |           1|      8266|
+|7     |flexible_snake__GB6 |           1|      8521|
 |8     |render_oled__GB0    |           1|     23187|
 |9     |render_oled__GB1    |           1|     19157|
-|10    |menu_screen__GB0    |           1|     25418|
-|11    |menu_screen__GB1    |           1|      3447|
-|12    |menu_screen__GB2    |           1|      5418|
-|13    |menu_screen__GB3    |           1|      6293|
-|14    |menu_screen__GB4    |           1|      6988|
-|15    |Top_Student__GC0    |           1|      1872|
+|10    |Top_Student__GC0    |           1|      2254|
 +------+--------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:21:13 ; elapsed = 00:23:07 . Memory (MB): peak = 28363.117 ; gain = 28076.086
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:55 . Memory (MB): peak = 874.219 ; gain = 587.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:21:14 ; elapsed = 00:23:08 . Memory (MB): peak = 28363.117 ; gain = 28076.086
+Finished Timing Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:56 . Memory (MB): peak = 881.109 ; gain = 594.398
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++-----------------+--------------------------+-----------+----------------------+-------------------------------+
+|Module Name      | RTL Object               | Inference | Size (Depth x Width) | Primitives                    | 
++-----------------+--------------------------+-----------+----------------------+-------------------------------+
+|render_oled__GB0 | pixel_colour_cache_1_reg | Implied   | 8 K x 16             | RAM64X1D x 96  RAM64M x 480   | 
+|render_oled__GB0 | pixel_colour_cache_0_reg | Implied   | 8 K x 16             | RAM64X1D x 96  RAM64M x 480   | 
++-----------------+--------------------------+-----------+----------------------+-------------------------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+--------------------+------------+----------+
 |      |RTL Partition       |Replication |Instances |
 +------+--------------------+------------+----------+
-|1     |flexible_snake__GB0 |           1|      1326|
-|2     |flexible_snake__GB1 |           1|      1326|
-|3     |flexible_snake__GB2 |           1|      1622|
-|4     |flexible_snake__GB3 |           1|      1718|
-|5     |flexible_snake__GB4 |           1|      1851|
+|1     |flexible_snake__GB0 |           1|      5650|
+|2     |flexible_snake__GB1 |           1|      5650|
+|3     |flexible_snake__GB2 |           1|      3405|
+|4     |flexible_snake__GB3 |           1|      2532|
+|5     |flexible_snake__GB4 |           1|      1832|
 |6     |flexible_snake__GB5 |           1|        49|
-|7     |flexible_snake__GB6 |           1|      5516|
-|8     |render_oled__GB0    |           1|       200|
-|9     |menu_screen__GB0    |           1|     25400|
-|10    |menu_screen__GB1    |           1|      3440|
-|11    |menu_screen__GB2    |           1|      5418|
-|12    |menu_screen__GB3    |           1|      6293|
-|13    |menu_screen__GB4    |           1|      6988|
-|14    |Top_Student__GC0    |           1|      1872|
+|7     |flexible_snake__GB6 |           1|      5755|
+|8     |render_oled__GB0    |           1|      8061|
+|9     |render_oled__GB1    |           1|       541|
+|10    |Top_Student__GC0    |           1|      2254|
 +------+--------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:21:16 ; elapsed = 00:23:19 . Memory (MB): peak = 28363.117 ; gain = 28076.086
+Finished Technology Mapping : Time (s): cpu = 00:00:43 ; elapsed = 00:00:59 . Memory (MB): peak = 904.043 ; gain = 617.332
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+--------------------+------------+----------+
-|      |RTL Partition       |Replication |Instances |
-+------+--------------------+------------+----------+
-|1     |flexible_snake__GB0 |           1|       876|
-|2     |flexible_snake__GB1 |           1|       876|
-|3     |flexible_snake__GB2 |           1|       196|
-|4     |flexible_snake__GB3 |           1|         0|
-|5     |flexible_snake__GB4 |           1|         0|
-|6     |flexible_snake__GB5 |           1|        49|
-|7     |flexible_snake__GB6 |           1|       207|
-|8     |render_oled__GB0    |           1|         0|
-|9     |menu_screen__GB0    |           1|      9198|
-|10    |menu_screen__GB1    |           1|      1253|
-|11    |menu_screen__GB2    |           1|      1923|
-|12    |menu_screen__GB3    |           1|      2073|
-|13    |menu_screen__GB4    |           1|      2472|
-|14    |Top_Student__GC0    |           1|      1036|
-+------+--------------------+------------+----------+
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -1182,7 +1218,7 @@ INFO: [Synth 8-5365] Flop mouse/Inst_Ps2Interface/ps2_data_h_reg is being invert
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:21:26 ; elapsed = 00:23:30 . Memory (MB): peak = 28363.117 ; gain = 28076.086
+Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:01:00 . Memory (MB): peak = 904.043 ; gain = 617.332
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1195,7 +1231,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:21:26 ; elapsed = 00:23:30 . Memory (MB): peak = 28363.117 ; gain = 28076.086
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:01:00 . Memory (MB): peak = 904.043 ; gain = 617.332
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1207,101 +1243,122 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:21:26 ; elapsed = 00:23:31 . Memory (MB): peak = 28363.117 ; gain = 28076.086
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:01:01 . Memory (MB): peak = 904.043 ; gain = 617.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:21:26 ; elapsed = 00:23:31 . Memory (MB): peak = 28363.117 ; gain = 28076.086
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:46 ; elapsed = 00:01:01 . Memory (MB): peak = 904.043 ; gain = 617.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:21:28 ; elapsed = 00:23:32 . Memory (MB): peak = 28363.117 ; gain = 28076.086
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:01:01 . Memory (MB): peak = 904.043 ; gain = 617.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:21:28 ; elapsed = 00:23:32 . Memory (MB): peak = 28363.117 ; gain = 28076.086
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:46 ; elapsed = 00:01:01 . Memory (MB): peak = 904.043 ; gain = 617.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |blk_mem_gen_1 |         1|
++------+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     3|
-|2     |CARRY4 |   137|
-|3     |LUT1   |    69|
-|4     |LUT2   |  2073|
-|5     |LUT3   |  1178|
-|6     |LUT4   |  1421|
-|7     |LUT5   |  1934|
-|8     |LUT6   | 11725|
-|9     |MUXF7  |   222|
-|10    |MUXF8  |   108|
-|11    |FDE_1  |    32|
-|12    |FDRE   |  1409|
-|13    |FDSE   |    14|
-|14    |LDC    |     9|
-|15    |LDP    |     7|
-|16    |IBUF   |     7|
-|17    |IOBUF  |     2|
-|18    |OBUF   |    23|
-|19    |OBUFT  |    13|
-+------+-------+------+
++------+--------------+------+
+|      |Cell          |Count |
++------+--------------+------+
+|1     |blk_mem_gen_1 |     1|
+|2     |BUFG          |     4|
+|3     |CARRY4        |   944|
+|4     |LUT1          |   425|
+|5     |LUT2          |  2272|
+|6     |LUT3          |   605|
+|7     |LUT4          |   788|
+|8     |LUT5          |   827|
+|9     |LUT6          |  4246|
+|10    |MUXF7         |  1704|
+|11    |MUXF8         |   820|
+|12    |RAM64M        |   960|
+|13    |RAM64X1D      |   192|
+|14    |FDCE          |   594|
+|15    |FDE_1         |    32|
+|16    |FDPE          |   384|
+|17    |FDRE          |   593|
+|18    |FDSE          |     2|
+|19    |IBUF          |     9|
+|20    |IOBUF         |     2|
+|21    |OBUF          |    17|
+|22    |OBUFT         |    19|
++------+--------------+------+
 
 Report Instance Areas: 
-+------+----------------------+-----------------+------+
-|      |Instance              |Module           |Cells |
-+------+----------------------+-----------------+------+
-|1     |top                   |                 | 20386|
-|2     |  clk_mod_400hz       |flexible_clock   |    54|
-|3     |  clk_mod_6p25m       |flexible_clock_0 |    51|
-|4     |  display_mod         |Oled_Display     | 17266|
-|5     |  menu_screen_inst    |menu_screen      |   127|
-|6     |    frame_rate        |flexible_clock_1 |    63|
-|7     |  mouse               |MouseCtl         |   447|
-|8     |    Inst_Ps2Interface |Ps2Interface     |   256|
-|9     |  user_snake          |flexible_snake   |  2098|
-|10    |    snake_mod         |basic_snake      |   600|
-+------+----------------------+-----------------+------+
++------+------------------------+-----------------+------+
+|      |Instance                |Module           |Cells |
++------+------------------------+-----------------+------+
+|1     |top                     |                 | 15455|
+|2     |  clk_mod_400hz         |flexible_clock   |    54|
+|3     |  clk_mod_6p25m         |flexible_clock_0 |    51|
+|4     |  debounce_btnD         |debounce         |    53|
+|5     |    d0                  |my_dff_en_11     |     2|
+|6     |    d1                  |my_dff_en_12     |     3|
+|7     |    d2                  |my_dff_en_13     |     1|
+|8     |    u1                  |clock_enable_14  |    47|
+|9     |  debounce_btnR         |debounce_1       |    53|
+|10    |    d0                  |my_dff_en_7      |     2|
+|11    |    d1                  |my_dff_en_8      |     2|
+|12    |    d2                  |my_dff_en_9      |     2|
+|13    |    u1                  |clock_enable_10  |    47|
+|14    |  debounce_btnU         |debounce_2       |    54|
+|15    |    d0                  |my_dff_en        |     2|
+|16    |    d1                  |my_dff_en_5      |     2|
+|17    |    d2                  |my_dff_en_6      |     3|
+|18    |    u1                  |clock_enable     |    47|
+|19    |  display_mod           |Oled_Display     |   489|
+|20    |  menu_screen_inst      |menu_screen      |    89|
+|21    |    frame_rate          |flexible_clock_4 |    55|
+|22    |    frame_selector_inst |frame_selector   |    34|
+|23    |  mouse                 |MouseCtl         |   447|
+|24    |    Inst_Ps2Interface   |Ps2Interface     |   256|
+|25    |  render_oled_inst      |render_oled      |  3934|
+|26    |    clk_slow_inst_6p25m |flexible_clock_3 |    51|
+|27    |  user_snake            |flexible_snake   |  7792|
+|28    |    snake_mod           |basic_snake      |   160|
++------+------------------------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:21:28 ; elapsed = 00:23:32 . Memory (MB): peak = 28363.117 ; gain = 28076.086
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:46 ; elapsed = 00:01:01 . Memory (MB): peak = 904.043 ; gain = 617.332
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 164 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:10:28 ; elapsed = 00:12:04 . Memory (MB): peak = 28363.117 ; gain = 2892.195
-Synthesis Optimization Complete : Time (s): cpu = 00:21:28 ; elapsed = 00:23:33 . Memory (MB): peak = 28363.117 ; gain = 28076.086
+Synthesis finished with 0 errors, 0 critical warnings and 167 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:37 ; elapsed = 00:00:55 . Memory (MB): peak = 904.043 ; gain = 284.270
+Synthesis Optimization Complete : Time (s): cpu = 00:00:46 ; elapsed = 00:01:02 . Memory (MB): peak = 904.043 ; gain = 617.332
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 524 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 4663 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'Top_Student' is not ideal for floorplanning, since the cellview 'Oled_Display' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 50 instances were transformed.
+  A total of 1186 instances were transformed.
   FDE_1 => FDRE (inverted pins: C): 32 instances
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
-  LDC => LDCE: 9 instances
-  LDP => LDPE: 7 instances
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 960 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 192 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-255 Infos, 219 Warnings, 0 Critical Warnings and 0 Errors encountered.
+270 Infos, 220 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:21:32 ; elapsed = 00:23:39 . Memory (MB): peak = 28363.117 ; gain = 28087.559
+synth_design: Time (s): cpu = 00:00:49 ; elapsed = 00:01:06 . Memory (MB): peak = 904.043 ; gain = 628.844
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Lawrence/Desktop/ee2026_t4/FDP_main/FDP.runs/synth_1/Top_Student.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Top_Student_utilization_synth.rpt -pb Top_Student_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.113 . Memory (MB): peak = 28363.117 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri Apr 11 14:58:24 2025...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.165 . Memory (MB): peak = 904.043 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Apr 12 02:54:06 2025...

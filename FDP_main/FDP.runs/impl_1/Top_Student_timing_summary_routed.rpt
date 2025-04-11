@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Fri Apr 11 14:59:56 2025
+| Date         : Sat Apr 12 02:55:28 2025
 | Host         : Lawrence-ROG running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file Top_Student_timing_summary_routed.rpt -pb Top_Student_timing_summary_routed.pb -rpx Top_Student_timing_summary_routed.rpx -warn_on_violation
 | Design       : Top_Student
@@ -52,41 +52,13 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 295 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+ There are 439 register/latch pins with no clock driven by root clock pin: clk (HIGH)
 
- There are 1029 register/latch pins with no clock driven by root clock pin: clk_mod_400hz/SLOW_CLOCK_reg/Q (HIGH)
+ There are 1033 register/latch pins with no clock driven by root clock pin: clk_mod_400hz/SLOW_CLOCK_reg/Q (HIGH)
 
  There are 115 register/latch pins with no clock driven by root clock pin: clk_mod_6p25m/SLOW_CLOCK_reg/Q (HIGH)
 
- There are 16 register/latch pins with no clock driven by root clock pin: menu_screen_inst/frame_count_reg[10]/Q (HIGH)
-
- There are 16 register/latch pins with no clock driven by root clock pin: menu_screen_inst/frame_count_reg[11]/Q (HIGH)
-
- There are 16 register/latch pins with no clock driven by root clock pin: menu_screen_inst/frame_count_reg[12]/Q (HIGH)
-
- There are 16 register/latch pins with no clock driven by root clock pin: menu_screen_inst/frame_count_reg[13]/Q (HIGH)
-
- There are 16 register/latch pins with no clock driven by root clock pin: menu_screen_inst/frame_count_reg[14]/Q (HIGH)
-
- There are 16 register/latch pins with no clock driven by root clock pin: menu_screen_inst/frame_count_reg[15]/Q (HIGH)
-
- There are 16 register/latch pins with no clock driven by root clock pin: menu_screen_inst/frame_count_reg[2]/Q (HIGH)
-
- There are 16 register/latch pins with no clock driven by root clock pin: menu_screen_inst/frame_count_reg[3]/Q (HIGH)
-
- There are 16 register/latch pins with no clock driven by root clock pin: menu_screen_inst/frame_count_reg[4]/Q (HIGH)
-
- There are 16 register/latch pins with no clock driven by root clock pin: menu_screen_inst/frame_count_reg[5]/Q (HIGH)
-
- There are 16 register/latch pins with no clock driven by root clock pin: menu_screen_inst/frame_count_reg[6]/Q (HIGH)
-
- There are 16 register/latch pins with no clock driven by root clock pin: menu_screen_inst/frame_count_reg[7]/Q (HIGH)
-
- There are 16 register/latch pins with no clock driven by root clock pin: menu_screen_inst/frame_count_reg[8]/Q (HIGH)
-
- There are 16 register/latch pins with no clock driven by root clock pin: menu_screen_inst/frame_count_reg[9]/Q (HIGH)
-
- There are 16 register/latch pins with no clock driven by root clock pin: menu_screen_inst/frame_rate/SLOW_CLOCK_reg/Q (HIGH)
+ There are 4261 register/latch pins with no clock driven by root clock pin: render_oled_inst/clk_slow_inst_6p25m/SLOW_CLOCK_reg/Q (HIGH)
 
 
 2. checking constant_clock
@@ -101,21 +73,21 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 2928 pins that are not constrained for maximum delay. (HIGH)
+ There are 37144 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
 
 5. checking no_input_delay
 --------------------------
- There are 8 input ports with no input delay specified. (HIGH)
+ There are 10 input ports with no input delay specified. (HIGH)
 
  There are 0 input ports with no input delay but user has a false path constraint.
 
 
 6. checking no_output_delay
 ---------------------------
- There are 24 ports with no output delay specified. (HIGH)
+ There are 18 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 

@@ -13,7 +13,7 @@ module Top_Student (    input clk,
     // constant parameters
     parameter MAX_VEL = 5;
     
-    // variavles for OLED display
+    // variables for OLED display
     wire [15:0] pixel_colour; // if rendering in top, set as reg, if in render_oled, set as wire
     wire [15:0] menu_colour; 
     wire [15:0] world_colour; 
@@ -21,6 +21,8 @@ module Top_Student (    input clk,
     wire frame_beg;
     wire [7:0] pixel_x;   
     wire [7:0] pixel_y;
+
+
     PixelToXY converter_mod (
         .pixel_index(pixel_index),
         .x(pixel_x),
@@ -127,7 +129,7 @@ module Top_Student (    input clk,
     // inst user_worm and enemy_worm
     flexible_snake user_snake(
         .slow_clk(clk400hz), 
-        .rst(sw[14]),
+        .rst(reset_user),
         .x_dir(x_vel_debug), 
         .y_dir(y_vel_debug), 
         .xpos(snake_xpos), 
@@ -143,6 +145,11 @@ module Top_Student (    input clk,
         .debugx(),
         .debugy()
     );
+
+    wire reset_user = sw[14] | 
+                        state == START | 
+                        state == CHOOSE_DIFFICULTY_NORMAL | 
+                        state == CHOOSE_DIFFICULTY_HARD;
     
     wire [9:0] user_worm_x [0:47];
     wire [9:0] user_worm_y [0:47];
@@ -158,7 +165,7 @@ module Top_Student (    input clk,
     // update 2D array of worm positions
     always @(*) begin
         led [15:8] = user_worm_x[0]; // for debugging
-        led [7:0]  = user_worm_y[0]; // for debugging
+        led [1:0] = state;
     end
     
     // update velocity
@@ -258,8 +265,6 @@ module Top_Student (    input clk,
         .reg_food_location_7(reg_food_location_7)
     );
 
-
-
     // Inst render_oled
     render_oled render_oled_inst (
         .clk(clk),
@@ -284,13 +289,75 @@ module Top_Student (    input clk,
     );
 
     // inst menu screen
-    // menu_screen menu_screen_inst (
-    //     .clk(clk),
-    //     .pixel_index(pixel_index),
-    //     .oled_data(menu_colour)
-    // );
+    menu_screen menu_screen_inst (
+        .clk(clk),
+        .state(state), 
+        .pixel_index(pixel_index),
+        .oled_data(menu_colour)
+    );
 
-    assign pixel_colour = world_colour; // display menu for now
+    assign pixel_colour = ( state == GAME ) ? world_colour : menu_colour; 
+
+    
+    /*      -------------------
+            FSM FOR MENU SCREEN 
+            -------------------    */
+
+
+    // FSM for menu screen
+    parameter   START                   = 2'b00, 
+                CHOOSE_DIFFICULTY_NORMAL= 2'b01,
+                CHOOSE_DIFFICULTY_HARD  = 2'b10,
+                GAME                    = 2'b11;
+      
+    reg [1:0] state = START;
+    reg [1:0] nextstate = START;
+
+    always @ ( * ) begin
+        case (state)
+            START:                      nextstate = (btnR_debounced) ? CHOOSE_DIFFICULTY_NORMAL: START;
+
+            CHOOSE_DIFFICULTY_NORMAL:   begin
+                if (btnD_debounced) 
+                    nextstate = CHOOSE_DIFFICULTY_HARD;
+                else if (btnC) 
+                    nextstate = GAME; 
+                else 
+                    nextstate = CHOOSE_DIFFICULTY_NORMAL;
+            end
+
+            CHOOSE_DIFFICULTY_HARD: begin
+                if (btnU_debounced) 
+                    nextstate = CHOOSE_DIFFICULTY_NORMAL;
+                else if (btnC) 
+                    nextstate = GAME; 
+                else 
+                    nextstate = CHOOSE_DIFFICULTY_HARD;
+
+            end
+
+            GAME:                       nextstate = GAME; // TODO: Game over logic
+
+        endcase
+    end
+
+    always @ (posedge clk or posedge sw[13]) begin
+
+        if (sw[13])  // reset
+            state <= START;
+         
+        else
+            state <= nextstate;
+    end
+
+    // debounce all buttons
+    debounce debounce_btnC ( clk, btnC, btnC_debounced );
+    debounce debounce_btnU ( clk, btnU, btnU_debounced );
+    debounce debounce_btnD ( clk, btnD, btnD_debounced );
+    debounce debounce_btnL ( clk, btnL, btnL_debounced );
+    debounce debounce_btnR ( clk, btnR, btnR_debounced );
+
+
 
     // debug block for rendering in top
 /*

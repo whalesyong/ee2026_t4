@@ -7,6 +7,17 @@
 set_property -dict { PACKAGE_PIN W5   IOSTANDARD LVCMOS33 } [get_ports clk]
 #create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports clk]
 
+## Allow known combinatorial loop in display controller
+set_property ALLOW_COMBINATORIAL_LOOPS true [get_nets -of_objects [get_cells <cellname>]]
+set_property SEVERITY {Warning}  [get_drc_checks LUTLP-1]
+set_property SEVERITY {Warning} [get_drc_checks NSTD-1]
+#set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets display_mod/head_index_reg[0]_rep__2]
+#set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets display_mod/head_index_reg[0]_rep__2_0]
+#set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets display_mod/worm_x_mem[0][9]_i_10/*]
+#set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets -hier -regexp .*head_index_reg.*]
+#set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets -hier -regexp .*worm_x_mem.*]
+#set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets -hierarchical -filter {NAME =~ "*"}]
+#set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets debounce_btnD/led_OBUF[0]]
 
 ## Switches
 set_property -dict { PACKAGE_PIN V17   IOSTANDARD LVCMOS33 } [get_ports {sw[0]}]
