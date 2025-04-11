@@ -12,6 +12,10 @@ module Top_Student (    input clk,
 
     // constant parameters
     parameter MAX_VEL = 5;
+    localparam 
+        SCREEN_WIDTH  = 499,
+        SCREEN_HEIGHT = 499,
+        BOUNDARY_OFFSET = 10; // Offset for food placement
     
     // variavles for OLED display
     wire [15:0] pixel_colour; // if rendering in top, set as reg, if in render_oled, set as wire
@@ -55,7 +59,6 @@ module Top_Student (    input clk,
     wire signed [12:0] snake_new_y_vel;
     wire vel_changed;
     wire [7:0] user_size;
-    wire [7:0] enemy_size;
     wire [9:0] debugx, debugy;
 
 
@@ -83,6 +86,13 @@ module Top_Student (    input clk,
         .divider(2), 
         .SLOW_CLOCK(clk_25m)
      ); 
+
+    wire clk_1hz; 
+    flexible_clock clk_mod1hz(
+        .CLOCK(clk),
+        .divider(50000000), 
+        .SLOW_CLOCK(clk_1hz)
+     );
 
     Oled_Display display_mod (  
         .clk(clk6p25m),
@@ -123,17 +133,18 @@ module Top_Student (    input clk,
     end
     
     wire directionEnable = (sw[15]) ? ((btnL | btnR | btnU | btnD | btnC)? 1: 0) : 1;
-    
+    wire food_eaten;
+
     // inst user_worm and enemy_worm
     flexible_snake user_snake(
         .slow_clk(clk400hz), 
         .rst(0),
         .x_dir(x_vel_debug), 
         .y_dir(y_vel_debug), 
-        .xpos(snake_xpos), 
-        .ypos(snake_ypos), 
+     //   .xpos(snake_xpos), 
+        //.ypos(snake_ypos), 
         .directionEnable(directionEnable),
-        .food_eaten(0),
+        .food_eaten(food_eaten),
         .x_worm_flat(user_snake_xpos), 
         .y_worm_flat(user_snake_ypos), 
         .size(user_size),
@@ -143,7 +154,52 @@ module Top_Student (    input clk,
         .debugx(),
         .debugy()
     );
-    
+
+    //define enemy snake and its variables 
+    wire [7:0] enemy_size;
+    reg signed [12:0] enemy_x_vel;
+    reg signed [12:0] enemy_y_vel;
+    reg [8:0] enemy_xpos = 30;
+    reg [8:0] enemy_ypos = 30;
+    wire [479:0] enemy_snake_x_flat; 
+    wire [479:0] enemy_snake_y_flat;
+    wire signed [12:0] enemy_new_x_vel;
+    wire signed [12:0] enemy_new_y_vel;
+
+    always @ (posedge clk_1hz) begin 
+
+        
+        if (enemy_xpos < 10 || enemy_xpos > 490) begin
+            enemy_x_vel <= -enemy_x_vel;
+        end
+        if (enemy_ypos < 10 || enemy_ypos > 490) begin
+            enemy_y_vel <= -enemy_y_vel;
+        end
+
+        // update enemy snake position based on velocity
+        enemy_xpos <= enemy_xpos + enemy_x_vel;
+        enemy_ypos <= enemy_ypos + enemy_y_vel;
+    end
+/*
+    flexible_snake enemy_snake_1 (
+        .slow_clk(clk400hz), 
+        .rst(0),
+        .x_dir(x_vel_debug),//set enemy snake vel to user's for now  
+        .y_dir(y_vel_debug), 
+        //.xpos(enemy_xpos), 
+        //.ypos(enemy_ypos), 
+        .directionEnable(directionEnable),
+        .food_eaten(0),
+        .x_worm_flat(enemy_snake_x_flat), 
+        .y_worm_flat(enemy_snake_y_flat), 
+        .size(enemy_size),
+        .new_x_vel(enemy_new_x_vel),
+        .new_y_vel(enemy_new_y_vel), 
+        .vel_changed(), // not used for now
+        .debugx(),
+        .debugy()
+    );
+  */  
     wire [9:0] user_worm_x [0:47];
     wire [9:0] user_worm_y [0:47];
     
@@ -155,11 +211,12 @@ module Top_Student (    input clk,
         end
     endgenerate
 
-    // update 2D array of worm positions
-    always @(*) begin
-        led [15:8] = user_worm_x[0]; // for debugging
-        led [7:0]  = user_worm_y[0]; // for debugging
-    end
+    // show the enemy head on the LEDs
+    reg [9:0] enemy_head_x;
+    reg [9:0] enemy_head_y;
+
+
+
     
     // update velocity
     // normalization logic for mouse direction input to flexi_snake
@@ -219,14 +276,12 @@ module Top_Student (    input clk,
 
 
 // CAMERA & FOOD wires
-    wire [9:0] cam_offset_x;
-    wire [9:0] cam_offset_y;
-    wire [3:0] reg_food_eaten;
-    wire [15:0] reg_food_location_0, reg_food_location_1, reg_food_location_2, reg_food_location_3;
-    wire [15:0] reg_food_location_4, reg_food_location_5, reg_food_location_6, reg_food_location_7;
+
+    wire[479:0] food_x_flat;
+    wire[479:0] food_y_flat;
     // Head coordinates for snakes
-    wire [9:0] user_head_x = {1'b0, snake_xpos};  // Extend from 9-bit to 10-bit
-    wire [9:0] user_head_y = {1'b0, snake_ypos};
+    wire [9:0] user_head_x = user_worm_x[user_size-1];  // Extend from 9-bit to 10-bit
+    wire [9:0] user_head_y = user_worm_y[user_size-1];
     wire [9:0] enemy_head_x0 = 10'd30;  // Placeholder for now
     wire [9:0] enemy_head_y0 = 10'd30;
     wire [9:0] enemy_head_x1 = 10'd30;
@@ -234,9 +289,10 @@ module Top_Student (    input clk,
     wire [9:0] enemy_head_x2 = 10'd30;
     wire [9:0] enemy_head_y2 = 10'd30;
 
+    wire [47:0] user_collisions;
     food_and_camera food_mod (
         .clk(clk),
-        .reset(0), // or use a proper reset
+        .reset(btnC), // or use a proper reset
         .userwormheadx(user_head_x),
         .userwormheady(user_head_y),
         .enemywormheadx0(enemy_head_x0),
@@ -245,18 +301,21 @@ module Top_Student (    input clk,
         .enemywormheady1(enemy_head_y1),
         .enemywormheadx2(enemy_head_x2),
         .enemywormheady2(enemy_head_y2),
-        .cam_offset_x(cam_offset_x),
-        .cam_offset_y(cam_offset_y),
-        .reg_food_eaten(reg_food_eaten),
-        .reg_food_location_0(reg_food_location_0),
-        .reg_food_location_1(reg_food_location_1),
-        .reg_food_location_2(reg_food_location_2),
-        .reg_food_location_3(reg_food_location_3),
-        .reg_food_location_4(reg_food_location_4),
-        .reg_food_location_5(reg_food_location_5),
-        .reg_food_location_6(reg_food_location_6),
-        .reg_food_location_7(reg_food_location_7)
+        .food_eaten(food_eaten),
+        .food_x_flat(food_x_flat), // Flattened food x-coordinates
+        .food_y_flat(food_y_flat), // Flattened food y-coordinates
+        .user_collisions(user_collisions) 
     );
+    
+
+    always @ (*) begin 
+        if (sw[14]) 
+            led = user_collisions[15:0];
+        else begin 
+            led[7:0] = user_worm_x[user_size-1][7:0];
+            led[15:8] = user_worm_y[user_size-1][7:0];
+        end   
+    end  
 
 
 
@@ -268,29 +327,27 @@ module Top_Student (    input clk,
         .user_worm_x_flat(user_snake_xpos), // flattened x-coordinates of user worm
         .user_worm_y_flat(user_snake_ypos), // flattened y-coordinates of user worm
         .user_size(user_size), // size of user worm
-        .enemy_worm_x_flat(0), // flattened x-coordinates of enemy worm (not used)
-        .enemy_worm_y_flat(0), // flattened y-coordinates of enemy worm (not used)
-        .enemy_size(0), // size of enemy worm (not used)
-        .food_x_flat(0), // flattened x-coordinates of food (not used)
-        .food_y_flat(0), // flattened y-coordinates of food (not used)
-
-
+        .enemy_worm_x_flat(enemy_snake_x_flat), // flattened x-coordinates of enemy worm (not used)
+        .enemy_worm_y_flat(enemy_snake_y_flat), // flattened y-coordinates of enemy worm (not used)
+        .enemy_size(enemy_size), // size of enemy worm (not used)
+        .food_x_flat(food_x_flat), // flattened x-coordinates of food (not used)
+        .food_y_flat(food_y_flat), // flattened y-coordinates of food (not used)
         // output
-        .pixel_colour(world_colour) // output pixel color
-
-        ,
+        .pixel_colour(pixel_colour), // output pixel color,
         .debugx(),
         .debugy()
     );
 
+
+/*
     // inst menu screen
     menu_screen menu_screen_inst (
         .clk(clk),
         .pixel_index(pixel_index),
         .oled_data(menu_colour)
-    );
+    ); */
 
-    assign pixel_colour = menu_colour; // display menu for now
+   // assign pixel_colour = menu_colour; // display menu for now,  commented out to not show the menu 
 
     // debug block for rendering in top
 /*

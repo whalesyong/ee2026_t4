@@ -57,7 +57,10 @@ module render_oled(
             assign food_x[i] = food_x_flat[ 10*i + 9 : 10 * i ];
             assign food_y[i] = food_y_flat[ 10*i + 9 : 10 * i ];
         end
+
+
     endgenerate
+
 
     wire [10:0] camera_offset_x = ( user_worm_x[user_size-1] > 48) ? user_worm_x[user_size-1] - 48 : 0; 
     wire [10:0] camera_offset_y = ( user_worm_y[user_size-1] > 32) ? user_worm_y[user_size-1] - 32 : 0;

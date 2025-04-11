@@ -4,7 +4,7 @@ module flexible_snake(
     input slow_clk, 
     input rst,
     input signed [12:0] x_dir, y_dir, 
-    input [9:0] xpos, ypos,
+   // input [9:0] xpos, ypos,
     input directionEnable,
     input food_eaten,
     // 10/4 changeed from wire to reg
@@ -22,7 +22,12 @@ module flexible_snake(
     (* ram_style = "block" *) reg [9:0] worm_y_mem [0:MAX_LENGTH-1];
 
     // Pointer and size registers
-    reg [7:0] head_index;
+    reg [7:0] head_index = 0;
+    initial begin 
+        //initialize head position 
+        worm_x_mem[head_index] = 10'd30; // x position of head
+        worm_y_mem[head_index] = 10'd30; // y position of head
+    end
 
     // Wires from the basic snake movement module
     wire [9:0] new_xpos_wire, new_ypos_wire;
