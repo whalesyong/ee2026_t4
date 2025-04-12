@@ -346,7 +346,7 @@ module Top_Student (    input clk,
             difficulty <= 1; // hard
         end
         
-        if ( food_eaten )
+        if ( food_eaten_wire )
            user_score <= user_score + 1; // increment score when food is eaten
 
         if (state == GAME) 
