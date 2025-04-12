@@ -5,12 +5,8 @@ module food_and_camera (
     input reset,
     input [9:0] userwormheadx,
     input [9:0] userwormheady,
-    input [9:0] enemywormheadx0,
-    input [9:0] enemywormheady0,
-    input [9:0] enemywormheadx1,
-    input [9:0] enemywormheady1,
-    input [9:0] enemywormheadx2,
-    input [9:0] enemywormheady2,
+    input [9:0] enemywormheadx,
+    input [9:0] enemywormheady,
 
     output reg  food_eaten = 0 ,
     (* ram_style = "block" *) output reg [479:0] food_x_flat,
@@ -48,10 +44,10 @@ module food_and_camera (
             
             // Do the same for enemy collisions
             assign enemy0_collisions[j] = (
-                enemywormheadx0 <= (food_x[j] + 4) &&
-                (enemywormheadx0 + 4) >= food_x[j] &&
-                enemywormheady0 <= (food_y[j] + 4) &&
-                (enemywormheady0 + 4) >= food_y[j]
+                enemywormheadx <= (food_x[j] + 4) &&
+                (enemywormheadx + 4) >= food_x[j] &&
+                enemywormheady <= (food_y[j] + 4) &&
+                (enemywormheady + 4) >= food_y[j]
             );
         end
         // assign enemy1_collisions[j] = (enemywormheadx1 == food_x[j]) && (enemywormheady1 == food_y[j]);
