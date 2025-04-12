@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module ss_display(seg, an, clk, num);
-  output reg [6:0] seg;
+  output reg [7:0] seg;
   input wire clk;
   output reg [3:0] an;
   input wire [15:0] num;  // Changed to 16-bit to handle up to 9999
@@ -24,16 +24,16 @@ module ss_display(seg, an, clk, num);
     endcase
     
     case (digit[counter])
-      0: seg = 8'b01000000;
-      1: seg = 8'b01111001;
-      2: seg = 8'b00100100;
-      3: seg = 8'b00110000;
-      4: seg = 8'b00011001;
-      5: seg = 8'b00010010;
-      6: seg = 8'b00000010;
-      7: seg = 8'b01111000;
-      8: seg = 8'b00000000;
-      9: seg = 8'b00010000;
+      0: seg = 8'b11000000;
+      1: seg = 8'b11111001;
+      2: seg = 8'b10100100;
+      3: seg = 8'b10110000;
+      4: seg = 8'b10011001;
+      5: seg = 8'b10010010;
+      6: seg = 8'b10000010;
+      7: seg = 8'b11111000;
+      8: seg = 8'b10000000;
+      9: seg = 8'b10010000;
       default: seg = 8'b01111111;  // Blank display for invalid digits
     endcase
 

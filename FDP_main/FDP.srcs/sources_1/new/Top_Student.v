@@ -23,12 +23,6 @@ module Top_Student (    input clk,
     wire [7:0] pixel_y;
 
 
-    PixelToXY converter_mod (
-        .pixel_index(pixel_index),
-        .x(pixel_x),
-        .y(pixel_y)
-     );
-
     //variables for mouse ctrl 
     wire [11:0] mouse_xpos;
     wire [11:0] mouse_ypos;
@@ -92,6 +86,13 @@ module Top_Student (    input clk,
         .divider(2), 
         .SLOW_CLOCK(clk_25m)
      ); 
+    
+    wire clk_100hz;
+    flexible_clock clk_mod100hz(
+        .CLOCK(clk),
+        .divider(500000), 
+        .SLOW_CLOCK(clk_100hz)
+     );
 
     Oled_Display display_mod (  
         .clk(clk6p25m),
@@ -177,44 +178,13 @@ module Top_Student (    input clk,
 
     // enemy worm position
     always @(*) begin
-        led[15] = mouseEnable;
-        led [14] = difficulty;
+        led [15] = difficulty;
+        led [14] = mouseEnable;
 
-        led [9:5] = x_dir_wire; // for debugging
+        // led [9:5] = x_dir_wire; // for debugging
 
-        led [4:0]  = y_dir_wire; // for debugging
+        // led [4:0]  = y_dir_wire; // for debugging
     end
-    
-//     update velocity
-//     normalization logic for mouse direction input to flexi_snake
-//    always @(*) begin
-//        // calculate absolute values 
-//        abs_x = (x_dir < 0) ? -x_dir : x_dir;
-//        abs_y = (y_dir < 0) ? -y_dir : y_dir;
-//        // calculate max value
-//        max_val = (abs_x > abs_y) ? abs_x : abs_y;
-//        // normalize values
-//        if (max_val == 0) begin
-//            normalized_x_dir = 0;
-//            normalized_y_dir = 0;
-//        end
-//        else begin
-//            // TODO: a little unsure about this division here
-//            normalized_x_dir = (x_dir * MAX_VEL) / max_val;
-//            normalized_y_dir = (y_dir * MAX_VEL) / max_val;
-//        end
-
-//    end
-        // use mouse input for user_worm
-        // use AI for enemy_worm
-
-    // update position of worms
-
-    // update display
-
-    //TODO: for now, render the snake on the screen and in Top_student
-    // rendering should be abstracted into a separate module 
-
 
     // for debugging 
     always @ (posedge clk400hz) begin 
@@ -240,30 +210,6 @@ module Top_Student (    input clk,
         end
 
     end
-
-
-// CAMERA & FOOD wires
-//    wire [3:0] reg_food_eaten;
-//    // Head coordinates for snakes
-//    wire [9:0] enemy_head_x0 = 10'd30;  // Placeholder for now
-//    wire [9:0] enemy_head_y0 = 10'd30;
-//    wire [9:0] enemy_head_x1 = 10'd30;
-//    wire [9:0] enemy_head_y1 = 10'd30;
-//    wire [9:0] enemy_head_x2 = 10'd30;
-//    wire [9:0] enemy_head_y2 = 10'd30;
-
-//    food_and_camera food_mod (
-//        .clk(clk),
-//        .reset(0), // or use a proper reset
-//        .enemywormheadx0(enemy_head_x0),
-//        .enemywormheady0(enemy_head_y0),
-//        .enemywormheadx1(enemy_head_x1),
-//        .enemywormheady1(enemy_head_y1),
-//        .enemywormheadx2(enemy_head_x2),
-//        .enemywormheady2(enemy_head_y2),
-//        .reg_food_eaten(reg_food_eaten)
-//    );
-
 
 
     // Inst render_oled
@@ -321,6 +267,8 @@ module Top_Student (    input clk,
                     nextstate = CHOOSE_DIFFICULTY_HARD;
                 else if (btnC) 
                     nextstate = GAME; 
+                else if (btnL_debounced) 
+                    nextstate = START;
                 else 
                     nextstate = CHOOSE_DIFFICULTY_NORMAL;
             end
@@ -330,6 +278,8 @@ module Top_Student (    input clk,
                     nextstate = CHOOSE_DIFFICULTY_NORMAL;
                 else if (btnC) 
                     nextstate = GAME; 
+                else if (btnL_debounced)
+                    nextstate = START;
                 else 
                     nextstate = CHOOSE_DIFFICULTY_HARD;
 
@@ -365,22 +315,24 @@ module Top_Student (    input clk,
     debounce debounce_btnL ( clk, btnL, btnL_debounced );
     debounce debounce_btnR ( clk, btnR, btnR_debounced );
 
+    // update score on 7 seg
+    wire [12:0] user_score = user_size - 6;
+    wire [12:0] enemy_score = enemy_size - 6;
+    wire [12:0] combined_score = user_score * 100 + enemy_score;
+
+    ss_display ss_display_inst(
+        .seg(seg), 
+        .an(an), 
+        // 400hz
+        .clk(clk400hz),
+        .num(combined_score) // display user score
+    );
 
 
-    // debug block for rendering in top
-/*
-    always @ (posedge clk_25m) begin
 
-        if (pixel_x == debugx + 4 && pixel_y == debugy +4) begin
-            pixel_colour <= 16'b11111_111111_11111;
-        end
-        if (pixel_x > debugx && pixel_x < debugx + 4 && pixel_y > debugy  && pixel_y < debugy + 4) begin
-            pixel_colour <= 16'h1111; 
-        end
-        else begin
-            pixel_colour <= 16'b00000_000000_00000;
-        end
-    end*/
+
+
+
 endmodule
 
 
