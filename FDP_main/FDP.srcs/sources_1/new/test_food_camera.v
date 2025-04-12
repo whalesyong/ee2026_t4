@@ -24,9 +24,7 @@ module food_and_camera (
 
     // Combinational logic for collision detection
    // wire [47:0] user_collisions;
-    wire [47:0] enemy0_collisions;
-    wire [47:0] enemy1_collisions;
-    wire [47:0] enemy2_collisions;
+    wire [47:0] enemy_collisions;
 
 
     // comment out the generate block for one always block 
@@ -43,7 +41,7 @@ module food_and_camera (
             );
             
             // Do the same for enemy collisions
-            assign enemy0_collisions[j] = (
+            assign enemy_collisions[j] = (
                 enemywormheadx <= (food_x[j] + 4) &&
                 (enemywormheadx + 4) >= food_x[j] &&
                 enemywormheady <= (food_y[j] + 4) &&
@@ -87,12 +85,11 @@ module food_and_camera (
                 food_y[i] <= BOUNDARY_OFFSET + ((i*20*7) % (SCREEN_HEIGHT-2*BOUNDARY_OFFSET));
             end
         end else begin
-            food_eaten <= {|enemy2_collisions, |enemy1_collisions, |enemy0_collisions, |user_collisions};
+            food_eaten <= {|enemy_collisions, |user_collisions};
             
             // Update food positions only when eaten
             for (i = 0; i < 48; i = i + 1) begin
-                if (user_collisions[i] || enemy0_collisions[i] || 
-                    enemy1_collisions[i] || enemy2_collisions[i]) begin
+                if (user_collisions[i] || enemy_collisions[i]) begin
                     rng_seed <= {rng_seed[14:0], rng_seed[15] ^ rng_seed[13]};
                     // Keep food within 500x500 world bounds
                     food_x[i] <= BOUNDARY_OFFSET + (rng_seed[8:0] % (SCREEN_WIDTH-2*BOUNDARY_OFFSET));

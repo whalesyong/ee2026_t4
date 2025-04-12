@@ -54,8 +54,8 @@ module Top_Student (    input clk,
     wire [479:0] user_snake_ypos;
     wire signed [12:0] user_new_x_vel;
     wire signed [12:0] user_new_y_vel;
-    reg [8:0] enemy_xpos = 50;
-    reg [8:0] enemy_ypos = 50;
+    reg [8:0] enemy_xpos = 60;
+    reg [8:0] enemy_ypos = 30;
     wire [479:0] enemy_snake_xpos; 
     wire [479:0] enemy_snake_ypos;
     wire signed [12:0] enemy_new_x_vel;
@@ -310,13 +310,15 @@ module Top_Student (    input clk,
         .debugx(),
         .debugy()
     );
+    
+    assign pixel_colour = world_colour; // display menu for now
 
-     menu_screen menu_screen_inst (
-        .clk(clk),
-        .state(state), 
-        .pixel_index(pixel_index),
-        .oled_data(menu_colour)
-    );
+//     menu_screen menu_screen_inst (
+//        .clk(clk),
+//        .state(state), 
+//        .pixel_index(pixel_index),
+//        .oled_data(menu_colour)
+//    );
 
     
     /*      -------------------
@@ -325,62 +327,62 @@ module Top_Student (    input clk,
 
 
     // FSM for menu screen
-    parameter   START                   = 2'b00, 
-                CHOOSE_DIFFICULTY_NORMAL= 2'b01,
-                CHOOSE_DIFFICULTY_HARD  = 2'b10,
-                GAME                    = 2'b11;
+//    parameter   START                   = 2'b00, 
+//                CHOOSE_DIFFICULTY_NORMAL= 2'b01,
+//                CHOOSE_DIFFICULTY_HARD  = 2'b10,
+//                GAME                    = 2'b11;
                 
-    assign pixel_colour = ( state == GAME ) ? world_colour : menu_colour; 
+//    assign pixel_colour = ( state == GAME ) ? world_colour : menu_colour; 
       
-    reg [1:0] state = START;
-    reg [1:0] nextstate = START;
-    reg difficulty; // 0 for normal, 1 for hard
+//    reg [1:0] state = START;
+//    reg [1:0] nextstate = START;
+//    reg difficulty; // 0 for normal, 1 for hard
 
-    always @ ( * ) begin
-        case (state)
-            START:  nextstate = (btnR) ? CHOOSE_DIFFICULTY_NORMAL: START;
+//    always @ ( * ) begin
+//        case (state)
+//            START:  nextstate = (btnR) ? CHOOSE_DIFFICULTY_NORMAL: START;
 
-            CHOOSE_DIFFICULTY_NORMAL:   begin
-                if (btnD) 
-                    nextstate = CHOOSE_DIFFICULTY_HARD;
-                else if (btnC) 
-                    nextstate = GAME; 
-                else 
-                    nextstate = CHOOSE_DIFFICULTY_NORMAL;
-            end
+//            CHOOSE_DIFFICULTY_NORMAL:   begin
+//                if (btnD) 
+//                    nextstate = CHOOSE_DIFFICULTY_HARD;
+//                else if (btnC) 
+//                    nextstate = GAME; 
+//                else 
+//                    nextstate = CHOOSE_DIFFICULTY_NORMAL;
+//            end
 
-            CHOOSE_DIFFICULTY_HARD: begin
-                if (btnU) 
-                    nextstate = CHOOSE_DIFFICULTY_NORMAL;
-                else if (btnC) 
-                    nextstate = GAME; 
-                else 
-                    nextstate = CHOOSE_DIFFICULTY_HARD;
+//            CHOOSE_DIFFICULTY_HARD: begin
+//                if (btnU) 
+//                    nextstate = CHOOSE_DIFFICULTY_NORMAL;
+//                else if (btnC) 
+//                    nextstate = GAME; 
+//                else 
+//                    nextstate = CHOOSE_DIFFICULTY_HARD;
 
-            end
+//            end
 
-            GAME:   nextstate = GAME; // TODO: Game over logic
+//            GAME:   nextstate = GAME; // TODO: Game over logic
 
-        endcase
-    end
+//        endcase
+//    end
 
-    // edit the outputs based on the state
-    always @ (posedge clk ) begin
-        if (sw[13])  // reset
-            state <= START;
-        else
-            state <= nextstate;
+//    // edit the outputs based on the state
+//    always @ (posedge clk ) begin
+//        if (sw[13])  // reset
+//            state <= START;
+//        else
+//            state <= nextstate;
 
-        if (state == CHOOSE_DIFFICULTY_NORMAL) begin
-            difficulty <= 0; // normal
-        end
+//        if (state == CHOOSE_DIFFICULTY_NORMAL) begin
+//            difficulty <= 0; // normal
+//        end
         
 
-        if (state == CHOOSE_DIFFICULTY_HARD) begin
-            difficulty <= 1; // hard
-        end
+//        if (state == CHOOSE_DIFFICULTY_HARD) begin
+//            difficulty <= 1; // hard
+//        end
         
-    end
+//    end
 
     // debug block for rendering in top
 /*
