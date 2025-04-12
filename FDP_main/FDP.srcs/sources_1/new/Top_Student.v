@@ -65,7 +65,7 @@ module Top_Student (    input clk,
     wire vel_changed;
     wire [9:0] debugx, debugy;
     reg game_over;
-
+    reg score;
 
     // * FOR DEBUGGING 
     reg signed [12:0] x_vel_debug = 0;
@@ -181,13 +181,13 @@ module Top_Student (    input clk,
     );
 
     // enemy worm position
-    always @(*) begin
-        led[15] = mouseEnable;
+//    always @(*) begin
+//        led[15] = mouseEnable;
 
-        led [14:8] = x_dir_wire; // for debugging
+//        led [14:8] = x_dir_wire; // for debugging
 
-        led [7:0]  = y_dir_wire; // for debugging
-    end
+//        led [7:0]  = y_dir_wire; // for debugging
+//    end
     
 //     update velocity
 //     normalization logic for mouse direction input to flexi_snake
@@ -222,12 +222,22 @@ module Top_Student (    input clk,
     wire [9:0] user_worm_x [0:47];
     wire [9:0] user_worm_y [0:47];
     
-    
     genvar n;
     generate
         for (n = 0; n < 48; n = n + 1) begin : pack_user_worm_x
             assign user_worm_x[n] = user_snake_xpos[ 10*n + 9 : 10 * n ];
             assign user_worm_y[n] = user_snake_ypos[ 10*n + 9 : 10 * n ];
+        end
+    endgenerate
+    
+    wire [9:0] enemy_worm_x [0:47];
+    wire [9:0] enemy_worm_y [0:47];
+    
+    genvar k;
+    generate
+        for (k = 0; k < 48; k = k + 1) begin : pack_enemy_worm_x
+            assign enemy_worm_x[k] = enemy_snake_xpos[ 10*k + 9 : 10 * k ];
+            assign enemy_worm_y[k] = enemy_snake_ypos[ 10*k + 9 : 10 * k ];
         end
     endgenerate
     
@@ -263,12 +273,8 @@ module Top_Student (    input clk,
     // Head coordinates for snakes
     wire [9:0] user_head_x = user_worm_x[user_size-1];  // Extend from 9-bit to 10-bit
     wire [9:0] user_head_y = user_worm_y[user_size-1];
-    wire [9:0] enemy_head_x0 = 10'd30;  // Placeholder for now
-    wire [9:0] enemy_head_y0 = 10'd30;
-    wire [9:0] enemy_head_x1 = 10'd30;
-    wire [9:0] enemy_head_y1 = 10'd30;
-    wire [9:0] enemy_head_x2 = 10'd30;
-    wire [9:0] enemy_head_y2 = 10'd30;
+    wire [9:0] enemy_head_x = enemy_worm_x[enemy_size-1];
+    wire [9:0] enemy_head_y = enemy_worm_y[enemy_size-1];
 
     wire [47:0] user_collisions;
     food_and_camera food_mod (
@@ -276,12 +282,8 @@ module Top_Student (    input clk,
         .reset(btnC), // or use a proper reset
         .userwormheadx(user_head_x),
         .userwormheady(user_head_y),
-        .enemywormheadx0(enemy_head_x0),
-        .enemywormheady0(enemy_head_y0),
-        .enemywormheadx1(enemy_head_x1),
-        .enemywormheady1(enemy_head_y1),
-        .enemywormheadx2(enemy_head_x2),
-        .enemywormheady2(enemy_head_y2),
+        .enemywormheadx(enemy_head_x),
+        .enemywormheady(enemy_head_y),
         .food_eaten(0),
         .food_x_flat(food_x_flat), // Flattened food x-coordinates
         .food_y_flat(food_y_flat), // Flattened food y-coordinates
@@ -309,14 +311,76 @@ module Top_Student (    input clk,
         .debugy()
     );
 
-    // inst menu screen
-    // menu_screen menu_screen_inst (
-    //     .clk(clk),
-    //     .pixel_index(pixel_index),
-    //     .oled_data(menu_colour)
-    // );
+     menu_screen menu_screen_inst (
+        .clk(clk),
+        .state(state), 
+        .pixel_index(pixel_index),
+        .oled_data(menu_colour)
+    );
 
-    assign pixel_colour = world_colour; // display menu for now
+    
+    /*      -------------------
+            FSM FOR MENU SCREEN 
+            -------------------    */
+
+
+    // FSM for menu screen
+    parameter   START                   = 2'b00, 
+                CHOOSE_DIFFICULTY_NORMAL= 2'b01,
+                CHOOSE_DIFFICULTY_HARD  = 2'b10,
+                GAME                    = 2'b11;
+                
+    assign pixel_colour = ( state == GAME ) ? world_colour : menu_colour; 
+      
+    reg [1:0] state = START;
+    reg [1:0] nextstate = START;
+    reg difficulty; // 0 for normal, 1 for hard
+
+    always @ ( * ) begin
+        case (state)
+            START:  nextstate = (btnR) ? CHOOSE_DIFFICULTY_NORMAL: START;
+
+            CHOOSE_DIFFICULTY_NORMAL:   begin
+                if (btnD) 
+                    nextstate = CHOOSE_DIFFICULTY_HARD;
+                else if (btnC) 
+                    nextstate = GAME; 
+                else 
+                    nextstate = CHOOSE_DIFFICULTY_NORMAL;
+            end
+
+            CHOOSE_DIFFICULTY_HARD: begin
+                if (btnU) 
+                    nextstate = CHOOSE_DIFFICULTY_NORMAL;
+                else if (btnC) 
+                    nextstate = GAME; 
+                else 
+                    nextstate = CHOOSE_DIFFICULTY_HARD;
+
+            end
+
+            GAME:   nextstate = GAME; // TODO: Game over logic
+
+        endcase
+    end
+
+    // edit the outputs based on the state
+    always @ (posedge clk ) begin
+        if (sw[13])  // reset
+            state <= START;
+        else
+            state <= nextstate;
+
+        if (state == CHOOSE_DIFFICULTY_NORMAL) begin
+            difficulty <= 0; // normal
+        end
+        
+
+        if (state == CHOOSE_DIFFICULTY_HARD) begin
+            difficulty <= 1; // hard
+        end
+        
+    end
 
     // debug block for rendering in top
 /*
