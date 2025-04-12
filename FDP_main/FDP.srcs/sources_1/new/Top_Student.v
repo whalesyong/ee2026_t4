@@ -61,7 +61,12 @@ module Top_Student (    input clk,
     wire [9:0] debugx, debugy;
     reg game_over;
 
-
+    wire btnU_debounced;
+    wire btnD_debounced;
+    wire btnL_debounced;
+    wire btnR_debounced;
+    wire btnC_debounced; 
+    
     // * FOR DEBUGGING 
     reg signed [12:0] x_vel_debug = 0;
     reg signed [12:0] y_vel_debug = 0;
@@ -135,7 +140,8 @@ module Top_Student (    input clk,
     end
     
     wire directionEnable = (sw[15]) ? ((btnL | btnR | btnU | btnD | btnC)? 1: 0) : 1;
-    
+    reg difficulty; // 0 for normal, 1 for hard
+
     // inst user_worm and enemy_worm
     flexible_snake user_snake(
         .slow_clk(clk400hz), 
@@ -210,7 +216,8 @@ module Top_Student (    input clk,
         end
 
     end
-
+    wire [9:0] enemy_worm_x [0:47];
+    wire [9:0] enemy_worm_y [0:47];
     wire [9:0] user_worm_x [0:47];
     wire [9:0] user_worm_y [0:47];
     wire[479:0] food_x_flat;
@@ -223,8 +230,9 @@ module Top_Student (    input clk,
     wire [9:0] enemy_head_y = enemy_worm_y[enemy_size-1];
 
     wire [47:0] user_collisions;
+    wire food_eaten_wire;
     food_and_camera food_mod (
-        .clk(clk100hz),
+        .clk(clk_100hz),
         .reset(btnC), // or use a proper reset
         .userwormheadx(user_head_x),
         .userwormheady(user_head_y),
@@ -258,27 +266,21 @@ module Top_Student (    input clk,
     );
 
     
-    wire [9:0] enemy_worm_x [0:47];
-    wire [9:0] enemy_worm_y [0:47];
+
     
-    genvar k;
+    genvar k, n;
     generate
         for (k = 0; k < 48; k = k + 1) begin : pack_enemy_worm_x
             assign enemy_worm_x[k] = enemy_snake_xpos[ 10*k + 9 : 10 * k ];
             assign enemy_worm_y[k] = enemy_snake_ypos[ 10*k + 9 : 10 * k ];
         end
+        for (n = 0; n < 48; n = n + 1) begin : pack_user_worm_x
+            assign user_worm_x[n] = user_snake_xpos[ 10*n + 9 : 10 * n ];
+            assign user_worm_y[n] = user_snake_ypos[ 10*n + 9 : 10 * n ];
+        end
     endgenerate
     
 
-    // inst menu screen
-    menu_screen menu_screen_inst (
-        .clk(clk),
-        .state(state), 
-        .pixel_index(pixel_index),
-        .oled_data(menu_colour)
-    );
-
-    assign pixel_colour = ( state == GAME ) ? world_colour : menu_colour; 
 
     
     /*      -------------------
@@ -291,10 +293,19 @@ module Top_Student (    input clk,
                 CHOOSE_DIFFICULTY_NORMAL= 2'b01,
                 CHOOSE_DIFFICULTY_HARD  = 2'b10,
                 GAME                    = 2'b11;
-      
+
     reg [1:0] state = START;
     reg [1:0] nextstate = START;
-    reg difficulty; // 0 for normal, 1 for hard
+    assign pixel_colour = ( state == GAME ) ? world_colour : menu_colour; 
+
+    // inst menu screen
+    menu_screen menu_screen_inst (
+        .clk(clk),
+        .state(state), 
+        .pixel_index(pixel_index),
+        .oled_data(menu_colour)
+    );
+
 
     always @ ( * ) begin
         case (state)
@@ -330,6 +341,7 @@ module Top_Student (    input clk,
         endcase
     end
 
+    reg [12:0] user_score = 0;
     // edit the outputs based on the state
     always @ (posedge clk ) begin
         if (sw[13])  // reset
@@ -363,7 +375,7 @@ module Top_Student (    input clk,
 
 
     // update score on 7 seg
-    reg [12:0] user_score = 0;
+    
     wire [12:0] enemy_score = enemy_size - 10;
     wire [12:0] combined_score = user_score + enemy_score * 100;
 
