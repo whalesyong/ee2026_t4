@@ -178,6 +178,7 @@ module Top_Student (    input clk,
     // enemy worm position
     always @(*) begin
         led[15] = mouseEnable;
+        led [14] = difficulty;
 
         led [9:5] = x_dir_wire; // for debugging
 
@@ -322,7 +323,6 @@ module Top_Student (    input clk,
                     nextstate = GAME; 
                 else 
                     nextstate = CHOOSE_DIFFICULTY_NORMAL;
-                difficulty = 0; 
             end
 
             CHOOSE_DIFFICULTY_HARD: begin
@@ -332,7 +332,6 @@ module Top_Student (    input clk,
                     nextstate = GAME; 
                 else 
                     nextstate = CHOOSE_DIFFICULTY_HARD;
-                difficulty = 1; 
 
             end
 
@@ -341,12 +340,22 @@ module Top_Student (    input clk,
         endcase
     end
 
-    always @ (posedge clk or posedge sw[13]) begin
+    // edit the outputs based on the state
+    always @ (posedge clk ) begin
         if (sw[13])  // reset
             state <= START;
-         
         else
             state <= nextstate;
+
+        if (state == CHOOSE_DIFFICULTY_NORMAL) begin
+            difficulty <= 0; // normal
+        end
+        
+
+        if (state == CHOOSE_DIFFICULTY_HARD) begin
+            difficulty <= 1; // hard
+        end
+        
     end
 
     // debounce all buttons
