@@ -8,8 +8,8 @@ module flexible_snake(
     input directionEnable,
     input food_eaten,
     // 10/4 changeed from wire to reg
-    output wire [479:0] x_worm_flat, y_worm_flat,
-    output reg [7:0] size = 2, 
+    output wire [479:0] x_worm_flat , y_worm_flat,
+    output reg [7:0] size = 6, 
     output reg signed [12:0] new_x_vel, new_y_vel, 
     output reg vel_changed,
     output [9:0] debugx, debugy 
@@ -60,7 +60,7 @@ module flexible_snake(
             // Clear flattened outputs (optional here since combinational logic drives these)
 
             head_index <= 0;
-            size <= 10;  // default starting size
+            size <= 6;  // default starting size
             new_x_vel <= 0;
             new_y_vel <= 0;
             vel_changed <= 0;

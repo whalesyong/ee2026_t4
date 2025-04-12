@@ -21,6 +21,7 @@ module Top_Student (    input clk,
     wire frame_beg;
     wire [7:0] pixel_x;   
     wire [7:0] pixel_y;
+    
     PixelToXY converter_mod (
         .pixel_index(pixel_index),
         .x(pixel_x),
@@ -83,6 +84,13 @@ module Top_Student (    input clk,
         .divider(125000), 
         .SLOW_CLOCK(clk400hz)
     );
+    
+    wire clk100hz;
+    flexible_clock clk_mod_100hz(
+        .CLOCK(clk),
+        .divider(500000),
+        .SLOW_CLOCK(clk100hz)
+    );
 
     wire clk_25m;
     flexible_clock clk_mod25m(
@@ -131,7 +139,7 @@ module Top_Student (    input clk,
         y_dir = y_dir_wire;
     end
     
-    wire directionEnable = (sw[15]) ? ((btnL | btnR | btnU | btnD | btnC)? 1: 0) : 1;
+    wire directionEnable = (btnL | btnR | btnU | btnD | btnC)? 1: 0;
     
     // inst user_worm and enemy_worm
     flexible_snake user_snake(
@@ -176,9 +184,9 @@ module Top_Student (    input clk,
     always @(*) begin
         led[15] = mouseEnable;
 
-        led [9:5] = x_dir_wire; // for debugging
+        led [14:8] = x_dir_wire; // for debugging
 
-        led [4:0]  = y_dir_wire; // for debugging
+        led [7:0]  = y_dir_wire; // for debugging
     end
     
 //     update velocity
@@ -211,7 +219,18 @@ module Top_Student (    input clk,
     //TODO: for now, render the snake on the screen and in Top_student
     // rendering should be abstracted into a separate module 
 
-
+    wire [9:0] user_worm_x [0:47];
+    wire [9:0] user_worm_y [0:47];
+    
+    
+    genvar n;
+    generate
+        for (n = 0; n < 48; n = n + 1) begin : pack_user_worm_x
+            assign user_worm_x[n] = user_snake_xpos[ 10*n + 9 : 10 * n ];
+            assign user_worm_y[n] = user_snake_ypos[ 10*n + 9 : 10 * n ];
+        end
+    endgenerate
+    
     // for debugging 
     always @ (posedge clk400hz) begin 
         // X velocity control
@@ -237,29 +256,37 @@ module Top_Student (    input clk,
 
     end
 
+    // CAMERA & FOOD wires
+    
+    wire[479:0] food_x_flat;
+    wire[479:0] food_y_flat;
+    // Head coordinates for snakes
+    wire [9:0] user_head_x = user_worm_x[user_size-1];  // Extend from 9-bit to 10-bit
+    wire [9:0] user_head_y = user_worm_y[user_size-1];
+    wire [9:0] enemy_head_x0 = 10'd30;  // Placeholder for now
+    wire [9:0] enemy_head_y0 = 10'd30;
+    wire [9:0] enemy_head_x1 = 10'd30;
+    wire [9:0] enemy_head_y1 = 10'd30;
+    wire [9:0] enemy_head_x2 = 10'd30;
+    wire [9:0] enemy_head_y2 = 10'd30;
 
-// CAMERA & FOOD wires
-//    wire [3:0] reg_food_eaten;
-//    // Head coordinates for snakes
-//    wire [9:0] enemy_head_x0 = 10'd30;  // Placeholder for now
-//    wire [9:0] enemy_head_y0 = 10'd30;
-//    wire [9:0] enemy_head_x1 = 10'd30;
-//    wire [9:0] enemy_head_y1 = 10'd30;
-//    wire [9:0] enemy_head_x2 = 10'd30;
-//    wire [9:0] enemy_head_y2 = 10'd30;
-
-//    food_and_camera food_mod (
-//        .clk(clk),
-//        .reset(0), // or use a proper reset
-//        .enemywormheadx0(enemy_head_x0),
-//        .enemywormheady0(enemy_head_y0),
-//        .enemywormheadx1(enemy_head_x1),
-//        .enemywormheady1(enemy_head_y1),
-//        .enemywormheadx2(enemy_head_x2),
-//        .enemywormheady2(enemy_head_y2),
-//        .reg_food_eaten(reg_food_eaten)
-//    );
-
+    wire [47:0] user_collisions;
+    food_and_camera food_mod (
+        .clk(clk100hz),
+        .reset(btnC), // or use a proper reset
+        .userwormheadx(user_head_x),
+        .userwormheady(user_head_y),
+        .enemywormheadx0(enemy_head_x0),
+        .enemywormheady0(enemy_head_y0),
+        .enemywormheadx1(enemy_head_x1),
+        .enemywormheady1(enemy_head_y1),
+        .enemywormheadx2(enemy_head_x2),
+        .enemywormheady2(enemy_head_y2),
+        .food_eaten(0),
+        .food_x_flat(food_x_flat), // Flattened food x-coordinates
+        .food_y_flat(food_y_flat), // Flattened food y-coordinates
+        .user_collisions(user_collisions) 
+    );
 
 
     // Inst render_oled
@@ -273,8 +300,8 @@ module Top_Student (    input clk,
         .enemy_worm_x_flat(enemy_snake_xpos), // flattened x-coordinates of enemy worm 
         .enemy_worm_y_flat(enemy_snake_ypos), // flattened y-coordinates of enemy worm
         .enemy_size(enemy_size), // size of enemy worm
-        .food_x_flat(0), // flattened x-coordinates of food (not used)
-        .food_y_flat(0), // flattened y-coordinates of food (not used)
+        .food_x_flat(food_x_flat), // flattened x-coordinates of food (not used)
+        .food_y_flat(food_y_flat), // flattened y-coordinates of food (not used)
 
         // output
         .pixel_colour(world_colour), // output pixel color

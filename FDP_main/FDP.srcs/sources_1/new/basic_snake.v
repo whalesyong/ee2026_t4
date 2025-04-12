@@ -25,7 +25,7 @@ module basic_snake(
     always @ (posedge slow_clk) begin 
         pos_changed = 0;
         vel_changed = 0;
-        flag <= (flag == 15) ? 0 : flag + 1;
+        flag <= (flag == 5) ? 0 : flag + 1;
 
         if (flag == 0) begin 
             new_x_vel = x_vel;
@@ -38,13 +38,13 @@ module basic_snake(
 
         // Collision detection for top-left corner positioning
         if (potential_xpos < 3) begin  // Left wall
-            potential_xpos = 3;
+            potential_xpos = 4;
             new_x_vel = -new_x_vel;
             vel_changed = 1;
             pos_changed = 0;
         end
         else if (potential_xpos >= MAX_X - BOX_SIZE) begin  // Right wall
-            potential_xpos = MAX_X - BOX_SIZE;
+            potential_xpos = MAX_X - BOX_SIZE - 1;
             new_x_vel = -new_x_vel;
             vel_changed = 1;
             pos_changed = 0;            
@@ -52,13 +52,13 @@ module basic_snake(
         end
 
         if (potential_ypos < 3) begin  // Top wall
-            potential_ypos = 3;
+            potential_ypos = 4;
             new_y_vel = -new_y_vel;
-            vel_changed=1;
+            vel_changed = 1;
             pos_changed = 0;
         end
         else if (potential_ypos >= MAX_Y - BOX_SIZE) begin  // Bottom wall
-            potential_ypos = MAX_Y - BOX_SIZE;
+            potential_ypos = MAX_Y - BOX_SIZE - 1;
             new_y_vel = -new_y_vel;
             vel_changed = 1;
             pos_changed = 0;
