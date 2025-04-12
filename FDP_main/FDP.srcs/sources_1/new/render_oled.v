@@ -33,7 +33,7 @@ module render_oled(
     reg [15:0] pixel_colour_reg;
     reg active_buffer; // 0 or 1 to indicate the active display buffer
 
-   // wire in_boundary;
+    // wire in_boundary;
     // reg in_user_worm;
     // reg in_enemy_worm;
     // reg in_food;

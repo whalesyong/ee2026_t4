@@ -8,6 +8,7 @@ module flexible_snake(
     input directionEnable,
     input food_eaten,
     input difficulty, // 0 for normal, 1 for hard
+
     // 10/4 changeed from wire to reg
     output wire [479:0] x_worm_flat, y_worm_flat,
     output reg [7:0] size = 10, 
@@ -51,15 +52,13 @@ module flexible_snake(
     
     integer i;  // Used for loops in always blocks
 
-
-    
     // Sequential logic: reset, update memory and snake growth
     always @(posedge slow_clk or posedge rst) begin
         if (rst) begin
             // Reset snake memory
             for (i = 0; i < MAX_LENGTH; i = i + 1) begin
-                worm_x_mem[i] <= 10'd30;
-                worm_y_mem[i] <= 10'd30;
+                worm_x_mem[i] <= xpos;
+                worm_y_mem[i] <= ypos;
             end
             // Clear flattened outputs (optional here since combinational logic drives these)
 

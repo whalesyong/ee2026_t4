@@ -13,7 +13,7 @@ module basic_snake(
 
     reg signed [12:0] potential_xpos, potential_ypos;
 
-    wire [4:0] difficulty_adjusted_speed = (difficulty == 1) ? 10 : 20; // smaller number means faster worm
+    wire [4:0] difficulty_adjusted_speed = (difficulty == 1) ? 5 : 20; // smaller number means faster worm
 
 
     assign debugx = potential_xpos[9:0];
