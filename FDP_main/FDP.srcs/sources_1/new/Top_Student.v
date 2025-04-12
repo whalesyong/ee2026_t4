@@ -211,6 +211,31 @@ module Top_Student (    input clk,
 
     end
 
+    wire [9:0] user_worm_x [0:47];
+    wire [9:0] user_worm_y [0:47];
+    wire[479:0] food_x_flat;
+    wire[479:0] food_y_flat;
+
+    // Head coordinates for snakes
+    wire [9:0] user_head_x = user_worm_x[user_size-1];  // Extend from 9-bit to 10-bit
+    wire [9:0] user_head_y = user_worm_y[user_size-1];
+    wire [9:0] enemy_head_x = enemy_worm_x[enemy_size-1];
+    wire [9:0] enemy_head_y = enemy_worm_y[enemy_size-1];
+
+    wire [47:0] user_collisions;
+    food_and_camera food_mod (
+        .clk(clk100hz),
+        .reset(btnC), // or use a proper reset
+        .userwormheadx(user_head_x),
+        .userwormheady(user_head_y),
+        .enemywormheadx(enemy_head_x),
+        .enemywormheady(enemy_head_y),
+        .food_eaten(food_eaten_wire),
+        .food_x_flat(food_x_flat), // Flattened food x-coordinates
+        .food_y_flat(food_y_flat), // Flattened food y-coordinates
+        .user_collisions(user_collisions) 
+    );
+
 
     // Inst render_oled
     render_oled render_oled_inst (
@@ -223,14 +248,27 @@ module Top_Student (    input clk,
         .enemy_worm_x_flat(enemy_snake_xpos), // flattened x-coordinates of enemy worm 
         .enemy_worm_y_flat(enemy_snake_ypos), // flattened y-coordinates of enemy worm
         .enemy_size(enemy_size), // size of enemy worm
-        .food_x_flat(0), // flattened x-coordinates of food (not used)
-        .food_y_flat(0), // flattened y-coordinates of food (not used)
+        .food_x_flat(food_x_flat), // flattened x-coordinates of food (not used)
+        .food_y_flat(food_y_flat), // flattened y-coordinates of food (not used)
 
         // output
         .pixel_colour(world_colour), // output pixel color
         .debugx(),
         .debugy()
     );
+
+    
+    wire [9:0] enemy_worm_x [0:47];
+    wire [9:0] enemy_worm_y [0:47];
+    
+    genvar k;
+    generate
+        for (k = 0; k < 48; k = k + 1) begin : pack_enemy_worm_x
+            assign enemy_worm_x[k] = enemy_snake_xpos[ 10*k + 9 : 10 * k ];
+            assign enemy_worm_y[k] = enemy_snake_ypos[ 10*k + 9 : 10 * k ];
+        end
+    endgenerate
+    
 
     // inst menu screen
     menu_screen menu_screen_inst (
@@ -260,7 +298,9 @@ module Top_Student (    input clk,
 
     always @ ( * ) begin
         case (state)
-            START:  nextstate = (btnR_debounced) ? CHOOSE_DIFFICULTY_NORMAL: START;
+            START:  begin
+                nextstate = (btnR_debounced) ? CHOOSE_DIFFICULTY_NORMAL: START;
+            end
 
             CHOOSE_DIFFICULTY_NORMAL:   begin
                 if (btnD_debounced) 
@@ -306,6 +346,12 @@ module Top_Student (    input clk,
             difficulty <= 1; // hard
         end
         
+        if ( food_eaten )
+           user_score <= user_score + 1; // increment score when food is eaten
+
+        if (state == GAME) 
+            user_score <= 0;
+        
     end
 
     // debounce all buttons
@@ -315,10 +361,11 @@ module Top_Student (    input clk,
     debounce debounce_btnL ( clk, btnL, btnL_debounced );
     debounce debounce_btnR ( clk, btnR, btnR_debounced );
 
+
     // update score on 7 seg
-    wire [12:0] user_score = user_size - 6;
-    wire [12:0] enemy_score = enemy_size - 6;
-    wire [12:0] combined_score = user_score * 100 + enemy_score;
+    reg [12:0] user_score = 0;
+    wire [12:0] enemy_score = enemy_size - 10;
+    wire [12:0] combined_score = user_score + enemy_score * 100;
 
     ss_display ss_display_inst(
         .seg(seg), 
@@ -327,9 +374,6 @@ module Top_Student (    input clk,
         .clk(clk400hz),
         .num(combined_score) // display user score
     );
-
-
-
 
 
 
