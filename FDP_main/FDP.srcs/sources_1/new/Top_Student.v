@@ -162,7 +162,7 @@ module Top_Student (    input clk,
         .debugx(),
         .debugy()
     );
-    
+    wire food_eaten_enemy;
     flexible_snake enemy_snake(
         .slow_clk(clk400hz), 
         .rst(btnC),
@@ -171,7 +171,7 @@ module Top_Student (    input clk,
         .xpos(enemy_xpos), 
         .ypos(enemy_ypos), 
         .directionEnable(directionEnable),
-        .food_eaten(0),
+        .food_eaten(food_eaten_enemy),
         .x_worm_flat(enemy_snake_xpos), 
         .y_worm_flat(enemy_snake_ypos), 
         .size(enemy_size),
@@ -230,7 +230,7 @@ module Top_Student (    input clk,
     wire [9:0] enemy_head_y = enemy_worm_y[enemy_size-1];
 
     wire [47:0] user_collisions;
-    wire food_eaten_wire;
+    wire food_eaten_user;
     food_and_camera food_mod (
         .clk(clk_100hz),
         .reset(btnC), // or use a proper reset
@@ -238,7 +238,7 @@ module Top_Student (    input clk,
         .userwormheady(user_head_y),
         .enemywormheadx(enemy_head_x),
         .enemywormheady(enemy_head_y),
-        .food_eaten(food_eaten_wire),
+        .food_eaten(food_eaten_user),
         .food_x_flat(food_x_flat), // Flattened food x-coordinates
         .food_y_flat(food_y_flat), // Flattened food y-coordinates
         .user_collisions(user_collisions) 
@@ -341,9 +341,12 @@ module Top_Student (    input clk,
         endcase
     end
 
-    reg [12:0] user_score = 0;
+    reg [7:0] user_score = 0;
+    reg [12:0] enemy_score =0;
+
+    
     // edit the outputs based on the state
-    always @ (posedge clk ) begin
+    always @ (posedge clk400hz) begin
         if (sw[13])  // reset
             state <= START;
         else
@@ -358,11 +361,13 @@ module Top_Student (    input clk,
             difficulty <= 1; // hard
         end
         
-        if ( food_eaten_wire )
+        if ( food_eaten_user )
            user_score <= user_score + 1; // increment score when food is eaten
 
-        if (state == GAME) 
-            user_score <= 0;
+        else if (food_eaten_enemy) begin
+            enemy_score <= enemy_score + 1; // increment score when food is eaten
+        end
+
         
     end
 
@@ -375,10 +380,8 @@ module Top_Student (    input clk,
 
 
     // update score on 7 seg
-    
-    wire [12:0] enemy_score = enemy_size - 10;
-    wire [12:0] combined_score = user_score + enemy_score * 100;
 
+    wire [12:0] combined_score = user_score + enemy_score * 100;
     ss_display ss_display_inst(
         .seg(seg), 
         .an(an), 
